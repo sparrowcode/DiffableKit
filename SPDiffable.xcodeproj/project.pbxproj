@@ -18,7 +18,6 @@
 		F4954C07249B9716007072FA /* SPDiffableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFF249B9715007072FA /* SPDiffableTableView.swift */; };
 		F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */; };
 		F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C01249B9715007072FA /* SPDiffableTableController.swift */; };
-		F4954C0A249B9716007072FA /* SPTableDiffableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C02249B9715007072FA /* SPTableDiffableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +37,6 @@
 		F4954BFF249B9715007072FA /* SPDiffableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableView.swift; sourceTree = "<group>"; };
 		F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTableDiffableDataSource.swift; sourceTree = "<group>"; };
 		F4954C01249B9715007072FA /* SPDiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
-		F4954C02249B9715007072FA /* SPTableDiffableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTableDiffableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +132,6 @@
 				F4954BFF249B9715007072FA /* SPDiffableTableView.swift */,
 				F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */,
 				F4954C01249B9715007072FA /* SPDiffableTableController.swift */,
-				F4954C02249B9715007072FA /* SPTableDiffableController.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -228,7 +225,6 @@
 				F4954C03249B9716007072FA /* SPDiffableFooter.swift in Sources */,
 				F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */,
 				F4954C07249B9716007072FA /* SPDiffableTableView.swift in Sources */,
-				F4954C0A249B9716007072FA /* SPTableDiffableController.swift in Sources */,
 				F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

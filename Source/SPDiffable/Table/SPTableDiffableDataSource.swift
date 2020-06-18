@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+public class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     init(tableView: UITableView, cellProviders: [CellProvider]) {
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
@@ -44,14 +44,14 @@ class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection
         apply(snapshot, animatingDifferences: animating)
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTextHeader {
             return header.text
         }
         return nil
     }
     
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    public override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTextFooter {
             return footer.text
         }

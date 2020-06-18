@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDiffableTableController: UIViewController {
+public class SPDiffableTableController: UIViewController {
     
     let tableView: SPDiffableTableView
     
@@ -39,9 +39,9 @@ class SPDiffableTableController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
-        tableView.setEqualSuperviewBoundsWithAutoLayout()
+        tableView.frame = view.bounds
     }
 }
