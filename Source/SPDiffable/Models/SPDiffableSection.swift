@@ -23,13 +23,13 @@ import UIKit
 
 public class SPDiffableSection: NSObject {
     
-    var identifier: String
-    var header: SPDiffableHeader?
-    var footer: SPDiffableFooter?
+    public var identifier: String
+    public var header: SPDiffableHeader?
+    public var footer: SPDiffableFooter?
     
-    var items: [SPDiffableItem] = []
+    public var items: [SPDiffableItem] = []
     
-    init(identifier: String, header: SPDiffableHeader? = nil, footer: SPDiffableFooter? = nil, items: [SPDiffableItem] = []) {
+    public init(identifier: String, header: SPDiffableHeader? = nil, footer: SPDiffableFooter? = nil, items: [SPDiffableItem] = []) {
         self.identifier = identifier
         self.header = header
         self.footer = footer
