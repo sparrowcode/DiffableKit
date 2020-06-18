@@ -4,8 +4,8 @@
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-    - [CocoaPods](#cocoapods)
     - [Swift Package Manager](#swift-package-manager)
+    - [CocoaPods](#cocoapods)
     - [Carthage](#carthage)
     - [Manually](#manually)
 - [Quick Start](#quick-start)
@@ -22,14 +22,6 @@ Swift `+5.0`. Ready for use on iOS 13+
 
 ## Installation
 
-### CocoaPods:
-
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPDiffable` into your Xcode project using CocoaPods, specify it in your `Podfile`:
-
-```ruby
-pod 'SPDiffable'
-```
-
 ### Swift Package Manager
 
 The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
@@ -38,6 +30,14 @@ To integrate `SPDiffable` into your Xcode project using Xcode 11, specify it in 
 
 ```ogdl
 https://github.com/ivanvorobei/SPDiffable
+```
+
+### CocoaPods:
+
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPDiffable` into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+pod 'SPDiffable'
 ```
 
 ### Carthage
