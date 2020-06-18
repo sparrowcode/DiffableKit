@@ -59,4 +59,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
 }
 
+/**
+ Using for apply new data in diffable data source.
+ */
 typealias SPTableDiffableSnapshot = NSDiffableDataSourceSnapshot<SPDiffableSection, SPDiffableItem>
