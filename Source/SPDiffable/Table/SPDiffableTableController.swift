@@ -23,13 +23,13 @@ import UIKit
 
 public class SPDiffableTableController: UIViewController {
     
-    let tableView: SPDiffableTableView
+    public let tableView: SPDiffableTableView
     
-    var diffableDataSource: SPTableDiffableDataSource {
+    public var diffableDataSource: SPTableDiffableDataSource {
         return tableView.diffableDataSource
     }
     
-    init(style: UITableView.Style, cellProviders: [SPTableDiffableDataSource.CellProvider]) {
+    public init(style: UITableView.Style, cellProviders: [SPTableDiffableDataSource.CellProvider]) {
         self.tableView = SPDiffableTableView(style: style, cellProviders: cellProviders)
         super.init(nibName: nil, bundle: nil)
     }
