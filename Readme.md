@@ -1,4 +1,4 @@
-# SPDiffable 1
+# SPDiffable
 
 ## Navigate
 
