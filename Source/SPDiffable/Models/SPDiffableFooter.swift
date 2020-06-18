@@ -25,9 +25,9 @@ public class SPDiffableFooter: NSObject {}
 
 public class SPDiffableTextFooter: SPDiffableFooter {
     
-    var text: String
+    public var text: String
     
-    init(text: String) {
+    public init(text: String) {
         self.text = text
         super.init()
     }

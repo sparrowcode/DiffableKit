@@ -23,9 +23,9 @@ import UIKit
 
 public class SPDiffableItem: NSObject {
     
-    var identifier: String
+    public var identifier: String
     
-    init(_ identifier: String) {
+    public init(_ identifier: String) {
         self.identifier = identifier
     }
 
