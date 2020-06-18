@@ -21,10 +21,21 @@
 
 import UIKit
 
+/**
+ `SPDiffableTableView` is basic class, which stored and managment diffable data source object.
+ 
+ For set or update data, need pass all cell providers, which processing for each section and item in your data. For apply data, need call `apply` method and pass `SPDiffableSection` objects.
+ */
 open class SPDiffableTableView: UITableView, UITableViewDelegate {
     
     public var diffableDataSource: SPTableDiffableDataSource!
     
+    /**
+     Requerid cell providers.
+     
+     - parameter style: Table style.
+     - parameter cellProviders: Functions, whuch process each model to `UITableViewCell`.
+     */
     public init(style: UITableView.Style, cellProviders: [SPTableDiffableDataSource.CellProvider]) {
         super.init(frame: .zero, style: style)
         diffableDataSource = SPTableDiffableDataSource(tableView: self, cellProviders: cellProviders)
@@ -35,4 +46,3 @@ open class SPDiffableTableView: UITableView, UITableViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
