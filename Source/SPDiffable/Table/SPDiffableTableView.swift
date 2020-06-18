@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableTableView: UITableView, UITableViewDelegate {
+open class SPDiffableTableView: UITableView, UITableViewDelegate {
     
     public var diffableDataSource: SPTableDiffableDataSource!
     
@@ -31,7 +31,7 @@ public class SPDiffableTableView: UITableView, UITableViewDelegate {
     }
     
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

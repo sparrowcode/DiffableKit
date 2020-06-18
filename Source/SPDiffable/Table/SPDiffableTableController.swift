@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableTableController: UIViewController {
+open class SPDiffableTableController: UIViewController {
     
     public let tableView: SPDiffableTableView
     
@@ -35,7 +35,7 @@ public class SPDiffableTableController: UIViewController {
     }
     
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
