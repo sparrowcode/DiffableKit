@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableSection: NSObject {
+open class SPDiffableSection: NSObject {
     
     public var identifier: String
     public var header: SPDiffableHeader?

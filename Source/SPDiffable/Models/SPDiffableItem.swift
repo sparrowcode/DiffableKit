@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableItem: NSObject {
+open class SPDiffableItem: NSObject {
     
     public var identifier: String
     
