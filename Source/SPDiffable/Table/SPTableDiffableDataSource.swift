@@ -23,7 +23,7 @@ import UIKit
 
 public class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
-    init(tableView: UITableView, cellProviders: [CellProvider]) {
+    public init(tableView: UITableView, cellProviders: [CellProvider]) {
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
             for provider in cellProviders {
                 if let cell = provider(tableView, indexPath, model) {
@@ -35,7 +35,7 @@ public class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffable
         defaultRowAnimation = .fade
     }
     
-    func apply(sections: [SPDiffableSection], animating: Bool) {
+    public func apply(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPTableDiffableSnapshot()
         for section in sections {
             snapshot.appendSections([section])

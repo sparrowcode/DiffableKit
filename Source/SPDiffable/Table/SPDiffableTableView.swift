@@ -23,9 +23,9 @@ import UIKit
 
 public class SPDiffableTableView: UITableView, UITableViewDelegate {
     
-    var diffableDataSource: SPTableDiffableDataSource!
+    public var diffableDataSource: SPTableDiffableDataSource!
     
-    init(style: UITableView.Style, cellProviders: [SPTableDiffableDataSource.CellProvider]) {
+    public init(style: UITableView.Style, cellProviders: [SPTableDiffableDataSource.CellProvider]) {
         super.init(frame: .zero, style: style)
         diffableDataSource = SPTableDiffableDataSource(tableView: self, cellProviders: cellProviders)
     }
