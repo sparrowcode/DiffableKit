@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDiffableItem: NSObject {
+public class SPDiffableItem: NSObject {
     
     var identifier: String
     
@@ -29,11 +29,11 @@ class SPDiffableItem: NSObject {
         self.identifier = identifier
     }
 
-    override var hash : Int {
+    public override var hash : Int {
         return identifier.hashValue
     }
     
-    override func isEqual(_ object: Any?) -> Bool {
+    public override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? SPDiffableItem else { return false }
         return identifier == object.identifier
     }

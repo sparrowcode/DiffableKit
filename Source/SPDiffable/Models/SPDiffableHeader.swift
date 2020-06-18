@@ -21,9 +21,9 @@
 
 import UIKit
 
-class SPDiffableHeader: NSObject {}
+public class SPDiffableHeader: NSObject {}
 
-class SPDiffableTextHeader: SPDiffableHeader {
+public class SPDiffableTextHeader: SPDiffableHeader {
     
     var text: String
     

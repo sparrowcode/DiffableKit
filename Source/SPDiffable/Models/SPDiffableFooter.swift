@@ -21,9 +21,9 @@
 
 import UIKit
 
-class SPDiffableFooter: NSObject {}
+public class SPDiffableFooter: NSObject {}
 
-class SPDiffableTextFooter: SPDiffableFooter {
+public class SPDiffableTextFooter: SPDiffableFooter {
     
     var text: String
     

@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDiffableSection: NSObject {
+public class SPDiffableSection: NSObject {
     
     var identifier: String
     var header: SPDiffableHeader?
@@ -36,11 +36,11 @@ class SPDiffableSection: NSObject {
         self.items = items
     }
     
-    override var hash : Int {
+    public override var hash : Int {
         return identifier.hashValue
     }
     
-    override func isEqual(_ object: Any?) -> Bool {
+    public override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? SPDiffableSection else { return false }
         return identifier == object.identifier
     }
