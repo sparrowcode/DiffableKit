@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
