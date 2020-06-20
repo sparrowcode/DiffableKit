@@ -21,7 +21,7 @@
 
 import UIKit
 
-@objc public protocol SPTableDiffableDelegate: class {
+@objc public protocol SPTableDiffableMediator: class {
     
     @objc optional func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     
