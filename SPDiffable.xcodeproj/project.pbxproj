@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F4632035249EBA7100AF7413 /* SPTableDiffableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPTableDiffableDelegate.swift */; };
+		F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */; };
 		F4954BE2249B788A007072FA /* SPDiffable.h in Headers */ = {isa = PBXBuildFile; fileRef = F4954BE0249B788A007072FA /* SPDiffable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4954BEE249B95F2007072FA /* FUNDING.yml in Resources */ = {isa = PBXBuildFile; fileRef = F4954BED249B95F2007072FA /* FUNDING.yml */; };
 		F4954BF7249B962C007072FA /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = F4954BF2249B962C007072FA /* Readme.md */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F4632034249EBA7100AF7413 /* SPTableDiffableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTableDiffableDelegate.swift; sourceTree = "<group>"; };
+		F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTableDiffableMediator.swift; sourceTree = "<group>"; };
 		F4954BDD249B788A007072FA /* SPDiffable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPDiffable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4954BE0249B788A007072FA /* SPDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDiffable.h; sourceTree = "<group>"; };
 		F4954BE1249B788A007072FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			children = (
 				F4632036249EBB9200AF7413 /* Views */,
 				F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */,
-				F4632034249EBA7100AF7413 /* SPTableDiffableDelegate.swift */,
+				F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 				F4954C03249B9716007072FA /* SPDiffableFooter.swift in Sources */,
 				F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */,
 				F4954C07249B9716007072FA /* SPDiffableTableView.swift in Sources */,
-				F4632035249EBA7100AF7413 /* SPTableDiffableDelegate.swift in Sources */,
+				F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */,
 				F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
