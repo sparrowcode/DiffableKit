@@ -39,6 +39,7 @@ open class SPDiffableTableView: UITableView, UITableViewDelegate {
     public init(style: UITableView.Style, cellProviders: [SPTableDiffableDataSource.CellProvider]) {
         super.init(frame: .zero, style: style)
         diffableDataSource = SPTableDiffableDataSource(tableView: self, cellProviders: cellProviders)
+        delaysContentTouches = false
     }
     
     @available(*, unavailable)
