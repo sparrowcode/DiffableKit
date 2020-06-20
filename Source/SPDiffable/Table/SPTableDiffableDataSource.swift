@@ -46,6 +46,8 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         apply(snapshot, animatingDifferences: animating)
     }
     
+    // MARK: Mediator Calling
+    
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let title = mediator?.tableView?(tableView, titleForHeaderInSection: section) {
             return title
@@ -68,6 +70,10 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     
     public override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return mediator?.tableView?(tableView, canEditRowAt: indexPath) ?? false
+    }
+    
+    public override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        mediator?.tableView?(tableView, commit: editingStyle, forRowAt: indexPath)
     }
 }
 
