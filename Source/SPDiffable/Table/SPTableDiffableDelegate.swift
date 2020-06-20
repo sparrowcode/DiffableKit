@@ -21,11 +21,11 @@
 
 import UIKit
 
-public protocol SPTableDiffableDelegate: class {
+@objc public protocol SPTableDiffableDelegate: class {
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    @objc optional func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    @objc optional func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
+    @objc optional func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
 }
