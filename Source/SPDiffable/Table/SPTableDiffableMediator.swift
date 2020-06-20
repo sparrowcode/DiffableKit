@@ -28,4 +28,6 @@ import UIKit
     @objc optional func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     
     @objc optional func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
+    
+    @objc optional func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
 }
