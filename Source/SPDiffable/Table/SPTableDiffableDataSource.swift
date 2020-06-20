@@ -23,6 +23,8 @@ import UIKit
 
 open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
+    public weak var diffableDelegate: SPTableDiffableDelegate?
+    
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
             for provider in cellProviders {
@@ -45,6 +47,9 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
     
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let title = diffableDelegate?.tableView(tableView, titleForHeaderInSection: section) {
+            return title
+        }
         if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTextHeader {
             return header.text
         }
@@ -52,6 +57,9 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
     
     public override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if let title = diffableDelegate?.tableView(tableView, titleForFooterInSection: section) {
+            return title
+        }
         if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTextFooter {
             return footer.text
         }
@@ -59,7 +67,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
     
     public override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return diffableDelegate?.tableView(tableView, canEditRowAt: indexPath) ?? false
     }
 }
 
