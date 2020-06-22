@@ -60,7 +60,7 @@ If you prefer not to use any of dependency managers, you can integrate `SPDiffab
 
 This project is free, but developing it takes time. Contributing to this project is a huge help. Here is list of tasks that need to be done, you can help with any:
 
-- Add documentation in the source files (description of public methods and parameters)
+- Fix documentation mistakes, add more description to code documentations
 
 ## License
 

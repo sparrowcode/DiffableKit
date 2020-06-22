@@ -21,6 +21,9 @@
 
 import UIKit
 
+/**
+ Some table data source methods, which can be passed to delegate class.
+ */
 @objc public protocol SPTableDiffableMediator: class {
     
     @objc optional func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool

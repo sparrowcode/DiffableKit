@@ -129,9 +129,9 @@
 		F4954BF9249B9715007072FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F4954BFC249B9715007072FA /* SPDiffableHeader.swift */,
 				F4954BFA249B9715007072FA /* SPDiffableFooter.swift */,
 				F4954BFB249B9715007072FA /* SPDiffableItem.swift */,
-				F4954BFC249B9715007072FA /* SPDiffableHeader.swift */,
 				F4954BFD249B9715007072FA /* SPDiffableSection.swift */,
 			);
 			path = Models;
