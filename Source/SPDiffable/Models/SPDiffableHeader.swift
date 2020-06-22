@@ -21,8 +21,15 @@
 
 import UIKit
 
+/**
+Basic header model.
+All headers should be inherited from it class.
+*/
 open class SPDiffableHeader: NSObject {}
 
+/**
+Header class with only text.
+*/
 open class SPDiffableTextHeader: SPDiffableHeader {
     
     public var text: String

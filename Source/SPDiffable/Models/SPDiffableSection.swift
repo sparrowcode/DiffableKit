@@ -21,12 +21,19 @@
 
 import UIKit
 
+/**
+Basic section model.
+You can set custom header and footer.
+*/
 open class SPDiffableSection: NSObject {
     
     public var identifier: String
     public var header: SPDiffableHeader?
     public var footer: SPDiffableFooter?
     
+    /**
+     Items in this section.
+     */
     public var items: [SPDiffableItem] = []
     
     public init(identifier: String, header: SPDiffableHeader? = nil, footer: SPDiffableFooter? = nil, items: [SPDiffableItem] = []) {
@@ -36,7 +43,7 @@ open class SPDiffableSection: NSObject {
         self.items = items
     }
     
-    public override var hash : Int {
+    public override var hash: Int {
         return identifier.hashValue
     }
     

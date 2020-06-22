@@ -21,10 +21,17 @@
 
 import UIKit
 
+/**
+ Basic diffable class.
+ Added table view and ready-use data source.
+ */
 open class SPDiffableTableController: UIViewController {
     
     public let tableView: SPDiffableTableView
     
+    /**
+     Wrapper for data source of table view for fast access.
+     */
     public var diffableDataSource: SPTableDiffableDataSource {
         return tableView.diffableDataSource
     }
@@ -43,6 +50,7 @@ open class SPDiffableTableController: UIViewController {
         super.viewDidLoad()
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.preservesSuperviewLayoutMargins = true
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -50,5 +58,4 @@ open class SPDiffableTableController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
 }

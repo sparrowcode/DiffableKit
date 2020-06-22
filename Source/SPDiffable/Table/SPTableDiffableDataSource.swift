@@ -23,6 +23,10 @@ import UIKit
 
 open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
+    /**
+     Passed some data source methods to delegate class.
+     For using, need implement protocol `SPTableDiffableMediator` and set mediator.
+     */
     public weak var mediator: SPTableDiffableMediator?
     
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
@@ -37,6 +41,9 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         defaultRowAnimation = .fade
     }
     
+    /**
+     Wrapper for apply content method.
+     */
     public func apply(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPTableDiffableSnapshot()
         for section in sections {
@@ -46,7 +53,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         apply(snapshot, animatingDifferences: animating)
     }
     
-    // MARK: Mediator Calling
+    // MARK: Mediator
     
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let title = mediator?.tableView?(tableView, titleForHeaderInSection: section) {

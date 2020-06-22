@@ -21,8 +21,15 @@
 
 import UIKit
 
+/**
+ Basic footer model.
+ All foters should be inherited from it class.
+ */
 open class SPDiffableFooter: NSObject {}
 
+/**
+ Footer class with only text.
+ */
 open class SPDiffableTextFooter: SPDiffableFooter {
     
     public var text: String

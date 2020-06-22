@@ -21,6 +21,10 @@
 
 import UIKit
 
+/**
+Basic item model.
+All items should be inherited from it class.
+*/
 open class SPDiffableItem: NSObject {
     
     public var identifier: String

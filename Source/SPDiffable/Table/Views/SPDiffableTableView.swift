@@ -28,6 +28,10 @@ import UIKit
  */
 open class SPDiffableTableView: UITableView, UITableViewDelegate {
     
+    /**
+     Diffable Data source. No need set data source manually.
+     Call method `apply` for set content.
+    */
     public var diffableDataSource: SPTableDiffableDataSource!
     
     /**
