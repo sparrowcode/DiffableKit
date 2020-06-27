@@ -21,41 +21,23 @@
 
 import UIKit
 
-/**
- Basic diffable class.
- Added table view and ready-use data source.
- */
-open class SPDiffableTableController: UIViewController {
+open class SPDiffableTableController: UITableViewController {
     
-    public let tableView: SPDiffableTableView
+    public var diffableDataSource: SPTableDiffableDataSource?
     
-    /**
-     Wrapper for data source of table view for fast access.
-     */
-    public var diffableDataSource: SPTableDiffableDataSource {
-        return tableView.diffableDataSource
+    func setCellProviders( _ providers: [SPTableDiffableDataSource.CellProvider], sections: [SPDiffableSection]) {
+        diffableDataSource = SPTableDiffableDataSource(tableView: tableView, cellProviders: providers)
+        diffableDataSource?.apply(sections: sections, animating: false)
     }
     
-    public init(style: UITableView.Style, cellProviders: [SPTableDiffableDataSource.CellProvider]) {
-        self.tableView = SPDiffableTableView(style: style, cellProviders: cellProviders)
-        super.init(nibName: nil, bundle: nil)
+    // MARK: Ovveriden Init
+    
+    public override init(style: UITableView.Style) {
+        super.init(style: style)
     }
     
     @available(*, unavailable)
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.preservesSuperviewLayoutMargins = true
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
     }
 }

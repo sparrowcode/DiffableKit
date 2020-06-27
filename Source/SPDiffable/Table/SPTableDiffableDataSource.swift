@@ -38,7 +38,6 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
             }
             return nil
         })
-        defaultRowAnimation = .fade
     }
     
     /**
