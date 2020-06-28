@@ -22,15 +22,7 @@
 import UIKit
 
 /**
- Some table data source methods, which can be passed to delegate class.
- */
-@objc public protocol SPTableDiffableMediator: class {
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
-}
+Basic header model.
+All headers should be inherited from it class.
+*/
+open class SPDiffableHeader: NSObject {}

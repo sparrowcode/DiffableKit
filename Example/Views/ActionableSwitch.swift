@@ -2,9 +2,9 @@ import UIKit
 
 class ActionableSwitch: UISwitch {
     
-    var action: SwitchTableRowModel.Action
+    var action: SPDiffableTableRowSwitch.Action
     
-    init(action: @escaping SwitchTableRowModel.Action) {
+    init(action: @escaping SPDiffableTableRowSwitch.Action) {
         self.action = action
         super.init(frame: .zero)
         addTarget(self, action: #selector(self.valueChanged), for: .valueChanged)

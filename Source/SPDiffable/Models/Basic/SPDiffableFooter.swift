@@ -22,15 +22,7 @@
 import UIKit
 
 /**
- Some table data source methods, which can be passed to delegate class.
+ Basic footer model.
+ All foters should be inherited from it class.
  */
-@objc public protocol SPTableDiffableMediator: class {
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
-}
+open class SPDiffableFooter: NSObject {}

@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Varabei (varabeis@icloud.com)
+// Copyright © 2020 Ivan Vorobei (varabeis@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,17 +27,9 @@ open class SPDiffableTableController: UITableViewController {
     
     // MARK: Helper func
     
-    public func apply(sections: [SPDiffableSection], animating: Bool) {
-        diffableDataSource?.apply(sections: sections, animating: animating)
-    }
-    
     public func setCellProviders( _ providers: [SPTableDiffableDataSource.CellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPTableDiffableDataSource(tableView: tableView, cellProviders: providers)
         diffableDataSource?.apply(sections: sections, animating: false)
-    }
-    
-    public func setCellProvider( _ provider: @escaping SPTableDiffableDataSource.CellProvider, sections: [SPDiffableSection]) {
-        setCellProviders([provider], sections: sections)
     }
     
     // MARK: Ovveriden Init
@@ -51,3 +43,5 @@ open class SPDiffableTableController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+public typealias SPDiffableTableCellProvider = SPTableDiffableDataSource.CellProvider

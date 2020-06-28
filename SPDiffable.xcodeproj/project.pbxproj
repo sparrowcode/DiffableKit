@@ -18,6 +18,16 @@
 		F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
 		F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */; };
 		F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C01249B9715007072FA /* SPDiffableTableController.swift */; };
+		F4FEAEBA24A8FA3500CA513C /* SPDiffableTableTextHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTableTextHeader.swift */; };
+		F4FEAEBC24A8FA6500CA513C /* SPDiffableTableTextFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBB24A8FA6500CA513C /* SPDiffableTableTextFooter.swift */; };
+		F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */; };
+		F4FEAEC024A8FB1400CA513C /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */; };
+		F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */; };
+		F4FEAEC324A8FBC900CA513C /* SPDiffableTableTextHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTableTextHeader.swift */; };
+		F4FEAEC424A8FBC900CA513C /* SPDiffableTableTextFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBB24A8FA6500CA513C /* SPDiffableTableTextFooter.swift */; };
+		F4FEAEC524A8FBC900CA513C /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */; };
+		F4FEAEC624A8FBC900CA513C /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */; };
+		F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */; };
 		F4FF9CC224A68400006B2122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CC124A68400006B2122 /* AppDelegate.swift */; };
 		F4FF9CC624A68400006B2122 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CC524A68400006B2122 /* RootController.swift */; };
 		F4FF9CCB24A68401006B2122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FF9CCA24A68401006B2122 /* Assets.xcassets */; };
@@ -30,11 +40,7 @@
 		F4FF9CD924A6848E006B2122 /* SPTableDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */; };
 		F4FF9CDA24A6848E006B2122 /* SPTableDiffableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */; };
 		F4FF9CDC24A684A9006B2122 /* DiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CDB24A684A9006B2122 /* DiffableTableController.swift */; };
-		F4FF9CDF24A6854A006B2122 /* NativeTableRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CDE24A6854A006B2122 /* NativeTableRowModel.swift */; };
 		F4FF9CE324A6857E006B2122 /* NativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CE224A6857E006B2122 /* NativeTableViewCell.swift */; };
-		F4FF9CE524A686F2006B2122 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CE424A686F2006B2122 /* Typealiases.swift */; };
-		F4FF9CE724A6919F006B2122 /* SwitchTableRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CE624A6919F006B2122 /* SwitchTableRowModel.swift */; };
-		F4FF9CE924A691DC006B2122 /* StepperTableRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CE824A691DC006B2122 /* StepperTableRowModel.swift */; };
 		F4FF9CEB24A69A26006B2122 /* ActionableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CEA24A69A26006B2122 /* ActionableSwitch.swift */; };
 		F4FF9CED24A69A95006B2122 /* ActionableStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CEC24A69A95006B2122 /* ActionableStepper.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +62,11 @@
 		F4954BFD249B9715007072FA /* SPDiffableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableSection.swift; sourceTree = "<group>"; };
 		F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTableDiffableDataSource.swift; sourceTree = "<group>"; };
 		F4954C01249B9715007072FA /* SPDiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
+		F4FEAEB924A8FA3500CA513C /* SPDiffableTableTextHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableTextHeader.swift; sourceTree = "<group>"; };
+		F4FEAEBB24A8FA6500CA513C /* SPDiffableTableTextFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableTextFooter.swift; sourceTree = "<group>"; };
+		F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRow.swift; sourceTree = "<group>"; };
+		F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowStepper.swift; sourceTree = "<group>"; };
+		F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowSwitch.swift; sourceTree = "<group>"; };
 		F4FF9CBF24A68400006B2122 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FF9CC124A68400006B2122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FF9CC524A68400006B2122 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
@@ -63,11 +74,7 @@
 		F4FF9CCD24A68401006B2122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4FF9CCF24A68401006B2122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4FF9CDB24A684A9006B2122 /* DiffableTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableTableController.swift; sourceTree = "<group>"; };
-		F4FF9CDE24A6854A006B2122 /* NativeTableRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTableRowModel.swift; sourceTree = "<group>"; };
 		F4FF9CE224A6857E006B2122 /* NativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTableViewCell.swift; sourceTree = "<group>"; };
-		F4FF9CE424A686F2006B2122 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
-		F4FF9CE624A6919F006B2122 /* SwitchTableRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableRowModel.swift; sourceTree = "<group>"; };
-		F4FF9CE824A691DC006B2122 /* StepperTableRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTableRowModel.swift; sourceTree = "<group>"; };
 		F4FF9CEA24A69A26006B2122 /* ActionableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionableSwitch.swift; sourceTree = "<group>"; };
 		F4FF9CEC24A69A95006B2122 /* ActionableStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionableStepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,10 +177,8 @@
 		F4954BF9249B9715007072FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F4954BFC249B9715007072FA /* SPDiffableHeader.swift */,
-				F4954BFA249B9715007072FA /* SPDiffableFooter.swift */,
-				F4954BFB249B9715007072FA /* SPDiffableItem.swift */,
-				F4954BFD249B9715007072FA /* SPDiffableSection.swift */,
+				F4FEAEB824A8FA1F00CA513C /* Table */,
+				F4FEAEB724A8FA0800CA513C /* Basic */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +189,29 @@
 				F4954C01249B9715007072FA /* SPDiffableTableController.swift */,
 				F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */,
 				F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		F4FEAEB724A8FA0800CA513C /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				F4954BFB249B9715007072FA /* SPDiffableItem.swift */,
+				F4954BFD249B9715007072FA /* SPDiffableSection.swift */,
+				F4954BFC249B9715007072FA /* SPDiffableHeader.swift */,
+				F4954BFA249B9715007072FA /* SPDiffableFooter.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		F4FEAEB824A8FA1F00CA513C /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				F4FEAEB924A8FA3500CA513C /* SPDiffableTableTextHeader.swift */,
+				F4FEAEBB24A8FA6500CA513C /* SPDiffableTableTextFooter.swift */,
+				F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */,
+				F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */,
+				F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -203,10 +231,6 @@
 		F4FF9CDD24A68541006B2122 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F4FF9CE624A6919F006B2122 /* SwitchTableRowModel.swift */,
-				F4FF9CE824A691DC006B2122 /* StepperTableRowModel.swift */,
-				F4FF9CDE24A6854A006B2122 /* NativeTableRowModel.swift */,
-				F4FF9CE424A686F2006B2122 /* Typealiases.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,8 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				F4FF9CE224A6857E006B2122 /* NativeTableViewCell.swift */,
-				F4FF9CEA24A69A26006B2122 /* ActionableSwitch.swift */,
 				F4FF9CEC24A69A95006B2122 /* ActionableStepper.swift */,
+				F4FF9CEA24A69A26006B2122 /* ActionableSwitch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,9 +368,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4FEAEC024A8FB1400CA513C /* SPDiffableTableRowStepper.swift in Sources */,
+				F4FEAEBA24A8FA3500CA513C /* SPDiffableTableTextHeader.swift in Sources */,
+				F4FEAEBC24A8FA6500CA513C /* SPDiffableTableTextFooter.swift in Sources */,
 				F4954C05249B9716007072FA /* SPDiffableHeader.swift in Sources */,
+				F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */,
 				F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */,
 				F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */,
+				F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
 				F4954C03249B9716007072FA /* SPDiffableFooter.swift in Sources */,
 				F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */,
 				F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */,
@@ -358,23 +387,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FF9CDF24A6854A006B2122 /* NativeTableRowModel.swift in Sources */,
 				F4FF9CD424A6848B006B2122 /* SPDiffableFooter.swift in Sources */,
 				F4FF9CD324A6848B006B2122 /* SPDiffableHeader.swift in Sources */,
+				F4FEAEC624A8FBC900CA513C /* SPDiffableTableRowStepper.swift in Sources */,
 				F4FF9CD924A6848E006B2122 /* SPTableDiffableDataSource.swift in Sources */,
+				F4FEAEC524A8FBC900CA513C /* SPDiffableTableRow.swift in Sources */,
 				F4FF9CED24A69A95006B2122 /* ActionableStepper.swift in Sources */,
+				F4FEAEC424A8FBC900CA513C /* SPDiffableTableTextFooter.swift in Sources */,
+				F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
 				F4FF9CD724A6848E006B2122 /* SPDiffableTableController.swift in Sources */,
 				F4FF9CEB24A69A26006B2122 /* ActionableSwitch.swift in Sources */,
 				F4FF9CC624A68400006B2122 /* RootController.swift in Sources */,
 				F4FF9CDA24A6848E006B2122 /* SPTableDiffableMediator.swift in Sources */,
+				F4FEAEC324A8FBC900CA513C /* SPDiffableTableTextHeader.swift in Sources */,
 				F4FF9CD624A6848B006B2122 /* SPDiffableSection.swift in Sources */,
 				F4FF9CC224A68400006B2122 /* AppDelegate.swift in Sources */,
 				F4FF9CD524A6848B006B2122 /* SPDiffableItem.swift in Sources */,
 				F4FF9CDC24A684A9006B2122 /* DiffableTableController.swift in Sources */,
-				F4FF9CE524A686F2006B2122 /* Typealiases.swift in Sources */,
 				F4FF9CE324A6857E006B2122 /* NativeTableViewCell.swift in Sources */,
-				F4FF9CE924A691DC006B2122 /* StepperTableRowModel.swift in Sources */,
-				F4FF9CE724A6919F006B2122 /* SwitchTableRowModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

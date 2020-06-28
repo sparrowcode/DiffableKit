@@ -21,16 +21,22 @@
 
 import UIKit
 
-/**
- Some table data source methods, which can be passed to delegate class.
- */
-@objc public protocol SPTableDiffableMediator: class {
+open class SPDiffableTableRowStepper: SPDiffableItem {
     
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    public var text: String
+    public var value: Int
+    public var minimumValue: Int
+    public var maximumValue: Int
+    public var action: Action
     
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
+    public init(text: String, value: Int, minimumValue: Int, maximumValue: Int, action: @escaping Action) {
+        self.text = text
+        self.value = value
+        self.minimumValue = minimumValue
+        self.maximumValue = maximumValue
+        self.action = action
+        super.init(text)
+    }
     
-    @objc optional func diffableTableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    public typealias Action = (_ value: Int) -> Void
 }
