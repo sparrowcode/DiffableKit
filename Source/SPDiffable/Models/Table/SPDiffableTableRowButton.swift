@@ -26,11 +26,13 @@ open class SPDiffableTableRowButton: SPDiffableItem {
     public var text: String
     public var detail: String? = nil
     public var icon: UIImage? = nil
+    public var accessoryType: UITableViewCell.AccessoryType
     public var action: Action
     
     public init(text: String, action: @escaping Action) {
         self.text = text
         self.action = action
+        self.accessoryType = .none
         super.init(text)
     }
     
@@ -38,6 +40,7 @@ open class SPDiffableTableRowButton: SPDiffableItem {
         self.text = text
         self.detail = detail
         self.icon = icon
+        self.accessoryType = accessoryType
         self.action = action
         super.init(text)
     }
