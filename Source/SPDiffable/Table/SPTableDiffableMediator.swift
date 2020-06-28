@@ -26,11 +26,11 @@ import UIKit
  */
 @objc public protocol SPTableDiffableMediator: class {
     
-    @objc optional func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    @objc optional func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     
-    @objc optional func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
+    @objc optional func diffableTableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
     
-    @objc optional func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    @objc optional func diffableTableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     
-    @objc optional func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    @objc optional func diffableTableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
 }

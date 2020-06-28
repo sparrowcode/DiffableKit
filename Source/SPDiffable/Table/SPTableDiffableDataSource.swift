@@ -55,7 +55,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     // MARK: Mediator
     
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let title = mediator?.tableView?(tableView, titleForHeaderInSection: section) {
+        if let title = mediator?.diffableTableView?(tableView, titleForHeaderInSection: section) {
             return title
         }
         if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTextHeader {
@@ -65,7 +65,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
     
     public override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if let title = mediator?.tableView?(tableView, titleForFooterInSection: section) {
+        if let title = mediator?.diffableTableView?(tableView, titleForFooterInSection: section) {
             return title
         }
         if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTextFooter {
@@ -75,11 +75,11 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
     
     public override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return mediator?.tableView?(tableView, canEditRowAt: indexPath) ?? false
+        return mediator?.diffableTableView?(tableView, canEditRowAt: indexPath) ?? false
     }
     
     public override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        mediator?.tableView?(tableView, commit: editingStyle, forRowAt: indexPath)
+        mediator?.diffableTableView?(tableView, commit: editingStyle, forRowAt: indexPath)
     }
 }
 
