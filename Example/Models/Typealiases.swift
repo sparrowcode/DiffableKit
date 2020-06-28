@@ -8,3 +8,5 @@ typealias DiffableTextHeader = SPDiffableTextHeader
 
 typealias DiffableFooter = SPDiffableFooter
 typealias DiffableTextFooter = SPDiffableTextFooter
+
+typealias DiffableCellProvider = SPTableDiffableDataSource.CellProvider

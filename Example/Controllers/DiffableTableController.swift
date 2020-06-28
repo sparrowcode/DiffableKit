@@ -1,6 +1,6 @@
 import UIKit
 
-class DiffableTableController: SPDiffableTableController {
+class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
     
     init() {
         super.init(style: .insetGrouped)
@@ -10,10 +10,11 @@ class DiffableTableController: SPDiffableTableController {
         super.viewDidLoad()
         tableView?.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
         setCellProviders([CellProvider.default], sections: content)
+        diffableDataSource?.mediator = self
     }
     
     internal func updateContent() {
-        diffableDataSource?.apply(sections: content, animating: true)
+        apply(sections: content, animating: true)
     }
     
     var content: [DiffableSection] {
@@ -31,8 +32,8 @@ class DiffableTableController: SPDiffableTableController {
     
     enum CellProvider {
         
-        static var `default`: SPTableDiffableDataSource.CellProvider {
-            let cellProvider: SPTableDiffableDataSource.CellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
+        static var `default`: DiffableCellProvider {
+            let cellProvider: DiffableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
                 switch model {
                 case let model as NativeTableRowModel:
                     let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
