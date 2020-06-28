@@ -30,6 +30,10 @@ open class SPDiffableTableController: UITableViewController {
         diffableDataSource?.apply(sections: sections, animating: false)
     }
     
+    public func setCellProvider( _ provider: @escaping SPTableDiffableDataSource.CellProvider, sections: [SPDiffableSection]) {
+        setCellProviders([provider], sections: sections)
+    }
+    
     // MARK: Ovveriden Init
     
     public override init(style: UITableView.Style) {
