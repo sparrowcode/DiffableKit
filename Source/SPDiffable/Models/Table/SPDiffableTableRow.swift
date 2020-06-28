@@ -25,22 +25,15 @@ open class SPDiffableTableRow: SPDiffableItem {
     
     public var text: String
     public var detail: String? = nil
+    public var icon: UIImage? = nil
     public var selectionStyle: UITableViewCell.SelectionStyle
     public var accessoryType: UITableViewCell.AccessoryType
     public var action: Action?
     
-    public init(text: String, detail: String?, accessoryType: UITableViewCell.AccessoryType) {
+    public init(text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType, action: Action? = nil) {
         self.text = text
         self.detail = detail
-        self.accessoryType = accessoryType
-        self.selectionStyle = .none
-        self.action = nil
-        super.init(text)
-    }
-    
-    public init(text: String, detail: String?, accessoryType: UITableViewCell.AccessoryType, action: Action?) {
-        self.text = text
-        self.detail = detail
+        self.icon = icon
         self.accessoryType = accessoryType
         self.selectionStyle = .default
         self.action = action

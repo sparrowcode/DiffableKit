@@ -24,11 +24,20 @@ import UIKit
 open class SPDiffableTableRowSwitch: SPDiffableItem {
     
     public var text: String
+    public var icon: UIImage? = nil
     public var isOn: Bool
     public var action: Action
     
     public init(text: String, isOn: Bool, action: @escaping Action) {
         self.text = text
+        self.isOn = isOn
+        self.action = action
+        super.init(text)
+    }
+    
+    public init(text: String, icon: UIImage?, isOn: Bool, action: @escaping Action) {
+        self.text = text
+        self.icon = icon
         self.isOn = isOn
         self.action = action
         super.init(text)
