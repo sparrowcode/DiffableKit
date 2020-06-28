@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Varabei (varabeis@icloud.com)
+// Copyright © 2020 Ivan Vorobei (varabeis@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,21 +21,18 @@
 
 import UIKit
 
-/**
- Basic footer model.
- All foters should be inherited from it class.
- */
-open class SPDiffableFooter: NSObject {}
-
-/**
- Footer class with only text.
- */
-open class SPDiffableTextFooter: SPDiffableFooter {
+open class SPDiffableTableRowSwitch: SPDiffableItem {
     
     public var text: String
+    public var isOn: Bool
+    public var action: Action
     
-    public init(text: String) {
+    public init(text: String, isOn: Bool, action: @escaping Action) {
         self.text = text
-        super.init()
+        self.isOn = isOn
+        self.action = action
+        super.init(text)
     }
+    
+    public typealias Action = (_ state: Bool) -> Void
 }

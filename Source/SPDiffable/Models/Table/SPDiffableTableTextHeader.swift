@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Varabei (varabeis@icloud.com)
+// Copyright © 2020 Ivan Vorobei (varabeis@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,15 +22,9 @@
 import UIKit
 
 /**
-Basic header model.
-All headers should be inherited from it class.
-*/
-open class SPDiffableHeader: NSObject {}
-
-/**
-Header class with only text.
-*/
-open class SPDiffableTextHeader: SPDiffableHeader {
+ Header class with only text.
+ */
+open class SPDiffableTableTextHeader: SPDiffableHeader {
     
     public var text: String
     

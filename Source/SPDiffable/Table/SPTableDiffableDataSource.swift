@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Varabei (varabeis@icloud.com)
+// Copyright © 2020 Ivan Vorobei (varabeis@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -58,7 +58,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         if let title = mediator?.diffableTableView?(tableView, titleForHeaderInSection: section) {
             return title
         }
-        if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTextHeader {
+        if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTableTextHeader {
             return header.text
         }
         return nil
@@ -68,7 +68,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         if let title = mediator?.diffableTableView?(tableView, titleForFooterInSection: section) {
             return title
         }
-        if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTextFooter {
+        if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTableTextFooter {
             return footer.text
         }
         return nil
