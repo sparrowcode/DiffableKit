@@ -25,6 +25,12 @@ open class SPDiffableTableController: UITableViewController {
     
     public var diffableDataSource: SPTableDiffableDataSource?
     
+    // MARK: Helper func
+    
+    public func apply(sections: [SPDiffableSection], animating: Bool) {
+        diffableDataSource?.apply(sections: sections, animating: animating)
+    }
+    
     public func setCellProviders( _ providers: [SPTableDiffableDataSource.CellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPTableDiffableDataSource(tableView: tableView, cellProviders: providers)
         diffableDataSource?.apply(sections: sections, animating: false)
