@@ -16,7 +16,7 @@ class DiffableTableController: SPDiffableTableController {
         diffableDataSource?.apply(sections: content, animating: true)
     }
     
-    var content: [SPDiffableSection] {
+    var content: [DiffableSection] {
         return []
     }  
     
