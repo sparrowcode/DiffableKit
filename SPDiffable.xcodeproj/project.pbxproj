@@ -28,6 +28,7 @@
 		F4FEAEC524A8FBC900CA513C /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */; };
 		F4FEAEC624A8FBC900CA513C /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */; };
 		F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */; };
+		F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC824A904C100CA513C /* SPDiffableTableRowButton.swift */; };
 		F4FF9CC224A68400006B2122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CC124A68400006B2122 /* AppDelegate.swift */; };
 		F4FF9CC624A68400006B2122 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CC524A68400006B2122 /* RootController.swift */; };
 		F4FF9CCB24A68401006B2122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FF9CCA24A68401006B2122 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRow.swift; sourceTree = "<group>"; };
 		F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowStepper.swift; sourceTree = "<group>"; };
 		F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowSwitch.swift; sourceTree = "<group>"; };
+		F4FEAEC824A904C100CA513C /* SPDiffableTableRowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowButton.swift; sourceTree = "<group>"; };
 		F4FF9CBF24A68400006B2122 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FF9CC124A68400006B2122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FF9CC524A68400006B2122 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */,
 				F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */,
 				F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */,
+				F4FEAEC824A904C100CA513C /* SPDiffableTableRowButton.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				F4FEAEBC24A8FA6500CA513C /* SPDiffableTableTextFooter.swift in Sources */,
 				F4954C05249B9716007072FA /* SPDiffableHeader.swift in Sources */,
 				F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */,
+				F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */,
 				F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */,
 				F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */,
 				F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
