@@ -24,6 +24,7 @@ import UIKit
 open class SPDiffableTableRowStepper: SPDiffableItem {
     
     public var text: String
+    public var icon: UIImage? = nil
     public var value: Int
     public var minimumValue: Int
     public var maximumValue: Int
@@ -31,6 +32,16 @@ open class SPDiffableTableRowStepper: SPDiffableItem {
     
     public init(text: String, value: Int, minimumValue: Int, maximumValue: Int, action: @escaping Action) {
         self.text = text
+        self.value = value
+        self.minimumValue = minimumValue
+        self.maximumValue = maximumValue
+        self.action = action
+        super.init(text)
+    }
+    
+    public init(text: String, icon: UIImage?, value: Int, minimumValue: Int, maximumValue: Int, action: @escaping Action) {
+        self.text = text
+        self.icon = icon
         self.value = value
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue

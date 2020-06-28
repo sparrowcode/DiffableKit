@@ -22,7 +22,9 @@ class RootController: DiffableTableController {
     override var content: [SPDiffableSection] {
         
         let accessorySection = SPDiffableSection(
-            identifier: Section.accessory.identifier, header: SPDiffableTableTextHeader(text: "Accessory"), footer: SPDiffableTableTextFooter(text: "Getting default value before show. After changes in elements you can check prints in console."),
+            identifier: Section.accessory.identifier,
+            header: SPDiffableTableTextHeader(text: "Accessory"),
+            footer: SPDiffableTableTextFooter(text: "Getting default value before show. After changes in elements you can check prints in console."),
             items: [
                 SPDiffableTableRowSwitch(text: "Switch", isOn: switchOn, action: { [weak self] (isOn) in
                     guard let self = self else { return }
@@ -37,13 +39,15 @@ class RootController: DiffableTableController {
         )
         
         let basicSection = SPDiffableSection(
-            identifier: Section.basic.identifier, header: SPDiffableTableTextHeader(text: "Presenter"), footer: SPDiffableTableTextFooter(text: "Push in navigation processing by table controller. Sometimes you need manually deselect cell."),
+            identifier: Section.basic.identifier,
+            header: SPDiffableTableTextHeader(text: "Presenter"),
+            footer: SPDiffableTableTextFooter(text: "Push in navigation processing by table controller. Sometimes you need manually deselect cell."),
             items: [
-                SPDiffableTableRow(text: "Basic Deselect", detail: nil, accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Basic Deselect", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 }),
-                SPDiffableTableRow(text: "Basic Push", detail: nil, accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Basic Push", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })
@@ -51,7 +55,7 @@ class RootController: DiffableTableController {
         )
         
         if switchOn {
-            accessorySection.items.insert(SPDiffableTableRow(text: "Switch Worked", detail: nil, accessoryType: .checkmark, action: nil), at: 1)
+            accessorySection.items.insert(SPDiffableTableRow(text: "Switch Worked", accessoryType: .checkmark), at: 1)
         }
         
         if stepperValue != 0 {
@@ -59,9 +63,10 @@ class RootController: DiffableTableController {
         }
         
         let checkmarkSections = SPDiffableSection(
-            identifier: Section.checkmark.identifier, header: nil, footer: SPDiffableTableTextFooter(text: "Example how usage search by models and change checkmark without reload table."),
+            identifier: Section.checkmark.identifier,
+            footer: SPDiffableTableTextFooter(text: "Example how usage search by models and change checkmark without reload table."),
             items: [
-                SPDiffableTableRow(text: "Chekmarks", detail: nil, accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Chekmarks", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })
@@ -69,9 +74,10 @@ class RootController: DiffableTableController {
         )
         
         let cellProviderSection = SPDiffableSection(
-            identifier: Section.customCellProvider.identifier, header: nil, footer: SPDiffableTableTextFooter(text: "Also you can add more providers for specific controller, and use default and custom specially for some contorllers."),
+            identifier: Section.customCellProvider.identifier,
+            footer: SPDiffableTableTextFooter(text: "Also you can add more providers for specific controller, and use default and custom specially for some contorllers."),
             items: [
-                SPDiffableTableRow(text: "Custom Cell Provider", detail: nil, accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Custom Cell Provider", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })

@@ -23,15 +23,21 @@ import UIKit
 
 open class SPDiffableTableRowButton: SPDiffableItem {
     
-    public var icon: UIImage?
     public var text: String
     public var detail: String? = nil
+    public var icon: UIImage? = nil
     public var action: Action
     
-    public init(icon: UIImage?, text: String, detail: String?, accessoryType: UITableViewCell.AccessoryType, action: @escaping Action) {
-        self.icon = icon
+    public init(text: String, action: @escaping Action) {
+        self.text = text
+        self.action = action
+        super.init(text)
+    }
+    
+    public init(text: String, detail: String?, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType, action: @escaping Action) {
         self.text = text
         self.detail = detail
+        self.icon = icon
         self.action = action
         super.init(text)
     }
