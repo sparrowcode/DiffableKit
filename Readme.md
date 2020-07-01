@@ -56,6 +56,8 @@ If you prefer not to use any of dependency managers, you can integrate `SPDiffab
 
 ## Usage
 
+Before read it, highly recomded check `Example` target in project. It examle show all features, like use stepper and switch, like process actions, create custom models and many other.
+
 For work with diffable need create model (inside you found some ready-use models) and do cell provider, which convert model with data to `UITableViewCell` or `UICollectionViewCell`.
 
 New model shoud extend from basic class `SPDiffableItem`:
