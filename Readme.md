@@ -2,7 +2,7 @@
 
 Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and  special cell providers for one-usage models.
 
-If you like the project, do not forget to `put star ★` and follow me on GitHub:
+If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
@@ -92,7 +92,7 @@ override func viewDidLoad() {
     super.viewDidLoad()
     
     // Register cell for usage it in table view
-    tableView?.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
+    tableView.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
     
     // Cell provider for `TableRowMode`
     let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
@@ -132,7 +132,7 @@ let section = SPDiffableSection(
             guard let self = self else { return }
             self.tableView.deselectRow(at: indexPath, animated: true)
             print("Tapped")
-        }),
+        })
     ]
 )
 
@@ -189,7 +189,7 @@ Now you can implemented requerid methods, for example title of header:
 
 ```swift
 func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Ovverided in of diffable mediator"
+    return "Overridden in of diffable mediator"
 }
 ```
 
