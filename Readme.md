@@ -68,8 +68,8 @@ After it add properties, which you want use:
 
 ```swift
 class TableRowMode: SPDiffableItem {
-  	
-  	public var text: String
+
+    public var text: String
     public var detail: String? = nil
     public var icon: UIImage? = nil
     public var selectionStyle: UITableViewCell.SelectionStyle
@@ -77,18 +77,18 @@ class TableRowMode: SPDiffableItem {
 }
 ```
 
-Last step, create table controller class and extend of `SPDiffableTableController`. Create custom cell provider - it help convert it data to table cell:
+Last step, create table controller class and extend of `SPDiffableTableController`. Create custom cell provider, it help convert it data to table cell:
 
 ```swift
 
 override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     // Register cell for usage it in table view
-    tableView?.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
-  
-  	// Cell provider for `TableRowMode`
-  	let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
+      tableView?.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
+    
+    // Cell provider for `TableRowMode`
+    let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
         switch model {
         case let model as TableRowMode:
             let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
@@ -101,9 +101,9 @@ override func viewDidLoad() {
             return nil
         }
     }
-  	
-  	// Pass cell provider and content. 
-  	// About content you can read next.
+    
+    // Pass cell provider and content. 
+    // About content you can read next.
     setCellProviders([cellProvider], sections: content)
 }
 
@@ -118,11 +118,11 @@ Create section class:
 
 ```swift
 let section = SPDiffableSection(
-	identifier: "example section",
+    identifier: "example section",
     header: SPDiffableTableTextHeader(text: "Header"),
     footer: SPDiffableTableTextFooter(text: "Footer"),
     items: [
-    	SPDiffableTableRow(text: "Basic Table Cell", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+        SPDiffableTableRow(text: "Basic Table Cell", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
             guard let self = self else { return }
             self.tableView.deselectRow(at: indexPath, animated: true)
             print("Tapped")
@@ -136,29 +136,29 @@ let content = [section]
 You can add more cells or sections. Last step - apply:
 
 ```swift
-diffableDataSource?.apply(sections: [content], animating: true)
+diffableDataSource?.apply(sections: content, animating: true)
 ```
 
-That all. You can each time greate new order or count cells and it automatically show with diffable animation. Project has some ready-use models, you can read about it next.
+That all. You can each time create new order or count cells and it automatically show with diffable animation. Project has some ready-use models, you can read about it next.
 
 ## Ready Use Models
 
 It models which you can use now, it shoud close your task without code. Of couse you can create your models.
 Now in project you can find this ready-use models:
 
-`SPDiffableItem` it basic class. All item models shoud be extend from it model.
-`SPDiffableSection` basic section class. Included footer and header, also items (cells).
-`SPDiffableHeader` basic header class. All headers shoud be extend from it class.
-`SPDiffableFooter` basic footer class. All footers shoud be extend from it class.
+- `SPDiffableItem` it basic class. All item models shoud be extend from it model.
+-  `SPDiffableSection` basic section class. Included footer and header, also items (cells).
+- `SPDiffableHeader` basic header class. All headers shoud be extend from it class.
+- `SPDiffableFooter` basic footer class. All footers shoud be extend from it class.
 
 #### For Table:
 
-`SPDiffableTableRow` it native table view cell. Support all basic styles and action for tap event.
-`SPDiffableTableRowStepper` table view cell with stepper. Has maximum value and minimum, also incuded action with passed value.
-`SPDiffableTableRowSwitch` table cell with switch, included default state and action for change event.
-`SPDiffableTableRowButton` table cell with style as button. Supprt table styles and action for tap.
-`SPDiffableTableTextHeader` table header with text. You can see it in native table.
-`SPDiffableTableTextFooter` table footer text.
+- `SPDiffableTableRow` it native table view cell. Support all basic styles and action for tap event.
+- `SPDiffableTableRowStepper` table view cell with stepper. Has maximum value and minimum, also incuded action with passed value.
+- `SPDiffableTableRowSwitch` table cell with switch, included default state and action for change event.
+- `SPDiffableTableRowButton` table cell with style as button. Supprt table styles and action for tap.
+- `SPDiffableTableTextHeader` table header with text. You can see it in native table.
+- `SPDiffableTableTextFooter` table footer text.
 
 #### For Collection:
 
@@ -170,12 +170,12 @@ Some methods in diffable data source can't ovveride without custom data source. 
 
 ```swift
 class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
-
-	override func viewDidLoad() {
-        super.viewDidLoad()
-        setCellProviders([cellProvider], sections: content)
-        diffableDataSource?.mediator = self
-    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setCellProviders([cellProvider], sections: content)
+    diffableDataSource?.mediator = self
+  }
 }
 ```
 
@@ -183,7 +183,7 @@ Now you can implemented requerid methods, for example title of header:
 
 ```swift
 func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-	return "Ovverided in of diffable mediator"
+  return "Ovverided in of diffable mediator"
 }
 ```
 
