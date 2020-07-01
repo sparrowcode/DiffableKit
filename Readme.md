@@ -58,7 +58,7 @@ If you prefer not to use any of dependency managers, you can integrate `SPDiffab
 
 Before read it, highly recomded check `Example` target in project. It examle show all features, like use stepper and switch, like process actions, create custom models and many other.
 
-For work with diffable need create model (inside you found some ready-use models) and do cell provider, which convert model with data to `UITableViewCell` or `UICollectionViewCell`.
+For work with diffable need create model (inside project you found some ready-use models) and do cell provider, which convert model with data to `UITableViewCell` or `UICollectionViewCell`.
 
 New model shoud extend from basic class `SPDiffableItem`:
 
@@ -112,7 +112,7 @@ override func viewDidLoad() {
 
 For example usage you can find in project in taget `Example`.
 
-## Apply Content
+### Apply Content
 
 Now table support models and custom cell provider. We can apply diffable content with animation (or not).
 Create section class:
@@ -142,7 +142,7 @@ diffableDataSource?.apply(sections: content, animating: true)
 
 That all. You can each time create new order or count cells and it automatically show with diffable animation. Project has some ready-use models, you can read about it next.
 
-## Ready Use Models
+### Ready Use Models
 
 It models which you can use now, it shoud close your task without code. Of couse you can create your models.
 Now in project you can find this ready-use models:
@@ -165,7 +165,7 @@ Now in project you can find this ready-use models:
 
 Now in progress development.
 
-## Mediator
+### Mediator
 
 Some methods in diffable data source can't ovveride without custom data source. It solved with mediator delegate. It simple. Next example for table. Set delegate `SPTableDiffableMediator`, all method optional:
 
