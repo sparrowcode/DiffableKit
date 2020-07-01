@@ -2,6 +2,10 @@
 
 Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and  special cell providers for one-usage models.
 
+If you like the project, do not forget to `put star ★` and follow me on GitHub:
+
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
+
 ## Navigate
 
 - [Requirements](#requirements)
@@ -16,6 +20,7 @@ Apple's diffable API requerid models for each object type. If you want use it in
     - [Ready Use Models](#ready-use-models)
     - [Mediator](#mediator)
 - [Сooperation](#сooperation)
+- [Russian Comunity](#russian-comunity)
 - [License](#license)
 
 ## Requirements
@@ -195,7 +200,12 @@ In protocol you can find more methods, like `canEdit` and other.
 This project is free, but developing it takes time. Contributing to this project is a huge help. Here is list of tasks that need to be done, you can help with any:
 
 - Update readme text, my English not great :(
-- Fix documentation mistakes, add more description to code documentations
+- Add docs to swift source files
+
+## Russian Comunity
+
+Присоединяйтесь в телеграм канал [Код Воробья](https://ivanvorobei.by/xcode-tutorials/telegram'), там найдете короткие ролики по iOS разработке и дизайне.
+Большие ролики выклыдываю на [YouTube](https://ivanvorobei.by/xcode-tutorials/youtube).
 
 ## License
 
