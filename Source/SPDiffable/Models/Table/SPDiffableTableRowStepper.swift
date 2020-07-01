@@ -21,6 +21,9 @@
 
 import UIKit
 
+/**
+ Model good using with `UIStepper class.
+ */
 open class SPDiffableTableRowStepper: SPDiffableItem {
     
     public var text: String

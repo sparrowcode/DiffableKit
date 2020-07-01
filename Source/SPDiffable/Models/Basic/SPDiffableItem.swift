@@ -27,6 +27,10 @@ All items should be inherited from it class.
 */
 open class SPDiffableItem: NSObject {
     
+    /**
+     Using for hash and checking equal between other models.
+     Shoud be uniq.
+     */
     public var identifier: String
     
     public init(_ identifier: String) {

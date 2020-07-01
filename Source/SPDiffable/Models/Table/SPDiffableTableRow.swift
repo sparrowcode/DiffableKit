@@ -21,6 +21,10 @@
 
 import UIKit
 
+/**
+ Model for basic nativa table cell.
+ Support accessory, detail text and icons.
+ */
 open class SPDiffableTableRow: SPDiffableItem {
     
     public var text: String
@@ -30,12 +34,12 @@ open class SPDiffableTableRow: SPDiffableItem {
     public var accessoryType: UITableViewCell.AccessoryType
     public var action: Action?
     
-    public init(text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType, action: Action? = nil) {
+    public init(text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, action: Action? = nil) {
         self.text = text
         self.detail = detail
         self.icon = icon
         self.accessoryType = accessoryType
-        self.selectionStyle = .default
+        self.selectionStyle = (action == nil) ? .none : .default
         self.action = action
         super.init(text)
     }

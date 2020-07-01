@@ -2,7 +2,7 @@ import UIKit
 
 class ActionableStepper: UIStepper {
     
-    var action: (Int) -> Void
+    var action: (_ value: Int) -> Void
     
     init(action: @escaping (Int) -> Void) {
         self.action = action
