@@ -146,7 +146,7 @@ It models which you can use now, it shoud close your task without code. Of couse
 Now in project you can find this ready-use models:
 
 - `SPDiffableItem` it basic class. All item models shoud be extend from it model.
--  `SPDiffableSection` basic section class. Included footer and header, also items (cells).
+- `SPDiffableSection` basic section class. Included footer and header, also items (cells).
 - `SPDiffableHeader` basic header class. All headers shoud be extend from it class.
 - `SPDiffableFooter` basic footer class. All footers shoud be extend from it class.
 
@@ -169,12 +169,12 @@ Some methods in diffable data source can't ovveride without custom data source. 
 
 ```swift
 class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setCellProviders([cellProvider], sections: content)
-    diffableDataSource?.mediator = self
-  }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setCellProviders([cellProvider], sections: content)
+        diffableDataSource?.mediator = self
+    }
 }
 ```
 
@@ -182,7 +182,7 @@ Now you can implemented requerid methods, for example title of header:
 
 ```swift
 func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-  return "Ovverided in of diffable mediator"
+    return "Ovverided in of diffable mediator"
 }
 ```
 
