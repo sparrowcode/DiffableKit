@@ -207,6 +207,8 @@ This project is free, but developing it takes time. Contributing to this project
 Присоединяйтесь в телеграм канал [Код Воробья](https://ivanvorobei.by/xcode-tutorials/telegram), там найдете короткие ролики о iOS разработке и дизайне.
 Большие ролики выклыдываю на [YouTube](https://ivanvorobei.by/xcode-tutorials/youtube).
 
+[![Tutorials on YouTube](https://github.com/ivanvorobei/SPDiffable/blob/master/Assets/youtube-preview.png)](https://ivanvorobei.by/xcode-tutorials/youtube)
+
 ## License
 
 `SPDiffable` is released under the MIT license. Check `LICENSE.md` for details.
