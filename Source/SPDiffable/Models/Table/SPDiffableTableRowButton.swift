@@ -21,22 +21,19 @@
 
 import UIKit
 
+/**
+ Model for button cell.
+ Apple use it element in some UI.
+ */
 open class SPDiffableTableRowButton: SPDiffableItem {
     
     public var text: String
-    public var detail: String? = nil
-    public var icon: UIImage? = nil
+    public var detail: String?
+    public var icon: UIImage?
     public var accessoryType: UITableViewCell.AccessoryType
     public var action: Action
     
-    public init(text: String, action: @escaping Action) {
-        self.text = text
-        self.action = action
-        self.accessoryType = .none
-        super.init(text)
-    }
-    
-    public init(text: String, detail: String?, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType, action: @escaping Action) {
+    public init(text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, action: @escaping Action) {
         self.text = text
         self.detail = detail
         self.icon = icon

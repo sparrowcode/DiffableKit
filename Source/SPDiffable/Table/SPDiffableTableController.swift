@@ -42,6 +42,11 @@ open class SPDiffableTableController: UITableViewController {
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delaysContentTouches = false
+    }
 }
 
 public typealias SPDiffableTableCellProvider = SPTableDiffableDataSource.CellProvider
