@@ -8,7 +8,7 @@ class DiffableTableController: SPDiffableTableController, SPTableDiffableMediato
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView?.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
+        tableView.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
         setCellProviders([CellProvider.default], sections: content)
         diffableDataSource?.mediator = self
     }
