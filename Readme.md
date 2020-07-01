@@ -85,7 +85,7 @@ override func viewDidLoad() {
     super.viewDidLoad()
     
     // Register cell for usage it in table view
-      tableView?.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
+    tableView?.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
     
     // Cell provider for `TableRowMode`
     let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
@@ -106,7 +106,6 @@ override func viewDidLoad() {
     // About content you can read next.
     setCellProviders([cellProvider], sections: content)
 }
-
 ```
 
 For example usage you can find in project in taget `Example`.
