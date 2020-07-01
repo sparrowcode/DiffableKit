@@ -20,7 +20,7 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
     - [Ready Use Models](#ready-use-models)
     - [Mediator](#mediator)
 - [Сooperation](#сooperation)
-- [Russian Comunity](#russian-comunity)
+- [Russian Community](#russian-community)
 - [License](#license)
 
 ## Requirements
@@ -202,9 +202,9 @@ This project is free, but developing it takes time. Contributing to this project
 - Update readme text, my English not great :(
 - Add docs to swift source files
 
-## Russian Comunity
+## Russian Community
 
-Присоединяйтесь в телеграм канал [Код Воробья](https://ivanvorobei.by/xcode-tutorials/telegram'), там найдете короткие ролики по iOS разработке и дизайне.
+Присоединяйтесь в телеграм канал [Код Воробья](https://ivanvorobei.by/xcode-tutorials/telegram), там найдете короткие ролики о iOS разработке и дизайне.
 Большие ролики выклыдываю на [YouTube](https://ivanvorobei.by/xcode-tutorials/youtube).
 
 ## License
