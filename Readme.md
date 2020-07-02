@@ -22,7 +22,6 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 - [Сooperation](#сooperation)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
-- [License](#license)
 
 ## Requirements
 
@@ -218,7 +217,3 @@ You can find this alerts in AppStore after feedback, after added song to library
 Большие туториалы выклыдываю на [YouTube](https://sparrowcode.ivanvorobei.by/youtube).
 
 [![Tutorials on YouTube](https://github.com/ivanvorobei/Assets/blob/master/Russian%20Community/youtube-preview.png)](https://sparrowcode.ivanvorobei.by/youtube)
-
-## License
-
-`SPDiffable` is released under the MIT license. Check `LICENSE.md` for details.
