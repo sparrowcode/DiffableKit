@@ -20,6 +20,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [Ready Use Models](#ready-use-models)
     - [Mediator](#mediator)
 - [Сooperation](#сooperation)
+- [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 - [License](#license)
 
@@ -202,12 +203,22 @@ This project is free, but developing it takes time. Contributing to this project
 - Update readme text, my English not great :(
 - Add docs to swift source files
 
+## Other Projects
+
+#### [SPPermissions](https://github.com/ivanvorobei/SPPermissions)
+Allow request permissions with native dialog UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customisation.
+
+#### [SPAlert](https://github.com/ivanvorobei/SPAlert)
+It is popup from Apple Music & Feedback in AppStore. Contains Done & Heart presets. Done present with draw path animation. I clone Apple's alerts as much as possible.
+You can find this alerts in AppStore after feedback, after added song to library in Apple Music. I am also add alert without icon, as simple message.
+
+
 ## Russian Community
 
-Присоединяйтесь в телеграм канал [Код Воробья](https://ivanvorobei.by/xcode-tutorials/telegram), там найдете короткие ролики о iOS разработке и дизайне.
-Большие ролики выклыдываю на [YouTube](https://ivanvorobei.by/xcode-tutorials/youtube).
+Присоединяйтесь в телеграм канал [Код Воробья](https://sparrowcode.ivanvorobei.by/telegram), там найдете заметки о iOS разработке и дизайне.
+Большие туториалы выклыдываю на [YouTube](https://sparrowcode.ivanvorobei.by/youtube).
 
-[![Tutorials on YouTube](https://github.com/ivanvorobei/SPDiffable/blob/master/Assets/youtube-preview.png)](https://ivanvorobei.by/xcode-tutorials/youtube)
+[![Tutorials on YouTube](https://github.com/ivanvorobei/SPDiffable/blob/master/Assets/youtube-preview.png)](https://sparrowcode.ivanvorobei.by/youtube)
 
 ## License
 
