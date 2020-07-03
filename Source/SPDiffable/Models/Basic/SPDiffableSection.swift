@@ -27,6 +27,10 @@ You can set custom header and footer.
 */
 open class SPDiffableSection: NSObject {
     
+    /**
+     Shoud be always uniq.
+     It identifier help detect which section changed.
+     */
     public var identifier: String
     public var header: SPDiffableHeader?
     public var footer: SPDiffableFooter?

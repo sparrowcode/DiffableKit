@@ -22,27 +22,41 @@
 import UIKit
 
 /**
- Model good using with `UIStepper class.
+ Model good using with `UIStepper` class.
  */
 open class SPDiffableTableRowStepper: SPDiffableItem {
     
-    public var text: String
-    public var icon: UIImage? = nil
+    /**
+     Current value of stepper.
+     */
     public var value: Int
+    
+    /**
+     Minimum value which stepper can set.
+     */
     public var minimumValue: Int
+    
+    /**
+     Maximum value which stepper can set.
+     */
     public var maximumValue: Int
+    
+    /**
+     Title for cell with stepper.
+     */
+    public var text: String
+    
+    /**
+     Optional image icon for table cell.
+     */
+    public var icon: UIImage? = nil
+    
+    /**
+     Action called when stepper change value.
+     */
     public var action: Action
     
-    public init(text: String, value: Int, minimumValue: Int, maximumValue: Int, action: @escaping Action) {
-        self.text = text
-        self.value = value
-        self.minimumValue = minimumValue
-        self.maximumValue = maximumValue
-        self.action = action
-        super.init(text)
-    }
-    
-    public init(text: String, icon: UIImage?, value: Int, minimumValue: Int, maximumValue: Int, action: @escaping Action) {
+    public init(text: String, icon: UIImage? = nil, value: Int, minimumValue: Int, maximumValue: Int, action: @escaping Action) {
         self.text = text
         self.icon = icon
         self.value = value
@@ -52,5 +66,10 @@ open class SPDiffableTableRowStepper: SPDiffableItem {
         super.init(text)
     }
     
+    /**
+     Wrapper for action which called when stepper change value.
+     
+     - Parameter value: Current value of stepper.
+     */
     public typealias Action = (_ value: Int) -> Void
 }
