@@ -23,10 +23,19 @@ import UIKit
 
 open class SPDiffableTableController: UITableViewController {
     
+    /**
+     Using it data source always. For update content call method `apply`.
+     Default data source no need call and set.
+     */
     public var diffableDataSource: SPTableDiffableDataSource?
     
-    // MARK: Helper func
-    
+    /**
+     Wrapper func which init data source with cell providers and content.
+     After init automatically set content without animation.
+     
+     - Parameter providers: Custom cell providers for diffable data source.
+     - Parameter sections: Content for table.
+     */
     public func setCellProviders( _ providers: [SPTableDiffableDataSource.CellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPTableDiffableDataSource(tableView: tableView, cellProviders: providers)
         diffableDataSource?.apply(sections: sections, animating: false)

@@ -21,6 +21,10 @@
 
 import UIKit
 
+/**
+ Defaut class for table diffable.
+ Support mediator as delegate, and allow set many cell providers.
+ */
 open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     /**
@@ -29,6 +33,14 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
      */
     public weak var mediator: SPTableDiffableMediator?
     
+    /**
+     Init with cell providers. After set content not updated, shoud do it manually.
+     Class `SPDiffableTableController` has wrapper method `setCellProviders`,
+     which automatically init diffable data source & set cell providers with update content.
+     
+     - Parameter tableView: Table view, which shoud using for apply content.
+     - Parameter cellProviders: Cell Providers which process models and convert it to registered `UITableViewCell`.
+     */
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
             for provider in cellProviders {
@@ -42,6 +54,9 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     
     /**
      Wrapper for apply content method.
+     
+     - Parameter sections: Full content for table.
+     - Parameter animating: Changes shoud be applied animatable or not.
      */
     public func apply(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPTableDiffableSnapshot()

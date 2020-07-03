@@ -225,17 +225,9 @@
 				F4192D2D24A75B280012B399 /* App */,
 				F4FF9CE024A68554006B2122 /* Controllers */,
 				F4FF9CE124A68573006B2122 /* Views */,
-				F4FF9CDD24A68541006B2122 /* Models */,
 				F4FF9CCF24A68401006B2122 /* Info.plist */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		F4FF9CDD24A68541006B2122 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		F4FF9CE024A68554006B2122 /* Controllers */ = {
