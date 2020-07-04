@@ -32,7 +32,7 @@ open class SPDiffableCollectionController: UICollectionViewController {
     
     // MARK: Ovveriden Init
     
-    override init(collectionViewLayout layout: UICollectionViewLayout) {
+    public override init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
     }
     
