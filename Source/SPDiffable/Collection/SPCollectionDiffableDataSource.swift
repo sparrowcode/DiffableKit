@@ -36,7 +36,11 @@ open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SP
     
     // MARK: Apply Wrappers
     
+<<<<<<< HEAD
     @objc public func applySections(sections: [SPDiffableSection], animating: Bool) {
+=======
+    public func apply(_ sections: [SPDiffableSection], animating: Bool) {
+>>>>>>> parent of cb4716e... Fix unrecognized selector
         var snapshot = SPDiffableSnapshot()
         snapshot.appendSections(sections)
         for section in sections {
@@ -44,6 +48,13 @@ open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SP
         }
         apply(snapshot, animatingDifferences: animating)
     }
+<<<<<<< HEAD
+=======
+    
+    @objc public func apply(_ snapshot: SPDiffableSnapshot, animating: Bool) {
+        apply(snapshot, animatingDifferences: animating, completion: nil)
+    }
+>>>>>>> parent of cb4716e... Fix unrecognized selector
 }
 
 public typealias SPDiffableCollectionCellProvider = SPCollectionDiffableDataSource.CellProvider
