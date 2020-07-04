@@ -27,7 +27,7 @@ open class SPDiffableCollectionController: UICollectionViewController {
     
     public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPCollectionDiffableDataSource(collectionView: collectionView, cellProviders: providers)
-        diffableDataSource?.apply(sections, animating: false)
+        diffableDataSource?.apply(sections: sections, animating: false)
     }
     
     // MARK: Ovveriden Init
