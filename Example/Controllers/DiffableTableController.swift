@@ -51,30 +51,30 @@ class DiffableTableController: SPDiffableTableController, SPTableDiffableMediato
     enum CellProvider {
         
         static var `default`: SPDiffableTableCellProvider {
-            let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
-                switch model {
-                case let model as SPDiffableTableRow:
+            let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
+                switch item {
+                case let item as SPDiffableTableRow:
                     let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
-                    cell.textLabel?.text = model.text
-                    cell.detailTextLabel?.text = model.detail
-                    cell.accessoryType = model.accessoryType
-                    cell.selectionStyle = model.selectionStyle
+                    cell.textLabel?.text = item.text
+                    cell.detailTextLabel?.text = item.detail
+                    cell.accessoryType = item.accessoryType
+                    cell.selectionStyle = item.selectionStyle
                     return cell
-                case let model as SPDiffableTableRowSwitch:
+                case let item as SPDiffableTableRowSwitch:
                     let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
-                    cell.textLabel?.text = model.text
-                    let control = ActionableSwitch(action: model.action)
-                    control.isOn = model.isOn
+                    cell.textLabel?.text = item.text
+                    let control = ActionableSwitch(action: item.action)
+                    control.isOn = item.isOn
                     cell.accessoryView = control
                     cell.selectionStyle = .none
                     return cell
-                case let model as SPDiffableTableRowStepper:
+                case let item as SPDiffableTableRowStepper:
                     let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
-                    cell.textLabel?.text = model.text
-                    let control = ActionableStepper(action: model.action)
-                    control.value = Double(model.value)
-                    control.minimumValue = Double(model.minimumValue)
-                    control.maximumValue = Double(model.maximumValue)
+                    cell.textLabel?.text = item.text
+                    let control = ActionableStepper(action: item.action)
+                    control.value = Double(item.value)
+                    control.minimumValue = Double(item.minimumValue)
+                    control.maximumValue = Double(item.maximumValue)
                     cell.accessoryView = control
                     cell.selectionStyle = .none
                     return cell

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F401290C24AFBA660039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
+		F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
 		F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */; };
 		F4954BE2249B788A007072FA /* SPDiffable.h in Headers */ = {isa = PBXBuildFile; fileRef = F4954BE0249B788A007072FA /* SPDiffable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4954BEE249B95F2007072FA /* FUNDING.yml in Resources */ = {isa = PBXBuildFile; fileRef = F4954BED249B95F2007072FA /* FUNDING.yml */; };
@@ -47,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSnapshot.swift; sourceTree = "<group>"; };
 		F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTableDiffableMediator.swift; sourceTree = "<group>"; };
 		F4954BDD249B788A007072FA /* SPDiffable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPDiffable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4954BE0249B788A007072FA /* SPDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDiffable.h; sourceTree = "<group>"; };
@@ -202,6 +205,7 @@
 				F4954BFD249B9715007072FA /* SPDiffableSection.swift */,
 				F4954BFC249B9715007072FA /* SPDiffableHeader.swift */,
 				F4954BFA249B9715007072FA /* SPDiffableFooter.swift */,
+				F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -370,6 +374,7 @@
 				F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */,
 				F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */,
 				F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */,
+				F401290C24AFBA660039D039 /* SPDiffableSnapshot.swift in Sources */,
 				F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */,
 				F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
 				F4954C03249B9716007072FA /* SPDiffableFooter.swift in Sources */,
@@ -396,6 +401,7 @@
 				F4FF9CC624A68400006B2122 /* RootController.swift in Sources */,
 				F4FF9CDA24A6848E006B2122 /* SPTableDiffableMediator.swift in Sources */,
 				F4FEAEC324A8FBC900CA513C /* SPDiffableTableTextHeader.swift in Sources */,
+				F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */,
 				F4FF9CD624A6848B006B2122 /* SPDiffableSection.swift in Sources */,
 				F4FF9CC224A68400006B2122 /* AppDelegate.swift in Sources */,
 				F4FF9CD524A6848B006B2122 /* SPDiffableItem.swift in Sources */,

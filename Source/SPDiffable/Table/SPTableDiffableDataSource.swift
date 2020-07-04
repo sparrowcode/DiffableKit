@@ -42,9 +42,9 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
      - Parameter cellProviders: Cell Providers which process models and convert it to registered `UITableViewCell`.
      */
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
-        super.init(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
+        super.init(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
             for provider in cellProviders {
-                if let cell = provider(tableView, indexPath, model) {
+                if let cell = provider(tableView, indexPath, item) {
                     return cell
                 }
             }
@@ -59,7 +59,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
      - Parameter animating: Changes shoud be applied animatable or not.
      */
     public func apply(sections: [SPDiffableSection], animating: Bool) {
-        var snapshot = SPTableDiffableSnapshot()
+        var snapshot = SPDiffableSnapshot()
         for section in sections {
             snapshot.appendSections([section])
             snapshot.appendItems(section.items, toSection: section)
@@ -97,8 +97,3 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         mediator?.diffableTableView?(tableView, commit: editingStyle, forRowAt: indexPath)
     }
 }
-
-/**
- Using for apply new data in diffable data source.
- */
-typealias SPTableDiffableSnapshot = NSDiffableDataSourceSnapshot<SPDiffableSection, SPDiffableItem>
