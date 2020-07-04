@@ -21,4 +21,4 @@
 
 import UIKit
 
-public class SPDiffableHeader: NSObject {}
+public typealias SPDiffableSnapshot = NSDiffableDataSourceSnapshot<SPDiffableSection, SPDiffableItem>

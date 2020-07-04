@@ -21,10 +21,7 @@
 
 import UIKit
 
-/**
- Header class with only text.
- */
-open class SPDiffableTableTextHeader: SPDiffableHeader {
+public class SPDiffableTextHeader: SPDiffableHeader {
     
     public var text: String
     

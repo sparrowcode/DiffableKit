@@ -21,7 +21,23 @@
 
 import UIKit
 
-/**
- Using for apply new data in diffable data source.
- */
-typealias SPDiffableSnapshot = NSDiffableDataSourceSnapshot<SPDiffableSection, SPDiffableItem>
+public class SPDiffableCollectionController: UICollectionViewController {
+    
+    public var diffableDataSource: SPCollectionDiffableDataSource?
+    
+    public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
+        diffableDataSource = SPCollectionDiffableDataSource(collectionView: collectionView, cellProviders: providers)
+        diffableDataSource?.apply(sections, animating: false)
+    }
+    
+    // MARK: Ovveriden Init
+    
+    override init(collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(collectionViewLayout: layout)
+    }
+    
+    @available(*, unavailable)
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

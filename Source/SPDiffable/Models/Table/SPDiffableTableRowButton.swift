@@ -21,11 +21,7 @@
 
 import UIKit
 
-/**
- Model for button cell.
- Apple use it element in some UI.
- */
-open class SPDiffableTableRowButton: SPDiffableItem {
+public class SPDiffableTableRowButton: SPDiffableItem {
     
     public var text: String
     public var detail: String?

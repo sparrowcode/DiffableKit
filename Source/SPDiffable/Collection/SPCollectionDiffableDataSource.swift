@@ -21,4 +21,33 @@
 
 import UIKit
 
-public class SPDiffableHeader: NSObject {}
+public class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+
+    public init(collectionView: UICollectionView, cellProviders: [CellProvider]) {
+        super.init(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
+            for provider in cellProviders {
+                if let cell = provider(collectionView, indexPath, item) {
+                    return cell
+                }
+            }
+            return nil
+        }
+    }
+    
+    // MARK: Apply Wrappers
+    
+    public func apply(_ sections: [SPDiffableSection], animating: Bool) {
+        var snapshot = SPDiffableSnapshot()
+        snapshot.appendSections(sections)
+        for section in sections {
+            snapshot.appendItems(section.items, toSection: section)
+        }
+        apply(snapshot, animatingDifferences: animating)
+    }
+    
+    public func apply(_ snapshot: SPDiffableSnapshot, animating: Bool) {
+        apply(snapshot, animatingDifferences: animating, completion: nil)
+    }
+}
+
+public typealias SPDiffableCollectionCellProvider = SPCollectionDiffableDataSource.CellProvider

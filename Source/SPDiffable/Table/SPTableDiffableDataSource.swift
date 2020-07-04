@@ -21,26 +21,10 @@
 
 import UIKit
 
-/**
- Defaut class for table diffable.
- Support mediator as delegate, and allow set many cell providers.
- */
-open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+public class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
-    /**
-     Passed some data source methods to delegate class.
-     For using, need implement protocol `SPTableDiffableMediator` and set mediator.
-     */
     public weak var mediator: SPTableDiffableMediator?
     
-    /**
-     Init with cell providers. After set content not updated, shoud do it manually.
-     Class `SPDiffableTableController` has wrapper method `setCellProviders`,
-     which automatically init diffable data source & set cell providers with update content.
-     
-     - Parameter tableView: Table view, which shoud using for apply content.
-     - Parameter cellProviders: Cell Providers which process models and convert it to registered `UITableViewCell`.
-     */
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
             for provider in cellProviders {
@@ -52,19 +36,19 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         })
     }
     
-    /**
-     Wrapper for apply content method.
-     
-     - Parameter sections: Full content for table.
-     - Parameter animating: Changes shoud be applied animatable or not.
-     */
+    // MARK: Apply Wrappers
+    
     public func apply(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPDiffableSnapshot()
+        snapshot.appendSections(sections)
         for section in sections {
-            snapshot.appendSections([section])
             snapshot.appendItems(section.items, toSection: section)
         }
         apply(snapshot, animatingDifferences: animating)
+    }
+    
+    public func apply(_ snapshot: SPDiffableSnapshot, animating: Bool) {
+        apply(snapshot, animatingDifferences: animating, completion: nil)
     }
     
     // MARK: Mediator
@@ -73,7 +57,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         if let title = mediator?.diffableTableView?(tableView, titleForHeaderInSection: section) {
             return title
         }
-        if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTableTextHeader {
+        if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTextHeader {
             return header.text
         }
         return nil
@@ -83,7 +67,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         if let title = mediator?.diffableTableView?(tableView, titleForFooterInSection: section) {
             return title
         }
-        if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTableTextFooter {
+        if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTextFooter {
             return footer.text
         }
         return nil
@@ -97,3 +81,5 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         mediator?.diffableTableView?(tableView, commit: editingStyle, forRowAt: indexPath)
     }
 }
+
+public typealias SPDiffableTableCellProvider = SPTableDiffableDataSource.CellProvider

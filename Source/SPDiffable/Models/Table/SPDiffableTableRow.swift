@@ -21,11 +21,7 @@
 
 import UIKit
 
-/**
- Model for basic nativa table cell.
- Support accessory, detail text and icons.
- */
-open class SPDiffableTableRow: SPDiffableItem {
+public class SPDiffableTableRow: SPDiffableItem {
     
     public var text: String
     public var detail: String? = nil
