@@ -21,26 +21,15 @@
 
 import UIKit
 
-/**
-Basic section model.
-You can set custom header and footer.
-*/
-open class SPDiffableSection: NSObject {
+public class SPDiffableSection: NSObject {
     
-    /**
-     Shoud be always uniq.
-     It identifier help detect which section changed.
-     */
     public var identifier: String
     public var header: SPDiffableHeader?
     public var footer: SPDiffableFooter?
-    
-    /**
-     Items in this section.
-     */
+
     public var items: [SPDiffableItem] = []
     
-    public init(identifier: String, header: SPDiffableHeader? = nil, footer: SPDiffableFooter? = nil, items: [SPDiffableItem] = []) {
+    public init(identifier: String, header: SPDiffableHeader? = nil, footer: SPDiffableFooter? = nil, items: [SPDiffableItem]) {
         self.identifier = identifier
         self.header = header
         self.footer = footer

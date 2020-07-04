@@ -21,8 +21,4 @@
 
 import UIKit
 
-/**
- Basic footer model.
- All foters should be inherited from it class.
- */
-open class SPDiffableFooter: NSObject {}
+public class SPDiffableFooter: NSObject {}

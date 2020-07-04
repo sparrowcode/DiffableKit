@@ -21,10 +21,7 @@
 
 import UIKit
 
-/**
- Footer class with only text.
- */
-open class SPDiffableTableTextFooter: SPDiffableFooter {
+public class SPDiffableTextFooter: SPDiffableFooter {
     
     public var text: String
     
