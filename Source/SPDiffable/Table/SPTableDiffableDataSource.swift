@@ -47,7 +47,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         apply(snapshot, animatingDifferences: animating)
     }
     
-    public func apply(_ snapshot: SPDiffableSnapshot, animating: Bool) {
+    public func apply(snapshot: SPDiffableSnapshot, animating: Bool) {
         apply(snapshot, animatingDifferences: animating, completion: nil)
     }
     
