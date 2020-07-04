@@ -2,7 +2,7 @@ import UIKit
 
 class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
     
-    init() {
+    override init() {
         super.init(style: .insetGrouped)
     }
     
