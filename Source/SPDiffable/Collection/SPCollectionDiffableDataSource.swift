@@ -36,7 +36,7 @@ open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SP
     
     // MARK: Apply Wrappers
     
-    @objc public func apply(sections: [SPDiffableSection], animating: Bool) {
+    @objc public func applySections(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPDiffableSnapshot()
         snapshot.appendSections(sections)
         for section in sections {
