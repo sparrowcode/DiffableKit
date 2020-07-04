@@ -24,12 +24,12 @@ import UIKit
 open class SPDiffableSection: NSObject {
     
     public var identifier: String
-    public var header: SPDiffableHeader?
-    public var footer: SPDiffableFooter?
+    public var header: SPDiffableItem?
+    public var footer: SPDiffableItem?
 
     public var items: [SPDiffableItem] = []
     
-    public init(identifier: String, header: SPDiffableHeader? = nil, footer: SPDiffableFooter? = nil, items: [SPDiffableItem]) {
+    public init(identifier: String, header: SPDiffableItem? = nil, footer: SPDiffableItem? = nil, items: [SPDiffableItem]) {
         self.identifier = identifier
         self.header = header
         self.footer = footer
