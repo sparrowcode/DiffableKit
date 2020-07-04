@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableCollectionController: UICollectionViewController {
+open class SPDiffableCollectionController: UICollectionViewController {
     
     public var diffableDataSource: SPCollectionDiffableDataSource?
     

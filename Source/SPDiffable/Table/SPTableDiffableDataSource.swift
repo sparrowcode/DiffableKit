@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     public weak var mediator: SPTableDiffableMediator?
     
