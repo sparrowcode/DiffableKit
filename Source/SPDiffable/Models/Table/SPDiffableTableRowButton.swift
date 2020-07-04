@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableTableRowButton: SPDiffableItem {
+open class SPDiffableTableRowButton: SPDiffableItem {
     
     public var text: String
     public var detail: String?

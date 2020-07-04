@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableTableRowStepper: SPDiffableItem {
+open class SPDiffableTableRowStepper: SPDiffableItem {
 
     public var value: Int
     public var minimumValue: Int

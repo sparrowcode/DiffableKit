@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableTableRowSwitch: SPDiffableItem {
+open class SPDiffableTableRowSwitch: SPDiffableItem {
     
     public var text: String
     public var icon: UIImage?
