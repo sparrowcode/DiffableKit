@@ -14,9 +14,7 @@
 		F4954BEE249B95F2007072FA /* FUNDING.yml in Resources */ = {isa = PBXBuildFile; fileRef = F4954BED249B95F2007072FA /* FUNDING.yml */; };
 		F4954BF7249B962C007072FA /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = F4954BF2249B962C007072FA /* Readme.md */; };
 		F4954BF8249B962C007072FA /* SPDiffable.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F4954BF3249B962C007072FA /* SPDiffable.podspec */; };
-		F4954C03249B9716007072FA /* SPDiffableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFA249B9715007072FA /* SPDiffableFooter.swift */; };
 		F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFB249B9715007072FA /* SPDiffableItem.swift */; };
-		F4954C05249B9716007072FA /* SPDiffableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFC249B9715007072FA /* SPDiffableHeader.swift */; };
 		F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
 		F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */; };
 		F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C01249B9715007072FA /* SPDiffableTableController.swift */; };
@@ -39,8 +37,6 @@
 		F4FF9CC624A68400006B2122 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CC524A68400006B2122 /* RootController.swift */; };
 		F4FF9CCB24A68401006B2122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FF9CCA24A68401006B2122 /* Assets.xcassets */; };
 		F4FF9CCE24A68401006B2122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FF9CCC24A68401006B2122 /* LaunchScreen.storyboard */; };
-		F4FF9CD324A6848B006B2122 /* SPDiffableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFC249B9715007072FA /* SPDiffableHeader.swift */; };
-		F4FF9CD424A6848B006B2122 /* SPDiffableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFA249B9715007072FA /* SPDiffableFooter.swift */; };
 		F4FF9CD524A6848B006B2122 /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFB249B9715007072FA /* SPDiffableItem.swift */; };
 		F4FF9CD624A6848B006B2122 /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
 		F4FF9CD724A6848E006B2122 /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C01249B9715007072FA /* SPDiffableTableController.swift */; };
@@ -64,9 +60,7 @@
 		F4954BF1249B962C007072FA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		F4954BF2249B962C007072FA /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = SOURCE_ROOT; };
 		F4954BF3249B962C007072FA /* SPDiffable.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPDiffable.podspec; sourceTree = SOURCE_ROOT; };
-		F4954BFA249B9715007072FA /* SPDiffableFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableFooter.swift; sourceTree = "<group>"; };
 		F4954BFB249B9715007072FA /* SPDiffableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableItem.swift; sourceTree = "<group>"; };
-		F4954BFC249B9715007072FA /* SPDiffableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableHeader.swift; sourceTree = "<group>"; };
 		F4954BFD249B9715007072FA /* SPDiffableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableSection.swift; sourceTree = "<group>"; };
 		F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTableDiffableDataSource.swift; sourceTree = "<group>"; };
 		F4954C01249B9715007072FA /* SPDiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
@@ -230,8 +224,6 @@
 				F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeader.swift */,
 				F4FEAEBB24A8FA6500CA513C /* SPDiffableTextFooter.swift */,
 				F4954BFD249B9715007072FA /* SPDiffableSection.swift */,
-				F4954BFC249B9715007072FA /* SPDiffableHeader.swift */,
-				F4954BFA249B9715007072FA /* SPDiffableFooter.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -395,14 +387,12 @@
 				F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeader.swift in Sources */,
 				F4FEAEBC24A8FA6500CA513C /* SPDiffableTextFooter.swift in Sources */,
 				F4D5F20E24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift in Sources */,
-				F4954C05249B9716007072FA /* SPDiffableHeader.swift in Sources */,
 				F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */,
 				F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */,
 				F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */,
 				F401290C24AFBA660039D039 /* SPDiffableSnapshot.swift in Sources */,
 				F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */,
 				F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
-				F4954C03249B9716007072FA /* SPDiffableFooter.swift in Sources */,
 				F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */,
 				F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */,
 				F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */,
@@ -414,8 +404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FF9CD424A6848B006B2122 /* SPDiffableFooter.swift in Sources */,
-				F4FF9CD324A6848B006B2122 /* SPDiffableHeader.swift in Sources */,
 				F4D5F21224B0D4D10003EEEF /* SPDiffableCollectionController.swift in Sources */,
 				F4FEAEC624A8FBC900CA513C /* SPDiffableTableRowStepper.swift in Sources */,
 				F4FF9CD924A6848E006B2122 /* SPTableDiffableDataSource.swift in Sources */,

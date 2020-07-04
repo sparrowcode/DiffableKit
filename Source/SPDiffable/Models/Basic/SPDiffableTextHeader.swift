@@ -21,12 +21,12 @@
 
 import UIKit
 
-open class SPDiffableTextHeader: SPDiffableHeader {
+open class SPDiffableTextHeader: SPDiffableItem {
     
     public var text: String
     
     public init(text: String) {
         self.text = text
-        super.init()
+        super.init(text)
     }
 }
