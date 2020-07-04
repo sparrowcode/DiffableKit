@@ -44,10 +44,6 @@ open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SP
         }
         apply(snapshot, animatingDifferences: animating)
     }
-    
-    @objc public func apply(snapshot: SPDiffableSnapshot, animating: Bool) {
-        apply(snapshot, animatingDifferences: animating, completion: nil)
-    }
 }
 
 public typealias SPDiffableCollectionCellProvider = SPCollectionDiffableDataSource.CellProvider
