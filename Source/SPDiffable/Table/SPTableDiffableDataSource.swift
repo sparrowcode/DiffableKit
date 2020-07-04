@@ -47,6 +47,13 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         apply(snapshot, animatingDifferences: animating)
     }
     
+<<<<<<< HEAD
+=======
+    public func apply(_ snapshot: SPDiffableSnapshot, animating: Bool) {
+        apply(snapshot, animatingDifferences: animating, completion: nil)
+    }
+    
+>>>>>>> parent of cb4716e... Fix unrecognized selector
     // MARK: Mediator
     
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
