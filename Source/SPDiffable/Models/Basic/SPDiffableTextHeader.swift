@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableTextHeader: SPDiffableHeader {
+open class SPDiffableTextHeader: SPDiffableHeader {
     
     public var text: String
     

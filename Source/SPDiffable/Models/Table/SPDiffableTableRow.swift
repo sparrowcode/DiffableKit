@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableTableRow: SPDiffableItem {
+open class SPDiffableTableRow: SPDiffableItem {
     
     public var text: String
     public var detail: String? = nil

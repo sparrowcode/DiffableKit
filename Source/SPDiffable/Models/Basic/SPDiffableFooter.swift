@@ -21,4 +21,4 @@
 
 import UIKit
 
-public class SPDiffableFooter: NSObject {}
+open class SPDiffableFooter: NSObject {}

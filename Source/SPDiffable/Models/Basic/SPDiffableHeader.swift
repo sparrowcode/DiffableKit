@@ -21,4 +21,4 @@
 
 import UIKit
 
-public class SPDiffableHeader: NSObject {}
+open class SPDiffableHeader: NSObject {}
