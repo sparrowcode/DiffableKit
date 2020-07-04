@@ -32,6 +32,10 @@ open class SPDiffableTableController: UITableViewController {
     
     // MARK: Ovveriden Init
     
+    public init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     public override init(style: UITableView.Style) {
         super.init(style: style)
     }
