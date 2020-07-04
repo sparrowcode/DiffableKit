@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDiffableTableController: UITableViewController {
+open class SPDiffableTableController: UITableViewController {
     
     public var diffableDataSource: SPTableDiffableDataSource?
     

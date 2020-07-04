@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
 
     public init(collectionView: UICollectionView, cellProviders: [CellProvider]) {
         super.init(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
