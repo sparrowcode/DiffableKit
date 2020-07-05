@@ -39,10 +39,25 @@ open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SP
     public func apply(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPDiffableSnapshot()
         snapshot.appendSections(sections)
-        for section in sections {
-            snapshot.appendItems(section.items, toSection: section)
+        
+        if #available(iOS 14, *) {
+            apply(snapshot, animatingDifferences: animating, completion: nil)
+            for section in sections {
+                var sectionSnapshot = SPDiffableSectionSnapshot()
+                let header = section.header
+                if let header = header {
+                    sectionSnapshot.append([header])
+                }
+                sectionSnapshot.append(section.items, to: header)
+                sectionSnapshot.expand(sectionSnapshot.items)
+                apply(sectionSnapshot, to: section, animatingDifferences: animating)
+            }
+        } else {
+            for section in sections {
+                snapshot.appendItems(section.items, toSection: section)
+            }
+            apply(snapshot, animatingDifferences: animating)
         }
-        apply(snapshot, animatingDifferences: animating)
     }
     
     public func apply(snapshot: SPDiffableSnapshot, animating: Bool) {
