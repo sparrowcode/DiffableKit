@@ -61,7 +61,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
         view.addSubview(collectionView)
     }
     
-    enum CellProvider {
+    public enum CellProvider {
         
         public static var itemCellProvider: SPDiffableCollectionCellProvider {
             let itemCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
