@@ -22,10 +22,15 @@
 import UIKit
 
 @available(iOS 14, *)
-open class SPDiffableSideBarController: UIViewController {
+open class SPDiffableSideBarController: UIViewController, UICollectionViewDelegate {
     
     public var collectionView: UICollectionView!
-    public var diffabDataSource: SPCollectionDiffableDataSource?
+    public var diffableDataSource: SPCollectionDiffableDataSource?
+    
+    public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
+        diffableDataSource = SPCollectionDiffableDataSource(collectionView: collectionView, cellProviders: providers)
+        diffableDataSource?.apply(sections: sections, animating: false)
+    }
     
     // MARK: Ovveriden Init
     
@@ -43,18 +48,17 @@ open class SPDiffableSideBarController: UIViewController {
         
         let layout = UICollectionViewCompositionalLayout { [weak self] (section, layoutEnvironment) -> NSCollectionLayoutSection? in
             var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
-            let header = self?.diffabDataSource?.snapshot().sectionIdentifiers[section].header
+            let header = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].header
             configuration.headerMode = (header == nil) ? .none : .firstItemInSection
-            let footer = self?.diffabDataSource?.snapshot().sectionIdentifiers[section].footer
+            let footer = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].footer
             configuration.footerMode = (footer == nil) ? .none : .supplementary
             return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
         }
         
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.delegate = self
         view.addSubview(collectionView)
-        
-        diffabDataSource = SPCollectionDiffableDataSource(collectionView: collectionView, cellProviders: [CellProvider.itemCellProvider, CellProvider.headerCellProvider])
     }
     
     enum CellProvider {
@@ -67,7 +71,7 @@ open class SPDiffableSideBarController: UIViewController {
                     content.text = item.title
                     content.image = item.image
                     cell.contentConfiguration = content
-                    cell.accessories = []
+                    cell.accessories = item.accessories
                 }
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
             }
@@ -82,7 +86,7 @@ open class SPDiffableSideBarController: UIViewController {
                     content.text = item.text
                     content.image = nil
                     cell.contentConfiguration = content
-                    cell.accessories = [.outlineDisclosure()]
+                    cell.accessories = item.accessories
                 }
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
             }

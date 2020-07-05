@@ -21,14 +21,20 @@
 
 import UIKit
 
+@available(iOS 14, *)
 open class SPDiffableSideBarMenuItem: SPDiffableItem {
     
     public let title: String
     public let image: UIImage?
+    public var accessories: [UICellAccessory]
+    public var action: Action?
     
-    public init(title: String, image: UIImage?) {
+    public init(title: String, image: UIImage?, accessories: [UICellAccessory], action: Action? = nil) {
         self.title = title
         self.image = image
+        self.accessories = accessories
         super.init(title)
     }
+    
+    public typealias Action = (_ indexPath: IndexPath) -> Void
 }

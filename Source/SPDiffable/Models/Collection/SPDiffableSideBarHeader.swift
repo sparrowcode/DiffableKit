@@ -21,12 +21,15 @@
 
 import UIKit
 
+@available(iOS 14, *)
 open class SPDiffableSideBarHeader: SPDiffableItem {
     
     public var text: String
+    public var accessories: [UICellAccessory]
     
-    public init(text: String) {
+    public init(text: String, accessories: [UICellAccessory] = []) {
         self.text = text
+        self.accessories = accessories
         super.init(text)
     }
 }
