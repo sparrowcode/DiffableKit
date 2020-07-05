@@ -143,7 +143,6 @@
 		F4954BE9249B78C9007072FA /* SPDiffable */ = {
 			isa = PBXGroup;
 			children = (
-				F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */,
 				F4954BF9249B9715007072FA /* Models */,
 				F4D5F20C24B0D1D10003EEEF /* Collection */,
 				F4954BFE249B9715007072FA /* Table */,
@@ -184,7 +183,11 @@
 		F4954BF9249B9715007072FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F4FEAEB724A8FA0800CA513C /* Basic */,
+				F4954BFB249B9715007072FA /* SPDiffableItem.swift */,
+				F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeader.swift */,
+				F4FEAEBB24A8FA6500CA513C /* SPDiffableTextFooter.swift */,
+				F4954BFD249B9715007072FA /* SPDiffableSection.swift */,
+				F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */,
 				F4D5F21324B0D6DA0003EEEF /* Collection */,
 				F4FEAEB824A8FA1F00CA513C /* Table */,
 			);
@@ -215,17 +218,6 @@
 			children = (
 			);
 			path = Collection;
-			sourceTree = "<group>";
-		};
-		F4FEAEB724A8FA0800CA513C /* Basic */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BFB249B9715007072FA /* SPDiffableItem.swift */,
-				F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeader.swift */,
-				F4FEAEBB24A8FA6500CA513C /* SPDiffableTextFooter.swift */,
-				F4954BFD249B9715007072FA /* SPDiffableSection.swift */,
-			);
-			path = Basic;
 			sourceTree = "<group>";
 		};
 		F4FEAEB824A8FA1F00CA513C /* Table */ = {
