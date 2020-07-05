@@ -21,7 +21,13 @@
 
 import UIKit
 
+/**
+ Wrapper of `NSDiffableDataSourceSnapshot` with basic `SPDiffableSection` & `SPDiffableItem`.
+ */
 public typealias SPDiffableSnapshot = NSDiffableDataSourceSnapshot<SPDiffableSection, SPDiffableItem>
 
+/**
+ Wrapper of NSDiffableDataSourceSectionSnapshot  with basic `SPDiffableItem`.
+ */
 @available(iOS 14, *)
 public typealias SPDiffableSectionSnapshot = NSDiffableDataSourceSectionSnapshot<SPDiffableItem>

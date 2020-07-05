@@ -21,6 +21,9 @@
 
 import UIKit
 
+/**
+ Header model for side bar item.
+ */
 @available(iOS 14, *)
 open class SPDiffableSideBarHeader: SPDiffableItem {
     

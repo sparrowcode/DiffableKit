@@ -21,6 +21,11 @@
 
 import UIKit
 
+/**
+ Menu item in side bar.
+ 
+ For header use `SPDiffableSideBarHeader` class.
+ */
 @available(iOS 14, *)
 open class SPDiffableSideBarMenuItem: SPDiffableItem {
     

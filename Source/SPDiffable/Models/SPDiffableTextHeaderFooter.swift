@@ -21,7 +21,10 @@
 
 import UIKit
 
-open class SPDiffableTextHeader: SPDiffableItem {
+/**
+ Header & Footer model class with simple text.
+ */
+open class SPDiffableTextHeaderFooter: SPDiffableItem {
     
     public var text: String
     
