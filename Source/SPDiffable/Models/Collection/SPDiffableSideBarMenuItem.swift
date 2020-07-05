@@ -29,7 +29,7 @@ open class SPDiffableSideBarMenuItem: SPDiffableItem {
     public var accessories: [UICellAccessory]
     public var action: Action
     
-    public init(title: String, image: UIImage?, accessories: [UICellAccessory], action: @escaping Action) {
+    public init(title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
         self.title = title
         self.image = image
         self.accessories = accessories
