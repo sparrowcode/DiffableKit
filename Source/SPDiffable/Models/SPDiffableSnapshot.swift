@@ -22,3 +22,6 @@
 import UIKit
 
 public typealias SPDiffableSnapshot = NSDiffableDataSourceSnapshot<SPDiffableSection, SPDiffableItem>
+
+@available(iOS 14, *)
+public typealias SPDiffableSectionSnapshot = NSDiffableDataSourceSectionSnapshot<SPDiffableItem>
