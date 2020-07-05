@@ -28,6 +28,8 @@ open class SPDiffableItem: NSObject, NSCopying {
     public init(_ identifier: String) {
         self.identifier = identifier
     }
+    
+    // MARK: Hashable and Equatable
 
     public override var hash: Int {
         var hasher = Hasher()
@@ -39,6 +41,8 @@ open class SPDiffableItem: NSObject, NSCopying {
         guard let object = object as? SPDiffableItem else { return false }
         return identifier == object.identifier
     }
+    
+    // MARK: NSCopying
     
     public func copy(with zone: NSZone? = nil) -> Any {
         return SPDiffableItem(self.identifier)
