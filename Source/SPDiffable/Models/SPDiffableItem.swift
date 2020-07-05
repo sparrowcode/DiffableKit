@@ -21,27 +21,22 @@
 
 import UIKit
 
-open class SPDiffableSection: NSObject {
+open class SPDiffableItem: NSObject {
     
     public var identifier: String
-    public var header: SPDiffableItem?
-    public var footer: SPDiffableItem?
-
-    public var items: [SPDiffableItem] = []
     
-    public init(identifier: String, header: SPDiffableItem? = nil, footer: SPDiffableItem? = nil, items: [SPDiffableItem]) {
+    public init(_ identifier: String) {
         self.identifier = identifier
-        self.header = header
-        self.footer = footer
-        self.items = items
     }
-    
+
     public override var hash: Int {
-        return identifier.hashValue
+        var hasher = Hasher()
+        hasher.combine(identifier)
+        return hasher.finalize()
     }
     
     public override func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? SPDiffableSection else { return false }
+        guard let object = object as? SPDiffableItem else { return false }
         return identifier == object.identifier
     }
 }
