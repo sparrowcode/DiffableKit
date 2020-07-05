@@ -27,12 +27,13 @@ open class SPDiffableSideBarMenuItem: SPDiffableItem {
     public let title: String
     public let image: UIImage?
     public var accessories: [UICellAccessory]
-    public var action: Action?
+    public var action: Action
     
-    public init(title: String, image: UIImage?, accessories: [UICellAccessory], action: Action? = nil) {
+    public init(title: String, image: UIImage?, accessories: [UICellAccessory], action: @escaping Action) {
         self.title = title
         self.image = image
         self.accessories = accessories
+        self.action = action
         super.init(title)
     }
     
