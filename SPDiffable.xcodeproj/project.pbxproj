@@ -21,6 +21,7 @@
 		F4B4A4AC24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift */; };
 		F4B4A4AD24B1C85C000D8C07 /* SPDiffableSideBarMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift */; };
 		F4B4A4AF24B1C868000D8C07 /* SPDiffableSideBarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */; };
+		F4B4A4B124B1C8E3000D8C07 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */; };
 		F4D5F20E24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */; };
 		F4D5F20F24B0D2260003EEEF /* SPCollectionDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */; };
 		F4D5F21124B0D26E0003EEEF /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */; };
@@ -69,6 +70,7 @@
 		F4954C01249B9715007072FA /* SPDiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
 		F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarMenuItem.swift; sourceTree = "<group>"; };
 		F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarHeader.swift; sourceTree = "<group>"; };
+		F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarController.swift; sourceTree = "<group>"; };
 		F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCollectionDiffableDataSource.swift; sourceTree = "<group>"; };
 		F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
 		F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTextHeader.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */,
+				F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */,
 				F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */,
 			);
 			path = Collection;
@@ -398,6 +401,7 @@
 				F4B4A4AC24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift in Sources */,
 				F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */,
 				F4D5F21124B0D26E0003EEEF /* SPDiffableCollectionController.swift in Sources */,
+				F4B4A4B124B1C8E3000D8C07 /* SPDiffableSideBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
