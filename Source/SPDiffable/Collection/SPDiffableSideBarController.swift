@@ -21,12 +21,30 @@
 
 import UIKit
 
+/**
+Basic side bar controller.
+
+ For common init call `setCellProviders` with default data and providers for it models.
+ If need init manually, shoud init `diffableDataSource` fist, and next apply content when you need it.
+
+ Collection configuration setted to `.sidebar`.
+ Layout detect data source and automatically set header and footer mode.
+*/
 @available(iOS 14, *)
 open class SPDiffableSideBarController: UIViewController, UICollectionViewDelegate {
     
     public var collectionView: UICollectionView!
     public var diffableDataSource: SPCollectionDiffableDataSource?
     
+    /**
+     Init `diffableDataSource` and apply content to data source without animation.
+     
+     If need custom logic, you can manually init and apply data when you need.
+     
+     - warning: Changes applied not animatable.
+     - parameter providers: Cell Providers with valid order for processing.
+     - parameter sections: Content as array of `SPDiffableSection`.
+     */
     public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPCollectionDiffableDataSource(collectionView: collectionView, cellProviders: providers)
         diffableDataSource?.apply(sections: sections, animating: false)
@@ -61,6 +79,10 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
         view.addSubview(collectionView)
     }
     
+    /**
+     Defaults cell provider, which can help you doing side bar faster.
+     You can do your providers and ise its with more flexible.
+     */
     public enum CellProvider {
         
         public static var itemCellProvider: SPDiffableCollectionCellProvider {

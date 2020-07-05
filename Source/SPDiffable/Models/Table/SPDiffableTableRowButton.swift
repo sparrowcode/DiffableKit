@@ -21,6 +21,11 @@
 
 import UIKit
 
+/**
+ When table cell has style button.
+ 
+ Action pass index path of proccess cell.
+ */
 open class SPDiffableTableRowButton: SPDiffableItem {
     
     public var text: String

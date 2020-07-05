@@ -21,6 +21,12 @@
 
 import UIKit
 
+/**
+ Diffable collecton data source.
+ 
+ Using array cell providers for get view for each model.
+ Need pass all cell providers which will be using in collection view and data source all by order each and try get view.
+ */
 open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
 
     public init(collectionView: UICollectionView, cellProviders: [CellProvider]) {
@@ -36,6 +42,15 @@ open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SP
     
     // MARK: Apply Wrappers
     
+    /**
+     Applying sections to current snapshot.
+     
+     Section convert to snapshot and appling after.
+     If it iOS 14 and higher, content split to section and apply each section to collection. If it iOS 13, section convert to snaphost and apply all.
+     
+     - parameter sections: Array of `SPDiffableSection`, it content of table.
+     - parameter animating: Shoud apply changes with animation or not.
+     */
     public func apply(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPDiffableSnapshot()
         snapshot.appendSections(sections)
@@ -60,9 +75,18 @@ open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SP
         }
     }
     
+    /**
+     Applying new snapshot insted of current.
+     
+     - parameter snapshot: New snapshot.
+     - parameter animating: Shoud apply changes with animation or not.
+     */
     public func apply(snapshot: SPDiffableSnapshot, animating: Bool) {
         apply(snapshot, animatingDifferences: animating, completion: nil)
     }
 }
 
+/**
+ Wrapper of collection cell provider.
+ */
 public typealias SPDiffableCollectionCellProvider = SPCollectionDiffableDataSource.CellProvider

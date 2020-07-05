@@ -21,6 +21,13 @@
 
 import UIKit
 
+/**
+ Basic table item model with titles and accessories.
+ 
+ You can set icon and selection style.
+ By default if action is nil, selection style set to `.none`.
+ If accessory is control, you can find reay-use class for it.
+ */
 open class SPDiffableTableRow: SPDiffableItem {
     
     public var text: String
