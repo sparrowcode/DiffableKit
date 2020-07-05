@@ -21,7 +21,7 @@
 
 import UIKit
 
-open class SPDiffableSection: NSObject {
+open class SPDiffableSection: NSObject, NSCopying {
     
     public var identifier: String
     public var header: SPDiffableItem?
@@ -45,5 +45,14 @@ open class SPDiffableSection: NSObject {
     public override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? SPDiffableSection else { return false }
         return identifier == object.identifier
+    }
+    
+    public func copy(with zone: NSZone? = nil) -> Any {
+        return SPDiffableSection(
+            identifier: self.identifier,
+            header: self.header,
+            footer: self.footer,
+            items: self.items
+        )
     }
 }

@@ -21,7 +21,7 @@
 
 import UIKit
 
-open class SPDiffableItem: NSObject {
+open class SPDiffableItem: NSObject, NSCopying {
     
     public var identifier: String
     
@@ -38,5 +38,9 @@ open class SPDiffableItem: NSObject {
     public override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? SPDiffableItem else { return false }
         return identifier == object.identifier
+    }
+    
+    public func copy(with zone: NSZone? = nil) -> Any {
+        return SPDiffableItem(self.identifier)
     }
 }
