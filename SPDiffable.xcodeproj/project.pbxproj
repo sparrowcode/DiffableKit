@@ -9,14 +9,18 @@
 /* Begin PBXBuildFile section */
 		F401290C24AFBA660039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
 		F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
+		F449A32B24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449A32A24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift */; };
+		F449A32C24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449A32A24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift */; };
+		F449A33124B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449A33024B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift */; };
+		F449A33224B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449A33024B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift */; };
 		F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */; };
 		F4954BE2249B788A007072FA /* SPDiffable.h in Headers */ = {isa = PBXBuildFile; fileRef = F4954BE0249B788A007072FA /* SPDiffable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFB249B9715007072FA /* SPDiffableItem.swift */; };
 		F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
 		F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */; };
 		F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C01249B9715007072FA /* SPDiffableTableController.swift */; };
-		F4B4A4AC24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift */; };
-		F4B4A4AD24B1C85C000D8C07 /* SPDiffableSideBarMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift */; };
+		F4B4A4AC24B1C855000D8C07 /* SPDiffableSideBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarItem.swift */; };
+		F4B4A4AD24B1C85C000D8C07 /* SPDiffableSideBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarItem.swift */; };
 		F4B4A4AF24B1C868000D8C07 /* SPDiffableSideBarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */; };
 		F4B4A4B124B1C8E3000D8C07 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */; };
 		F4B4A4B524B285FF000D8C07 /* SideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4B424B285FF000D8C07 /* SideBarController.swift */; };
@@ -57,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSnapshot.swift; sourceTree = "<group>"; };
+		F449A32A24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButton.swift; sourceTree = "<group>"; };
+		F449A33024B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButtonCollectionViewListCell.swift; sourceTree = "<group>"; };
 		F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTableDiffableMediator.swift; sourceTree = "<group>"; };
 		F4954BDD249B788A007072FA /* SPDiffable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPDiffable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4954BE0249B788A007072FA /* SPDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDiffable.h; sourceTree = "<group>"; };
@@ -65,7 +71,7 @@
 		F4954BFD249B9715007072FA /* SPDiffableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableSection.swift; sourceTree = "<group>"; };
 		F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTableDiffableDataSource.swift; sourceTree = "<group>"; };
 		F4954C01249B9715007072FA /* SPDiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
-		F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarMenuItem.swift; sourceTree = "<group>"; };
+		F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarItem.swift; sourceTree = "<group>"; };
 		F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarHeader.swift; sourceTree = "<group>"; };
 		F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarController.swift; sourceTree = "<group>"; };
 		F4B4A4B424B285FF000D8C07 /* SideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarController.swift; sourceTree = "<group>"; };
@@ -201,6 +207,7 @@
 				F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */,
 				F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */,
 				F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */,
+				F449A33024B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -208,8 +215,9 @@
 		F4D5F21324B0D6DA0003EEEF /* Collection */ = {
 			isa = PBXGroup;
 			children = (
+				F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarItem.swift */,
+				F449A32A24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift */,
 				F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */,
-				F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -374,17 +382,19 @@
 				F4FEAEC024A8FB1400CA513C /* SPDiffableTableRowStepper.swift in Sources */,
 				F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift in Sources */,
 				F4D5F20E24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift in Sources */,
+				F449A32B24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift in Sources */,
 				F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */,
 				F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */,
 				F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */,
 				F401290C24AFBA660039D039 /* SPDiffableSnapshot.swift in Sources */,
 				F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */,
 				F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
+				F449A33124B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */,
 				F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */,
 				F4B4A50124B34A7A000D8C07 /* Package.swift in Sources */,
 				F4B4A4AF24B1C868000D8C07 /* SPDiffableSideBarHeader.swift in Sources */,
 				F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */,
-				F4B4A4AC24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift in Sources */,
+				F4B4A4AC24B1C855000D8C07 /* SPDiffableSideBarItem.swift in Sources */,
 				F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */,
 				F4D5F21124B0D26E0003EEEF /* SPDiffableCollectionController.swift in Sources */,
 				F4B4A4B124B1C8E3000D8C07 /* SPDiffableSideBarController.swift in Sources */,
@@ -404,17 +414,19 @@
 				F4FF9CED24A69A95006B2122 /* ActionableStepper.swift in Sources */,
 				F4B4A4B724B28634000D8C07 /* SPDiffableSideBarHeader.swift in Sources */,
 				F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
+				F449A32C24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift in Sources */,
 				F4FF9CD724A6848E006B2122 /* SPDiffableTableController.swift in Sources */,
 				F4FF9CEB24A69A26006B2122 /* ActionableSwitch.swift in Sources */,
 				F4FF9CC624A68400006B2122 /* RootController.swift in Sources */,
 				F4FF9CDA24A6848E006B2122 /* SPTableDiffableMediator.swift in Sources */,
 				F4FEAEC324A8FBC900CA513C /* SPDiffableTextHeaderFooter.swift in Sources */,
+				F449A33224B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */,
 				F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */,
 				F4FF9CD624A6848B006B2122 /* SPDiffableSection.swift in Sources */,
 				F4FF9CC224A68400006B2122 /* AppDelegate.swift in Sources */,
 				F4FF9CD524A6848B006B2122 /* SPDiffableItem.swift in Sources */,
 				F4FF9CDC24A684A9006B2122 /* DiffableTableController.swift in Sources */,
-				F4B4A4AD24B1C85C000D8C07 /* SPDiffableSideBarMenuItem.swift in Sources */,
+				F4B4A4AD24B1C85C000D8C07 /* SPDiffableSideBarItem.swift in Sources */,
 				F4D5F20F24B0D2260003EEEF /* SPCollectionDiffableDataSource.swift in Sources */,
 				F4FF9CE324A6857E006B2122 /* NativeTableViewCell.swift in Sources */,
 			);

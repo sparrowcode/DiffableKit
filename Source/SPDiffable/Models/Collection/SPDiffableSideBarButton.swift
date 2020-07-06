@@ -22,12 +22,12 @@
 import UIKit
 
 /**
- Menu item in side bar.
+ Buton item in side bar.
  
- For header use `SPDiffableSideBarHeader` class.
+ Colorful title usually.
  */
 @available(iOS 14, *)
-open class SPDiffableSideBarMenuItem: SPDiffableItem {
+open class SPDiffableSideBarButton: SPDiffableItem {
     
     public let title: String
     public let image: UIImage?

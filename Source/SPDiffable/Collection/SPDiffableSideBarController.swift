@@ -88,12 +88,24 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
         
         public static var itemCellProvider: SPDiffableCollectionCellProvider {
             let itemCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
-                guard let item = item as? SPDiffableSideBarMenuItem else { return nil }
-                let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SPDiffableSideBarMenuItem> { (cell, indexPath, item) in
+                guard let item = item as? SPDiffableSideBarItem else { return nil }
+                let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SPDiffableSideBarItem> { (cell, indexPath, item) in
                     var content = cell.defaultContentConfiguration()
                     content.text = item.title
                     content.image = item.image
                     cell.contentConfiguration = content
+                    cell.accessories = item.accessories
+                }
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            }
+            return itemCellProvider
+        }
+        
+        public static var buttonCellProvider: SPDiffableCollectionCellProvider {
+            let itemCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
+                guard let item = item as? SPDiffableSideBarButton else { return nil }
+                let cellRegistration = UICollectionView.CellRegistration<SPDiffableSideBarButtonCollectionViewListCell, SPDiffableSideBarButton> { (cell, indexPath, item) in
+                    cell.updateWithItem(item)
                     cell.accessories = item.accessories
                 }
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
