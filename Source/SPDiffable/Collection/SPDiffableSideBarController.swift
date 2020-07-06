@@ -34,6 +34,7 @@ Basic side bar controller.
 open class SPDiffableSideBarController: UIViewController, UICollectionViewDelegate {
     
     public var collectionView: UICollectionView!
+    
     public var diffableDataSource: SPCollectionDiffableDataSource?
     
     /**
