@@ -21,6 +21,11 @@
 
 import UIKit
 
+/**
+ Protocol for some data source methods
+ 
+ This methods not always implemented in data source and split to other protocol.
+ */
 @objc public protocol SPTableDiffableMediator: class {
     
     @objc optional func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?

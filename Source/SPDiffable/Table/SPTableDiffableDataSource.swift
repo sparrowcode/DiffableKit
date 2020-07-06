@@ -21,8 +21,21 @@
 
 import UIKit
 
+/**
+ Diffable table data source.
+ 
+ Using array cell providers for get view for each model.
+ Need pass all cell providers which will be using in collection view and data source all by order each and try get view.
+ */
 open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
+    /**
+     Mediator call some methods which can not using in data source object.
+     
+     Need set mediator for data source and implement methods which need.
+     It allow manage for example header titles not ovveride data source class.
+     Now data source doing only cell provider logic.
+     */
     public weak var mediator: SPTableDiffableMediator?
     
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
@@ -38,6 +51,14 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     
     // MARK: Apply Wrappers
     
+    /**
+     Applying sections to current snapshot.
+     
+     Section convert to snapshot and appling after.
+     
+     - parameter sections: Array of `SPDiffableSection`, it content of table.
+     - parameter animating: Shoud apply changes with animation or not.
+     */
     public func apply(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPDiffableSnapshot()
         snapshot.appendSections(sections)
@@ -47,6 +68,12 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         apply(snapshot, animatingDifferences: animating)
     }
     
+    /**
+     Applying new snapshot insted of current.
+     
+     - parameter snapshot: New snapshot.
+     - parameter animating: Shoud apply changes with animation or not.
+     */
     public func apply(snapshot: SPDiffableSnapshot, animating: Bool) {
         apply(snapshot, animatingDifferences: animating, completion: nil)
     }
@@ -57,7 +84,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         if let title = mediator?.diffableTableView?(tableView, titleForHeaderInSection: section) {
             return title
         }
-        if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTextHeader {
+        if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTextHeaderFooter {
             return header.text
         }
         return nil
@@ -67,7 +94,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         if let title = mediator?.diffableTableView?(tableView, titleForFooterInSection: section) {
             return title
         }
-        if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTextFooter {
+        if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTextHeaderFooter {
             return footer.text
         }
         return nil

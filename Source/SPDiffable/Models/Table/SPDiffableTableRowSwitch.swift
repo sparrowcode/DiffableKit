@@ -21,6 +21,11 @@
 
 import UIKit
 
+/**
+ Table model with switch.
+ 
+ Switch's action pass new state.
+ */
 open class SPDiffableTableRowSwitch: SPDiffableItem {
     
     public var text: String

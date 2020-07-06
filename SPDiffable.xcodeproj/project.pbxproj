@@ -22,13 +22,11 @@
 		F4D5F20F24B0D2260003EEEF /* SPCollectionDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */; };
 		F4D5F21124B0D26E0003EEEF /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */; };
 		F4D5F21224B0D4D10003EEEF /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */; };
-		F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeader.swift */; };
-		F4FEAEBC24A8FA6500CA513C /* SPDiffableTextFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBB24A8FA6500CA513C /* SPDiffableTextFooter.swift */; };
+		F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */; };
 		F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */; };
 		F4FEAEC024A8FB1400CA513C /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */; };
 		F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */; };
-		F4FEAEC324A8FBC900CA513C /* SPDiffableTextHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeader.swift */; };
-		F4FEAEC424A8FBC900CA513C /* SPDiffableTextFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBB24A8FA6500CA513C /* SPDiffableTextFooter.swift */; };
+		F4FEAEC324A8FBC900CA513C /* SPDiffableTextHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */; };
 		F4FEAEC524A8FBC900CA513C /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */; };
 		F4FEAEC624A8FBC900CA513C /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */; };
 		F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */; };
@@ -66,8 +64,7 @@
 		F4954C01249B9715007072FA /* SPDiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
 		F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCollectionDiffableDataSource.swift; sourceTree = "<group>"; };
 		F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
-		F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTextHeader.swift; sourceTree = "<group>"; };
-		F4FEAEBB24A8FA6500CA513C /* SPDiffableTextFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTextFooter.swift; sourceTree = "<group>"; };
+		F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTextHeaderFooter.swift; sourceTree = "<group>"; };
 		F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRow.swift; sourceTree = "<group>"; };
 		F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowStepper.swift; sourceTree = "<group>"; };
 		F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowSwitch.swift; sourceTree = "<group>"; };
@@ -184,11 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				F4954BFB249B9715007072FA /* SPDiffableItem.swift */,
-				F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeader.swift */,
-				F4FEAEBB24A8FA6500CA513C /* SPDiffableTextFooter.swift */,
+				F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */,
 				F4954BFD249B9715007072FA /* SPDiffableSection.swift */,
 				F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */,
-				F4D5F21324B0D6DA0003EEEF /* Collection */,
 				F4FEAEB824A8FA1F00CA513C /* Table */,
 			);
 			path = Models;
@@ -209,13 +204,6 @@
 			children = (
 				F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */,
 				F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */,
-			);
-			path = Collection;
-			sourceTree = "<group>";
-		};
-		F4D5F21324B0D6DA0003EEEF /* Collection */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -376,8 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4FEAEC024A8FB1400CA513C /* SPDiffableTableRowStepper.swift in Sources */,
-				F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeader.swift in Sources */,
-				F4FEAEBC24A8FA6500CA513C /* SPDiffableTextFooter.swift in Sources */,
+				F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift in Sources */,
 				F4D5F20E24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift in Sources */,
 				F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */,
 				F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */,
@@ -401,13 +388,12 @@
 				F4FF9CD924A6848E006B2122 /* SPTableDiffableDataSource.swift in Sources */,
 				F4FEAEC524A8FBC900CA513C /* SPDiffableTableRow.swift in Sources */,
 				F4FF9CED24A69A95006B2122 /* ActionableStepper.swift in Sources */,
-				F4FEAEC424A8FBC900CA513C /* SPDiffableTextFooter.swift in Sources */,
 				F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
 				F4FF9CD724A6848E006B2122 /* SPDiffableTableController.swift in Sources */,
 				F4FF9CEB24A69A26006B2122 /* ActionableSwitch.swift in Sources */,
 				F4FF9CC624A68400006B2122 /* RootController.swift in Sources */,
 				F4FF9CDA24A6848E006B2122 /* SPTableDiffableMediator.swift in Sources */,
-				F4FEAEC324A8FBC900CA513C /* SPDiffableTextHeader.swift in Sources */,
+				F4FEAEC324A8FBC900CA513C /* SPDiffableTextHeaderFooter.swift in Sources */,
 				F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */,
 				F4FF9CD624A6848B006B2122 /* SPDiffableSection.swift in Sources */,
 				F4FF9CC224A68400006B2122 /* AppDelegate.swift in Sources */,

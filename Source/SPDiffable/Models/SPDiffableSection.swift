@@ -21,8 +21,20 @@
 
 import UIKit
 
+/**
+ Basic section class. Can set header, footer and items in it section.
+ 
+ Using in diffable work. All sections shoud be inhert from it.
+ Can init with empty models if need configure later.
+ */
 open class SPDiffableSection: NSObject, NSCopying {
     
+    /**
+     Identifier help for detect uniq section and doing diffable work and animations.
+     
+     Always shoud be uniq. But if it changed, diffable system remove old and insert new (not reload).
+     Identifier uses in `Hashable` and `Equatable` protocols.
+     */
     public var identifier: String
     public var header: SPDiffableItem?
     public var footer: SPDiffableItem?
@@ -36,6 +48,8 @@ open class SPDiffableSection: NSObject, NSCopying {
         self.items = items
     }
     
+    // MARK: Hashable and Equatable
+    
     public override var hash: Int {
         var hasher = Hasher()
         hasher.combine(identifier)
@@ -47,6 +61,9 @@ open class SPDiffableSection: NSObject, NSCopying {
         return identifier == object.identifier
     }
     
+    // MARK: NSCopying
+    // Implemented becouse when using with collection,
+    // sometimes catch error about unregognized selector.
     public func copy(with zone: NSZone? = nil) -> Any {
         return SPDiffableSection(
             identifier: self.identifier,
