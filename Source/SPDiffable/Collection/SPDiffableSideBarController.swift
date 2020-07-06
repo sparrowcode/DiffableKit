@@ -51,17 +51,6 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
         diffableDataSource?.apply(sections: sections, animating: false)
     }
     
-    // MARK: Ovveriden Init
-    
-    public init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    @available(*, unavailable)
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -108,7 +97,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
             let itemCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
                 guard let item = item as? SPDiffableSideBarItem else { return nil }
                 let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SPDiffableSideBarItem> { (cell, indexPath, item) in
-                    var content = cell.defaultContentConfiguration()
+                    var content = UIListContentConfiguration.sidebarCell()
                     content.text = item.title
                     content.image = item.image
                     cell.contentConfiguration = content
@@ -135,7 +124,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
             let headerCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
                 guard let item = item as? SPDiffableSideBarHeader else { return nil }
                 let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SPDiffableSideBarHeader> { (cell, indexPath, item) in
-                    var content = cell.defaultContentConfiguration()
+                    var content = UIListContentConfiguration.sidebarHeader()
                     content.text = item.text
                     content.image = nil
                     cell.contentConfiguration = content
