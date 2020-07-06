@@ -11,9 +11,6 @@
 		F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
 		F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */; };
 		F4954BE2249B788A007072FA /* SPDiffable.h in Headers */ = {isa = PBXBuildFile; fileRef = F4954BE0249B788A007072FA /* SPDiffable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4954BEE249B95F2007072FA /* FUNDING.yml in Resources */ = {isa = PBXBuildFile; fileRef = F4954BED249B95F2007072FA /* FUNDING.yml */; };
-		F4954BF7249B962C007072FA /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = F4954BF2249B962C007072FA /* Readme.md */; };
-		F4954BF8249B962C007072FA /* SPDiffable.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F4954BF3249B962C007072FA /* SPDiffable.podspec */; };
 		F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFB249B9715007072FA /* SPDiffableItem.swift */; };
 		F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
 		F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */; };
@@ -25,6 +22,11 @@
 		F4B4A4B524B285FF000D8C07 /* SideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4B424B285FF000D8C07 /* SideBarController.swift */; };
 		F4B4A4B624B28614000D8C07 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */; };
 		F4B4A4B724B28634000D8C07 /* SPDiffableSideBarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */; };
+		F4B4A50024B34A7A000D8C07 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F4B4A4FB24B34A7A000D8C07 /* LICENSE */; };
+		F4B4A50124B34A7A000D8C07 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4FC24B34A7A000D8C07 /* Package.swift */; };
+		F4B4A50224B34A7A000D8C07 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4B4A4FD24B34A7A000D8C07 /* .gitignore */; };
+		F4B4A50324B34A7A000D8C07 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = F4B4A4FE24B34A7A000D8C07 /* Readme.md */; };
+		F4B4A50424B34A7A000D8C07 /* SPDiffable.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F4B4A4FF24B34A7A000D8C07 /* SPDiffable.podspec */; };
 		F4D5F20E24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */; };
 		F4D5F20F24B0D2260003EEEF /* SPCollectionDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */; };
 		F4D5F21124B0D26E0003EEEF /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */; };
@@ -59,12 +61,6 @@
 		F4954BDD249B788A007072FA /* SPDiffable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPDiffable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4954BE0249B788A007072FA /* SPDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDiffable.h; sourceTree = "<group>"; };
 		F4954BE1249B788A007072FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4954BED249B95F2007072FA /* FUNDING.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
-		F4954BEF249B962C007072FA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		F4954BF0249B962C007072FA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
-		F4954BF1249B962C007072FA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
-		F4954BF2249B962C007072FA /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = SOURCE_ROOT; };
-		F4954BF3249B962C007072FA /* SPDiffable.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPDiffable.podspec; sourceTree = SOURCE_ROOT; };
 		F4954BFB249B9715007072FA /* SPDiffableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableItem.swift; sourceTree = "<group>"; };
 		F4954BFD249B9715007072FA /* SPDiffableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableSection.swift; sourceTree = "<group>"; };
 		F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTableDiffableDataSource.swift; sourceTree = "<group>"; };
@@ -73,6 +69,11 @@
 		F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarHeader.swift; sourceTree = "<group>"; };
 		F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarController.swift; sourceTree = "<group>"; };
 		F4B4A4B424B285FF000D8C07 /* SideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarController.swift; sourceTree = "<group>"; };
+		F4B4A4FB24B34A7A000D8C07 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F4B4A4FC24B34A7A000D8C07 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		F4B4A4FD24B34A7A000D8C07 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F4B4A4FE24B34A7A000D8C07 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		F4B4A4FF24B34A7A000D8C07 /* SPDiffable.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SPDiffable.podspec; sourceTree = "<group>"; };
 		F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCollectionDiffableDataSource.swift; sourceTree = "<group>"; };
 		F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
 		F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTextHeaderFooter.swift; sourceTree = "<group>"; };
@@ -123,10 +124,14 @@
 		F4954BD3249B788A007072FA = {
 			isa = PBXGroup;
 			children = (
-				F4954BEB249B95C8007072FA /* Deployment */,
 				F4954BDF249B788A007072FA /* Source */,
 				F4FF9CC024A68400006B2122 /* Example */,
 				F4954BDE249B788A007072FA /* Products */,
+				F4B4A4FD24B34A7A000D8C07 /* .gitignore */,
+				F4B4A4FB24B34A7A000D8C07 /* LICENSE */,
+				F4B4A4FC24B34A7A000D8C07 /* Package.swift */,
+				F4B4A4FE24B34A7A000D8C07 /* Readme.md */,
+				F4B4A4FF24B34A7A000D8C07 /* SPDiffable.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,27 +171,6 @@
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
-		};
-		F4954BEB249B95C8007072FA /* Deployment */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BEC249B95F2007072FA /* .github */,
-				F4954BF1249B962C007072FA /* .gitignore */,
-				F4954BEF249B962C007072FA /* LICENSE */,
-				F4954BF0249B962C007072FA /* Package.swift */,
-				F4954BF2249B962C007072FA /* Readme.md */,
-				F4954BF3249B962C007072FA /* SPDiffable.podspec */,
-			);
-			path = Deployment;
-			sourceTree = "<group>";
-		};
-		F4954BEC249B95F2007072FA /* .github */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BED249B95F2007072FA /* FUNDING.yml */,
-			);
-			path = .github;
-			sourceTree = SOURCE_ROOT;
 		};
 		F4954BF9249B9715007072FA /* Models */ = {
 			isa = PBXGroup;
@@ -364,9 +348,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4954BF8249B962C007072FA /* SPDiffable.podspec in Resources */,
-				F4954BF7249B962C007072FA /* Readme.md in Resources */,
-				F4954BEE249B95F2007072FA /* FUNDING.yml in Resources */,
+				F4B4A50224B34A7A000D8C07 /* .gitignore in Resources */,
+				F4B4A50024B34A7A000D8C07 /* LICENSE in Resources */,
+				F4B4A50424B34A7A000D8C07 /* SPDiffable.podspec in Resources */,
+				F4B4A50324B34A7A000D8C07 /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +381,7 @@
 				F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */,
 				F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
 				F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */,
+				F4B4A50124B34A7A000D8C07 /* Package.swift in Sources */,
 				F4B4A4AF24B1C868000D8C07 /* SPDiffableSideBarHeader.swift in Sources */,
 				F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */,
 				F4B4A4AC24B1C855000D8C07 /* SPDiffableSideBarMenuItem.swift in Sources */,

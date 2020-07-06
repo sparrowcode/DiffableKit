@@ -46,7 +46,8 @@ open class SPCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SP
      Applying sections to current snapshot.
      
      Section convert to snapshot and appling after.
-     If it iOS 14 and higher, content split to section and apply each section to collection. If it iOS 13, section convert to snaphost and apply all.
+     If it iOS 14 and higher, content split to section and apply each section to collection.
+     If it iOS 13, section convert to snaphost and apply all.
      
      - parameter sections: Array of `SPDiffableSection`, it content of table.
      - parameter animating: Shoud apply changes with animation or not.
