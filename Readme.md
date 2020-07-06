@@ -19,9 +19,9 @@ If you want help project, check [Сooperation](#сooperation) section.
 - [Usage](#usage)
     - [How it work](#usage)
     - [Apply content](#apply-content)
-    - [Ready Use Models](#ready-use-models)
-    - [Sidebar](#sidebar)
     - [Mediator](#mediator)
+    - [Sidebar](#sidebar)
+- [Ready Use Models](#ready-use-models)
 - [Сooperation](#сooperation)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
@@ -150,28 +150,30 @@ diffableDataSource?.apply(sections: content, animating: true)
 
 That all. You can each time create new order or count cells and it automatically show with diffable animation. Project has some ready-use models, you can read about it next.
 
-### Ready Use Models
+### Mediator
 
-It models which you can use now, it shoud close your task without code. Of couse you can create your models.
-Now in project you can find this ready-use models:
+Some methods in diffable data source can't ovveride without custom data source. It solved with mediator delegate. It simple. Next example for table. Set delegate `SPTableDiffableMediator`, all method optional:
 
-- `SPDiffableItem` it basic class. All item models shoud be extend from it model. Header and footer also.
-- `SPDiffableSection` section class. Included footer and header properties, also items (cells).
-- `SPDiffableTextHeaderFooter` header or footer class with text.
+```swift
+class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
 
-#### For Table:
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setCellProviders([cellProvider], sections: content)
+        diffableDataSource?.mediator = self
+    }
+}
+```
 
-- `SPDiffableTableRow` it native item for table cell. Support all basic styles and action for tap event.
-- `SPDiffableTableRowStepper` item for table cell with stepper. Has maximum value and minimum, also incuded action with passed value.
-- `SPDiffableTableRowSwitch` item for table with switch, included default state and action for change event.
-- `SPDiffableTableRowButton` item for table in style as button. Support table styles and action for tap.
+Now you can implemented requerid methods, for example title of header:
 
-#### For Collection:
+```swift
+func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return "Overridden in of diffable mediator"
+}
+```
 
-Now in progress development.
-
-- `SPDiffableSideBarMenuItem` menu item in side bar. Support accessories and actions.
-- `SPDiffableSideBarHeader` header model for side bar item.
+In protocol you can find more methods, like `canEdit` and other.
 
 ### Sidebar
 
@@ -205,30 +207,28 @@ SPDiffableSection(
 )
 ```
 
-### Mediator
+## Ready Use Models
 
-Some methods in diffable data source can't ovveride without custom data source. It solved with mediator delegate. It simple. Next example for table. Set delegate `SPTableDiffableMediator`, all method optional:
+It models which you can use now, it shoud close your task without code. Of couse you can create your models.
+Now in project you can find this ready-use models:
 
-```swift
-class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
+- `SPDiffableItem` it basic class. All item models shoud be extend from it model. Header and footer also.
+- `SPDiffableSection` section class. Included footer and header properties, also items (cells).
+- `SPDiffableTextHeaderFooter` header or footer class with text.
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setCellProviders([cellProvider], sections: content)
-        diffableDataSource?.mediator = self
-    }
-}
-```
+#### For Table:
 
-Now you can implemented requerid methods, for example title of header:
+- `SPDiffableTableRow` it native item for table cell. Support all basic styles and action for tap event.
+- `SPDiffableTableRowStepper` item for table cell with stepper. Has maximum value and minimum, also incuded action with passed value.
+- `SPDiffableTableRowSwitch` item for table with switch, included default state and action for change event.
+- `SPDiffableTableRowButton` item for table in style as button. Support table styles and action for tap.
 
-```swift
-func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Overridden in of diffable mediator"
-}
-```
+#### For Collection:
 
-In protocol you can find more methods, like `canEdit` and other.
+Now in progress development.
+
+- `SPDiffableSideBarMenuItem` menu item in side bar. Support accessories and actions.
+- `SPDiffableSideBarHeader` header model for side bar item.
 
 ## Сooperation
 
