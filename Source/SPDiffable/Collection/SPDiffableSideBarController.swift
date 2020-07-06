@@ -67,6 +67,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
         
         let layout = UICollectionViewCompositionalLayout { [weak self] (section, layoutEnvironment) -> NSCollectionLayoutSection? in
             var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
+            configuration.backgroundColor = UIColor.secondarySystemBackground
             let header = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].header
             configuration.headerMode = (header == nil) ? .none : .firstItemInSection
             let footer = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].footer
