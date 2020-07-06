@@ -75,9 +75,26 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
         }
         
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
-        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.delegate = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch diffableDataSource?.itemIdentifier(for: indexPath) {
+        case let item as SPDiffableSideBarItem:
+            item.action(indexPath)
+        case let item as SPDiffableSideBarButton:
+            item.action(indexPath)
+        default:
+            break
+        }
     }
     
     /**
@@ -86,7 +103,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
      */
     public enum CellProvider {
         
-        public static var itemCellProvider: SPDiffableCollectionCellProvider {
+        public static var item: SPDiffableCollectionCellProvider {
             let itemCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
                 guard let item = item as? SPDiffableSideBarItem else { return nil }
                 let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SPDiffableSideBarItem> { (cell, indexPath, item) in
@@ -101,7 +118,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
             return itemCellProvider
         }
         
-        public static var buttonCellProvider: SPDiffableCollectionCellProvider {
+        public static var button: SPDiffableCollectionCellProvider {
             let itemCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
                 guard let item = item as? SPDiffableSideBarButton else { return nil }
                 let cellRegistration = UICollectionView.CellRegistration<SPDiffableSideBarButtonCollectionViewListCell, SPDiffableSideBarButton> { (cell, indexPath, item) in
@@ -113,7 +130,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
             return itemCellProvider
         }
         
-        public static var headerCellProvider: SPDiffableCollectionCellProvider {
+        public static var header: SPDiffableCollectionCellProvider {
             let headerCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
                 guard let item = item as? SPDiffableSideBarHeader else { return nil }
                 let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SPDiffableSideBarHeader> { (cell, indexPath, item) in
@@ -126,6 +143,10 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
             }
             return headerCellProvider
+        }
+        
+        public static var all: [SPDiffableCollectionCellProvider] {
+            return [item, button, header]
         }
     }
 }
