@@ -11,9 +11,6 @@
 		F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
 		F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */; };
 		F4954BE2249B788A007072FA /* SPDiffable.h in Headers */ = {isa = PBXBuildFile; fileRef = F4954BE0249B788A007072FA /* SPDiffable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4954BEE249B95F2007072FA /* FUNDING.yml in Resources */ = {isa = PBXBuildFile; fileRef = F4954BED249B95F2007072FA /* FUNDING.yml */; };
-		F4954BF7249B962C007072FA /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = F4954BF2249B962C007072FA /* Readme.md */; };
-		F4954BF8249B962C007072FA /* SPDiffable.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F4954BF3249B962C007072FA /* SPDiffable.podspec */; };
 		F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFB249B9715007072FA /* SPDiffableItem.swift */; };
 		F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
 		F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */; };
@@ -52,18 +49,17 @@
 		F4954BDD249B788A007072FA /* SPDiffable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPDiffable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4954BE0249B788A007072FA /* SPDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDiffable.h; sourceTree = "<group>"; };
 		F4954BE1249B788A007072FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4954BED249B95F2007072FA /* FUNDING.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
-		F4954BEF249B962C007072FA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		F4954BF0249B962C007072FA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
-		F4954BF1249B962C007072FA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
-		F4954BF2249B962C007072FA /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = SOURCE_ROOT; };
-		F4954BF3249B962C007072FA /* SPDiffable.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPDiffable.podspec; sourceTree = SOURCE_ROOT; };
 		F4954BFB249B9715007072FA /* SPDiffableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableItem.swift; sourceTree = "<group>"; };
 		F4954BFD249B9715007072FA /* SPDiffableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableSection.swift; sourceTree = "<group>"; };
 		F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTableDiffableDataSource.swift; sourceTree = "<group>"; };
 		F4954C01249B9715007072FA /* SPDiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
 		F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCollectionDiffableDataSource.swift; sourceTree = "<group>"; };
 		F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
+		F4F4813524B3481D00CBF7D0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F4F4813624B3481D00CBF7D0 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		F4F4813724B3481D00CBF7D0 /* SPDiffable.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPDiffable.podspec; sourceTree = "<group>"; };
+		F4F4813824B3481D00CBF7D0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F4F4813924B3481D00CBF7D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTextHeaderFooter.swift; sourceTree = "<group>"; };
 		F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRow.swift; sourceTree = "<group>"; };
 		F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowStepper.swift; sourceTree = "<group>"; };
@@ -112,10 +108,14 @@
 		F4954BD3249B788A007072FA = {
 			isa = PBXGroup;
 			children = (
-				F4954BEB249B95C8007072FA /* Deployment */,
 				F4954BDF249B788A007072FA /* Source */,
 				F4FF9CC024A68400006B2122 /* Example */,
 				F4954BDE249B788A007072FA /* Products */,
+				F4F4813524B3481D00CBF7D0 /* .gitignore */,
+				F4F4813824B3481D00CBF7D0 /* LICENSE */,
+				F4F4813924B3481D00CBF7D0 /* Package.swift */,
+				F4F4813624B3481D00CBF7D0 /* Readme.md */,
+				F4F4813724B3481D00CBF7D0 /* SPDiffable.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,27 +155,6 @@
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
-		};
-		F4954BEB249B95C8007072FA /* Deployment */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BEC249B95F2007072FA /* .github */,
-				F4954BF1249B962C007072FA /* .gitignore */,
-				F4954BEF249B962C007072FA /* LICENSE */,
-				F4954BF0249B962C007072FA /* Package.swift */,
-				F4954BF2249B962C007072FA /* Readme.md */,
-				F4954BF3249B962C007072FA /* SPDiffable.podspec */,
-			);
-			path = Deployment;
-			sourceTree = "<group>";
-		};
-		F4954BEC249B95F2007072FA /* .github */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BED249B95F2007072FA /* FUNDING.yml */,
-			);
-			path = .github;
-			sourceTree = SOURCE_ROOT;
 		};
 		F4954BF9249B9715007072FA /* Models */ = {
 			isa = PBXGroup;
@@ -341,9 +320,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4954BF8249B962C007072FA /* SPDiffable.podspec in Resources */,
-				F4954BF7249B962C007072FA /* Readme.md in Resources */,
-				F4954BEE249B95F2007072FA /* FUNDING.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +526,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -576,6 +553,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
