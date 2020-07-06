@@ -21,8 +21,13 @@
 
 import UIKit
 
+/**
+ Model table cell with stepper and action for it.
+ 
+ Steper action pass value in handler.
+ */
 open class SPDiffableTableRowStepper: SPDiffableItem {
-
+    
     public var value: Int
     public var minimumValue: Int
     public var maximumValue: Int

@@ -1,10 +1,12 @@
 # SPDiffable
 
-Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and  special cell providers for one-usage models.
+Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and special cell providers for one-usage models.
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/Assets/blob/master/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
+
+If you want help project, check [Сooperation](#сooperation) section.
 
 ## Navigate
 
@@ -17,8 +19,9 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 - [Usage](#usage)
     - [How it work](#usage)
     - [Apply content](#apply-content)
-    - [Ready Use Models](#ready-use-models)
     - [Mediator](#mediator)
+    - [Sidebar](#sidebar)
+- [Ready Use Models](#ready-use-models)
 - [Сooperation](#сooperation)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
@@ -63,7 +66,7 @@ If you prefer not to use any of dependency managers, you can integrate `SPDiffab
 
 Before read it, highly recomded check `Example` target in project. It examle show all features, like use stepper and switch, like process actions, create custom models and many other.
 
-For work with diffable need create model (inside project you found some ready-use models) and do cell provider, which convert model with data to `UITableViewCell` or `UICollectionViewCell`.
+For work with diffable need create model (inside project you found some ready-use models) and do cell provider, which convert model with data to `UITableViewCell` or `UICollectionViewCell`. Next example for table, but all methods and class names available for collections.
 
 New model shoud extend from basic class `SPDiffableItem`:
 
@@ -71,7 +74,7 @@ New model shoud extend from basic class `SPDiffableItem`:
 class TableRowModel: SPDiffableItem {}
 ```
 
-After it add properties, which you want use:
+After it add properties, which you want use. For example:
 
 ```swift
 class TableRowMode: SPDiffableItem {
@@ -84,7 +87,7 @@ class TableRowMode: SPDiffableItem {
 }
 ```
 
-Last step, create table controller class and extend of `SPDiffableTableController`. Create custom cell provider, it help convert it data to table cell:
+Last step, create table controller class and extend of `SPDiffableTableController`. Create custom cell provider, it doing convert it data to table cell:
 
 ```swift
 
@@ -115,7 +118,7 @@ override func viewDidLoad() {
 }
 ```
 
-For example usage you can find in project in taget `Example`.
+All actions similar to collections. For example usage you can find in project in taget `Example`.
 
 ### Apply Content
 
@@ -125,10 +128,10 @@ Create section class:
 ```swift
 let section = SPDiffableSection(
     identifier: "example section",
-    header: SPDiffableTableTextHeader(text: "Header"),
-    footer: SPDiffableTableTextFooter(text: "Footer"),
+    header: SPDiffableTextHeaderFooter(text: "Header"),
+    footer: SPDiffableTextHeaderFooter(text: "Footer"),
     items: [
-        SPDiffableTableRow(text: "Basic Table Cell", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+        TableRowMode(text: "Basic Table Cell", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
             guard let self = self else { return }
             self.tableView.deselectRow(at: indexPath, animated: true)
             print("Tapped")
@@ -146,29 +149,6 @@ diffableDataSource?.apply(sections: content, animating: true)
 ```
 
 That all. You can each time create new order or count cells and it automatically show with diffable animation. Project has some ready-use models, you can read about it next.
-
-### Ready Use Models
-
-It models which you can use now, it shoud close your task without code. Of couse you can create your models.
-Now in project you can find this ready-use models:
-
-- `SPDiffableItem` it basic class. All item models shoud be extend from it model.
-- `SPDiffableSection` basic section class. Included footer and header, also items (cells).
-- `SPDiffableHeader` basic header class. All headers shoud be extend from it class.
-- `SPDiffableFooter` basic footer class. All footers shoud be extend from it class.
-
-#### For Table:
-
-- `SPDiffableTableRow` it native table view cell. Support all basic styles and action for tap event.
-- `SPDiffableTableRowStepper` table view cell with stepper. Has maximum value and minimum, also incuded action with passed value.
-- `SPDiffableTableRowSwitch` table cell with switch, included default state and action for change event.
-- `SPDiffableTableRowButton` table cell with style as button. Supprt table styles and action for tap.
-- `SPDiffableTableTextHeader` table header with text. You can see it in native table.
-- `SPDiffableTableTextFooter` table footer text.
-
-#### For Collection:
-
-Now in progress development.
 
 ### Mediator
 
@@ -195,12 +175,67 @@ func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section
 
 In protocol you can find more methods, like `canEdit` and other.
 
+### Sidebar
+
+Create new controller and extend from `SPDiffableSideBarController`. Remember, it available only from iOS 14. Now it abailable for `ios14` branch.
+
+```swift
+class SidebarController: SPDiffableSideBarController {}
+```
+
+In class available ready-use cell providers for menu item and header section. For get it shoud call:
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    setCellProviders([CellProvider.itemCellProvider, CellProvider.headerCellProvider], sections: content)
+}
+```
+
+Content it array of `SPDiffableSection`. For menu model need use model `SPDiffableSideBarMenuItem`. For header and footer will create `SPDiffableSideBarHeader` model.
+
+```swift
+SPDiffableSection(
+    identifier: Section.library.rawValue,
+    header: SPDiffableSideBarHeader(text: "Library", accessories: [.outlineDisclosure()]),
+    items: [
+        SPDiffableSideBarMenuItem(title: "Recently Added", image: UIImage(systemName: "clock"), action: { _ in }),
+        SPDiffableSideBarMenuItem(title: "Artists", image: UIImage(systemName: "music.mic"), action: { _ in }),
+        SPDiffableSideBarMenuItem(title: "Albums", image: UIImage(systemName: "rectangle.stack"), action: { _ in }),
+        SPDiffableSideBarMenuItem(title: "Songs", image: UIImage(systemName: "music.note"), action: { _ in }),
+    ]
+)
+```
+
+## Ready Use Models
+
+It models which you can use now, it shoud close your task without code. Of couse you can create your models.
+Now in project you can find this ready-use models:
+
+- `SPDiffableItem` it basic class. All item models shoud be extend from it model. Header and footer also.
+- `SPDiffableSection` section class. Included footer and header properties, also items (cells).
+- `SPDiffableTextHeaderFooter` header or footer class with text.
+
+#### For Table:
+
+- `SPDiffableTableRow` it native item for table cell. Support all basic styles and action for tap event.
+- `SPDiffableTableRowStepper` item for table cell with stepper. Has maximum value and minimum, also incuded action with passed value.
+- `SPDiffableTableRowSwitch` item for table with switch, included default state and action for change event.
+- `SPDiffableTableRowButton` item for table in style as button. Support table styles and action for tap.
+
+#### For Collection:
+
+Now in progress development.
+
+- `SPDiffableSideBarMenuItem` menu item in side bar. Support accessories and actions.
+- `SPDiffableSideBarHeader` header model for side bar item.
+
 ## Сooperation
 
 This project is free, but developing it takes time. Contributing to this project is a huge help. Here is list of tasks that need to be done, you can help with any:
 
 - Update readme text, my English not great :(
-- Add docs to swift source files
+- Update docs to swift source files
 
 ## Other Projects
 

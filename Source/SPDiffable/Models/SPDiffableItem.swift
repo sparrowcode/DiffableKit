@@ -21,14 +21,27 @@
 
 import UIKit
 
+/**
+ Basic class for items and sections.
+ 
+ All next model's classes shoud be extend from it class.
+ */
 open class SPDiffableItem: NSObject, NSCopying {
     
+    /**
+     Identifier help for detect uniq cell and doing diffable work and animations.
+     
+     Always shoud be uniq. But if it changed, diffable system remove old and insert new (not reload).
+     Identifier uses in `Hashable` and `Equatable` protocols.
+     */
     public var identifier: String
     
     public init(_ identifier: String) {
         self.identifier = identifier
     }
-
+    
+    // MARK: Hashable and Equatable
+    
     public override var hash: Int {
         var hasher = Hasher()
         hasher.combine(identifier)
@@ -40,6 +53,9 @@ open class SPDiffableItem: NSObject, NSCopying {
         return identifier == object.identifier
     }
     
+    // MARK: NSCopying
+    // Implemented becouse when using with collection,
+    // sometimes catch error about unregognized selector.
     public func copy(with zone: NSZone? = nil) -> Any {
         return SPDiffableItem(self.identifier)
     }
