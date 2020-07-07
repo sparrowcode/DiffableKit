@@ -44,19 +44,4 @@ open class SPDiffableCollectionController: UICollectionViewController {
         diffableDataSource = SPCollectionDiffableDataSource(collectionView: collectionView, cellProviders: providers)
         diffableDataSource?.apply(sections: sections, animating: false)
     }
-    
-    // MARK: Ovveriden Init
-    
-    public init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    public override init(collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(collectionViewLayout: layout)
-    }
-    
-    @available(*, unavailable)
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }

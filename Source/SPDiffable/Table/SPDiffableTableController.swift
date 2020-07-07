@@ -44,19 +44,4 @@ open class SPDiffableTableController: UITableViewController {
         diffableDataSource = SPTableDiffableDataSource(tableView: tableView, cellProviders: providers)
         diffableDataSource?.apply(sections: sections, animating: false)
     }
-    
-    // MARK: Ovveriden Init
-    
-    public init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    public override init(style: UITableView.Style) {
-        super.init(style: style)
-    }
-    
-    @available(*, unavailable)
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
