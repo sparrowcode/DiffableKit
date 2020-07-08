@@ -25,6 +25,7 @@ import UIKit
  List class using for ovveride logic of text color.
  
  When change state, here using custom processing of title color. It depended of state.
+ Also not show background selection, but cell selected. Need deselect it manually.
  Configure it cell need via `updateWithItem` func.
  */
 @available(iOS 14, *)
@@ -42,11 +43,17 @@ class SPDiffableSideBarButtonCollectionViewListCell: UICollectionViewListCell {
         var content = UIListContentConfiguration.sidebarCell().updated(for: state)
         content.text = item?.title
         content.image = item?.image
+        
         content.textProperties.color = tintColor
-        if state.isHighlighted || state.isSelected {
-            content.textProperties.color = content.imageProperties.tintColor ?? UIColor.white
+        content.imageProperties.tintColor = tintColor
+        
+        if state.isHighlighted {
+            content.textProperties.color = .tertiaryLabel
+            content.imageProperties.tintColor = .tertiaryLabel
         }
+
         contentConfiguration = content
+        backgroundConfiguration?.backgroundColor = .clear
     }
 }
 

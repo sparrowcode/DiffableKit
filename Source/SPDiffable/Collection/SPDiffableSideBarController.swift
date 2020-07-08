@@ -113,6 +113,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
                 guard let item = item as? SPDiffableSideBarButton else { return nil }
                 let cellRegistration = UICollectionView.CellRegistration<SPDiffableSideBarButtonCollectionViewListCell, SPDiffableSideBarButton> { (cell, indexPath, item) in
                     cell.updateWithItem(item)
+                    
                     cell.accessories = item.accessories
                 }
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
