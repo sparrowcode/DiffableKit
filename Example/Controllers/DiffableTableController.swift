@@ -2,8 +2,12 @@ import UIKit
 
 class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
     
-    override init() {
+    init() {
         super.init(style: .insetGrouped)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
