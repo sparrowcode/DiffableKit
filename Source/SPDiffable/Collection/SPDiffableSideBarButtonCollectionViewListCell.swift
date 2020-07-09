@@ -39,21 +39,21 @@ class SPDiffableSideBarButtonCollectionViewListCell: UICollectionViewListCell {
         setNeedsUpdateConfiguration()
     }
     
+    #warning("Not work dimmeed title colorize. Soon fix it. In Apple Music app it also not work.")
     override func updateConfiguration(using state: UICellConfigurationState) {
         var content = UIListContentConfiguration.sidebarCell().updated(for: state)
         content.text = item?.title
         content.image = item?.image
-        
         content.textProperties.color = tintColor
-        content.imageProperties.tintColor = tintColor
-        
-        if state.isHighlighted {
-            content.textProperties.color = .tertiaryLabel
-            content.imageProperties.tintColor = .tertiaryLabel
-        }
-
         contentConfiguration = content
-        backgroundConfiguration?.backgroundColor = .clear
+    }
+    
+    /**
+     Button can't be selected becouse it call once action.
+     Automatically disable selection.
+     */
+    override var isSelected: Bool {
+        didSet { if isSelected { isSelected = false } }
     }
 }
 

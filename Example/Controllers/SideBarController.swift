@@ -25,7 +25,12 @@ class SidebarController: SPDiffableSideBarController {
                     SPDiffableSideBarItem(title: "Browse", image: UIImage(systemName: "square.grid.2x2"), action: { _ in }),
                     SPDiffableSideBarItem(title: "Radio", image: UIImage(systemName: "dot.radiowaves.left.and.right"), action: { _ in }),
                     SPDiffableSideBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), action: { _ in }),
-                    SPDiffableSideBarButton(title: "Button", image: UIImage(systemName: "plus.square.fill"), action: { _ in })
+                    SPDiffableSideBarButton(title: "Button", image: UIImage(systemName: "plus.square.fill"), action: { [weak self] _ in
+                        guard let self = self else { return }
+                        let controller = UIViewController()
+                        controller.view.backgroundColor = .systemBackground
+                        self.present(controller, animated: true, completion: nil)
+                    })
                 ])
         )
         content.append(
