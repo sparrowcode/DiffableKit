@@ -48,13 +48,15 @@ open class SPDiffableSection: NSObject, NSCopying {
         self.items = items
     }
     
-    // MARK: Hashable and Equatable
+    // MARK: Hashable
     
     public override var hash: Int {
         var hasher = Hasher()
         hasher.combine(identifier)
         return hasher.finalize()
     }
+    
+    // MARK: Equatable
     
     public override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? SPDiffableSection else { return false }
