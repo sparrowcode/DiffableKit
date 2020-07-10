@@ -1,5 +1,8 @@
 import UIKit
 
+/**
+ Basic controller with default cell providers.
+ */
 class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
     
     init() {
