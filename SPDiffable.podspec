@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.swift_version = ['4.2', '5.0']
   s.ios.deployment_target = "13.0"
 
-  s.source_files  = "Source/SPDiffable/**/*.swift"
+  s.source_files  = "Sources/SPDiffable/**/*.swift"
 
 end

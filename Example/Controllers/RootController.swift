@@ -124,8 +124,8 @@ class RootController: DiffableTableController {
         didSet {
             print("Stepper value is: \(stepperValue)")
             updateContent(animating: true)
-            guard let indexPath = diffableDataSource?.indexPath(for: SPDiffableItem(identifier: stepperValueIdentifier)), let cell = tableView.cellForRow(at: indexPath) else { return }
-            cell.detailTextLabel?.text = "\(Int(stepperValue))"
+            /*guard let indexPath = diffableDataSource?.indexPath(for: SPDiffableItem(identifier: stepperValueIdentifier)), let cell = tableView.cellForRow(at: indexPath) else { return }
+            cell.detailTextLabel?.text = "\(Int(stepperValue))"*/
         }
     }
     
