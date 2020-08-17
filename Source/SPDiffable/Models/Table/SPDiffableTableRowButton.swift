@@ -34,7 +34,7 @@ open class SPDiffableTableRowButton: SPDiffableItem {
     public var accessoryType: UITableViewCell.AccessoryType
     public var action: Action
     
-    public init(identifier: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .default,  action: Action? = nil) {
+    public init(identifier: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .default,  action: Action) {
         self.text = text
         self.detail = detail
         self.icon = icon
