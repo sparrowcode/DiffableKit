@@ -23,11 +23,7 @@ import UIKit
 
 open class SPDiffableSubtitleTableViewCell: UITableViewCell {
     
-<<<<<<< HEAD
-    public static let identifier = "SPDiffableSubtitleTableViewCell"
-=======
     public static let reuseIdentifier = "SPDiffableSubtitleTableViewCell"
->>>>>>> ios14
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)

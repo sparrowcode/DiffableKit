@@ -40,7 +40,7 @@ open class SPDiffableTableRowButton: SPDiffableItem {
         self.icon = icon
         self.accessoryType = accessoryType
         self.action = action
-        super.init(identifier: text)
+        super.init(identifier: identifier ?? text)
     }
     
     public typealias Action = (_ indexPath: IndexPath) -> Void
