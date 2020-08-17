@@ -1,8 +1,8 @@
 import UIKit
 
-class NativeTableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
     
-    static let identifier = "NativeTableViewCell"
+    static let identifier = "TableViewCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)

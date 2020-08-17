@@ -35,7 +35,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
     
     public var collectionView: UICollectionView!
     
-    public var diffableDataSource: SPCollectionDiffableDataSource?
+    public var diffableDataSource: SPDiffableCollectionDataSource?
     
     /**
      Init `diffableDataSource` and apply content to data source without animation.
@@ -47,7 +47,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
      - parameter sections: Content as array of `SPDiffableSection`.
      */
     public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
-        diffableDataSource = SPCollectionDiffableDataSource(collectionView: collectionView, cellProviders: providers)
+        diffableDataSource = SPDiffableCollectionDataSource(collectionView: collectionView, cellProviders: providers)
         diffableDataSource?.apply(sections: sections, animating: false)
     }
     
