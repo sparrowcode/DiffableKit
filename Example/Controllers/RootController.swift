@@ -47,11 +47,11 @@ class RootController: DiffableTableController {
             header: SPDiffableTextHeaderFooter(text: "Presenter"),
             footer: SPDiffableTextHeaderFooter(text: "Push in navigation processing by table controller. Sometimes you need manually deselect cell."),
             items: [
-                SPDiffableTableDefaultRow(text: "Basic Deselect", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Basic Deselect", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 }),
-                SPDiffableTableDefaultRow(text: "Basic Push", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Basic Push", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })
@@ -60,7 +60,7 @@ class RootController: DiffableTableController {
         content.append(basicSection)
         
         if switchOn {
-            accessorySection.items.insert(SPDiffableTableDefaultRow(text: "Switch Worked", accessoryType: .checkmark), at: 1)
+            accessorySection.items.insert(SPDiffableTableRow(text: "Switch Worked", accessoryType: .checkmark), at: 1)
         }
         
         if stepperValue != 0 {
@@ -71,7 +71,7 @@ class RootController: DiffableTableController {
             identifier: Section.checkmark.identifier,
             footer: SPDiffableTextHeaderFooter(text: "Example how usage search by models and change checkmark without reload table."),
             items: [
-                SPDiffableTableDefaultRow(text: "Chekmarks", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Chekmarks", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })
@@ -83,7 +83,7 @@ class RootController: DiffableTableController {
             identifier: Section.customCellProvider.identifier,
             footer: SPDiffableTextHeaderFooter(text: "Also you can add more providers for specific controller, and use default and custom specially for some contorllers."),
             items: [
-                SPDiffableTableDefaultRow(text: "Custom Cell Provider", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Custom Cell Provider", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })
@@ -110,8 +110,8 @@ class RootController: DiffableTableController {
         }
     }
     
-    private var stepperValueDiffableRow: SPDiffableTableDefaultRow {
-        return SPDiffableTableDefaultRow(text: "Stepper Value", detail: "\(stepperValue)", accessoryType: .none)
+    private var stepperValueDiffableRow: SPDiffableTableRow {
+        return SPDiffableTableRow(text: "Stepper Value", detail: "\(stepperValue)", accessoryType: .none)
     }
 }
 

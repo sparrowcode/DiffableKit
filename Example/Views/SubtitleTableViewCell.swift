@@ -1,11 +1,11 @@
 import UIKit
 
-class NativeTableViewCell: UITableViewCell {
+class SubtitleTableViewCell: UITableViewCell {
     
-    static let identifier = "NativeTableViewCell"
+    static let identifier = "SubtitleTableViewCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .value1, reuseIdentifier: reuseIdentifier)
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
     }
     
     required init?(coder: NSCoder) {
