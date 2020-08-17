@@ -1,16 +1,6 @@
 import UIKit
 
-class TableViewCell: UITableViewCell {
-    
-    static let identifier = "NativeTableViewCell"
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .value1, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class TableViewCell: SPDiffableTableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
