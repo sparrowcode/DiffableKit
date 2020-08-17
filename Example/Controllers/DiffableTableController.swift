@@ -1,6 +1,6 @@
 import UIKit
 
-class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
+class DiffableTableController: SPDiffableTableController, SPDiffableTableMediator {
     
     init() {
         super.init(style: .insetGrouped)
@@ -12,7 +12,8 @@ class DiffableTableController: SPDiffableTableController, SPTableDiffableMediato
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.identifier)
+        tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: SubtitleTableViewCell.identifier)
         setCellProviders([CellProvider.default], sections: content)
         diffableDataSource?.mediator = self
     }
@@ -40,14 +41,21 @@ class DiffableTableController: SPDiffableTableController, SPTableDiffableMediato
             let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
                 switch item {
                 case let item as SPDiffableTableRow:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
+                    let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
                     cell.textLabel?.text = item.text
                     cell.detailTextLabel?.text = item.detail
                     cell.accessoryType = item.accessoryType
                     cell.selectionStyle = item.selectionStyle
                     return cell
+                case let item as SPDiffableTableRowSubtitle:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: SubtitleTableViewCell.identifier, for: indexPath) as! SubtitleTableViewCell
+                    cell.textLabel?.text = item.text
+                    cell.detailTextLabel?.text = item.subtitle
+                    cell.accessoryType = item.accessoryType
+                    cell.selectionStyle = item.selectionStyle
+                    return cell
                 case let item as SPDiffableTableRowSwitch:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
+                    let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
                     cell.textLabel?.text = item.text
                     let control = ActionableSwitch(action: item.action)
                     control.isOn = item.isOn
@@ -55,7 +63,7 @@ class DiffableTableController: SPDiffableTableController, SPTableDiffableMediato
                     cell.selectionStyle = .none
                     return cell
                 case let item as SPDiffableTableRowStepper:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
+                    let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
                     cell.textLabel?.text = item.text
                     let control = ActionableStepper(action: item.action)
                     control.value = Double(item.value)

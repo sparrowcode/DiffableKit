@@ -22,38 +22,30 @@
 import UIKit
 
 /**
- List class using for ovveride logic of text color.
+ Basic table item model with title and bottom subtitle and accessories.
  
- When change state, here using custom processing of title color. It depended of state.
- Also not show background selection, but cell selected. Need deselect it manually.
- Configure it cell need via `updateWithItem` func.
+ You can set icon and selection style.
+ By default if action is nil, selection style set to `.none`.
+ If accessory is control, you can find reay-use class for it.
  */
-@available(iOS 14, *)
-class SPDiffableSideBarButtonCollectionViewListCell: UICollectionViewListCell {
+open class SPDiffableTableRowSubtitle: SPDiffableItem {
     
-    private var item: SPDiffableSideBarButton? = nil
+    public var text: String
+    public var subtitle: String? = nil
+    public var icon: UIImage? = nil
+    public var selectionStyle: UITableViewCell.SelectionStyle
+    public var accessoryType: UITableViewCell.AccessoryType
+    public var action: Action?
     
-    func updateWithItem(_ newItem: SPDiffableSideBarButton) {
-        guard item != newItem else { return }
-        item = newItem
-        setNeedsUpdateConfiguration()
+    public init(text: String, subtitle: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, action: Action? = nil) {
+        self.text = text
+        self.subtitle = subtitle
+        self.icon = icon
+        self.accessoryType = accessoryType
+        self.selectionStyle = (action == nil) ? .none : .default
+        self.action = action
+        super.init(text)
     }
     
-    override func updateConfiguration(using state: UICellConfigurationState) {
-        var content = UIListContentConfiguration.sidebarCell().updated(for: state)
-        content.text = item?.title
-        content.image = item?.image
-        content.textProperties.color = tintColor
-        contentConfiguration = content
-    }
-    
-    /**
-     Button can't be selected becouse it call once action.
-     Automatically disable selection.
-     */
-    override var isSelected: Bool {
-        didSet { if isSelected { isSelected = false } }
-    }
+    public typealias Action = (_ indexPath: IndexPath) -> Void
 }
-
-

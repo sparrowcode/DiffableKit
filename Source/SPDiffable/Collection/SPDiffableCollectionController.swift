@@ -29,7 +29,7 @@ import UIKit
  */
 open class SPDiffableCollectionController: UICollectionViewController {
     
-    public var diffableDataSource: SPCollectionDiffableDataSource?
+    public var diffableDataSource: SPDiffableCollectionDataSource?
     
     /**
      Init `diffableDataSource` and apply content to data source without animation.
@@ -41,7 +41,7 @@ open class SPDiffableCollectionController: UICollectionViewController {
      - parameter sections: Content as array of `SPDiffableSection`.
      */
     public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
-        diffableDataSource = SPCollectionDiffableDataSource(collectionView: collectionView, cellProviders: providers)
+        diffableDataSource = SPDiffableCollectionDataSource(collectionView: collectionView, cellProviders: providers)
         diffableDataSource?.apply(sections: sections, animating: false)
     }
 }

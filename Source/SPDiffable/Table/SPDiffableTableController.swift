@@ -29,7 +29,7 @@ import UIKit
  */
 open class SPDiffableTableController: UITableViewController {
     
-    public var diffableDataSource: SPTableDiffableDataSource?
+    public var diffableDataSource: SPDiffableTableDataSource?
     
     /**
      Init `diffableDataSource` and apply content to data source without animation.
@@ -41,7 +41,7 @@ open class SPDiffableTableController: UITableViewController {
      - parameter sections: Content as array of `SPDiffableSection`.
      */
     public func setCellProviders( _ providers: [SPDiffableTableCellProvider], sections: [SPDiffableSection]) {
-        diffableDataSource = SPTableDiffableDataSource(tableView: tableView, cellProviders: providers)
+        diffableDataSource = SPDiffableTableDataSource(tableView: tableView, cellProviders: providers)
         diffableDataSource?.apply(sections: sections, animating: false)
     }
 }

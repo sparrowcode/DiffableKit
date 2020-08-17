@@ -27,7 +27,7 @@ import UIKit
  Using array cell providers for get view for each model.
  Need pass all cell providers which will be using in collection view and data source all by order each and try get view.
  */
-open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     /**
      Mediator call some methods which can not using in data source object.
@@ -36,7 +36,7 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
      It allow manage for example header titles not ovveride data source class.
      Now data source doing only cell provider logic.
      */
-    public weak var mediator: SPTableDiffableMediator?
+    public weak var mediator: SPDiffableTableMediator?
     
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
@@ -109,4 +109,4 @@ open class SPTableDiffableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
 }
 
-public typealias SPDiffableTableCellProvider = SPTableDiffableDataSource.CellProvider
+public typealias SPDiffableTableCellProvider = SPDiffableTableDataSource.CellProvider
