@@ -30,9 +30,9 @@ open class SPDiffableSideBarHeader: SPDiffableItem {
     public var text: String
     public var accessories: [UICellAccessory]
     
-    public init(text: String, accessories: [UICellAccessory] = []) {
+    public init(identifier: String? = nil, text: String, accessories: [UICellAccessory] = []) {
         self.text = text
         self.accessories = accessories
-        super.init(text)
+        super.init(identifier: identifier ?? text)
     }
 }

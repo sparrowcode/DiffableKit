@@ -33,12 +33,12 @@ open class SPDiffableTableRowSwitch: SPDiffableItem {
     public var isOn: Bool
     public var action: Action
     
-    public init(text: String, icon: UIImage? = nil, isOn: Bool, action: @escaping Action) {
+    public init(identifier: String? = nil, text: String, icon: UIImage? = nil, isOn: Bool, action: @escaping Action) {
         self.text = text
         self.icon = icon
         self.isOn = isOn
         self.action = action
-        super.init(text)
+        super.init(identifier: identifier ?? text)
     }
     
     public typealias Action = (_ state: Bool) -> Void

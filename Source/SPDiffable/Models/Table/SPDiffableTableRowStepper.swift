@@ -28,22 +28,24 @@ import UIKit
  */
 open class SPDiffableTableRowStepper: SPDiffableItem {
     
-    public var value: Int
-    public var minimumValue: Int
-    public var maximumValue: Int
+    public var stepValue: Double
+    public var value: Double
+    public var minimumValue: Double
+    public var maximumValue: Double
     public var text: String
     public var icon: UIImage? = nil
     public var action: Action
     
-    public init(text: String, icon: UIImage? = nil, value: Int, minimumValue: Int, maximumValue: Int, action: @escaping Action) {
+    public init(identifier: String? = nil, text: String, icon: UIImage? = nil, stepValue: Double, value: Double, minimumValue: Double, maximumValue: Double, action: @escaping Action) {
         self.text = text
         self.icon = icon
+        self.stepValue = stepValue
         self.value = value
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
         self.action = action
-        super.init(text)
+        super.init(identifier: identifier ?? text)
     }
     
-    public typealias Action = (_ value: Int) -> Void
+    public typealias Action = (_ value: Double) -> Void
 }
