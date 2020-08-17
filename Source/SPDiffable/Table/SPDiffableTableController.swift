@@ -58,7 +58,9 @@ open class SPDiffableTableController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTableViewCell.identifier, for: indexPath) as! SPDiffableTableViewCell
                 cell.textLabel?.text = model.text
                 cell.detailTextLabel?.text = model.detail
-                     cell.selectionStyle = model.selectionStyle
+                cell.imageView?.image = model.icon
+                cell.accessoryType = model.accessoryType
+                cell.selectionStyle = model.selectionStyle
                 return cell
             case let model as SPDiffableTableRowSubtitle:
                 let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableSubtitleTableViewCell.identifier, for: indexPath) as! SPDiffableSubtitleTableViewCell
