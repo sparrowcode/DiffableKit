@@ -199,10 +199,10 @@
 		OBJ_30 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_31 /* SPDiffableStepper.swift */,
-				OBJ_32 /* SPDiffableSubtitleTableViewCell.swift */,
-				OBJ_33 /* SPDiffableSwitch.swift */,
 				OBJ_34 /* SPDiffableTableViewCell.swift */,
+				OBJ_32 /* SPDiffableSubtitleTableViewCell.swift */,
+				OBJ_31 /* SPDiffableStepper.swift */,
+				OBJ_33 /* SPDiffableSwitch.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
