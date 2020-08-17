@@ -23,7 +23,7 @@ import UIKit
 
 open class SPDiffableTableViewCell: UITableViewCell {
     
-    static let identifier = "SPDiffableTableViewCell"
+    public static let identifier = "SPDiffableTableViewCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
