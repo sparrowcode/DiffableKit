@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDiffableStepper: UIStepper {
+open class SPDiffableStepper: UIStepper {
     
     var action: (_ value: Double) -> Void
     
@@ -31,7 +31,7 @@ class SPDiffableStepper: UIStepper {
         addTarget(self, action: #selector(self.valueChanged), for: .valueChanged)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         self.action = { _ in }
         super.init(coder: coder)
     }

@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDiffableSwitch: UISwitch {
+open class SPDiffableSwitch: UISwitch {
     
     var action: (_ state: Bool) -> Void
     
@@ -31,7 +31,7 @@ class SPDiffableSwitch: UISwitch {
         addTarget(self, action: #selector(self.valueChanged), for: .valueChanged)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
