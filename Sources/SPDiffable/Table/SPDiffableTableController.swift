@@ -106,4 +106,9 @@ open class SPDiffableTableController: UITableViewController {
             break
         }
     }
+    
+    public func cell(for itemIdentifier: String) -> UITableViewCell? {
+        guard let indexPath = diffableDataSource?.indexPath(for: itemIdentifier) else { return nil }
+        return tableView.cellForRow(at: indexPath)
+    }
 }
