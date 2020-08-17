@@ -33,8 +33,8 @@ open class SPDiffableTableController: UITableViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.identifier)
-        tableView.register(SPDiffableSubtitleTableViewCell.self, forCellReuseIdentifier: SPDiffableSubtitleTableViewCell.identifier)
+        tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.reuseIdentifier)
+        tableView.register(SPDiffableSubtitleTableViewCell.self, forCellReuseIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier)
     }
     
     /**
@@ -55,7 +55,7 @@ open class SPDiffableTableController: UITableViewController {
         let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
             switch model {
             case let model as SPDiffableTableRow:
-                let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTableViewCell.identifier, for: indexPath) as! SPDiffableTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTableViewCell
                 cell.textLabel?.text = model.text
                 cell.detailTextLabel?.text = model.detail
                 cell.imageView?.image = model.icon
@@ -63,17 +63,47 @@ open class SPDiffableTableController: UITableViewController {
                 cell.selectionStyle = model.selectionStyle
                 return cell
             case let model as SPDiffableTableRowSubtitle:
-                let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableSubtitleTableViewCell.identifier, for: indexPath) as! SPDiffableSubtitleTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableSubtitleTableViewCell
                 cell.textLabel?.text = model.text
                 cell.detailTextLabel?.text = model.subtitle
                 cell.imageView?.image = model.icon
                 cell.accessoryType = model.accessoryType
                 cell.selectionStyle = model.selectionStyle
                 return cell
+            case let item as SPDiffableTableRowSwitch:
+                let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTableViewCell
+                cell.textLabel?.text = item.text
+                let control = SPDiffableSwitch(action: item.action)
+                control.isOn = item.isOn
+                cell.accessoryView = control
+                cell.selectionStyle = .none
+                return cell
+            case let item as SPDiffableTableRowStepper:
+                let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTableViewCell
+                cell.textLabel?.text = item.text
+                let control = SPDiffableStepper(action: item.action)
+                control.stepValue = item.stepValue
+                control.value = item.value
+                control.minimumValue = item.minimumValue
+                control.maximumValue = item.maximumValue
+                cell.accessoryView = control
+                cell.selectionStyle = .none
+                return cell
             default:
                 return nil
             }
         }
         return cellProvider
+    }
+    
+    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch diffableDataSource?.itemIdentifier(for: indexPath) {
+        case let model as SPDiffableTableRow:
+            model.action?(indexPath)
+        case let model as SPDiffableTableRowSubtitle:
+            model.action?(indexPath)
+        default:
+            break
+        }
     }
 }
