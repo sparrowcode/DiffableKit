@@ -21,31 +21,21 @@
 
 import UIKit
 
-/**
- Basic table item model with titles and accessories.
- 
- You can set icon and selection style.
- By default if action is nil, selection style set to `.none`.
- If accessory is control, you can find reay-use class for it.
- */
-open class SPDiffableTableRow: SPDiffableItem {
+class SPDiffableSwitch: UISwitch {
     
-    public var text: String
-    public var detail: String? = nil
-    public var icon: UIImage? = nil
-    public var selectionStyle: UITableViewCell.SelectionStyle
-    public var accessoryType: UITableViewCell.AccessoryType
-    public var action: Action?
+    var action: (_ state: Bool) -> Void
     
-    public init(identifier: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .none, action: Action? = nil) {
-        self.text = text
-        self.detail = detail
-        self.icon = icon
-        self.accessoryType = accessoryType
-        self.selectionStyle = selectionStyle
+    init(action: @escaping (_ state: Bool) -> Void) {
         self.action = action
-        super.init(identifier: identifier ?? text)
+        super.init(frame: .zero)
+        addTarget(self, action: #selector(self.valueChanged), for: .valueChanged)
     }
     
-    public typealias Action = (_ indexPath: IndexPath) -> Void
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func valueChanged() {
+        action(isOn)
+    }
 }

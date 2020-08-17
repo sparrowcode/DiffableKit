@@ -22,7 +22,11 @@
 import UIKit
 
 /**
+<<<<<<< HEAD
  Basic table item model with titles and accessories.
+=======
+ Basic table item model with title and bottom subtitle and accessories.
+>>>>>>> ios14
  
  You can set icon and selection style.
  By default if action is nil, selection style set to `.none`.
@@ -37,14 +41,24 @@ open class SPDiffableTableRowSubtitle: SPDiffableItem {
     public var accessoryType: UITableViewCell.AccessoryType
     public var action: Action?
     
+<<<<<<< HEAD
     public init(text: String, subtitle: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, action: Action? = nil) {
+=======
+    public init(identifier: String? = nil, text: String, subtitle: String, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .none, action: Action? = nil) {
+>>>>>>> ios14
         self.text = text
         self.subtitle = subtitle
         self.icon = icon
         self.accessoryType = accessoryType
+<<<<<<< HEAD
         self.selectionStyle = (action == nil) ? .none : .default
         self.action = action
         super.init(text)
+=======
+        self.selectionStyle = selectionStyle
+        self.action = action
+        super.init(identifier: identifier ?? text)
+>>>>>>> ios14
     }
     
     public typealias Action = (_ indexPath: IndexPath) -> Void

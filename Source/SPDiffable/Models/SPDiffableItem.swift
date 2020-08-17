@@ -36,19 +36,17 @@ open class SPDiffableItem: NSObject, NSCopying {
      */
     public var identifier: String
     
-    public init(_ identifier: String) {
+    public init(identifier: String) {
         self.identifier = identifier
     }
     
-    // MARK: Hashable
+    // MARK: Hashable and Equatable
     
     public override var hash: Int {
         var hasher = Hasher()
         hasher.combine(identifier)
         return hasher.finalize()
     }
-    
-    // MARK: Equatable
     
     public override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? SPDiffableItem else { return false }
@@ -59,6 +57,6 @@ open class SPDiffableItem: NSObject, NSCopying {
     // Implemented becouse when using with collection,
     // sometimes catch error about unregognized selector.
     public func copy(with zone: NSZone? = nil) -> Any {
-        return SPDiffableItem(self.identifier)
+        return SPDiffableItem(identifier: self.identifier)
     }
 }

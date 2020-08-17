@@ -22,30 +22,17 @@
 import UIKit
 
 /**
- Basic table item model with titles and accessories.
- 
- You can set icon and selection style.
- By default if action is nil, selection style set to `.none`.
- If accessory is control, you can find reay-use class for it.
+ Header model for side bar item.
  */
-open class SPDiffableTableRow: SPDiffableItem {
+@available(iOS 14, *)
+open class SPDiffableSideBarHeader: SPDiffableItem {
     
     public var text: String
-    public var detail: String? = nil
-    public var icon: UIImage? = nil
-    public var selectionStyle: UITableViewCell.SelectionStyle
-    public var accessoryType: UITableViewCell.AccessoryType
-    public var action: Action?
+    public var accessories: [UICellAccessory]
     
-    public init(identifier: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .none, action: Action? = nil) {
+    public init(identifier: String? = nil, text: String, accessories: [UICellAccessory] = []) {
         self.text = text
-        self.detail = detail
-        self.icon = icon
-        self.accessoryType = accessoryType
-        self.selectionStyle = selectionStyle
-        self.action = action
+        self.accessories = accessories
         super.init(identifier: identifier ?? text)
     }
-    
-    public typealias Action = (_ indexPath: IndexPath) -> Void
 }

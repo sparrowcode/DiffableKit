@@ -46,7 +46,8 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
      Applying sections to current snapshot.
      
      Section convert to snapshot and appling after.
-     If it iOS 14 and higher, content split to section and apply each section to collection. If it iOS 13, section convert to snaphost and apply all.
+     If it iOS 14 and higher, content split to section and apply each section to collection.
+     If it iOS 13, section convert to snaphost and apply all.
      
      - parameter sections: Array of `SPDiffableSection`, it content of table.
      - parameter animating: Shoud apply changes with animation or not.
@@ -55,10 +56,24 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
         var snapshot = SPDiffableSnapshot()
         snapshot.appendSections(sections)
         
-        for section in sections {
-            snapshot.appendItems(section.items, toSection: section)
+        if #available(iOS 14, *) {
+            apply(snapshot, animatingDifferences: animating, completion: nil)
+            for section in sections {
+                var sectionSnapshot = SPDiffableSectionSnapshot()
+                let header = section.header
+                if let header = header {
+                    sectionSnapshot.append([header])
+                }
+                sectionSnapshot.append(section.items, to: header)
+                sectionSnapshot.expand(sectionSnapshot.items)
+                apply(sectionSnapshot, to: section, animatingDifferences: animating)
+            }
+        } else {
+            for section in sections {
+                snapshot.appendItems(section.items, toSection: section)
+            }
+            apply(snapshot, animatingDifferences: animating)
         }
-        apply(snapshot, animatingDifferences: animating)
     }
     
     /**

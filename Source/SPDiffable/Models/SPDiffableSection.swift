@@ -48,7 +48,7 @@ open class SPDiffableSection: NSObject, NSCopying {
         self.items = items
     }
     
-    // MARK: Hashable
+    // MARK: Hashable and Equatable
     
     public override var hash: Int {
         var hasher = Hasher()
@@ -56,14 +56,13 @@ open class SPDiffableSection: NSObject, NSCopying {
         return hasher.finalize()
     }
     
-    // MARK: Equatable
-    
     public override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? SPDiffableSection else { return false }
         return identifier == object.identifier
     }
     
     // MARK: NSCopying
+    
     // Implemented becouse when using with collection,
     // sometimes catch error about unregognized selector.
     public func copy(with zone: NSZone? = nil) -> Any {

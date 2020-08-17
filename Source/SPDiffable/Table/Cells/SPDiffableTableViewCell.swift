@@ -21,15 +21,38 @@
 
 import UIKit
 
+<<<<<<< HEAD
+<<<<<<< HEAD:Source/SPDiffable/Table/Cells/SPDiffableTableViewCell.swift
 open class SPDiffableTableViewCell: UITableViewCell {
+=======
+/**
+ Header & Footer model class with simple text.
+ */
+open class SPDiffableTextHeaderFooter: SPDiffableItem {
+>>>>>>> ios14:Source/SPDiffable/Models/SPDiffableTextHeaderFooter.swift
     
     public static let identifier = "SPDiffableTableViewCell"
     
+<<<<<<< HEAD:Source/SPDiffable/Table/Cells/SPDiffableTableViewCell.swift
+=======
+open class SPDiffableTableViewCell: UITableViewCell {
+    
+    public static let reuseIdentifier = "SPDiffableTableViewCell"
+    
+>>>>>>> ios14
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
     }
     
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
+<<<<<<< HEAD
+=======
+    public init(identifier: String? = nil, text: String) {
+        self.text = text
+        super.init(identifier: identifier ?? text)
+>>>>>>> ios14:Source/SPDiffable/Models/SPDiffableTextHeaderFooter.swift
+=======
+>>>>>>> ios14
     }
 }

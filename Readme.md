@@ -188,21 +188,23 @@ In class available ready-use cell providers for menu item and header section. Fo
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-    setCellProviders([CellProvider.itemCellProvider, CellProvider.headerCellProvider], sections: content)
+    setCellProviders([CellProvider.item, CellProvider.button, CellProvider.header], sections: content)
+    // or you can set all default providers by call `CellProvider.all`
 }
 ```
 
-Content it array of `SPDiffableSection`. For menu model need use model `SPDiffableSideBarMenuItem`. For header and footer will create `SPDiffableSideBarHeader` model.
+Content it array of `SPDiffableSection`. For menu model need use model `SPDiffableSideBarItem` or `SPDiffableSideBarButton`. For header and footer will create `SPDiffableSideBarHeader` model.
 
 ```swift
 SPDiffableSection(
     identifier: Section.library.rawValue,
     header: SPDiffableSideBarHeader(text: "Library", accessories: [.outlineDisclosure()]),
     items: [
-        SPDiffableSideBarMenuItem(title: "Recently Added", image: UIImage(systemName: "clock"), action: { _ in }),
-        SPDiffableSideBarMenuItem(title: "Artists", image: UIImage(systemName: "music.mic"), action: { _ in }),
-        SPDiffableSideBarMenuItem(title: "Albums", image: UIImage(systemName: "rectangle.stack"), action: { _ in }),
-        SPDiffableSideBarMenuItem(title: "Songs", image: UIImage(systemName: "music.note"), action: { _ in }),
+        SPDiffableSideBarItem(title: "Recently Added", image: UIImage(systemName: "clock"), action: { _ in }),
+        SPDiffableSideBarItem(title: "Artists", image: UIImage(systemName: "music.mic"), action: { _ in }),
+        SPDiffableSideBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack"), action: { _ in }),
+        SPDiffableSideBarItem(title: "Songs", image: UIImage(systemName: "music.note"), action: { _ in }),
+        SPDiffableSideBarButton(title: "Add New", image: UIImage(systemName: "plus.square.fill"), action: { _ in })
     ]
 )
 ```
@@ -227,7 +229,8 @@ Now in project you can find this ready-use models:
 
 Now in progress development.
 
-- `SPDiffableSideBarMenuItem` menu item in side bar. Support accessories and actions.
+- `SPDiffableSideBarItem` menu item in side bar. Support accessories and actions.
+- `SPDiffableSideBarButton` button item in side bar. Color of title similar to tint.
 - `SPDiffableSideBarHeader` header model for side bar item.
 
 ## Сooperation

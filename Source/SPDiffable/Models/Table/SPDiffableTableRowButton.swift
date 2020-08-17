@@ -34,13 +34,13 @@ open class SPDiffableTableRowButton: SPDiffableItem {
     public var accessoryType: UITableViewCell.AccessoryType
     public var action: Action
     
-    public init(text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, action: @escaping Action) {
+    public init(identifier: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .default,  action: Action? = nil) {
         self.text = text
         self.detail = detail
         self.icon = icon
         self.accessoryType = accessoryType
         self.action = action
-        super.init(text)
+        super.init(identifier: text)
     }
     
     public typealias Action = (_ indexPath: IndexPath) -> Void
