@@ -29,7 +29,7 @@ open class SPDiffableTableViewCell: UITableViewCell {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
     }
 }
