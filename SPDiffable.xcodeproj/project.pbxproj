@@ -3,122 +3,116 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F401290C24AFBA660039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
-		F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
-		F449A32B24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449A32A24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift */; };
-		F449A32C24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449A32A24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift */; };
-		F449A33124B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449A33024B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift */; };
-		F449A33224B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449A33024B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift */; };
-		F4632035249EBA7100AF7413 /* SPDiffableTableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPDiffableTableMediator.swift */; };
-		F4954BE2249B788A007072FA /* SPDiffable.h in Headers */ = {isa = PBXBuildFile; fileRef = F4954BE0249B788A007072FA /* SPDiffable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFB249B9715007072FA /* SPDiffableItem.swift */; };
-		F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
-		F4954C08249B9716007072FA /* SPDiffableTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPDiffableTableDataSource.swift */; };
-		F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C01249B9715007072FA /* SPDiffableTableController.swift */; };
-		F4B4A4AC24B1C855000D8C07 /* SPDiffableSideBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarItem.swift */; };
-		F4B4A4AD24B1C85C000D8C07 /* SPDiffableSideBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarItem.swift */; };
-		F4B4A4AF24B1C868000D8C07 /* SPDiffableSideBarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */; };
-		F4B4A4B124B1C8E3000D8C07 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */; };
-		F4B4A4B524B285FF000D8C07 /* SideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4B424B285FF000D8C07 /* SideBarController.swift */; };
-		F4B4A4B624B28614000D8C07 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */; };
-		F4B4A4B724B28634000D8C07 /* SPDiffableSideBarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */; };
-		F4B4A50024B34A7A000D8C07 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F4B4A4FB24B34A7A000D8C07 /* LICENSE */; };
-		F4B4A50124B34A7A000D8C07 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4A4FC24B34A7A000D8C07 /* Package.swift */; };
-		F4B4A50224B34A7A000D8C07 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4B4A4FD24B34A7A000D8C07 /* .gitignore */; };
-		F4B4A50324B34A7A000D8C07 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = F4B4A4FE24B34A7A000D8C07 /* Readme.md */; };
-		F4B4A50424B34A7A000D8C07 /* SPDiffable.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F4B4A4FF24B34A7A000D8C07 /* SPDiffable.podspec */; };
-		F4CBE61F24EA9CE2002C2418 /* SPDiffableTableRowSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CBE61E24EA9CE2002C2418 /* SPDiffableTableRowSubtitle.swift */; };
-		F4CBE62024EA9CF7002C2418 /* SPDiffableTableRowSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CBE61E24EA9CE2002C2418 /* SPDiffableTableRowSubtitle.swift */; };
-		F4D5F20E24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift */; };
-		F4D5F20F24B0D2260003EEEF /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift */; };
-		F4D5F21124B0D26E0003EEEF /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */; };
-		F4D5F21224B0D4D10003EEEF /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */; };
-		F4D63BE124EAE22500CD70BC /* SPDiffableSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D63BDF24EAE22500CD70BC /* SPDiffableSubtitleTableViewCell.swift */; };
-		F4D63BE224EAE22500CD70BC /* SPDiffableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D63BE024EAE22500CD70BC /* SPDiffableTableViewCell.swift */; };
-		F4D63BE324EAE22B00CD70BC /* SPDiffableSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D63BDF24EAE22500CD70BC /* SPDiffableSubtitleTableViewCell.swift */; };
-		F4D63BE424EAE22F00CD70BC /* SPDiffableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D63BE024EAE22500CD70BC /* SPDiffableTableViewCell.swift */; };
-		F4D63BE724EAE31200CD70BC /* SPDiffableStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D63BE624EAE31200CD70BC /* SPDiffableStepper.swift */; };
-		F4D63BE924EAE35000CD70BC /* SPDiffableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D63BE824EAE35000CD70BC /* SPDiffableSwitch.swift */; };
-		F4D63BEA24EAE38E00CD70BC /* SPDiffableStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D63BE624EAE31200CD70BC /* SPDiffableStepper.swift */; };
-		F4D63BEB24EAE38E00CD70BC /* SPDiffableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D63BE824EAE35000CD70BC /* SPDiffableSwitch.swift */; };
-		F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */; };
-		F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */; };
-		F4FEAEC024A8FB1400CA513C /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */; };
-		F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */; };
-		F4FEAEC324A8FBC900CA513C /* SPDiffableTextHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */; };
-		F4FEAEC524A8FBC900CA513C /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */; };
-		F4FEAEC624A8FBC900CA513C /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */; };
-		F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */; };
-		F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC824A904C100CA513C /* SPDiffableTableRowButton.swift */; };
-		F4FF9CC224A68400006B2122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CC124A68400006B2122 /* AppDelegate.swift */; };
-		F4FF9CC624A68400006B2122 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CC524A68400006B2122 /* RootController.swift */; };
-		F4FF9CCB24A68401006B2122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FF9CCA24A68401006B2122 /* Assets.xcassets */; };
-		F4FF9CCE24A68401006B2122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FF9CCC24A68401006B2122 /* LaunchScreen.storyboard */; };
-		F4FF9CD524A6848B006B2122 /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFB249B9715007072FA /* SPDiffableItem.swift */; };
-		F4FF9CD624A6848B006B2122 /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
-		F4FF9CD724A6848E006B2122 /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C01249B9715007072FA /* SPDiffableTableController.swift */; };
-		F4FF9CD924A6848E006B2122 /* SPDiffableTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPDiffableTableDataSource.swift */; };
-		F4FF9CDA24A6848E006B2122 /* SPDiffableTableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPDiffableTableMediator.swift */; };
-		F4FF9CDC24A684A9006B2122 /* DiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CDB24A684A9006B2122 /* DiffableTableController.swift */; };
+		F47A41F324EB22A70054DBB2 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A41E524EB22A70054DBB2 /* RootController.swift */; };
+		F47A41F524EB22A70054DBB2 /* DiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A41E624EB22A70054DBB2 /* DiffableTableController.swift */; };
+		F47A41F724EB22A70054DBB2 /* SideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A41E724EB22A70054DBB2 /* SideBarController.swift */; };
+		F47A41FC24EB22A70054DBB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47A41EC24EB22A70054DBB2 /* Assets.xcassets */; };
+		F47A41FD24EB22A70054DBB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47A41ED24EB22A70054DBB2 /* LaunchScreen.storyboard */; };
+		F47A41FF24EB22A70054DBB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A41EF24EB22A70054DBB2 /* AppDelegate.swift */; };
+		F47A420024EB23220054DBB2 /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SPDiffableCollectionDataSource.swift */; };
+		F47A420124EB23220054DBB2 /* SPDiffableTableRowSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* SPDiffableTableRowSubtitle.swift */; };
+		F47A420224EB23220054DBB2 /* SPDiffableSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* SPDiffableSubtitleTableViewCell.swift */; };
+		F47A420324EB23220054DBB2 /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* SPDiffableTableController.swift */; };
+		F47A420424EB23220054DBB2 /* SPDiffableTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* SPDiffableTableDataSource.swift */; };
+		F47A420524EB23220054DBB2 /* SPDiffableTableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* SPDiffableTableMediator.swift */; };
+		F47A420624EB23220054DBB2 /* SPDiffableTextHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* SPDiffableTextHeaderFooter.swift */; };
+		F47A420724EB23220054DBB2 /* SPDiffableSideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* SPDiffableSideBarButton.swift */; };
+		F47A420824EB23220054DBB2 /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SPDiffableCollectionController.swift */; };
+		F47A420924EB23220054DBB2 /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* SPDiffableTableRowSwitch.swift */; };
+		F47A420A24EB23220054DBB2 /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* SPDiffableSection.swift */; };
+		F47A420B24EB23220054DBB2 /* SPDiffableStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* SPDiffableStepper.swift */; };
+		F47A420C24EB23220054DBB2 /* SPDiffableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* SPDiffableSwitch.swift */; };
+		F47A420D24EB23220054DBB2 /* SPDiffableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* SPDiffableTableViewCell.swift */; };
+		F47A420E24EB23220054DBB2 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */; };
+		F47A420F24EB23220054DBB2 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* SPDiffableSideBarController.swift */; };
+		F47A421024EB23220054DBB2 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* SPDiffableSnapshot.swift */; };
+		F47A421124EB23220054DBB2 /* SPDiffableTableRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* SPDiffableTableRowButton.swift */; };
+		F47A421224EB23220054DBB2 /* SPDiffableSideBarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* SPDiffableSideBarHeader.swift */; };
+		F47A421324EB23220054DBB2 /* SPDiffableSideBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* SPDiffableSideBarItem.swift */; };
+		F47A421424EB23220054DBB2 /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* SPDiffableItem.swift */; };
+		F47A421524EB23220054DBB2 /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* SPDiffableTableRow.swift */; };
+		F47A421624EB23220054DBB2 /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* SPDiffableTableRowStepper.swift */; };
+		OBJ_53 /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SPDiffableCollectionController.swift */; };
+		OBJ_54 /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SPDiffableCollectionDataSource.swift */; };
+		OBJ_55 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */; };
+		OBJ_56 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* SPDiffableSideBarController.swift */; };
+		OBJ_57 /* SPDiffableSideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* SPDiffableSideBarButton.swift */; };
+		OBJ_58 /* SPDiffableSideBarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* SPDiffableSideBarHeader.swift */; };
+		OBJ_59 /* SPDiffableSideBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* SPDiffableSideBarItem.swift */; };
+		OBJ_60 /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* SPDiffableItem.swift */; };
+		OBJ_61 /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* SPDiffableSection.swift */; };
+		OBJ_62 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* SPDiffableSnapshot.swift */; };
+		OBJ_63 /* SPDiffableTextHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* SPDiffableTextHeaderFooter.swift */; };
+		OBJ_64 /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* SPDiffableTableRow.swift */; };
+		OBJ_65 /* SPDiffableTableRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* SPDiffableTableRowButton.swift */; };
+		OBJ_66 /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* SPDiffableTableRowStepper.swift */; };
+		OBJ_67 /* SPDiffableTableRowSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* SPDiffableTableRowSubtitle.swift */; };
+		OBJ_68 /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* SPDiffableTableRowSwitch.swift */; };
+		OBJ_69 /* SPDiffableStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* SPDiffableStepper.swift */; };
+		OBJ_70 /* SPDiffableSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* SPDiffableSubtitleTableViewCell.swift */; };
+		OBJ_71 /* SPDiffableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* SPDiffableSwitch.swift */; };
+		OBJ_72 /* SPDiffableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* SPDiffableTableViewCell.swift */; };
+		OBJ_73 /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* SPDiffableTableController.swift */; };
+		OBJ_74 /* SPDiffableTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* SPDiffableTableDataSource.swift */; };
+		OBJ_75 /* SPDiffableTableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* SPDiffableTableMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSnapshot.swift; sourceTree = "<group>"; };
-		F449A32A24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButton.swift; sourceTree = "<group>"; };
-		F449A33024B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButtonCollectionViewListCell.swift; sourceTree = "<group>"; };
-		F4632034249EBA7100AF7413 /* SPDiffableTableMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableMediator.swift; sourceTree = "<group>"; };
-		F4954BDD249B788A007072FA /* SPDiffable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPDiffable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4954BE0249B788A007072FA /* SPDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDiffable.h; sourceTree = "<group>"; };
-		F4954BE1249B788A007072FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4954BFB249B9715007072FA /* SPDiffableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableItem.swift; sourceTree = "<group>"; };
-		F4954BFD249B9715007072FA /* SPDiffableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableSection.swift; sourceTree = "<group>"; };
-		F4954C00249B9715007072FA /* SPDiffableTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableDataSource.swift; sourceTree = "<group>"; };
-		F4954C01249B9715007072FA /* SPDiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
-		F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarItem.swift; sourceTree = "<group>"; };
-		F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarHeader.swift; sourceTree = "<group>"; };
-		F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarController.swift; sourceTree = "<group>"; };
-		F4B4A4B424B285FF000D8C07 /* SideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarController.swift; sourceTree = "<group>"; };
-		F4B4A4FB24B34A7A000D8C07 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		F4B4A4FC24B34A7A000D8C07 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		F4B4A4FD24B34A7A000D8C07 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		F4B4A4FE24B34A7A000D8C07 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
-		F4B4A4FF24B34A7A000D8C07 /* SPDiffable.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SPDiffable.podspec; sourceTree = "<group>"; };
-		F4CBE61E24EA9CE2002C2418 /* SPDiffableTableRowSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowSubtitle.swift; sourceTree = "<group>"; };
-		F4D5F20D24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDataSource.swift; sourceTree = "<group>"; };
-		F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
-		F4D63BDF24EAE22500CD70BC /* SPDiffableSubtitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableSubtitleTableViewCell.swift; sourceTree = "<group>"; };
-		F4D63BE024EAE22500CD70BC /* SPDiffableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableViewCell.swift; sourceTree = "<group>"; };
-		F4D63BE624EAE31200CD70BC /* SPDiffableStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableStepper.swift; sourceTree = "<group>"; };
-		F4D63BE824EAE35000CD70BC /* SPDiffableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSwitch.swift; sourceTree = "<group>"; };
-		F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTextHeaderFooter.swift; sourceTree = "<group>"; };
-		F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRow.swift; sourceTree = "<group>"; };
-		F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowStepper.swift; sourceTree = "<group>"; };
-		F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowSwitch.swift; sourceTree = "<group>"; };
-		F4FEAEC824A904C100CA513C /* SPDiffableTableRowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowButton.swift; sourceTree = "<group>"; };
-		F4FF9CBF24A68400006B2122 /* SPDiffable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPDiffable.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4FF9CC124A68400006B2122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4FF9CC524A68400006B2122 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
-		F4FF9CCA24A68401006B2122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F4FF9CCD24A68401006B2122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F4FF9CCF24A68401006B2122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4FF9CDB24A684A9006B2122 /* DiffableTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableTableController.swift; sourceTree = "<group>"; };
+		F47A41CE24EB222C0054DBB2 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F47A41DE24EB222D0054DBB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F47A41E524EB22A70054DBB2 /* RootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		F47A41E624EB22A70054DBB2 /* DiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffableTableController.swift; sourceTree = "<group>"; };
+		F47A41E724EB22A70054DBB2 /* SideBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarController.swift; sourceTree = "<group>"; };
+		F47A41EC24EB22A70054DBB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F47A41EE24EB22A70054DBB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F47A41EF24EB22A70054DBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		OBJ_10 /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
+		OBJ_11 /* SPDiffableCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDataSource.swift; sourceTree = "<group>"; };
+		OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButtonCollectionViewListCell.swift; sourceTree = "<group>"; };
+		OBJ_13 /* SPDiffableSideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarController.swift; sourceTree = "<group>"; };
+		OBJ_16 /* SPDiffableSideBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButton.swift; sourceTree = "<group>"; };
+		OBJ_17 /* SPDiffableSideBarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarHeader.swift; sourceTree = "<group>"; };
+		OBJ_18 /* SPDiffableSideBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarItem.swift; sourceTree = "<group>"; };
+		OBJ_19 /* SPDiffableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableItem.swift; sourceTree = "<group>"; };
+		OBJ_20 /* SPDiffableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSection.swift; sourceTree = "<group>"; };
+		OBJ_21 /* SPDiffableSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSnapshot.swift; sourceTree = "<group>"; };
+		OBJ_22 /* SPDiffableTextHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTextHeaderFooter.swift; sourceTree = "<group>"; };
+		OBJ_24 /* SPDiffableTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRow.swift; sourceTree = "<group>"; };
+		OBJ_25 /* SPDiffableTableRowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowButton.swift; sourceTree = "<group>"; };
+		OBJ_26 /* SPDiffableTableRowStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowStepper.swift; sourceTree = "<group>"; };
+		OBJ_27 /* SPDiffableTableRowSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowSubtitle.swift; sourceTree = "<group>"; };
+		OBJ_28 /* SPDiffableTableRowSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowSwitch.swift; sourceTree = "<group>"; };
+		OBJ_31 /* SPDiffableStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableStepper.swift; sourceTree = "<group>"; };
+		OBJ_32 /* SPDiffableSubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		OBJ_33 /* SPDiffableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSwitch.swift; sourceTree = "<group>"; };
+		OBJ_34 /* SPDiffableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableViewCell.swift; sourceTree = "<group>"; };
+		OBJ_35 /* SPDiffableTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
+		OBJ_36 /* SPDiffableTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableDataSource.swift; sourceTree = "<group>"; };
+		OBJ_37 /* SPDiffableTableMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableMediator.swift; sourceTree = "<group>"; };
+		OBJ_40 /* SPDiffableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTests.swift; sourceTree = "<group>"; };
+		OBJ_41 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_45 /* SPDiffable.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPDiffable.podspec; sourceTree = "<group>"; };
+		OBJ_46 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		OBJ_47 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		"SPDiffable::SPDiffable::Product" /* SPDiffable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SPDiffable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F4954BDA249B788A007072FA /* Frameworks */ = {
+		F47A41CB24EB222C0054DBB2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4FF9CBC24A68400006B2122 /* Frameworks */ = {
+		OBJ_76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,194 +120,174 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F4192D2D24A75B280012B399 /* App */ = {
+		F47A41CF24EB222C0054DBB2 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				F4FF9CC124A68400006B2122 /* AppDelegate.swift */,
-				F4FF9CCA24A68401006B2122 /* Assets.xcassets */,
-				F4FF9CCC24A68401006B2122 /* LaunchScreen.storyboard */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		F4954BD3249B788A007072FA = {
-			isa = PBXGroup;
-			children = (
-				F4954BDF249B788A007072FA /* Source */,
-				F4FF9CC024A68400006B2122 /* Example */,
-				F4954BDE249B788A007072FA /* Products */,
-				F4B4A4FD24B34A7A000D8C07 /* .gitignore */,
-				F4B4A4FB24B34A7A000D8C07 /* LICENSE */,
-				F4B4A4FC24B34A7A000D8C07 /* Package.swift */,
-				F4B4A4FE24B34A7A000D8C07 /* Readme.md */,
-				F4B4A4FF24B34A7A000D8C07 /* SPDiffable.podspec */,
-			);
-			sourceTree = "<group>";
-		};
-		F4954BDE249B788A007072FA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BDD249B788A007072FA /* SPDiffable.framework */,
-				F4FF9CBF24A68400006B2122 /* SPDiffable.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F4954BDF249B788A007072FA /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BE9249B78C9007072FA /* SPDiffable */,
-				F4954BEA249B78DB007072FA /* Supporting Files */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		F4954BE9249B78C9007072FA /* SPDiffable */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BF9249B9715007072FA /* Models */,
-				F4D5F20C24B0D1D10003EEEF /* Collection */,
-				F4954BFE249B9715007072FA /* Table */,
-			);
-			path = SPDiffable;
-			sourceTree = "<group>";
-		};
-		F4954BEA249B78DB007072FA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BE0249B788A007072FA /* SPDiffable.h */,
-				F4954BE1249B788A007072FA /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F4954BF9249B9715007072FA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F4954BFB249B9715007072FA /* SPDiffableItem.swift */,
-				F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */,
-				F4954BFD249B9715007072FA /* SPDiffableSection.swift */,
-				F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */,
-				F4D5F21324B0D6DA0003EEEF /* Collection */,
-				F4FEAEB824A8FA1F00CA513C /* Table */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		F4954BFE249B9715007072FA /* Table */ = {
-			isa = PBXGroup;
-			children = (
-				F4D63BDE24EAE22500CD70BC /* Cells */,
-				F4954C01249B9715007072FA /* SPDiffableTableController.swift */,
-				F4954C00249B9715007072FA /* SPDiffableTableDataSource.swift */,
-				F4632034249EBA7100AF7413 /* SPDiffableTableMediator.swift */,
-			);
-			path = Table;
-			sourceTree = "<group>";
-		};
-		F4D5F20C24B0D1D10003EEEF /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-				F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */,
-				F4B4A4B024B1C8E3000D8C07 /* SPDiffableSideBarController.swift */,
-				F4D5F20D24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift */,
-				F449A33024B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift */,
-			);
-			path = Collection;
-			sourceTree = "<group>";
-		};
-		F4D5F21324B0D6DA0003EEEF /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-				F4B4A4AB24B1C855000D8C07 /* SPDiffableSideBarItem.swift */,
-				F449A32A24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift */,
-				F4B4A4AE24B1C868000D8C07 /* SPDiffableSideBarHeader.swift */,
-			);
-			path = Collection;
-			sourceTree = "<group>";
-		};
-		F4D63BDE24EAE22500CD70BC /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				F4D63BE624EAE31200CD70BC /* SPDiffableStepper.swift */,
-				F4D63BE824EAE35000CD70BC /* SPDiffableSwitch.swift */,
-				F4D63BE024EAE22500CD70BC /* SPDiffableTableViewCell.swift */,
-				F4D63BDF24EAE22500CD70BC /* SPDiffableSubtitleTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		F4FEAEB824A8FA1F00CA513C /* Table */ = {
-			isa = PBXGroup;
-			children = (
-				F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */,
-				F4CBE61E24EA9CE2002C2418 /* SPDiffableTableRowSubtitle.swift */,
-				F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */,
-				F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */,
-				F4FEAEC824A904C100CA513C /* SPDiffableTableRowButton.swift */,
-			);
-			path = Table;
-			sourceTree = "<group>";
-		};
-		F4FF9CC024A68400006B2122 /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				F4192D2D24A75B280012B399 /* App */,
-				F4FF9CE024A68554006B2122 /* Controllers */,
-				F4FF9CCF24A68401006B2122 /* Info.plist */,
+				F47A41EB24EB22A70054DBB2 /* App */,
+				F47A41E424EB22A70054DBB2 /* Controllers */,
+				F47A41DE24EB222D0054DBB2 /* Info.plist */,
 			);
 			path = Example;
 			sourceTree = "<group>";
 		};
-		F4FF9CE024A68554006B2122 /* Controllers */ = {
+		F47A41E424EB22A70054DBB2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F4FF9CC524A68400006B2122 /* RootController.swift */,
-				F4FF9CDB24A684A9006B2122 /* DiffableTableController.swift */,
-				F4B4A4B424B285FF000D8C07 /* SideBarController.swift */,
+				F47A41E524EB22A70054DBB2 /* RootController.swift */,
+				F47A41E624EB22A70054DBB2 /* DiffableTableController.swift */,
+				F47A41E724EB22A70054DBB2 /* SideBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		F4954BD8249B788A007072FA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F4954BE2249B788A007072FA /* SPDiffable.h in Headers */,
+		F47A41EB24EB22A70054DBB2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F47A41EF24EB22A70054DBB2 /* AppDelegate.swift */,
+				F47A41EC24EB22A70054DBB2 /* Assets.xcassets */,
+				F47A41ED24EB22A70054DBB2 /* LaunchScreen.storyboard */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			path = App;
+			sourceTree = "<group>";
 		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		F4954BDC249B788A007072FA /* SPDiffable */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F4954BE5249B788A007072FA /* Build configuration list for PBXNativeTarget "SPDiffable" */;
-			buildPhases = (
-				F4954BD8249B788A007072FA /* Headers */,
-				F4954BD9249B788A007072FA /* Sources */,
-				F4954BDA249B788A007072FA /* Frameworks */,
-				F4954BDB249B788A007072FA /* Resources */,
+		OBJ_14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_15 /* Collection */,
+				OBJ_19 /* SPDiffableItem.swift */,
+				OBJ_20 /* SPDiffableSection.swift */,
+				OBJ_21 /* SPDiffableSnapshot.swift */,
+				OBJ_22 /* SPDiffableTextHeaderFooter.swift */,
+				OBJ_23 /* Table */,
 			);
-			buildRules = (
+			path = Models;
+			sourceTree = "<group>";
+		};
+		OBJ_15 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_16 /* SPDiffableSideBarButton.swift */,
+				OBJ_17 /* SPDiffableSideBarHeader.swift */,
+				OBJ_18 /* SPDiffableSideBarItem.swift */,
 			);
-			dependencies = (
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		OBJ_23 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_24 /* SPDiffableTableRow.swift */,
+				OBJ_25 /* SPDiffableTableRowButton.swift */,
+				OBJ_26 /* SPDiffableTableRowStepper.swift */,
+				OBJ_27 /* SPDiffableTableRowSubtitle.swift */,
+				OBJ_28 /* SPDiffableTableRowSwitch.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		OBJ_29 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_30 /* Cells */,
+				OBJ_35 /* SPDiffableTableController.swift */,
+				OBJ_36 /* SPDiffableTableDataSource.swift */,
+				OBJ_37 /* SPDiffableTableMediator.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		OBJ_30 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_31 /* SPDiffableStepper.swift */,
+				OBJ_32 /* SPDiffableSubtitleTableViewCell.swift */,
+				OBJ_33 /* SPDiffableSwitch.swift */,
+				OBJ_34 /* SPDiffableTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		OBJ_38 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_39 /* SPDiffableTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_39 /* SPDiffableTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_40 /* SPDiffableTests.swift */,
+				OBJ_41 /* XCTestManifests.swift */,
+			);
+			name = SPDiffableTests;
+			path = Tests/SPDiffableTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"SPDiffable::SPDiffable::Product" /* SPDiffable.framework */,
+				F47A41CE24EB222C0054DBB2 /* Example.app */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_38 /* Tests */,
+				F47A41CF24EB222C0054DBB2 /* Example */,
+				OBJ_42 /* Products */,
+				OBJ_45 /* SPDiffable.podspec */,
+				OBJ_46 /* LICENSE */,
+				OBJ_47 /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* SPDiffable */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* SPDiffable */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* Collection */,
+				OBJ_14 /* Models */,
+				OBJ_29 /* Table */,
 			);
 			name = SPDiffable;
-			productName = SPDiffable;
-			productReference = F4954BDD249B788A007072FA /* SPDiffable.framework */;
-			productType = "com.apple.product-type.framework";
+			path = Sources/SPDiffable;
+			sourceTree = SOURCE_ROOT;
 		};
-		F4FF9CBE24A68400006B2122 /* Example */ = {
+		OBJ_9 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_10 /* SPDiffableCollectionController.swift */,
+				OBJ_11 /* SPDiffableCollectionDataSource.swift */,
+				OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */,
+				OBJ_13 /* SPDiffableSideBarController.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F47A41CD24EB222C0054DBB2 /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4FF9CD224A68401006B2122 /* Build configuration list for PBXNativeTarget "Example" */;
+			buildConfigurationList = F47A41DF24EB222D0054DBB2 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				F4FF9CBB24A68400006B2122 /* Sources */,
-				F4FF9CBC24A68400006B2122 /* Frameworks */,
-				F4FF9CBD24A68400006B2122 /* Resources */,
+				F47A41CA24EB222C0054DBB2 /* Sources */,
+				F47A41CB24EB222C0054DBB2 /* Frameworks */,
+				F47A41CC24EB222C0054DBB2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -321,142 +295,145 @@
 			);
 			name = Example;
 			productName = Example;
-			productReference = F4FF9CBF24A68400006B2122 /* SPDiffable.app */;
+			productReference = F47A41CE24EB222C0054DBB2 /* Example.app */;
 			productType = "com.apple.product-type.application";
+		};
+		"SPDiffable::SPDiffable" /* SPDiffable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_49 /* Build configuration list for PBXNativeTarget "SPDiffable" */;
+			buildPhases = (
+				OBJ_52 /* Sources */,
+				OBJ_76 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPDiffable;
+			productName = SPDiffable;
+			productReference = "SPDiffable::SPDiffable::Product" /* SPDiffable.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F4954BD4249B788A007072FA /* Project object */ = {
+		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1200;
-				ORGANIZATIONNAME = "Ivan Vorobei";
+				LastSwiftMigration = 9999;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 9999;
 				TargetAttributes = {
-					F4954BDC249B788A007072FA = {
-						CreatedOnToolsVersion = 11.5;
-						LastSwiftMigration = 1150;
-					};
-					F4FF9CBE24A68400006B2122 = {
-						CreatedOnToolsVersion = 11.5;
+					F47A41CD24EB222C0054DBB2 = {
+						CreatedOnToolsVersion = 12.0;
+						DevelopmentTeam = 28DU8642K3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = F4954BD7249B788A007072FA /* Build configuration list for PBXProject "SPDiffable" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "SPDiffable" */;
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = F4954BD3249B788A007072FA;
-			productRefGroup = F4954BDE249B788A007072FA /* Products */;
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4954BDC249B788A007072FA /* SPDiffable */,
-				F4FF9CBE24A68400006B2122 /* Example */,
+				"SPDiffable::SPDiffable" /* SPDiffable */,
+				F47A41CD24EB222C0054DBB2 /* Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F4954BDB249B788A007072FA /* Resources */ = {
+		F47A41CC24EB222C0054DBB2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4B4A50224B34A7A000D8C07 /* .gitignore in Resources */,
-				F4B4A50024B34A7A000D8C07 /* LICENSE in Resources */,
-				F4B4A50424B34A7A000D8C07 /* SPDiffable.podspec in Resources */,
-				F4B4A50324B34A7A000D8C07 /* Readme.md in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4FF9CBD24A68400006B2122 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F4FF9CCE24A68401006B2122 /* LaunchScreen.storyboard in Resources */,
-				F4FF9CCB24A68401006B2122 /* Assets.xcassets in Resources */,
+				F47A41FC24EB22A70054DBB2 /* Assets.xcassets in Resources */,
+				F47A41FD24EB22A70054DBB2 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F4954BD9249B788A007072FA /* Sources */ = {
+		F47A41CA24EB222C0054DBB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FEAEC024A8FB1400CA513C /* SPDiffableTableRowStepper.swift in Sources */,
-				F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift in Sources */,
-				F4D5F20E24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift in Sources */,
-				F4D63BE924EAE35000CD70BC /* SPDiffableSwitch.swift in Sources */,
-				F449A32B24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift in Sources */,
-				F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */,
-				F4D63BE124EAE22500CD70BC /* SPDiffableSubtitleTableViewCell.swift in Sources */,
-				F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */,
-				F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */,
-				F401290C24AFBA660039D039 /* SPDiffableSnapshot.swift in Sources */,
-				F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */,
-				F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
-				F449A33124B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */,
-				F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */,
-				F4B4A50124B34A7A000D8C07 /* Package.swift in Sources */,
-				F4B4A4AF24B1C868000D8C07 /* SPDiffableSideBarHeader.swift in Sources */,
-				F4D63BE224EAE22500CD70BC /* SPDiffableTableViewCell.swift in Sources */,
-				F4632035249EBA7100AF7413 /* SPDiffableTableMediator.swift in Sources */,
-				F4D63BE724EAE31200CD70BC /* SPDiffableStepper.swift in Sources */,
-				F4B4A4AC24B1C855000D8C07 /* SPDiffableSideBarItem.swift in Sources */,
-				F4954C08249B9716007072FA /* SPDiffableTableDataSource.swift in Sources */,
-				F4D5F21124B0D26E0003EEEF /* SPDiffableCollectionController.swift in Sources */,
-				F4CBE61F24EA9CE2002C2418 /* SPDiffableTableRowSubtitle.swift in Sources */,
-				F4B4A4B124B1C8E3000D8C07 /* SPDiffableSideBarController.swift in Sources */,
+				F47A421024EB23220054DBB2 /* SPDiffableSnapshot.swift in Sources */,
+				F47A420E24EB23220054DBB2 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */,
+				F47A420124EB23220054DBB2 /* SPDiffableTableRowSubtitle.swift in Sources */,
+				F47A41F724EB22A70054DBB2 /* SideBarController.swift in Sources */,
+				F47A420724EB23220054DBB2 /* SPDiffableSideBarButton.swift in Sources */,
+				F47A420924EB23220054DBB2 /* SPDiffableTableRowSwitch.swift in Sources */,
+				F47A420824EB23220054DBB2 /* SPDiffableCollectionController.swift in Sources */,
+				F47A420B24EB23220054DBB2 /* SPDiffableStepper.swift in Sources */,
+				F47A421624EB23220054DBB2 /* SPDiffableTableRowStepper.swift in Sources */,
+				F47A41FF24EB22A70054DBB2 /* AppDelegate.swift in Sources */,
+				F47A420C24EB23220054DBB2 /* SPDiffableSwitch.swift in Sources */,
+				F47A420524EB23220054DBB2 /* SPDiffableTableMediator.swift in Sources */,
+				F47A421124EB23220054DBB2 /* SPDiffableTableRowButton.swift in Sources */,
+				F47A41F524EB22A70054DBB2 /* DiffableTableController.swift in Sources */,
+				F47A421524EB23220054DBB2 /* SPDiffableTableRow.swift in Sources */,
+				F47A420024EB23220054DBB2 /* SPDiffableCollectionDataSource.swift in Sources */,
+				F47A421424EB23220054DBB2 /* SPDiffableItem.swift in Sources */,
+				F47A420224EB23220054DBB2 /* SPDiffableSubtitleTableViewCell.swift in Sources */,
+				F47A420324EB23220054DBB2 /* SPDiffableTableController.swift in Sources */,
+				F47A420624EB23220054DBB2 /* SPDiffableTextHeaderFooter.swift in Sources */,
+				F47A420A24EB23220054DBB2 /* SPDiffableSection.swift in Sources */,
+				F47A421224EB23220054DBB2 /* SPDiffableSideBarHeader.swift in Sources */,
+				F47A420D24EB23220054DBB2 /* SPDiffableTableViewCell.swift in Sources */,
+				F47A420424EB23220054DBB2 /* SPDiffableTableDataSource.swift in Sources */,
+				F47A420F24EB23220054DBB2 /* SPDiffableSideBarController.swift in Sources */,
+				F47A41F324EB22A70054DBB2 /* RootController.swift in Sources */,
+				F47A421324EB23220054DBB2 /* SPDiffableSideBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4FF9CBB24A68400006B2122 /* Sources */ = {
+		OBJ_52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				F4B4A4B624B28614000D8C07 /* SPDiffableSideBarController.swift in Sources */,
-				F4B4A4B524B285FF000D8C07 /* SideBarController.swift in Sources */,
-				F4D5F21224B0D4D10003EEEF /* SPDiffableCollectionController.swift in Sources */,
-				F4FEAEC624A8FBC900CA513C /* SPDiffableTableRowStepper.swift in Sources */,
-				F4D63BEA24EAE38E00CD70BC /* SPDiffableStepper.swift in Sources */,
-				F4FF9CD924A6848E006B2122 /* SPDiffableTableDataSource.swift in Sources */,
-				F4FEAEC524A8FBC900CA513C /* SPDiffableTableRow.swift in Sources */,
-				F4B4A4B724B28634000D8C07 /* SPDiffableSideBarHeader.swift in Sources */,
-				F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
-				F449A32C24B38F7300DEAAD3 /* SPDiffableSideBarButton.swift in Sources */,
-				F4FF9CD724A6848E006B2122 /* SPDiffableTableController.swift in Sources */,
-				F4FF9CC624A68400006B2122 /* RootController.swift in Sources */,
-				F4FF9CDA24A6848E006B2122 /* SPDiffableTableMediator.swift in Sources */,
-				F4D63BE424EAE22F00CD70BC /* SPDiffableTableViewCell.swift in Sources */,
-				F4FEAEC324A8FBC900CA513C /* SPDiffableTextHeaderFooter.swift in Sources */,
-				F449A33224B39D4A00DEAAD3 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */,
-				F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */,
-				F4FF9CD624A6848B006B2122 /* SPDiffableSection.swift in Sources */,
-				F4D63BEB24EAE38E00CD70BC /* SPDiffableSwitch.swift in Sources */,
-				F4CBE62024EA9CF7002C2418 /* SPDiffableTableRowSubtitle.swift in Sources */,
-				F4FF9CC224A68400006B2122 /* AppDelegate.swift in Sources */,
-				F4FF9CD524A6848B006B2122 /* SPDiffableItem.swift in Sources */,
-				F4FF9CDC24A684A9006B2122 /* DiffableTableController.swift in Sources */,
-				F4D63BE324EAE22B00CD70BC /* SPDiffableSubtitleTableViewCell.swift in Sources */,
-				F4B4A4AD24B1C85C000D8C07 /* SPDiffableSideBarItem.swift in Sources */,
-				F4D5F20F24B0D2260003EEEF /* SPDiffableCollectionDataSource.swift in Sources */,
+				OBJ_53 /* SPDiffableCollectionController.swift in Sources */,
+				OBJ_54 /* SPDiffableCollectionDataSource.swift in Sources */,
+				OBJ_55 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */,
+				OBJ_56 /* SPDiffableSideBarController.swift in Sources */,
+				OBJ_57 /* SPDiffableSideBarButton.swift in Sources */,
+				OBJ_58 /* SPDiffableSideBarHeader.swift in Sources */,
+				OBJ_59 /* SPDiffableSideBarItem.swift in Sources */,
+				OBJ_60 /* SPDiffableItem.swift in Sources */,
+				OBJ_61 /* SPDiffableSection.swift in Sources */,
+				OBJ_62 /* SPDiffableSnapshot.swift in Sources */,
+				OBJ_63 /* SPDiffableTextHeaderFooter.swift in Sources */,
+				OBJ_64 /* SPDiffableTableRow.swift in Sources */,
+				OBJ_65 /* SPDiffableTableRowButton.swift in Sources */,
+				OBJ_66 /* SPDiffableTableRowStepper.swift in Sources */,
+				OBJ_67 /* SPDiffableTableRowSubtitle.swift in Sources */,
+				OBJ_68 /* SPDiffableTableRowSwitch.swift in Sources */,
+				OBJ_69 /* SPDiffableStepper.swift in Sources */,
+				OBJ_70 /* SPDiffableSubtitleTableViewCell.swift in Sources */,
+				OBJ_71 /* SPDiffableSwitch.swift in Sources */,
+				OBJ_72 /* SPDiffableTableViewCell.swift in Sources */,
+				OBJ_73 /* SPDiffableTableController.swift in Sources */,
+				OBJ_74 /* SPDiffableTableDataSource.swift in Sources */,
+				OBJ_75 /* SPDiffableTableMediator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F4FF9CCC24A68401006B2122 /* LaunchScreen.storyboard */ = {
+		F47A41ED24EB22A70054DBB2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F4FF9CCD24A68401006B2122 /* Base */,
+				F47A41EE24EB22A70054DBB2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -464,16 +441,17 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F4954BE3249B788A007072FA /* Debug */ = {
+		F47A41E024EB222D0054DBB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -497,15 +475,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28DU8642K3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -516,28 +492,31 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		F4954BE4249B788A007072FA /* Release */ = {
+		F47A41E124EB222D0054DBB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -561,9 +540,9 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 28DU8642K3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -574,138 +553,158 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		F4954BE6249B788A007072FA /* Debug */ = {
+		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 28DU8642K3;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPDiffable;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
-		F4954BE7249B788A007072FA /* Release */ = {
+		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 28DU8642K3;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"SWIFT_PACKAGE=1",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPDiffable;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
-		F4FF9CD024A68401006B2122 /* Debug */ = {
+		OBJ_50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 28DU8642K3;
-				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.Example;
-				PRODUCT_NAME = SPDiffable;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SPDiffable.xcodeproj/SPDiffable_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SPDiffable;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_NAME = SPDiffable;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		F4FF9CD124A68401006B2122 /* Release */ = {
+		OBJ_51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 28DU8642K3;
-				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.Example;
-				PRODUCT_NAME = SPDiffable;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SPDiffable.xcodeproj/SPDiffable_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SPDiffable;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_NAME = SPDiffable;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4954BD7249B788A007072FA /* Build configuration list for PBXProject "SPDiffable" */ = {
+		F47A41DF24EB222D0054DBB2 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4954BE3249B788A007072FA /* Debug */,
-				F4954BE4249B788A007072FA /* Release */,
+				F47A41E024EB222D0054DBB2 /* Debug */,
+				F47A41E124EB222D0054DBB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4954BE5249B788A007072FA /* Build configuration list for PBXNativeTarget "SPDiffable" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "SPDiffable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4954BE6249B788A007072FA /* Debug */,
-				F4954BE7249B788A007072FA /* Release */,
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4FF9CD224A68401006B2122 /* Build configuration list for PBXNativeTarget "Example" */ = {
+		OBJ_49 /* Build configuration list for PBXNativeTarget "SPDiffable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4FF9CD024A68401006B2122 /* Debug */,
-				F4FF9CD124A68401006B2122 /* Release */,
+				OBJ_50 /* Debug */,
+				OBJ_51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F4954BD4249B788A007072FA /* Project object */;
+	rootObject = OBJ_1 /* Project object */;
 }
