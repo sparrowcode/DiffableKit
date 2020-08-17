@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDiffableTableViewCell: UITableViewCell {
+open class SPDiffableTableViewCell: UITableViewCell {
     
     static let identifier = "SPDiffableTableViewCell"
     
