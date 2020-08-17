@@ -22,26 +22,30 @@
 import UIKit
 
 /**
- Basic diffable collection controller.
+ Basic table item model with titles and accessories.
  
- For common init call `setCellProviders` with default data and providers for it models.
- If need init manually, shoud init `diffableDataSource` fist, and next apply content when you need it.
+ You can set icon and selection style.
+ By default if action is nil, selection style set to `.none`.
+ If accessory is control, you can find reay-use class for it.
  */
-open class SPDiffableCollectionController: UICollectionViewController {
+open class SPDiffableTableSubtitleRow: SPDiffableItem {
     
-    public var diffableDataSource: SPDiffableCollectionDataSource?
+    public var text: String
+    public var subtitle: String? = nil
+    public var icon: UIImage? = nil
+    public var selectionStyle: UITableViewCell.SelectionStyle
+    public var accessoryType: UITableViewCell.AccessoryType
+    public var action: Action?
     
-    /**
-     Init `diffableDataSource` and apply content to data source without animation.
-     
-     If need custom logic, you can manually init and apply data when you need.
-     
-     - warning: Changes applied not animatable.
-     - parameter providers: Cell Providers with valid order for processing.
-     - parameter sections: Content as array of `SPDiffableSection`.
-     */
-    public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
-        diffableDataSource = SPDiffableCollectionDataSource(collectionView: collectionView, cellProviders: providers)
-        diffableDataSource?.apply(sections: sections, animating: false)
+    public init(text: String, subtitle: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, action: Action? = nil) {
+        self.text = text
+        self.subtitle = subtitle
+        self.icon = icon
+        self.accessoryType = accessoryType
+        self.selectionStyle = (action == nil) ? .none : .default
+        self.action = action
+        super.init(text)
     }
+    
+    public typealias Action = (_ indexPath: IndexPath) -> Void
 }

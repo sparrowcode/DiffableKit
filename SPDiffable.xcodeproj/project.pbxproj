@@ -9,22 +9,24 @@
 /* Begin PBXBuildFile section */
 		F401290C24AFBA660039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
 		F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */; };
-		F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */; };
+		F4632035249EBA7100AF7413 /* SPDiffableTableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPDiffableTableMediator.swift */; };
+		F48FF6F724EA9A89002B2646 /* SPDiffableTableSubtitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FF6F624EA9A88002B2646 /* SPDiffableTableSubtitleRow.swift */; };
+		F48FF6F824EA9B06002B2646 /* SPDiffableTableSubtitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FF6F624EA9A88002B2646 /* SPDiffableTableSubtitleRow.swift */; };
 		F4954BE2249B788A007072FA /* SPDiffable.h in Headers */ = {isa = PBXBuildFile; fileRef = F4954BE0249B788A007072FA /* SPDiffable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFB249B9715007072FA /* SPDiffableItem.swift */; };
 		F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
-		F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */; };
+		F4954C08249B9716007072FA /* SPDiffableTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPDiffableTableDataSource.swift */; };
 		F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C01249B9715007072FA /* SPDiffableTableController.swift */; };
-		F4D5F20E24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */; };
-		F4D5F20F24B0D2260003EEEF /* SPCollectionDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */; };
+		F4D5F20E24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift */; };
+		F4D5F20F24B0D2260003EEEF /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F20D24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift */; };
 		F4D5F21124B0D26E0003EEEF /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */; };
 		F4D5F21224B0D4D10003EEEF /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */; };
 		F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */; };
-		F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */; };
+		F4FEAEBE24A8FAD200CA513C /* SPDiffableTableDefaultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableDefaultRow.swift */; };
 		F4FEAEC024A8FB1400CA513C /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */; };
 		F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */; };
 		F4FEAEC324A8FBC900CA513C /* SPDiffableTextHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */; };
-		F4FEAEC524A8FBC900CA513C /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */; };
+		F4FEAEC524A8FBC900CA513C /* SPDiffableTableDefaultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBD24A8FAD200CA513C /* SPDiffableTableDefaultRow.swift */; };
 		F4FEAEC624A8FBC900CA513C /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */; };
 		F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */; };
 		F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEAEC824A904C100CA513C /* SPDiffableTableRowButton.swift */; };
@@ -35,8 +37,8 @@
 		F4FF9CD524A6848B006B2122 /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFB249B9715007072FA /* SPDiffableItem.swift */; };
 		F4FF9CD624A6848B006B2122 /* SPDiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954BFD249B9715007072FA /* SPDiffableSection.swift */; };
 		F4FF9CD724A6848E006B2122 /* SPDiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C01249B9715007072FA /* SPDiffableTableController.swift */; };
-		F4FF9CD924A6848E006B2122 /* SPTableDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */; };
-		F4FF9CDA24A6848E006B2122 /* SPTableDiffableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */; };
+		F4FF9CD924A6848E006B2122 /* SPDiffableTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4954C00249B9715007072FA /* SPDiffableTableDataSource.swift */; };
+		F4FF9CDA24A6848E006B2122 /* SPDiffableTableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4632034249EBA7100AF7413 /* SPDiffableTableMediator.swift */; };
 		F4FF9CDC24A684A9006B2122 /* DiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CDB24A684A9006B2122 /* DiffableTableController.swift */; };
 		F4FF9CE324A6857E006B2122 /* NativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CE224A6857E006B2122 /* NativeTableViewCell.swift */; };
 		F4FF9CEB24A69A26006B2122 /* ActionableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF9CEA24A69A26006B2122 /* ActionableSwitch.swift */; };
@@ -45,15 +47,16 @@
 
 /* Begin PBXFileReference section */
 		F401290B24AFBA660039D039 /* SPDiffableSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSnapshot.swift; sourceTree = "<group>"; };
-		F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTableDiffableMediator.swift; sourceTree = "<group>"; };
+		F4632034249EBA7100AF7413 /* SPDiffableTableMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableMediator.swift; sourceTree = "<group>"; };
+		F48FF6F624EA9A88002B2646 /* SPDiffableTableSubtitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableSubtitleRow.swift; sourceTree = "<group>"; };
 		F4954BDD249B788A007072FA /* SPDiffable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPDiffable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4954BE0249B788A007072FA /* SPDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDiffable.h; sourceTree = "<group>"; };
 		F4954BE1249B788A007072FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4954BFB249B9715007072FA /* SPDiffableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableItem.swift; sourceTree = "<group>"; };
 		F4954BFD249B9715007072FA /* SPDiffableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableSection.swift; sourceTree = "<group>"; };
-		F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTableDiffableDataSource.swift; sourceTree = "<group>"; };
+		F4954C00249B9715007072FA /* SPDiffableTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableDataSource.swift; sourceTree = "<group>"; };
 		F4954C01249B9715007072FA /* SPDiffableTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
-		F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCollectionDiffableDataSource.swift; sourceTree = "<group>"; };
+		F4D5F20D24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDataSource.swift; sourceTree = "<group>"; };
 		F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
 		F4F4813524B3481D00CBF7D0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F4F4813624B3481D00CBF7D0 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
@@ -61,7 +64,7 @@
 		F4F4813824B3481D00CBF7D0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F4F4813924B3481D00CBF7D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F4FEAEB924A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTextHeaderFooter.swift; sourceTree = "<group>"; };
-		F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRow.swift; sourceTree = "<group>"; };
+		F4FEAEBD24A8FAD200CA513C /* SPDiffableTableDefaultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableDefaultRow.swift; sourceTree = "<group>"; };
 		F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowStepper.swift; sourceTree = "<group>"; };
 		F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowSwitch.swift; sourceTree = "<group>"; };
 		F4FEAEC824A904C100CA513C /* SPDiffableTableRowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableRowButton.swift; sourceTree = "<group>"; };
@@ -172,8 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				F4954C01249B9715007072FA /* SPDiffableTableController.swift */,
-				F4954C00249B9715007072FA /* SPTableDiffableDataSource.swift */,
-				F4632034249EBA7100AF7413 /* SPTableDiffableMediator.swift */,
+				F4954C00249B9715007072FA /* SPDiffableTableDataSource.swift */,
+				F4632034249EBA7100AF7413 /* SPDiffableTableMediator.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -182,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				F4D5F21024B0D26E0003EEEF /* SPDiffableCollectionController.swift */,
-				F4D5F20D24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift */,
+				F4D5F20D24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -190,7 +193,8 @@
 		F4FEAEB824A8FA1F00CA513C /* Table */ = {
 			isa = PBXGroup;
 			children = (
-				F4FEAEBD24A8FAD200CA513C /* SPDiffableTableRow.swift */,
+				F4FEAEBD24A8FAD200CA513C /* SPDiffableTableDefaultRow.swift */,
+				F48FF6F624EA9A88002B2646 /* SPDiffableTableSubtitleRow.swift */,
 				F4FEAEBF24A8FB1400CA513C /* SPDiffableTableRowStepper.swift */,
 				F4FEAEC124A8FB4600CA513C /* SPDiffableTableRowSwitch.swift */,
 				F4FEAEC824A904C100CA513C /* SPDiffableTableRowButton.swift */,
@@ -341,16 +345,17 @@
 			files = (
 				F4FEAEC024A8FB1400CA513C /* SPDiffableTableRowStepper.swift in Sources */,
 				F4FEAEBA24A8FA3500CA513C /* SPDiffableTextHeaderFooter.swift in Sources */,
-				F4D5F20E24B0D1EC0003EEEF /* SPCollectionDiffableDataSource.swift in Sources */,
-				F4FEAEBE24A8FAD200CA513C /* SPDiffableTableRow.swift in Sources */,
+				F48FF6F724EA9A89002B2646 /* SPDiffableTableSubtitleRow.swift in Sources */,
+				F4D5F20E24B0D1EC0003EEEF /* SPDiffableCollectionDataSource.swift in Sources */,
+				F4FEAEBE24A8FAD200CA513C /* SPDiffableTableDefaultRow.swift in Sources */,
 				F4FEAEC924A904C100CA513C /* SPDiffableTableRowButton.swift in Sources */,
 				F4954C04249B9716007072FA /* SPDiffableItem.swift in Sources */,
 				F401290C24AFBA660039D039 /* SPDiffableSnapshot.swift in Sources */,
 				F4954C09249B9716007072FA /* SPDiffableTableController.swift in Sources */,
 				F4FEAEC224A8FB4600CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
 				F4954C06249B9716007072FA /* SPDiffableSection.swift in Sources */,
-				F4632035249EBA7100AF7413 /* SPTableDiffableMediator.swift in Sources */,
-				F4954C08249B9716007072FA /* SPTableDiffableDataSource.swift in Sources */,
+				F4632035249EBA7100AF7413 /* SPDiffableTableMediator.swift in Sources */,
+				F4954C08249B9716007072FA /* SPDiffableTableDataSource.swift in Sources */,
 				F4D5F21124B0D26E0003EEEF /* SPDiffableCollectionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,21 +366,22 @@
 			files = (
 				F4D5F21224B0D4D10003EEEF /* SPDiffableCollectionController.swift in Sources */,
 				F4FEAEC624A8FBC900CA513C /* SPDiffableTableRowStepper.swift in Sources */,
-				F4FF9CD924A6848E006B2122 /* SPTableDiffableDataSource.swift in Sources */,
-				F4FEAEC524A8FBC900CA513C /* SPDiffableTableRow.swift in Sources */,
+				F4FF9CD924A6848E006B2122 /* SPDiffableTableDataSource.swift in Sources */,
+				F4FEAEC524A8FBC900CA513C /* SPDiffableTableDefaultRow.swift in Sources */,
 				F4FF9CED24A69A95006B2122 /* ActionableStepper.swift in Sources */,
 				F4FEAEC724A8FBCA00CA513C /* SPDiffableTableRowSwitch.swift in Sources */,
 				F4FF9CD724A6848E006B2122 /* SPDiffableTableController.swift in Sources */,
 				F4FF9CEB24A69A26006B2122 /* ActionableSwitch.swift in Sources */,
+				F48FF6F824EA9B06002B2646 /* SPDiffableTableSubtitleRow.swift in Sources */,
 				F4FF9CC624A68400006B2122 /* RootController.swift in Sources */,
-				F4FF9CDA24A6848E006B2122 /* SPTableDiffableMediator.swift in Sources */,
+				F4FF9CDA24A6848E006B2122 /* SPDiffableTableMediator.swift in Sources */,
 				F4FEAEC324A8FBC900CA513C /* SPDiffableTextHeaderFooter.swift in Sources */,
 				F401290D24AFBA820039D039 /* SPDiffableSnapshot.swift in Sources */,
 				F4FF9CD624A6848B006B2122 /* SPDiffableSection.swift in Sources */,
 				F4FF9CC224A68400006B2122 /* AppDelegate.swift in Sources */,
 				F4FF9CD524A6848B006B2122 /* SPDiffableItem.swift in Sources */,
 				F4FF9CDC24A684A9006B2122 /* DiffableTableController.swift in Sources */,
-				F4D5F20F24B0D2260003EEEF /* SPCollectionDiffableDataSource.swift in Sources */,
+				F4D5F20F24B0D2260003EEEF /* SPDiffableCollectionDataSource.swift in Sources */,
 				F4FF9CE324A6857E006B2122 /* NativeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

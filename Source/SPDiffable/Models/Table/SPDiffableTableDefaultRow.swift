@@ -28,7 +28,7 @@ import UIKit
  By default if action is nil, selection style set to `.none`.
  If accessory is control, you can find reay-use class for it.
  */
-open class SPDiffableTableRow: SPDiffableItem {
+open class SPDiffableTableDefaultRow: SPDiffableItem {
     
     public var text: String
     public var detail: String? = nil

@@ -3,7 +3,7 @@ import UIKit
 /**
  Basic controller with default cell providers.
  */
-class DiffableTableController: SPDiffableTableController, SPTableDiffableMediator {
+class DiffableTableController: SPDiffableTableController, SPDiffableTableMediator {
     
     init() {
         super.init(style: .insetGrouped)
@@ -30,7 +30,7 @@ class DiffableTableController: SPDiffableTableController, SPTableDiffableMediato
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch diffableDataSource?.itemIdentifier(for: indexPath) {
-        case let model as SPDiffableTableRow:
+        case let model as SPDiffableTableDefaultRow:
             model.action?(indexPath)
         default:
             break
@@ -42,10 +42,17 @@ class DiffableTableController: SPDiffableTableController, SPTableDiffableMediato
         static var `default`: SPDiffableTableCellProvider {
             let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
                 switch item {
-                case let item as SPDiffableTableRow:
+                case let item as SPDiffableTableDefaultRow:
                     let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
                     cell.textLabel?.text = item.text
                     cell.detailTextLabel?.text = item.detail
+                    cell.accessoryType = item.accessoryType
+                    cell.selectionStyle = item.selectionStyle
+                    return cell
+                case let item as SPDiffableTableSubtitleRow:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
+                    cell.textLabel?.text = item.text
+                    cell.detailTextLabel?.text = item.subtitle
                     cell.accessoryType = item.accessoryType
                     cell.selectionStyle = item.selectionStyle
                     return cell
