@@ -78,6 +78,10 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         apply(snapshot, animatingDifferences: animating, completion: nil)
     }
     
+    public func indexPath(for itemIdentifier: String) -> IndexPath? {
+        return indexPath(for: SPDiffableItem(identifier: itemIdentifier))
+    }
+    
     // MARK: Mediator
     
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
