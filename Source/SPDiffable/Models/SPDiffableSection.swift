@@ -62,6 +62,7 @@ open class SPDiffableSection: NSObject, NSCopying {
     }
     
     // MARK: NSCopying
+    
     // Implemented becouse when using with collection,
     // sometimes catch error about unregognized selector.
     public func copy(with zone: NSZone? = nil) -> Any {

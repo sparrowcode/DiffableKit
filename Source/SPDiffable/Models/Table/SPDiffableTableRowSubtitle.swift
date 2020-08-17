@@ -37,14 +37,14 @@ open class SPDiffableTableRowSubtitle: SPDiffableItem {
     public var accessoryType: UITableViewCell.AccessoryType
     public var action: Action?
     
-    public init(text: String, subtitle: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, action: Action? = nil) {
+    public init(identifier: String? = nil, text: String, subtitle: String, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .none, action: Action? = nil) {
         self.text = text
         self.subtitle = subtitle
         self.icon = icon
         self.accessoryType = accessoryType
-        self.selectionStyle = (action == nil) ? .none : .default
+        self.selectionStyle = selectionStyle
         self.action = action
-        super.init(text)
+        super.init(identifier: identifier ?? text)
     }
     
     public typealias Action = (_ indexPath: IndexPath) -> Void

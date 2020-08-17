@@ -36,7 +36,7 @@ open class SPDiffableItem: NSObject, NSCopying {
      */
     public var identifier: String
     
-    public init(_ identifier: String) {
+    public init(identifier: String) {
         self.identifier = identifier
     }
     
@@ -57,6 +57,6 @@ open class SPDiffableItem: NSObject, NSCopying {
     // Implemented becouse when using with collection,
     // sometimes catch error about unregognized selector.
     public func copy(with zone: NSZone? = nil) -> Any {
-        return SPDiffableItem(self.identifier)
+        return SPDiffableItem(identifier: self.identifier)
     }
 }

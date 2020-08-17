@@ -34,12 +34,12 @@ open class SPDiffableSideBarItem: SPDiffableItem {
     public var accessories: [UICellAccessory]
     public var action: Action
     
-    public init(title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
+    public init(identifier: String? = nil, title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
         self.title = title
         self.image = image
         self.accessories = accessories
         self.action = action
-        super.init(title)
+        super.init(identifier: identifier ?? title)
     }
     
     public typealias Action = (_ indexPath: IndexPath) -> Void

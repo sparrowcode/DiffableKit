@@ -34,7 +34,7 @@ class RootController: DiffableTableController {
                     self.switchOn = isOn
                     
                 }),
-                SPDiffableTableRowStepper(text: "Stepper", value: stepperValue, minimumValue: -5, maximumValue: 5, action: { [weak self] (value) in
+                SPDiffableTableRowStepper(text: "Stepper", stepValue: 1, value: stepperValue, minimumValue: -5, maximumValue: 5, action: { [weak self] (value) in
                     guard let self = self else { return }
                     self.stepperValue = value
                 })
@@ -47,11 +47,11 @@ class RootController: DiffableTableController {
             header: SPDiffableTextHeaderFooter(text: "Presenter"),
             footer: SPDiffableTextHeaderFooter(text: "Push in navigation processing by table controller. Sometimes you need manually deselect cell."),
             items: [
-                SPDiffableTableRow(text: "Basic Deselect", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Basic Deselect", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 }),
-                SPDiffableTableRow(text: "Basic Push", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Basic Push", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })
@@ -64,7 +64,9 @@ class RootController: DiffableTableController {
         }
         
         if stepperValue != 0 {
-            accessorySection.items.append(stepperValueDiffableRow)
+            accessorySection.items.append(
+                SPDiffableTableRow(identifier: stepperValueIdentifier, text: "Stepper Value", detail: "\(Int(stepperValue))")
+            )
         }
         
         if #available(iOS 14, *) {
@@ -72,7 +74,7 @@ class RootController: DiffableTableController {
                 identifier: Section.sidebar.identifier,
                 footer: SPDiffableTextHeaderFooter(text: "Example of new Side Bar."),
                 items: [
-                    SPDiffableTableRow(text: "Present Side Bar", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                    SPDiffableTableRow(text: "Present Side Bar", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
                         guard let self = self else { return }
                         self.tableView.deselectRow(at: indexPath, animated: true)
                         let sideBarController = SideBarSplitController()
@@ -84,12 +86,11 @@ class RootController: DiffableTableController {
             content.append(sideBarSections)
         }
         
-        
         let checkmarkSections = SPDiffableSection(
             identifier: Section.checkmark.identifier,
             footer: SPDiffableTextHeaderFooter(text: "Example how usage search by models and change checkmark without reload table."),
             items: [
-                SPDiffableTableRow(text: "Chekmarks", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Chekmarks", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })
@@ -101,7 +102,7 @@ class RootController: DiffableTableController {
             identifier: Section.customCellProvider.identifier,
             footer: SPDiffableTextHeaderFooter(text: "Also you can add more providers for specific controller, and use default and custom specially for some contorllers."),
             items: [
-                SPDiffableTableRow(text: "Custom Cell Provider", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Custom Cell Provider", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })
@@ -119,17 +120,15 @@ class RootController: DiffableTableController {
         }
     }
     
-    private var stepperValue: Int = 0 {
+    private var stepperValue: Double = 0 {
         didSet {
             print("Stepper value is: \(stepperValue)")
             updateContent(animating: true)
-            guard let indexPath = diffableDataSource?.indexPath(for: stepperValueDiffableRow), let cell = tableView.cellForRow(at: indexPath) else { return }
-            cell.detailTextLabel?.text = stepperValueDiffableRow.detail
+            guard let indexPath = diffableDataSource?.indexPath(for: SPDiffableItem(identifier: stepperValueIdentifier)), let cell = tableView.cellForRow(at: indexPath) else { return }
+            cell.detailTextLabel?.text = "\(Int(stepperValue))"
         }
     }
     
-    private var stepperValueDiffableRow: SPDiffableTableRow {
-        return SPDiffableTableRow(text: "Stepper Value", detail: "\(stepperValue)", accessoryType: .none)
-    }
+    private var stepperValueIdentifier: String { return "Stepper Value Identifier" }
 }
 

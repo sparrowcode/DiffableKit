@@ -28,8 +28,8 @@ open class SPDiffableTextHeaderFooter: SPDiffableItem {
     
     public var text: String
     
-    public init(text: String) {
+    public init(identifier: String? = nil, text: String) {
         self.text = text
-        super.init(text)
+        super.init(identifier: identifier ?? text)
     }
 }
