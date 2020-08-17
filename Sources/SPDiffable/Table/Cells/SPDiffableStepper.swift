@@ -25,7 +25,7 @@ open class SPDiffableStepper: UIStepper {
     
     var action: (_ value: Double) -> Void
     
-    init(action: @escaping (Double) -> Void) {
+    public init(action: @escaping (Double) -> Void) {
         self.action = action
         super.init(frame: .zero)
         addTarget(self, action: #selector(self.valueChanged), for: .valueChanged)
