@@ -25,7 +25,7 @@ open class SPDiffableSwitch: UISwitch {
     
     var action: (_ state: Bool) -> Void
     
-    init(action: @escaping (_ state: Bool) -> Void) {
+    public init(action: @escaping (_ state: Bool) -> Void) {
         self.action = action
         super.init(frame: .zero)
         addTarget(self, action: #selector(self.valueChanged), for: .valueChanged)
