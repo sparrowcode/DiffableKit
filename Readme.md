@@ -77,7 +77,7 @@ class TableRowModel: SPDiffableItem {}
 After it add properties, which you want use. For example:
 
 ```swift
-class TableRowMode: SPDiffableItem {
+class TableRowModel: SPDiffableItem {
 
     public var text: String
     public var detail: String? = nil
@@ -95,13 +95,13 @@ override func viewDidLoad() {
     super.viewDidLoad()
     
     // Register cell for usage it in table view
-    tableView.register(NativeTableViewCell.self, forCellReuseIdentifier: NativeTableViewCell.identifier)
+    tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.reuseIdentifier)
     
-    // Cell provider for `TableRowMode`
+    // Cell provider for `TableRowModel`
     let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
         switch model {
-        case let model as TableRowMode:
-            let cell = tableView.dequeueReusableCell(withIdentifier: NativeTableViewCell.identifier, for: indexPath) as! NativeTableViewCell
+        case let model as TableRowModel:
+            let cell = tableView.dequeueReusableCell(withIdentifier: YourTableViewCell.identifier, for: indexPath) as! YourTableViewCell
             cell.textLabel?.text = model.text
             cell.detailTextLabel?.text = model.detail
             cell.accessoryType = model.accessoryType
@@ -117,7 +117,7 @@ override func viewDidLoad() {
     setCellProviders([cellProvider], sections: content)
 }
 ```
-
+You can use default cell provider if using project's models. For get it call `SPDiffableTableController.defaultCellProvider`.
 All actions similar to collections. For example usage you can find in project in taget `Example`.
 
 ### Apply Content
@@ -131,7 +131,7 @@ let section = SPDiffableSection(
     header: SPDiffableTextHeaderFooter(text: "Header"),
     footer: SPDiffableTextHeaderFooter(text: "Footer"),
     items: [
-        TableRowMode(text: "Basic Table Cell", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
+        TableRowModel(text: "Basic Table Cell", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
             guard let self = self else { return }
             self.tableView.deselectRow(at: indexPath, animated: true)
             print("Tapped")
@@ -221,9 +221,13 @@ Now in project you can find this ready-use models:
 #### For Table:
 
 - `SPDiffableTableRow` it native item for table cell. Support all basic styles and action for tap event.
+- `SPDiffableTableRowSubtitle` it native item for table cell with subtitle. Support all as before.
 - `SPDiffableTableRowStepper` item for table cell with stepper. Has maximum value and minimum, also incuded action with passed value.
 - `SPDiffableTableRowSwitch` item for table with switch, included default state and action for change event.
 - `SPDiffableTableRowButton` item for table in style as button. Support table styles and action for tap.
+
+- `SPDiffableTableViewCell` basic table cell with detail text right side.
+- `SPDiffableSubtitleTableViewCell` basic table cell with two lines of texts.
 
 #### For Collection:
 

@@ -51,6 +51,12 @@ open class SPDiffableTableController: UITableViewController {
         diffableDataSource?.apply(sections: sections, animating: false)
     }
     
+    /**
+     Return cell provider, which process for all project models cells.
+     No need additional configure.
+     
+     For change style of cells requerid register new cell provider.
+     */
     public static var defaultCellProvider: SPDiffableTableCellProvider {
         let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
             switch model {
