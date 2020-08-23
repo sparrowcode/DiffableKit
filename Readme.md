@@ -21,7 +21,9 @@ If you want help project, check [Сooperation](#сooperation) section.
     - [Apply content](#apply-content)
     - [Mediator](#mediator)
     - [Sidebar](#sidebar)
-- [Ready Use Models](#ready-use-models)
+- [Ready Use](#ready-use)
+    - [Example](#ready-use)
+    - [Ready-use models](#ready-use-models)
 - [Сooperation](#сooperation)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
@@ -64,26 +66,23 @@ If you prefer not to use any of dependency managers, you can integrate `SPDiffab
 
 ## Usage
 
-Before read it, highly recomded check `Example` target in project. It examle show all features, like use stepper and switch, like process actions, create custom models and many other.
+Before read it, highly recomded check `Example` target in project. It examle show all features, like use stepper and switch, like process actions, create custom models and many other. Also you can skip full undestand logic and read [Ready-use section](#Ready Use) with minimum of code for start.
 
-For work with diffable need create model (inside project you found some ready-use models) and do cell provider, which convert model with data to `UITableViewCell` or `UICollectionViewCell`. Next example for table, but all methods and class names available for collections.
+For work with diffable need create model (inside project you found some ready-use models) and do cell provider, which convert data-model to `UITableViewCell` or `UICollectionViewCell`. Next example for table, but all methods and class names available for collections.
 
 New model shoud extend from basic class `SPDiffableItem`:
 
 ```swift
-class TableRowModel: SPDiffableItem {}
+class LocationRowModel: SPDiffableItem {}
 ```
 
 After it add properties, which you want use. For example:
 
 ```swift
-class TableRowModel: SPDiffableItem {
+class LocationRowModel: SPDiffableItem {
 
-    public var text: String
-    public var detail: String? = nil
-    public var icon: UIImage? = nil
-    public var selectionStyle: UITableViewCell.SelectionStyle
-    public var accessoryType: UITableViewCell.AccessoryType
+    public var city: String
+    public var adress: String?
 }
 ```
 
@@ -95,17 +94,15 @@ override func viewDidLoad() {
     super.viewDidLoad()
     
     // Register cell for usage it in table view
-    tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.reuseIdentifier)
+    tableView.register(LocationTableCell.self, forCellReuseIdentifier: "LocationTableCell")
     
-    // Cell provider for `TableRowModel`
-    let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
+    // Cell provider for `LocationRowModel`
+    let locationCellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
         switch model {
         case let model as TableRowModel:
-            let cell = tableView.dequeueReusableCell(withIdentifier: YourTableViewCell.identifier, for: indexPath) as! YourTableViewCell
-            cell.textLabel?.text = model.text
-            cell.detailTextLabel?.text = model.detail
-            cell.accessoryType = model.accessoryType
-            cell.selectionStyle = model.selectionStyle
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTableCell", for: indexPath) as! LocationTableCell
+            cell.textLabel?.text = model.city
+            cell.detailTextLabel?.text = model.adress
             return cell
         default:
             return nil
@@ -114,11 +111,10 @@ override func viewDidLoad() {
     
     // Pass cell provider and content. 
     // About content you can read next.
-    setCellProviders([cellProvider], sections: content)
+    setCellProviders([locationCellProvider], sections: content)
 }
 ```
-You can use default cell provider if using project's models. For get it call `SPDiffableTableController.defaultCellProvider`.
-All actions similar to collections. For example usage you can find in project in taget `Example`.
+In project available models for like `SPDiffableTableRow` and other with ready-use properties. Also you can use default cell provider if using project's models. For get it call `SPDiffableTableController.defaultCellProvider`.
 
 ### Apply Content
 
@@ -131,11 +127,9 @@ let section = SPDiffableSection(
     header: SPDiffableTextHeaderFooter(text: "Header"),
     footer: SPDiffableTextHeaderFooter(text: "Footer"),
     items: [
-        TableRowModel(text: "Basic Table Cell", accessoryType: .disclosureIndicator, action: { [weak self] indexPath in
-            guard let self = self else { return }
-            self.tableView.deselectRow(at: indexPath, animated: true)
-            print("Tapped")
-        })
+        LocationRowModel(city: "Minsk", adress: "Frunze Pr., bld. 47, appt. 7"),
+        LocationRowModel(city: "Shanghai", adress: "Ting Wei Gong Lu 9299long 168hao"),
+        LocationRowModel(city: "London", adress: "94  Whitby Road")
     ]
 )
 
@@ -148,7 +142,7 @@ You can add more cells or sections. Last step - apply:
 diffableDataSource?.apply(sections: content, animating: true)
 ```
 
-That all. You can each time create new order or count cells and it automatically show with diffable animation. Project has some ready-use models, you can read about it next.
+That all. You can each time create new order or count cells and it automatically show with diffable animation.
 
 ### Mediator
 
@@ -177,7 +171,7 @@ In protocol you can find more methods, like `canEdit` and other.
 
 ### Sidebar
 
-Create new controller and extend from `SPDiffableSideBarController`. Remember, it available only from iOS 14. Now it abailable for `ios14` branch.
+Create new controller and extend from `SPDiffableSideBarController`. Remember, it available only from iOS 14. 
 
 ```swift
 class SidebarController: SPDiffableSideBarController {}
@@ -209,7 +203,42 @@ SPDiffableSection(
 )
 ```
 
-## Ready Use Models
+## Ready Use
+
+You can save time and count of code using ready-use classes. In project available models and views. For example you need simple table with native cells. You need create content with `SPDiffableTableRow`:
+
+```swift
+let section = SPDiffableSection(
+    identifier: "example section",
+    header: SPDiffableTextHeaderFooter(text: "Header"),
+    footer: SPDiffableTextHeaderFooter(text: "Footer"),
+    items: [
+        SPDiffableTableRow(text: "First Cell", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
+            guard let self = self else { return }
+            self.tableView.deselectRow(at: indexPath, animated: true)
+        }),
+        SPDiffableTableRow(text: "Second Cell", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
+            guard let self = self else { return }
+            self.tableView.deselectRow(at: indexPath, animated: true)
+        }),
+    ]
+)
+```
+
+You init cell model and pass action, choose selection style and other. As you see, model describe native table cell. Next, you need set cell provider, but it also already available, for get it call `SPDiffableTableController.defaultCellProvider`.
+
+```
+setCellProviders([SPDiffableTableController.defaultCellProvider], sections: [section])
+```
+
+Now project's models automatically converting to cell. No need any additional work. That all code. 
+
+For update table shoud using `apply()` method:
+```
+diffableDataSource?.apply(sections: [section], animating: true)
+```
+
+## Ready-use models
 
 It models which you can use now, it shoud close your task without code. Of couse you can create your models.
 Now in project you can find this ready-use models:
@@ -230,8 +259,6 @@ Now in project you can find this ready-use models:
 - `SPDiffableSubtitleTableViewCell` basic table cell with two lines of texts.
 
 #### For Collection:
-
-Now in progress development.
 
 - `SPDiffableSideBarItem` menu item in side bar. Support accessories and actions.
 - `SPDiffableSideBarButton` button item in side bar. Color of title similar to tint.
