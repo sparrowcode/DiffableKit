@@ -23,7 +23,7 @@ If you want help project, check [Сooperation](#сooperation) section.
     - [Sidebar](#sidebar)
 - [Ready Use](#ready-use)
     - [Example](#ready-use)
-    - [Ready-use models](#ready-use-models)
+    - [List classes](#ready-use-classes)
 - [Сooperation](#сooperation)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
@@ -66,7 +66,7 @@ If you prefer not to use any of dependency managers, you can integrate `SPDiffab
 
 ## Usage
 
-Before read it, highly recomded check `Example` target in project. It examle show all features, like use stepper and switch, like process actions, create custom models and many other. Also you can skip full undestand logic and read [Ready-use section](#Ready Use) with minimum of code for start.
+Before read it, highly recomded check `Example` target in project. It examle show all features, like use stepper and switch, like process actions, create custom models and many other. Also you can skip full undestand logic and read [Ready-use section](https://github.com/ivanvorobei/SPDiffable#ready-use) with minimum of code for start.
 
 For work with diffable need create model (inside project you found some ready-use models) and do cell provider, which convert data-model to `UITableViewCell` or `UICollectionViewCell`. Next example for table, but all methods and class names available for collections.
 
@@ -227,18 +227,21 @@ let section = SPDiffableSection(
 
 You init cell model and pass action, choose selection style and other. As you see, model describe native table cell. Next, you need set cell provider, but it also already available, for get it call `SPDiffableTableController.defaultCellProvider`.
 
-```
+```swift
 setCellProviders([SPDiffableTableController.defaultCellProvider], sections: [section])
 ```
 
 Now project's models automatically converting to cell. No need any additional work. That all code. 
 
 For update table shoud using `apply()` method:
-```
+
+```swift
 diffableDataSource?.apply(sections: [section], animating: true)
 ```
 
-## Ready-use models
+If you use custom table view or table controller, don't forget register cells classes.  For `SPDiffableTableController` all cells already registered.
+
+## Ready-use classes
 
 It models which you can use now, it shoud close your task without code. Of couse you can create your models.
 Now in project you can find this ready-use models:
