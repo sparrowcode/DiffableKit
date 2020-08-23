@@ -156,12 +156,12 @@
 		OBJ_14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_23 /* Table */,
 				OBJ_15 /* Collection */,
 				OBJ_19 /* SPDiffableItem.swift */,
 				OBJ_20 /* SPDiffableSection.swift */,
 				OBJ_21 /* SPDiffableSnapshot.swift */,
 				OBJ_22 /* SPDiffableTextHeaderFooter.swift */,
-				OBJ_23 /* Table */,
 			);
 			path = Models;
 			sourceTree = "<group>";
