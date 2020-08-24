@@ -29,15 +29,15 @@ import UIKit
  
  Also need pass uniq `identifier`.
  */
-class SPDiffableWrapperItem: SPDiffableItem {
+open class SPDiffableWrapperItem: SPDiffableItem {
     
     /**
      You can pass any object as model.
      Later need uwrap it for get.
      */
-    var model: AnyObject
+    public var model: AnyObject
     
-    init(identifier: String, model: AnyObject) {
+    public init(identifier: String, model: AnyObject) {
         self.model = model
         super.init(identifier: identifier)
     }
