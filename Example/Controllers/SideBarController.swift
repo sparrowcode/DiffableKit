@@ -5,7 +5,7 @@ class SidebarController: SPDiffableSideBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCellProviders([defaultCellProvider], sections: content)
+        setCellProviders(SPDiffableCollectionCellProviders.sideBar, sections: content)
     }
     
     enum Section: String {

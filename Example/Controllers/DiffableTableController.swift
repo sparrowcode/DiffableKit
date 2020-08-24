@@ -13,7 +13,7 @@ class DiffableTableController: SPDiffableTableController, SPDiffableTableMediato
     override func viewDidLoad() {
         super.viewDidLoad()
         diffableDataSource?.mediator = self
-        setCellProviders([defaultCellProvider], sections: content)
+        setCellProviders(SPDiffableTableCellProviders.all, sections: content)
     }
     
     var content: [SPDiffableSection] {
