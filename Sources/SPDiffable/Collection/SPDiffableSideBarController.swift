@@ -91,11 +91,10 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
      Defaults cell provider, which can help you doing side bar faster.
      You can do your providers and ise its with more flexible.
      */
-    public enum CellProvider {
-        
-        public static var item: SPDiffableCollectionCellProvider {
-            let itemCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
-                guard let item = item as? SPDiffableSideBarItem else { return nil }
+    public var defaultCellProvider: SPDiffableCollectionCellProvider {
+        let cellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
+            switch item {
+            case let item as SPDiffableSideBarItem:
                 let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SPDiffableSideBarItem> { (cell, indexPath, item) in
                     var content = UIListContentConfiguration.sidebarCell()
                     content.text = item.title
@@ -104,25 +103,13 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
                     cell.accessories = item.accessories
                 }
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-            }
-            return itemCellProvider
-        }
-        
-        public static var button: SPDiffableCollectionCellProvider {
-            let itemCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
-                guard let item = item as? SPDiffableSideBarButton else { return nil }
+            case let item as SPDiffableSideBarButton:
                 let cellRegistration = UICollectionView.CellRegistration<SPDiffableSideBarButtonCollectionViewListCell, SPDiffableSideBarButton> { (cell, indexPath, item) in
                     cell.updateWithItem(item)
                     cell.accessories = item.accessories
                 }
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-            }
-            return itemCellProvider
-        }
-        
-        public static var header: SPDiffableCollectionCellProvider {
-            let headerCellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
-                guard let item = item as? SPDiffableSideBarHeader else { return nil }
+            case let item as SPDiffableSideBarHeader:
                 let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SPDiffableSideBarHeader> { (cell, indexPath, item) in
                     var content = UIListContentConfiguration.sidebarHeader()
                     content.text = item.text
@@ -131,12 +118,10 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
                     cell.accessories = item.accessories
                 }
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            default:
+                return nil
             }
-            return headerCellProvider
         }
-        
-        public static var all: [SPDiffableCollectionCellProvider] {
-            return [item, button, header]
-        }
+        return cellProvider
     }
 }
