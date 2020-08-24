@@ -36,6 +36,8 @@
 		F47A421424EB23220054DBB2 /* SPDiffableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* SPDiffableItem.swift */; };
 		F47A421524EB23220054DBB2 /* SPDiffableTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* SPDiffableTableRow.swift */; };
 		F47A421624EB23220054DBB2 /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* SPDiffableTableRowStepper.swift */; };
+		F4920A6424F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */; };
+		F4920A6524F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */; };
 		F4CBBCCC24EDD9230050E1BF /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CBBCCB24EDD9230050E1BF /* Aliases.swift */; };
 		OBJ_53 /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SPDiffableCollectionController.swift */; };
 		OBJ_54 /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SPDiffableCollectionDataSource.swift */; };
@@ -71,6 +73,7 @@
 		F47A41EC24EB22A70054DBB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F47A41EE24EB22A70054DBB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F47A41EF24EB22A70054DBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableWrapperItem.swift; sourceTree = "<group>"; };
 		F4CBBCCB24EDD9230050E1BF /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		OBJ_10 /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
 		OBJ_11 /* SPDiffableCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDataSource.swift; sourceTree = "<group>"; };
@@ -159,6 +162,7 @@
 				OBJ_23 /* Table */,
 				OBJ_15 /* Collection */,
 				OBJ_19 /* SPDiffableItem.swift */,
+				F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */,
 				OBJ_20 /* SPDiffableSection.swift */,
 				OBJ_21 /* SPDiffableSnapshot.swift */,
 				OBJ_22 /* SPDiffableTextHeaderFooter.swift */,
@@ -378,6 +382,7 @@
 				F47A420924EB23220054DBB2 /* SPDiffableTableRowSwitch.swift in Sources */,
 				F47A420824EB23220054DBB2 /* SPDiffableCollectionController.swift in Sources */,
 				F47A420B24EB23220054DBB2 /* SPDiffableStepper.swift in Sources */,
+				F4920A6524F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift in Sources */,
 				F47A421624EB23220054DBB2 /* SPDiffableTableRowStepper.swift in Sources */,
 				F47A41FF24EB22A70054DBB2 /* AppDelegate.swift in Sources */,
 				F4CBBCCC24EDD9230050E1BF /* Aliases.swift in Sources */,
@@ -414,6 +419,7 @@
 				OBJ_59 /* SPDiffableSideBarItem.swift in Sources */,
 				OBJ_60 /* SPDiffableItem.swift in Sources */,
 				OBJ_61 /* SPDiffableSection.swift in Sources */,
+				F4920A6424F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift in Sources */,
 				OBJ_62 /* SPDiffableSnapshot.swift in Sources */,
 				OBJ_63 /* SPDiffableTextHeaderFooter.swift in Sources */,
 				OBJ_64 /* SPDiffableTableRow.swift in Sources */,

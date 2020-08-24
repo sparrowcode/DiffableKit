@@ -13,6 +13,7 @@ typealias DiffableSubtitleTableViewCell = SPDiffableSubtitleTableViewCell
 // MARK:  Basic models
 
 typealias DiffableItem = SPDiffableItem
+typealias DiffableWrapperItem = SPDiffableWrapperItem
 typealias DiffableSection = SPDiffableSection
 
 // MARK:  Table models

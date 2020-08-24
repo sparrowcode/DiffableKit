@@ -22,42 +22,23 @@
 import UIKit
 
 /**
- Basic class for items and sections.
+ Wrapper class for any model.
  
- All next model's classes shoud be extend from it class.
+ Using it class if you no need create custom model to diffable.
+ You can pass any object and unwrap in cell provider.
+ 
+ Also need pass uniq `identifier`.
  */
-open class SPDiffableItem: NSObject, NSCopying {
+class SPDiffableWrapperItem: SPDiffableItem {
     
     /**
-     Identifier help for detect uniq cell and doing diffable work and animations.
-     
-     Always shoud be uniq. But if it changed, diffable system remove old and insert new (not reload).
-     Identifier uses in `Hashable` and `Equatable` protocols.
+     You can pass any object as model.
+     Later need uwrap it for get.
      */
-    public var identifier: String
+    var model: AnyObject
     
-    public init(identifier: String) {
-        self.identifier = identifier
-    }
-    
-    // MARK: Hashable and Equatable
-    
-    public override var hash: Int {
-        var hasher = Hasher()
-        hasher.combine(identifier)
-        return hasher.finalize()
-    }
-    
-    public override func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? SPDiffableItem else { return false }
-        return identifier == object.identifier
-    }
-    
-    // MARK: NSCopying
-    
-    // Implemented becouse when using with collection,
-    // sometimes catch error about unregognized selector.
-    public func copy(with zone: NSZone? = nil) -> Any {
-        return SPDiffableItem(identifier: self.identifier)
+    init(identifier: String, model: AnyObject) {
+        self.model = model
+        super.init(identifier: identifier)
     }
 }

@@ -24,6 +24,7 @@ If you want help project, check [Сooperation](#сooperation) section.
 - [Ready Use](#ready-use)
     - [Example](#ready-use)
     - [List classes](#ready-use-classes)
+    - [Wrapper](#wrapper)
 - [Сooperation](#сooperation)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
@@ -266,6 +267,20 @@ Now in project you can find this ready-use models:
 - `SPDiffableSideBarItem` menu item in side bar. Support accessories and actions.
 - `SPDiffableSideBarButton` button item in side bar. Color of title similar to tint.
 - `SPDiffableSideBarHeader` header model for side bar item.
+
+## Wrapper
+
+In project you can find class `SPDiffableWrapperItem`. Using it, when you don't want create custom item model for you diffable struct. You can pass any your model and uwrap it later in cell provider.
+
+```swift
+let item = SPDiffableWrapperItem(identifier: "unqi-identifier", model: LocationRowModel(city: "Minsk"))
+```
+
+And after unwrap it in custom cell provider.
+
+```swift
+
+```
 
 ## Сooperation
 
