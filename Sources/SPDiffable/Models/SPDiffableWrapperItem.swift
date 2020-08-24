@@ -35,9 +35,9 @@ open class SPDiffableWrapperItem: SPDiffableItem {
      You can pass any object as model.
      Later need uwrap it for get.
      */
-    public var model: AnyObject
+    public var model: Any
     
-    public init(identifier: String, model: AnyObject) {
+    public init(identifier: String, model: Any) {
         self.model = model
         super.init(identifier: identifier)
     }
