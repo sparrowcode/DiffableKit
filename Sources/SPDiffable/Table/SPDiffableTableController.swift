@@ -57,7 +57,7 @@ open class SPDiffableTableController: UITableViewController {
      
      For change style of cells requerid register new cell provider.
      */
-    public static var defaultCellProvider: SPDiffableTableCellProvider {
+    public var defaultCellProvider: SPDiffableTableCellProvider {
         let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
             switch model {
             case let model as SPDiffableTableRow:

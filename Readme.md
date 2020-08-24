@@ -183,8 +183,7 @@ In class available ready-use cell providers for menu item and header section. Fo
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-    setCellProviders([CellProvider.item, CellProvider.button, CellProvider.header], sections: content)
-    // or you can set all default providers by call `CellProvider.all`
+    setCellProviders([defaultCellProvider], sections: content)
 }
 ```
 
@@ -229,7 +228,7 @@ let section = SPDiffableSection(
 You init cell model and pass action, choose selection style and other. As you see, model describe native table cell. Next, you need set cell provider, but it also already available, for get it call `SPDiffableTableController.defaultCellProvider`.
 
 ```swift
-setCellProviders([SPDiffableTableController.defaultCellProvider], sections: [section])
+setCellProviders([defaultCellProvider], sections: [section])
 ```
 
 Now project's models automatically converting to cell. No need any additional work. That all code. 
