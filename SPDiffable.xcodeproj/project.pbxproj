@@ -38,6 +38,10 @@
 		F47A421624EB23220054DBB2 /* SPDiffableTableRowStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* SPDiffableTableRowStepper.swift */; };
 		F4920A6424F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */; };
 		F4920A6524F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */; };
+		F4920A6924F447D6007F7EE9 /* SPDiffableTableCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */; };
+		F4920A6A24F447D6007F7EE9 /* SPDiffableTableCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */; };
+		F4920A6C24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */; };
+		F4920A6D24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */; };
 		F4CBBCCC24EDD9230050E1BF /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CBBCCB24EDD9230050E1BF /* Aliases.swift */; };
 		OBJ_53 /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SPDiffableCollectionController.swift */; };
 		OBJ_54 /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SPDiffableCollectionDataSource.swift */; };
@@ -74,6 +78,8 @@
 		F47A41EE24EB22A70054DBB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F47A41EF24EB22A70054DBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableWrapperItem.swift; sourceTree = "<group>"; };
+		F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableCellProviders.swift; sourceTree = "<group>"; };
+		F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionCellProviders.swift; sourceTree = "<group>"; };
 		F4CBBCCB24EDD9230050E1BF /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		OBJ_10 /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
 		OBJ_11 /* SPDiffableCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDataSource.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 				OBJ_35 /* SPDiffableTableController.swift */,
 				OBJ_36 /* SPDiffableTableDataSource.swift */,
 				OBJ_37 /* SPDiffableTableMediator.swift */,
+				F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -277,6 +284,7 @@
 		OBJ_9 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
+				F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */,
 				OBJ_10 /* SPDiffableCollectionController.swift */,
 				OBJ_11 /* SPDiffableCollectionDataSource.swift */,
 				OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */,
@@ -389,8 +397,10 @@
 				F47A420C24EB23220054DBB2 /* SPDiffableSwitch.swift in Sources */,
 				F47A420524EB23220054DBB2 /* SPDiffableTableMediator.swift in Sources */,
 				F47A421124EB23220054DBB2 /* SPDiffableTableRowButton.swift in Sources */,
+				F4920A6A24F447D6007F7EE9 /* SPDiffableTableCellProviders.swift in Sources */,
 				F47A41F524EB22A70054DBB2 /* DiffableTableController.swift in Sources */,
 				F47A421524EB23220054DBB2 /* SPDiffableTableRow.swift in Sources */,
+				F4920A6D24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */,
 				F47A420024EB23220054DBB2 /* SPDiffableCollectionDataSource.swift in Sources */,
 				F47A421424EB23220054DBB2 /* SPDiffableItem.swift in Sources */,
 				F47A420224EB23220054DBB2 /* SPDiffableSubtitleTableViewCell.swift in Sources */,
@@ -412,9 +422,11 @@
 			files = (
 				OBJ_53 /* SPDiffableCollectionController.swift in Sources */,
 				OBJ_54 /* SPDiffableCollectionDataSource.swift in Sources */,
+				F4920A6C24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */,
 				OBJ_55 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */,
 				OBJ_56 /* SPDiffableSideBarController.swift in Sources */,
 				OBJ_57 /* SPDiffableSideBarButton.swift in Sources */,
+				F4920A6924F447D6007F7EE9 /* SPDiffableTableCellProviders.swift in Sources */,
 				OBJ_58 /* SPDiffableSideBarHeader.swift in Sources */,
 				OBJ_59 /* SPDiffableSideBarItem.swift in Sources */,
 				OBJ_60 /* SPDiffableItem.swift in Sources */,

@@ -4,9 +4,10 @@ import UIKit
 /**
  This file using as wrapper for ignore import SPDiffable libary.
  */
-
-typealias DiffableTableDataSource = SPDiffableTableDataSource
 typealias DiffableTableMediator = SPDiffableTableMediator
+typealias DiffableTableDataSource = SPDiffableTableDataSource
+typealias DiffableTableCellProviders = SPDiffableTableCellProviders
+
 typealias DiffableTableViewCell = SPDiffableTableViewCell
 typealias DiffableSubtitleTableViewCell = SPDiffableSubtitleTableViewCell
 
