@@ -1,4 +1,4 @@
-// import SPDiffable
+import SPDiffable
 import UIKit
 
 /**
@@ -6,10 +6,14 @@ import UIKit
  */
 typealias DiffableTableMediator = SPDiffableTableMediator
 typealias DiffableTableDataSource = SPDiffableTableDataSource
+typealias DiffableTableCellProvider = SPDiffableTableCellProvider
 typealias DiffableTableCellProviders = SPDiffableTableCellProviders
-
 typealias DiffableTableViewCell = SPDiffableTableViewCell
 typealias DiffableSubtitleTableViewCell = SPDiffableSubtitleTableViewCell
+
+typealias DiffableCollectionDataSource = SPDiffableCollectionDataSource
+typealias DiffableCollectionCellProvider = SPDiffableCollectionCellProvider
+typealias DiffableCollectionCellProviders = SPDiffableCollectionCellProviders
 
 // MARK:  Basic models
 
@@ -26,7 +30,11 @@ typealias TableRowStepper = SPDiffableTableRowStepper
 typealias TableRowButton = SPDiffableTableRowButton
 
 typealias DiffableTextHeaderFooter = SPDiffableTextHeaderFooter
-typealias DiffableTableCellProvider = SPDiffableTableCellProvider
+
+// MARK: Collection models
+
+
+
 
 // MARK: Other
 
