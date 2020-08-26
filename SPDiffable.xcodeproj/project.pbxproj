@@ -162,11 +162,29 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		F483DE6624F6780E00B5B727 /* CellProvider */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* Models */,
+				F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */,
+				F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */,
+			);
+			path = CellProvider;
+			sourceTree = "<group>";
+		};
+		F483DE6724F67A0000B5B727 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_37 /* SPDiffableTableMediator.swift */,
+				OBJ_36 /* SPDiffableTableDataSource.swift */,
+				OBJ_11 /* SPDiffableCollectionDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		OBJ_14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* Table */,
-				OBJ_15 /* Collection */,
 				OBJ_19 /* SPDiffableItem.swift */,
 				F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */,
 				OBJ_20 /* SPDiffableSection.swift */,
@@ -176,17 +194,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		OBJ_15 /* Collection */ = {
+		OBJ_15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_16 /* SPDiffableSideBarButton.swift */,
 				OBJ_17 /* SPDiffableSideBarHeader.swift */,
 				OBJ_18 /* SPDiffableSideBarItem.swift */,
 			);
-			path = Collection;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		OBJ_23 /* Table */ = {
+		OBJ_23 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_24 /* SPDiffableTableRow.swift */,
@@ -195,17 +213,15 @@
 				OBJ_27 /* SPDiffableTableRowSubtitle.swift */,
 				OBJ_28 /* SPDiffableTableRowSwitch.swift */,
 			);
-			path = Table;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		OBJ_29 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_23 /* Models */,
 				OBJ_30 /* Cells */,
 				OBJ_35 /* SPDiffableTableController.swift */,
-				OBJ_36 /* SPDiffableTableDataSource.swift */,
-				OBJ_37 /* SPDiffableTableMediator.swift */,
-				F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -273,8 +289,9 @@
 		OBJ_8 /* SPDiffable */ = {
 			isa = PBXGroup;
 			children = (
+				F483DE6724F67A0000B5B727 /* DataSource */,
+				F483DE6624F6780E00B5B727 /* CellProvider */,
 				OBJ_9 /* Collection */,
-				OBJ_14 /* Models */,
 				OBJ_29 /* Table */,
 			);
 			name = SPDiffable;
@@ -284,9 +301,8 @@
 		OBJ_9 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */,
+				OBJ_15 /* Models */,
 				OBJ_10 /* SPDiffableCollectionController.swift */,
-				OBJ_11 /* SPDiffableCollectionDataSource.swift */,
 				OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */,
 				OBJ_13 /* SPDiffableSideBarController.swift */,
 			);
