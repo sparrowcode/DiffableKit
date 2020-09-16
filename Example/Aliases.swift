@@ -20,6 +20,7 @@ typealias DiffableCollectionCellProviders = SPDiffableCollectionCellProviders
 typealias DiffableItem = SPDiffableItem
 typealias DiffableWrapperItem = SPDiffableWrapperItem
 typealias DiffableSection = SPDiffableSection
+typealias DiffableSnapshot = SPDiffableSnapshot
 
 // MARK:  Table models
 
