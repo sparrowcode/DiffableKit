@@ -52,6 +52,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
      - parameter sections: Array of `SPDiffableSection`, it content of table.
      - parameter animating: Shoud apply changes with animation or not.
      */
+    #warning("trouble with reuse, need fix")
     public func apply(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPDiffableSnapshot()
         snapshot.appendSections(sections)
