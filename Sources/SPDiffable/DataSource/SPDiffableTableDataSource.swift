@@ -27,6 +27,7 @@ import UIKit
  Using array cell providers for get view for each model.
  Need pass all cell providers which will be using in collection view and data source all by order each and try get view.
  */
+@available(iOS 13.0, *)
 open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     /**
@@ -113,4 +114,5 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
 }
 
+@available(iOS 13.0, *)
 public typealias SPDiffableTableCellProvider = SPDiffableTableDataSource.CellProvider
