@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.platform      = :ios
   s.ios.framework = 'UIKit'
   s.swift_version = ['4.2', '5.0']
-  s.ios.deployment_target = "13.0"
+  s.ios.deployment_target = "12.0"
 
   s.source_files  = "Sources/SPDiffable/**/*.swift"
 

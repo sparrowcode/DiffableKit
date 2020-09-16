@@ -4,14 +4,20 @@ import UIKit
 /**
  This file using as wrapper for ignore import SPDiffable libary.
  */
+@available(iOS 13.0, *)
 typealias DiffableTableMediator = SPDiffableTableMediator
+@available(iOS 13.0, *)
 typealias DiffableTableDataSource = SPDiffableTableDataSource
+@available(iOS 13.0, *)
 typealias DiffableTableCellProvider = SPDiffableTableCellProvider
+@available(iOS 13.0, *)
 typealias DiffableTableCellProviders = SPDiffableTableCellProviders
 typealias DiffableTableViewCell = SPDiffableTableViewCell
 typealias DiffableSubtitleTableViewCell = SPDiffableSubtitleTableViewCell
 
+@available(iOS 13.0, *)
 typealias DiffableCollectionDataSource = SPDiffableCollectionDataSource
+@available(iOS 13.0, *)
 typealias DiffableCollectionCellProvider = SPDiffableCollectionCellProvider
 typealias DiffableCollectionCellProviders = SPDiffableCollectionCellProviders
 
@@ -20,6 +26,7 @@ typealias DiffableCollectionCellProviders = SPDiffableCollectionCellProviders
 typealias DiffableItem = SPDiffableItem
 typealias DiffableWrapperItem = SPDiffableWrapperItem
 typealias DiffableSection = SPDiffableSection
+@available(iOS 13.0, *)
 typealias DiffableSnapshot = SPDiffableSnapshot
 
 // MARK:  Table models

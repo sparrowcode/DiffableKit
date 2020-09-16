@@ -27,6 +27,7 @@ import UIKit
  For common init call `setCellProviders` with default data and providers for it models.
  If need init manually, shoud init `diffableDataSource` fist, and next apply content when you need it.
  */
+@available(iOS 13.0, *)
 open class SPDiffableTableController: UITableViewController {
     
     public var diffableDataSource: SPDiffableTableDataSource?
