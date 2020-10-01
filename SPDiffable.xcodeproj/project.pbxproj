@@ -42,7 +42,6 @@
 		F4920A6A24F447D6007F7EE9 /* SPDiffableTableCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */; };
 		F4920A6C24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */; };
 		F4920A6D24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */; };
-		F4CBBCCC24EDD9230050E1BF /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CBBCCB24EDD9230050E1BF /* Aliases.swift */; };
 		OBJ_53 /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SPDiffableCollectionController.swift */; };
 		OBJ_54 /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SPDiffableCollectionDataSource.swift */; };
 		OBJ_55 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */; };
@@ -80,7 +79,6 @@
 		F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableWrapperItem.swift; sourceTree = "<group>"; };
 		F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableCellProviders.swift; sourceTree = "<group>"; };
 		F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionCellProviders.swift; sourceTree = "<group>"; };
-		F4CBBCCB24EDD9230050E1BF /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		OBJ_10 /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
 		OBJ_11 /* SPDiffableCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDataSource.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButtonCollectionViewListCell.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 		F47A41CF24EB222C0054DBB2 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				F4CBBCCB24EDD9230050E1BF /* Aliases.swift */,
 				F47A41EB24EB22A70054DBB2 /* App */,
 				F47A41E424EB22A70054DBB2 /* Controllers */,
 				F47A41DE24EB222D0054DBB2 /* Info.plist */,
@@ -409,7 +406,6 @@
 				F4920A6524F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift in Sources */,
 				F47A421624EB23220054DBB2 /* SPDiffableTableRowStepper.swift in Sources */,
 				F47A41FF24EB22A70054DBB2 /* AppDelegate.swift in Sources */,
-				F4CBBCCC24EDD9230050E1BF /* Aliases.swift in Sources */,
 				F47A420C24EB23220054DBB2 /* SPDiffableSwitch.swift in Sources */,
 				F47A420524EB23220054DBB2 /* SPDiffableTableMediator.swift in Sources */,
 				F47A421124EB23220054DBB2 /* SPDiffableTableRowButton.swift in Sources */,
