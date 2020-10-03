@@ -49,7 +49,7 @@ open class SPDiffableTableController: UITableViewController {
      */
     public func setCellProviders( _ providers: [SPDiffableTableCellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPDiffableTableDataSource(tableView: tableView, cellProviders: providers)
-        diffableDataSource?.apply(sections: sections, animating: false)
+        diffableDataSource?.apply(sections, animating: false)
     }
     
     open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

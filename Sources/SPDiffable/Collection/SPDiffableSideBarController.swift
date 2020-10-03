@@ -48,7 +48,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
      */
     public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPDiffableCollectionDataSource(collectionView: collectionView, cellProviders: providers)
-        diffableDataSource?.apply(sections: sections, animating: false)
+        diffableDataSource?.apply(sections, animating: false)
     }
     
     open override func viewDidLoad() {

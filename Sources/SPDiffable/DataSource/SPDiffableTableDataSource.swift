@@ -60,7 +60,7 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
      - parameter sections: Array of `SPDiffableSection`, it content of table.
      - parameter animating: Shoud apply changes with animation or not.
      */
-    public func apply(sections: [SPDiffableSection], animating: Bool) {
+    public func apply(_ sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPDiffableSnapshot()
         snapshot.appendSections(sections)
         for section in sections {
@@ -75,7 +75,7 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
      - parameter snapshot: New snapshot.
      - parameter animating: Shoud apply changes with animation or not.
      */
-    public func apply(snapshot: SPDiffableSnapshot, animating: Bool) {
+    public func apply(_ snapshot: SPDiffableSnapshot, animating: Bool) {
         apply(snapshot, animatingDifferences: animating, completion: nil)
     }
     
