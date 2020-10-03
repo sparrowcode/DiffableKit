@@ -62,12 +62,13 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             apply(snapshot, animatingDifferences: animating, completion: nil)
             for section in sections {
                 var sectionSnapshot = SPDiffableSectionSnapshot()
-                let header = section.header
-                if let header = header {
+                if let header = section.header {
                     sectionSnapshot.append([header])
+                    sectionSnapshot.append(section.items, to: header)
+                    sectionSnapshot.expand(sectionSnapshot.items)
+                } else {
+                    sectionSnapshot.append(section.items)
                 }
-                sectionSnapshot.append(section.items, to: header)
-                sectionSnapshot.expand(sectionSnapshot.items)
                 apply(sectionSnapshot, to: section, animatingDifferences: animating)
             }
         } else {
