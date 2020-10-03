@@ -102,8 +102,6 @@
 		OBJ_35 /* SPDiffableTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableController.swift; sourceTree = "<group>"; };
 		OBJ_36 /* SPDiffableTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableDataSource.swift; sourceTree = "<group>"; };
 		OBJ_37 /* SPDiffableTableMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableMediator.swift; sourceTree = "<group>"; };
-		OBJ_40 /* SPDiffableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTests.swift; sourceTree = "<group>"; };
-		OBJ_41 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_45 /* SPDiffable.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPDiffable.podspec; sourceTree = "<group>"; };
 		OBJ_46 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		OBJ_47 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -184,9 +182,9 @@
 			children = (
 				OBJ_19 /* SPDiffableItem.swift */,
 				F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */,
+				OBJ_22 /* SPDiffableTextHeaderFooter.swift */,
 				OBJ_20 /* SPDiffableSection.swift */,
 				OBJ_21 /* SPDiffableSnapshot.swift */,
-				OBJ_22 /* SPDiffableTextHeaderFooter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,24 +232,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		OBJ_38 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_39 /* SPDiffableTests */,
-			);
-			name = Tests;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_39 /* SPDiffableTests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_40 /* SPDiffableTests.swift */,
-				OBJ_41 /* XCTestManifests.swift */,
-			);
-			name = SPDiffableTests;
-			path = Tests/SPDiffableTests;
-			sourceTree = SOURCE_ROOT;
-		};
 		OBJ_42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,7 +246,6 @@
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_38 /* Tests */,
 				F47A41CF24EB222C0054DBB2 /* Example */,
 				OBJ_42 /* Products */,
 				OBJ_45 /* SPDiffable.podspec */,
