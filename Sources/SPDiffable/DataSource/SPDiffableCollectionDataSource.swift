@@ -53,22 +53,18 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
      - parameter sections: Array of `SPDiffableSection`, it content of table.
      - parameter animating: Shoud apply changes with animation or not.
      */
-    #warning("trouble with reuse, need fix")
     public func apply(sections: [SPDiffableSection], animating: Bool) {
         var snapshot = SPDiffableSnapshot()
         snapshot.appendSections(sections)
-        
         if #available(iOS 14, *) {
-            apply(snapshot, animatingDifferences: animating, completion: nil)
             for section in sections {
                 var sectionSnapshot = SPDiffableSectionSnapshot()
-                if let header = section.header {
+                let header = section.header
+                if let header = header {
                     sectionSnapshot.append([header])
-                    sectionSnapshot.append(section.items, to: header)
-                    sectionSnapshot.expand(sectionSnapshot.items)
-                } else {
-                    sectionSnapshot.append(section.items)
                 }
+                sectionSnapshot.append(section.items, to: header)
+                sectionSnapshot.expand(sectionSnapshot.items)
                 apply(sectionSnapshot, to: section, animatingDifferences: animating)
             }
         } else {
