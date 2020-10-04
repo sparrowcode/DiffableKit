@@ -25,7 +25,7 @@ import UIKit
  Basic diffable collection controller.
  
  For common init call `setCellProviders` with default data and providers for it models.
- If need init manually, shoud init `diffableDataSource` fist, and next apply content when you need it.
+ If need init manually, shoud init `diffableDataSource` first, and next apply content when you need it.
  */
 @available(iOS 13.0, *)
 open class SPDiffableCollectionController: UICollectionViewController {
