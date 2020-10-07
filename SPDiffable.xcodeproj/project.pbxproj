@@ -67,6 +67,19 @@
 		OBJ_75 /* SPDiffableTableMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* SPDiffableTableMediator.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F4977A3B252DE21000B20771 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F47A41CE24EB222C0054DBB2 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47A41DE24EB222D0054DBB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -295,6 +308,7 @@
 				F47A41CA24EB222C0054DBB2 /* Sources */,
 				F47A41CB24EB222C0054DBB2 /* Frameworks */,
 				F47A41CC24EB222C0054DBB2 /* Resources */,
+				F4977A3B252DE21000B20771 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,9 +319,9 @@
 			productReference = F47A41CE24EB222C0054DBB2 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		"SPDiffable::SPDiffable" /* SPDiffable */ = {
+		"SPDiffable::SPDiffable" /* SPDiffable iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_49 /* Build configuration list for PBXNativeTarget "SPDiffable" */;
+			buildConfigurationList = OBJ_49 /* Build configuration list for PBXNativeTarget "SPDiffable iOS" */;
 			buildPhases = (
 				OBJ_52 /* Sources */,
 				OBJ_76 /* Frameworks */,
@@ -316,7 +330,7 @@
 			);
 			dependencies = (
 			);
-			name = SPDiffable;
+			name = "SPDiffable iOS";
 			productName = SPDiffable;
 			productReference = "SPDiffable::SPDiffable::Product" /* SPDiffable.framework */;
 			productType = "com.apple.product-type.framework";
@@ -351,8 +365,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"SPDiffable::SPDiffable" /* SPDiffable */,
 				F47A41CD24EB222C0054DBB2 /* Example */,
+				"SPDiffable::SPDiffable" /* SPDiffable iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -650,6 +664,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SPDiffable;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
@@ -678,6 +693,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SPDiffable;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
@@ -708,7 +724,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_49 /* Build configuration list for PBXNativeTarget "SPDiffable" */ = {
+		OBJ_49 /* Build configuration list for PBXNativeTarget "SPDiffable iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_50 /* Debug */,
