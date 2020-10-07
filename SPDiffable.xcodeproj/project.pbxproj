@@ -92,6 +92,7 @@
 		F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableWrapperItem.swift; sourceTree = "<group>"; };
 		F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableCellProviders.swift; sourceTree = "<group>"; };
 		F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionCellProviders.swift; sourceTree = "<group>"; };
+		F4977BC6252E079A00B20771 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
 		OBJ_10 /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
 		OBJ_11 /* SPDiffableCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDataSource.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButtonCollectionViewListCell.swift; sourceTree = "<group>"; };
@@ -143,6 +144,7 @@
 		F47A41CF24EB222C0054DBB2 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				F4977BC6252E079A00B20771 /* Example.entitlements */,
 				F47A41EB24EB22A70054DBB2 /* App */,
 				F47A41E424EB22A70054DBB2 /* Controllers */,
 				F47A41DE24EB222D0054DBB2 /* Info.plist */,
@@ -347,7 +349,7 @@
 				TargetAttributes = {
 					F47A41CD24EB222C0054DBB2 = {
 						CreatedOnToolsVersion = 12.0;
-						DevelopmentTeam = 28DU8642K3;
+						DevelopmentTeam = Z384JW42NU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -502,8 +504,9 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 28DU8642K3;
+				DEVELOPMENT_TEAM = Z384JW42NU;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -527,6 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPDiffable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -567,9 +571,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 28DU8642K3;
+				DEVELOPMENT_TEAM = Z384JW42NU;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -588,6 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPDiffable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
