@@ -30,7 +30,7 @@ Basic side bar controller.
  Collection configuration setted to `.sidebar`.
  Layout detect data source and automatically set header and footer mode.
 */
-@available(iOS 14, macCatalyst 14, *)
+@available(iOS 14, *)
 open class SPDiffableSideBarController: UIViewController, UICollectionViewDelegate {
     
     public var collectionView: UICollectionView!

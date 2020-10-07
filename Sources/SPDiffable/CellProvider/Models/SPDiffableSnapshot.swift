@@ -30,5 +30,5 @@ public typealias SPDiffableSnapshot = NSDiffableDataSourceSnapshot<SPDiffableSec
 /**
  Wrapper of NSDiffableDataSourceSectionSnapshot  with basic `SPDiffableItem`.
  */
-@available(iOS 14, macCatalyst 14, *)
+@available(iOS 14, *)
 public typealias SPDiffableSectionSnapshot = NSDiffableDataSourceSectionSnapshot<SPDiffableItem>

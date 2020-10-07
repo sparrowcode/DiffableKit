@@ -28,7 +28,7 @@ import UIKit
  Also not show background selection, but cell selected. Need deselect it manually.
  Configure it cell need via `updateWithItem` func.
  */
-@available(iOS 14, macCatalyst 14, *)
+@available(iOS 14, *)
 class SPDiffableSideBarButtonCollectionViewListCell: UICollectionViewListCell {
     
     private var item: SPDiffableSideBarButton? = nil
