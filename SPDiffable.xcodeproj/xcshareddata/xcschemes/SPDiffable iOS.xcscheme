@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "SPDiffable::SPDiffable"
                BuildableName = "SPDiffable.framework"
-               BlueprintName = "SPDiffable"
+               BlueprintName = "SPDiffable iOS"
                ReferencedContainer = "container:SPDiffable.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
