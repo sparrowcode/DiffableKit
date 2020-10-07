@@ -1,6 +1,6 @@
 import UIKit
 
-@available(iOS 14, *)
+@available(iOS 14, macCatalyst 14, *)
 class SidebarController: SPDiffableSideBarController {
     
     override func viewDidLoad() {
@@ -63,7 +63,7 @@ class SidebarController: SPDiffableSideBarController {
     }
 }
 
-@available(iOS 14, *)
+@available(iOS 14, macCatalyst 14, *)
 class SideBarSplitController: UISplitViewController {
     
     init() {

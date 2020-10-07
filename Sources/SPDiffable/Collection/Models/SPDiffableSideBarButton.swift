@@ -26,7 +26,7 @@ import UIKit
  
  Colorful title usually.
  */
-@available(iOS 14, *)
+@available(iOS 14, macCatalyst 14, *)
 open class SPDiffableSideBarButton: SPDiffableItem {
     
     public let title: String
