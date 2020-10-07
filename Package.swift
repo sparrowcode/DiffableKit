@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SPDiffable",
     platforms: [
-        .iOS(.v12), .macOS(.v10_10),
+        .iOS(.v12)
     ],
     products: [
         .library(
