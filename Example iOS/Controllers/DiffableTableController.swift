@@ -21,7 +21,7 @@ class DiffableTableController: SPDiffableTableController, SPDiffableTableMediato
         return []
     }
     
-    internal func updateContent(animating: Bool) {
-        diffableDataSource?.apply(content, animating: animating)
+    internal func updateContent(animated: Bool) {
+        diffableDataSource?.apply(content, animated: animated)
     }
 }

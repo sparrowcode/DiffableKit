@@ -117,14 +117,14 @@ class RootController: DiffableTableController {
     private var switchOn: Bool = false {
         didSet {
             print("Switch is on: \(switchOn)")
-            updateContent(animating: true)
+            updateContent(animated: true)
         }
     }
     
     private var stepperValue: Double = 0 {
         didSet {
             print("Stepper value is: \(stepperValue)")
-            updateContent(animating: true)
+            updateContent(animated: true)
             guard let indexPath = diffableDataSource?.indexPath(for: stepperValueIdentifier), let cell = tableView.cellForRow(at: indexPath) else { return }
             cell.detailTextLabel?.text = "\(Int(stepperValue))"
         }
