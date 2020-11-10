@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4398D72255A67580047093F /* SPDiffableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4398D71255A67580047093F /* SPDiffableSlider.swift */; };
+		F4398D73255A67580047093F /* SPDiffableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4398D71255A67580047093F /* SPDiffableSlider.swift */; };
 		F47A41F324EB22A70054DBB2 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A41E524EB22A70054DBB2 /* RootController.swift */; };
 		F47A41F524EB22A70054DBB2 /* DiffableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A41E624EB22A70054DBB2 /* DiffableTableController.swift */; };
 		F47A41F724EB22A70054DBB2 /* SideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A41E724EB22A70054DBB2 /* SideBarController.swift */; };
@@ -81,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F4398D71255A67580047093F /* SPDiffableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSlider.swift; sourceTree = "<group>"; };
 		F47A41CE24EB222C0054DBB2 /* Example iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47A41DE24EB222D0054DBB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47A41E524EB22A70054DBB2 /* RootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
@@ -243,6 +246,7 @@
 				OBJ_32 /* SPDiffableSubtitleTableViewCell.swift */,
 				OBJ_31 /* SPDiffableStepper.swift */,
 				OBJ_33 /* SPDiffableSwitch.swift */,
+				F4398D71255A67580047093F /* SPDiffableSlider.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -418,6 +422,7 @@
 				F47A420D24EB23220054DBB2 /* SPDiffableTableViewCell.swift in Sources */,
 				F47A420424EB23220054DBB2 /* SPDiffableTableDataSource.swift in Sources */,
 				F47A420F24EB23220054DBB2 /* SPDiffableSideBarController.swift in Sources */,
+				F4398D72255A67580047093F /* SPDiffableSlider.swift in Sources */,
 				F47A41F324EB22A70054DBB2 /* RootController.swift in Sources */,
 				F47A421324EB23220054DBB2 /* SPDiffableSideBarItem.swift in Sources */,
 			);
@@ -442,6 +447,7 @@
 				OBJ_62 /* SPDiffableSnapshot.swift in Sources */,
 				OBJ_63 /* SPDiffableTextHeaderFooter.swift in Sources */,
 				OBJ_64 /* SPDiffableTableRow.swift in Sources */,
+				F4398D73255A67580047093F /* SPDiffableSlider.swift in Sources */,
 				OBJ_65 /* SPDiffableTableRowButton.swift in Sources */,
 				OBJ_66 /* SPDiffableTableRowStepper.swift in Sources */,
 				OBJ_67 /* SPDiffableTableRowSubtitle.swift in Sources */,
