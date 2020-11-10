@@ -31,13 +31,15 @@ import UIKit
 open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     /**
-     Mediator call some methods which can not using in data source object.
+     SPDiffable: Mediator call some methods which can not using in data source object.
      
      Need set mediator for data source and implement methods which need.
      It allow manage for example header titles not ovveride data source class.
      Now data source doing only cell provider logic.
      */
     public weak var mediator: SPDiffableTableMediator?
+    
+    private weak var tableView: UITableView?
     
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
@@ -48,12 +50,13 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
             }
             return nil
         })
+        self.tableView = tableView
     }
     
-    // MARK: Apply Wrappers
+    // MARK: - Apply Content
     
     /**
-     Applying sections to current snapshot.
+     SPDiffable: Applying sections to current snapshot.
      
      Section convert to snapshot and appling after.
      
@@ -70,7 +73,7 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
     
     /**
-     Applying new snapshot insted of current.
+     SPDiffable: Applying new snapshot insted of current.
      
      - parameter snapshot: New snapshot.
      - parameter animating: Shoud apply changes with animation or not.
@@ -79,11 +82,25 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         apply(snapshot, animatingDifferences: animated, completion: nil)
     }
     
+    // MARK: - Get Content
+    
+    /**
+     SPDiffable: Get indexPath for item by indetifier.
+     */
     public func indexPath(for itemIdentifier: String) -> IndexPath? {
         return indexPath(for: SPDiffableItem(identifier: itemIdentifier))
     }
     
-    // MARK: Mediator
+    /**
+     SPDiffable: Get cell specific type `T` by indetifier.
+     */
+    public func cell<T: UITableViewCell>(_ type: T.Type, for itemIdentifier: String) -> T? {
+        guard let indexPath = indexPath(for: itemIdentifier) else { return nil }
+        guard let cell = self.tableView?.cellForRow(at: indexPath) as? T else { return nil }
+        return cell
+    }
+    
+    // MARK: - Mediator
     
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let title = mediator?.diffableTableView?(tableView, titleForHeaderInSection: section) {
