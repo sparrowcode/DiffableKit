@@ -85,7 +85,14 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     // MARK: - Get Content
     
     /**
-     SPDiffable: Get indexPath for item by indetifier.
+     SPDiffable: Get item by index path.
+     */
+    public func item(for indexPath: IndexPath) -> SPDiffableItem? {
+        return itemIdentifier(for: indexPath)
+    }
+    
+    /**
+     SPDiffable: Get index path for item by identifier.
      */
     public func indexPath(for itemIdentifier: String) -> IndexPath? {
         return indexPath(for: SPDiffableItem(identifier: itemIdentifier))
