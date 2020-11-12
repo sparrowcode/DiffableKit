@@ -32,4 +32,10 @@ open class SPDiffableTableViewCell: UITableViewCell {
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    open override func prepareForReuse() {
+        super.prepareForReuse()
+        accessoryView = nil
+        detailTextLabel?.text = nil
+    }
 }
