@@ -77,6 +77,7 @@ class SideBarSplitController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        primaryBackgroundStyle = .sidebar
         preferredDisplayMode = .oneBesideSecondary
         presentsWithGesture = false
         preferredSplitBehavior = .tile
