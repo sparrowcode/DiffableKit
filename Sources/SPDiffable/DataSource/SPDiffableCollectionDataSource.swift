@@ -54,9 +54,21 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
      - parameter animating: Shoud apply changes with animation or not.
      */
     public func apply(_ sections: [SPDiffableSection], animated: Bool) {
-        var snapshot = SPDiffableSnapshot()
-        snapshot.appendSections(sections)
         if #available(iOS 14, *) {
+            
+            // Remove section if it deleted from content.
+            
+            var snapshot = self.snapshot()
+            let deletedSections = snapshot.sectionIdentifiers.filter({ (checkSection) -> Bool in
+                return !sections.contains(where: { $0.identifier == checkSection.identifier })
+            })
+            if !deletedSections.isEmpty {
+                snapshot.deleteSections(deletedSections)
+                apply(snapshot, animated: true)
+            }
+            
+            // Update current sections.
+            
             for section in sections {
                 var sectionSnapshot = SPDiffableSectionSnapshot()
                 let header = section.header
@@ -68,6 +80,8 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
                 apply(sectionSnapshot, to: section, animatingDifferences: animated)
             }
         } else {
+            var snapshot = SPDiffableSnapshot()
+            snapshot.appendSections(sections)
             for section in sections {
                 snapshot.appendItems(section.items, toSection: section)
             }
