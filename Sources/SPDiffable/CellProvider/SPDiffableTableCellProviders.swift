@@ -25,23 +25,13 @@ import UIKit
 public enum SPDiffableTableCellProviders {
     
     /**
-     Return cell provider, which process for all project models cells.
+     Return cell providers, which process for project models cells.
      No need additional configure.
      
      For change style of cells requerid register new cell provider.
      */
-    #warning("Redo to array")
-    public static var `default`: SPDiffableTableCellProvider {
-        let providers = [rowDetail, rowSubtitle, self.switch, stepper]
-        let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
-            for provider in providers {
-                if let cell = provider(tableView, indexPath, item) {
-                    return cell
-                }
-            }
-            return nil
-        }
-        return cellProvider
+    public static var `default`: [SPDiffableTableCellProvider] {
+        return [rowDetail, rowSubtitle, self.switch, stepper]
     }
     
     public static var rowDetail: SPDiffableTableCellProvider  {

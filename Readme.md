@@ -115,7 +115,7 @@ override func viewDidLoad() {
     setCellProviders([locationCellProvider], sections: content)
 }
 ```
-In project available models for like `SPDiffableTableRow` and other with ready-use properties. Also you can use default cell provider if using project's models. For get it call `SPDiffableTableController.defaultCellProvider`.
+In project available models for like `SPDiffableTableRow` and other with ready-use properties. Also you can use default cell provider if using project's models. For get it call `SPDiffableTableCellProviders.default`.
 
 ### Apply Content
 
