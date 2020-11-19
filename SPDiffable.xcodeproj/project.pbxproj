@@ -96,6 +96,8 @@
 		F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableCellProviders.swift; sourceTree = "<group>"; };
 		F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionCellProviders.swift; sourceTree = "<group>"; };
 		F4977BC6252E079A00B20771 /* Example iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Example iOS.entitlements"; sourceTree = "<group>"; };
+		F4D6FB12256646FC0046A328 /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
+		F4D6FB16256646FD0046A328 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		OBJ_10 /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
 		OBJ_11 /* SPDiffableCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDataSource.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButtonCollectionViewListCell.swift; sourceTree = "<group>"; };
@@ -195,6 +197,14 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		F4D6FB11256646FC0046A328 /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				F4D6FB12256646FC0046A328 /* FUNDING.yml */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
 		OBJ_14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,13 +273,15 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				F4D6FB11256646FC0046A328 /* .github */,
+				OBJ_46 /* LICENSE */,
+				OBJ_47 /* README.md */,
+				F4D6FB16256646FD0046A328 /* .gitignore */,
+				OBJ_45 /* SPDiffable.podspec */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				F47A41CF24EB222C0054DBB2 /* Example iOS */,
 				OBJ_42 /* Products */,
-				OBJ_45 /* SPDiffable.podspec */,
-				OBJ_46 /* LICENSE */,
-				OBJ_47 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
