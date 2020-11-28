@@ -94,14 +94,14 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     /**
      SPDiffable: Get index path for item by identifier.
      */
-    public func indexPath(for itemIdentifier: String) -> IndexPath? {
+    public func indexPath(for itemIdentifier: SPDiffableItem.Identifier) -> IndexPath? {
         return indexPath(for: SPDiffableItem(identifier: itemIdentifier))
     }
     
     /**
      SPDiffable: Get cell specific type `T` by indetifier.
      */
-    public func cell<T: UITableViewCell>(_ type: T.Type, for itemIdentifier: String) -> T? {
+    public func cell<T: UITableViewCell>(_ type: T.Type, for itemIdentifier: SPDiffableItem.Identifier) -> T? {
         guard let indexPath = indexPath(for: itemIdentifier) else { return nil }
         guard let cell = self.tableView?.cellForRow(at: indexPath) as? T else { return nil }
         return cell

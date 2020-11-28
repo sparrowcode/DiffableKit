@@ -35,20 +35,22 @@ open class SPDiffableSection: NSObject, NSCopying {
      Always shoud be uniq. But if it changed, diffable system remove old and insert new (not reload).
      Identifier uses in `Hashable` and `Equatable` protocols.
      */
-    public var identifier: String
+    public var identifier: SectionIdentifier
     public var header: SPDiffableItem?
     public var footer: SPDiffableItem?
 
     public var items: [SPDiffableItem]
     
-    public init(identifier: String, header: SPDiffableItem? = nil, footer: SPDiffableItem? = nil, items: [SPDiffableItem] = []) {
+    // MARK: - Init
+    
+    public init(identifier: SectionIdentifier, header: SPDiffableItem? = nil, footer: SPDiffableItem? = nil, items: [SPDiffableItem] = []) {
         self.identifier = identifier
         self.header = header
         self.footer = footer
         self.items = items
     }
     
-    // MARK: Hashable and Equatable
+    // MARK: - Hashable and Equatable
     
     public override var hash: Int {
         var hasher = Hasher()
@@ -61,7 +63,7 @@ open class SPDiffableSection: NSObject, NSCopying {
         return identifier == object.identifier
     }
     
-    // MARK: NSCopying
+    // MARK: - NSCopying
     
     // Implemented becouse when using with collection,
     // sometimes catch error about unregognized selector.
@@ -73,4 +75,8 @@ open class SPDiffableSection: NSObject, NSCopying {
             items: self.items
         )
     }
+    
+    // MARK: - Item Identifier
+    
+    public typealias SectionIdentifier = String
 }
