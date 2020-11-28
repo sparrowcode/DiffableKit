@@ -34,7 +34,7 @@ open class SPDiffableSideBarItem: SPDiffableItem {
     public var accessories: [UICellAccessory]
     public var action: Action
     
-    public init(identifier: String? = nil, title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
+    public init(identifier: SPDiffableItem.Identifier? = nil, title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
         self.title = title
         self.image = image
         self.accessories = accessories
