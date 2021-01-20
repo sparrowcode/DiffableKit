@@ -33,36 +33,7 @@ Basic side bar controller.
 @available(iOS 14, *)
 open class SPDiffableSideBarController: UIViewController, UICollectionViewDelegate {
     
-    public init() {
-        super.init(nibName: nil, bundle: nil)
-        commonInit()
-    }
-    
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        commonInit()
-    }
-    
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
-    }
-    
-    private func commonInit() {
-        let layout = UICollectionViewCompositionalLayout { [weak self] (section, layoutEnvironment) -> NSCollectionLayoutSection? in
-            var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
-            let header = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].header
-            configuration.headerMode = (header == nil) ? .none : .firstItemInSection
-            let footer = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].footer
-            configuration.footerMode = (footer == nil) ? .none : .supplementary
-            return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
-        }
-        
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
-        collectionView.delegate = self
-    }
-    
-    public var collectionView: UICollectionView!
+    public var collectionView = UICollectionView()
     
     public var diffableDataSource: SPDiffableCollectionDataSource?
     
@@ -82,6 +53,18 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let layout = UICollectionViewCompositionalLayout { [weak self] (section, layoutEnvironment) -> NSCollectionLayoutSection? in
+            var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
+            let header = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].header
+            configuration.headerMode = (header == nil) ? .none : .firstItemInSection
+            let footer = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].footer
+            configuration.footerMode = (footer == nil) ? .none : .supplementary
+            return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
+        }
+        
+        collectionView.setCollectionViewLayout(layout, animated: false)
+        collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
