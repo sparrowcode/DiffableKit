@@ -33,6 +33,11 @@ Basic side bar controller.
 @available(iOS 14, *)
 open class SPDiffableSideBarController: UIViewController, UICollectionViewDelegate {
     
+    public init() {
+        super.init(nibName: nil, bundle: nil)
+        commonInit()
+    }
+    
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         commonInit()
