@@ -31,9 +31,9 @@ class SidebarController: SPDiffableSideBarController {
     
     enum Section: String {
         
-        case tabs = "tabs"
-        case library = "library"
-        case playlists = "playlists"
+        case tabs
+        case library
+        case playlists
     }
     
     var content: [SPDiffableSection] {
