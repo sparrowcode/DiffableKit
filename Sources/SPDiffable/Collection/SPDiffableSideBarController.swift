@@ -37,6 +37,8 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
     
     public var diffableDataSource: SPDiffableCollectionDataSource?
     
+    open weak var diffableDelegate: SPDiffableCollectionDelegate?
+    
     /**
      Init `diffableDataSource` and apply content to data source without animation.
      
@@ -75,8 +77,12 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
         ])
     }
     
+    // MARK: - UICollectionViewDelegate
+    
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch diffableDataSource?.itemIdentifier(for: indexPath) {
+        guard let item = diffableDataSource?.itemIdentifier(for: indexPath) else { return }
+        diffableDelegate?.diffableCollectionView?(collectionView, didSelectItem: item)
+        switch item {
         case let item as SPDiffableSideBarItem:
             item.action(indexPath)
         case let item as SPDiffableSideBarButton:

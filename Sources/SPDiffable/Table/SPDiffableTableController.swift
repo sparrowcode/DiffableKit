@@ -32,6 +32,8 @@ open class SPDiffableTableController: UITableViewController {
     
     public var diffableDataSource: SPDiffableTableDataSource?
     
+    open weak var diffableDelegate: SPDiffableTableDelegate?
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.reuseIdentifier)
@@ -52,8 +54,12 @@ open class SPDiffableTableController: UITableViewController {
         diffableDataSource?.apply(sections, animated: false)
     }
     
+    // MARK: - UITableViewDelegate
+    
     open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch diffableDataSource?.itemIdentifier(for: indexPath) {
+        guard let item = diffableDataSource?.itemIdentifier(for: indexPath) else { return }
+        diffableDelegate?.diffableTableView?(tableView, didSelectItem: item)
+        switch item {
         case let model as SPDiffableTableRow:
             model.action?(indexPath)
         case let model as SPDiffableTableRowSubtitle:

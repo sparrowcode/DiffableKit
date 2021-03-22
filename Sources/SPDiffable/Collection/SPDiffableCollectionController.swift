@@ -32,6 +32,8 @@ open class SPDiffableCollectionController: UICollectionViewController {
     
     public var diffableDataSource: SPDiffableCollectionDataSource?
     
+    open weak var diffableDelegate: SPDiffableCollectionDelegate?
+    
     /**
      Init `diffableDataSource` and apply content to data source without animation.
      
@@ -44,5 +46,12 @@ open class SPDiffableCollectionController: UICollectionViewController {
     public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPDiffableCollectionDataSource(collectionView: collectionView, cellProviders: providers)
         diffableDataSource?.apply(sections, animated: false)
+    }
+    
+    // MARK: - UICollectionViewDelegate
+    
+    open override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = diffableDataSource?.itemIdentifier(for: indexPath) else { return }
+        diffableDelegate?.diffableCollectionView?(collectionView, didSelectItem: item)
     }
 }
