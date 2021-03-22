@@ -22,18 +22,10 @@
 import UIKit
 
 /**
- Protocol for some data source methods.
- 
- This methods not always implemented in data source and split to other protocol.
+ Protocol with table events.
  */
 @available(iOS 13.0, *)
-@objc public protocol SPDiffableTableMediator: class {
+@objc public protocol SPDiffableTableDelegate: class {
     
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    @objc optional func diffableTableView(_ tableView: UITableView, didSelectItem item: SPDiffableItem)
 }
