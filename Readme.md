@@ -15,7 +15,6 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [Manually](#manually)
 - [Usage](#usage)
     - [How it work](#usage)
-    - [Apply content](#apply-content)
     - [Mediator](#mediator)
     - [Diffable Delegate](#diffable-delegate)
     - [Sidebar](#sidebar)
