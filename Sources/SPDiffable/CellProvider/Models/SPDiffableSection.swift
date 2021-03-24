@@ -22,20 +22,23 @@
 import UIKit
 
 /**
- Basic section class. Can set header, footer and items in it section.
+ SPDiffable: Basic section class. Can set header, footer and items in it section.
  
  Using in diffable work. All sections shoud be inhert from it.
  Can init with empty models if need configure later.
  */
 open class SPDiffableSection: NSObject, NSCopying {
     
+    // MARK: - Properties
+    
     /**
-     Identifier help for detect uniq section and doing diffable work and animations.
+     SPDiffable: Identifier help for detect uniq section and doing diffable work and animations.
      
      Always shoud be uniq. But if it changed, diffable system remove old and insert new (not reload).
      Identifier uses in `Hashable` and `Equatable` protocols.
      */
     public var identifier: SectionIdentifier
+    
     public var header: SPDiffableItem?
     public var footer: SPDiffableItem?
 

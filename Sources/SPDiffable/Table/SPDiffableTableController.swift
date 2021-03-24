@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Basic diffable table controller.
+ SPDiffable: Basic diffable table controller.
  
  For common init call `setCellProviders` with default data and providers for it models.
  If need init manually, shoud init `diffableDataSource` first, and next apply content when you need it.
@@ -30,9 +30,13 @@ import UIKit
 @available(iOS 13.0, *)
 open class SPDiffableTableController: UITableViewController {
     
-    public var diffableDataSource: SPDiffableTableDataSource?
+    // MARK: - Properties
+    
+    open var diffableDataSource: SPDiffableTableDataSource?
     
     open weak var diffableDelegate: SPDiffableTableDelegate?
+    
+    // MARK: - Lifecycle
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +44,10 @@ open class SPDiffableTableController: UITableViewController {
         tableView.register(SPDiffableSubtitleTableViewCell.self, forCellReuseIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier)
     }
     
+    // MARK: - Configure
+    
     /**
-     Init `diffableDataSource` and apply content to data source without animation.
+     SPDiffable: Init `diffableDataSource` and apply content to data source without animation.
      
      If need custom logic, you can manually init and apply data when you need.
      
@@ -49,7 +55,7 @@ open class SPDiffableTableController: UITableViewController {
      - parameter providers: Cell Providers with valid order for processing.
      - parameter sections: Content as array of `SPDiffableSection`.
      */
-    public func setCellProviders( _ providers: [SPDiffableTableCellProvider], sections: [SPDiffableSection]) {
+    open func setCellProviders( _ providers: [SPDiffableTableCellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPDiffableTableDataSource(tableView: tableView, cellProviders: providers)
         diffableDataSource?.apply(sections, animated: false)
     }

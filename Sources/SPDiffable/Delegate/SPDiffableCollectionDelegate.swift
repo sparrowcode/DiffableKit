@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Protocol with collection events.
+ SPDiffable: Protocol with collection events.
  */
 @available(iOS 13.0, *)
 @objc public protocol SPDiffableCollectionDelegate: class {

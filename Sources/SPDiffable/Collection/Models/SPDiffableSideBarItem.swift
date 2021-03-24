@@ -22,17 +22,17 @@
 import UIKit
 
 /**
- Menu item in side bar.
+ SPDiffable: Menu item in side bar.
  
  For header use `SPDiffableSideBarHeader` class.
  */
 @available(iOS 14, *)
 open class SPDiffableSideBarItem: SPDiffableItem {
     
-    public let title: String
-    public let image: UIImage?
-    public var accessories: [UICellAccessory]
-    public var action: Action
+    open var title: String
+    open var image: UIImage?
+    open var accessories: [UICellAccessory]
+    open var action: Action
     
     public init(identifier: SPDiffableItem.Identifier? = nil, title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
         self.title = title

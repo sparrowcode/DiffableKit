@@ -24,21 +24,12 @@ import UIKit
 public enum SPDiffableCollectionCellProviders {
     
     /**
-     Defaults cell provider, which can help you doing side bar faster.
+     SPDiffable: Defaults cell provider, which can help you doing side bar faster.
      You can do your providers and ise its with more flexible.
      */
     @available(iOS 14, *)
-    public static var sideBar: SPDiffableCollectionCellProvider {
-        let cellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
-            let providers = [sideBarItem, sideBarButton, sideBarHeader]
-            for provider in providers {
-                if let cell = provider(collectionView, indexPath, item) {
-                    return cell
-                }
-            }
-            return nil
-        }
-        return cellProvider
+    public static var sideBar: [SPDiffableCollectionCellProvider] {
+        return [sideBarItem, sideBarButton, sideBarHeader]
     }
     
     @available(iOS 14, *)

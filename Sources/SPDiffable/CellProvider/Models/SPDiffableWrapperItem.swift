@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Wrapper class for any model.
+ SPDiffable: Wrapper class for any model.
  
  Using it class if you no need create custom model to diffable.
  You can pass any object and unwrap in cell provider.
@@ -32,7 +32,7 @@ import UIKit
 open class SPDiffableWrapperItem: SPDiffableItem {
     
     /**
-     You can pass any object as model.
+     SPDiffable: You can pass any object as model.
      Later need uwrap it for get.
      */
     public var model: Any

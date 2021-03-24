@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Basic table item model with titles and accessories.
+ SPDiffable: Basic table item model with titles and accessories.
  
  You can set icon and selection style.
  By default if action is nil, selection style set to `.none`.
@@ -30,12 +30,12 @@ import UIKit
  */
 open class SPDiffableTableRow: SPDiffableItem {
     
-    public var text: String
-    public var detail: String? = nil
-    public var icon: UIImage? = nil
-    public var selectionStyle: UITableViewCell.SelectionStyle
-    public var accessoryType: UITableViewCell.AccessoryType
-    public var action: Action?
+    open var text: String
+    open var detail: String? = nil
+    open var icon: UIImage? = nil
+    open var selectionStyle: UITableViewCell.SelectionStyle
+    open var accessoryType: UITableViewCell.AccessoryType
+    open var action: Action?
     
     public init(identifier: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .none, action: Action? = nil) {
         self.text = text

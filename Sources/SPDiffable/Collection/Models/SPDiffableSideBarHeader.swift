@@ -22,13 +22,13 @@
 import UIKit
 
 /**
- Header model for side bar item.
+ SPDiffable: Header model for side bar item.
  */
 @available(iOS 14, *)
 open class SPDiffableSideBarHeader: SPDiffableItem {
     
-    public var text: String
-    public var accessories: [UICellAccessory]
+    open var text: String
+    open var accessories: [UICellAccessory]
     
     public init(identifier: SPDiffableItem.Identifier? = nil, text: String, accessories: [UICellAccessory] = []) {
         self.text = text

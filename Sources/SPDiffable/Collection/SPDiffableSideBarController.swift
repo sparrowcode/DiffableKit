@@ -22,7 +22,7 @@
 import UIKit
 
 /**
-Basic side bar controller.
+ SPDiffable: Basic side bar controller.
 
  For common init call `setCellProviders` with default data and providers for it models.
  If need init manually, shoud init `diffableDataSource` fist, and next apply content when you need it.
@@ -33,14 +33,29 @@ Basic side bar controller.
 @available(iOS 14, *)
 open class SPDiffableSideBarController: UIViewController, UICollectionViewDelegate {
     
-    public lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    // MARK: - Properties
     
-    public var diffableDataSource: SPDiffableCollectionDataSource?
+    open lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    
+    open var diffableDataSource: SPDiffableCollectionDataSource?
     
     open weak var diffableDelegate: SPDiffableCollectionDelegate?
     
+    private var layout: UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { [weak self] (section, layoutEnvironment) -> NSCollectionLayoutSection? in
+            var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
+            let header = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].header
+            configuration.headerMode = (header == nil) ? .none : .firstItemInSection
+            let footer = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].footer
+            configuration.footerMode = (footer == nil) ? .none : .supplementary
+            return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
+        }
+    }
+    
+    // MARK: - Configure
+    
     /**
-     Init `diffableDataSource` and apply content to data source without animation.
+     SPDiffable: Init `diffableDataSource` and apply content to data source without animation.
      
      If need custom logic, you can manually init and apply data when you need.
      
@@ -53,16 +68,7 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
         diffableDataSource?.apply(sections, animated: false)
     }
     
-    private var layout: UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { [weak self] (section, layoutEnvironment) -> NSCollectionLayoutSection? in
-            var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
-            let header = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].header
-            configuration.headerMode = (header == nil) ? .none : .firstItemInSection
-            let footer = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].footer
-            configuration.footerMode = (footer == nil) ? .none : .supplementary
-            return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
-        }
-    }
+    // MARK: - Lifecycle
     
     open override func viewDidLoad() {
         super.viewDidLoad()

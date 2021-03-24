@@ -22,14 +22,20 @@
 import UIKit
 
 /**
- Diffable collecton data source.
+ SPDiffable: Diffable collecton data source.
  
  Using array cell providers for get view for each model.
  Need pass all cell providers which will be using in collection view and data source all by order each and try get view.
  */
 @available(iOS 13.0, *)
 open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+    
+    // MARK: - Properties
+    
+    private weak var collectionView: UICollectionView?
 
+    // MARK: - Init
+    
     public init(collectionView: UICollectionView, cellProviders: [CellProvider]) {
         super.init(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
             for provider in cellProviders {
@@ -41,10 +47,10 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
         }
     }
     
-    // MARK: Apply Wrappers
+    // MARK: - Apply Wrappers
     
     /**
-     Applying sections to current snapshot.
+     SPDiffable: Applying sections to current snapshot.
      
      Section convert to snapshot and appling after.
      If it iOS 14 and higher, content split to section and apply each section to collection.
@@ -90,7 +96,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
     }
     
     /**
-     Applying new snapshot insted of current.
+     SPDiffable: Applying new snapshot insted of current.
      
      - parameter snapshot: New snapshot.
      - parameter animating: Shoud apply changes with animation or not.
@@ -98,10 +104,35 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
     public func apply(_ snapshot: SPDiffableSnapshot, animated: Bool) {
         apply(snapshot, animatingDifferences: animated, completion: nil)
     }
+    
+    // MARK: - Get Content
+    
+    /**
+     SPDiffable: Get item by index path.
+     */
+    public func item(for indexPath: IndexPath) -> SPDiffableItem? {
+        return itemIdentifier(for: indexPath)
+    }
+    
+    /**
+     SPDiffable: Get index path for item by identifier.
+     */
+    public func indexPath(for itemIdentifier: SPDiffableItem.Identifier) -> IndexPath? {
+        return indexPath(for: SPDiffableItem(identifier: itemIdentifier))
+    }
+    
+    /**
+     SPDiffable: Get cell specific type `T` by indetifier.
+     */
+    public func cell<T: UICollectionViewCell>(_ type: T.Type, for itemIdentifier: SPDiffableItem.Identifier) -> T? {
+        guard let indexPath = indexPath(for: itemIdentifier) else { return nil }
+        guard let cell = self.collectionView?.cellForItem(at: indexPath) as? T else { return nil }
+        return cell
+    }
 }
 
 /**
- Wrapper of collection cell provider.
+ SPDiffable: Wrapper of collection cell provider.
  */
 @available(iOS 13.0, *)
 public typealias SPDiffableCollectionCellProvider = SPDiffableCollectionDataSource.CellProvider
