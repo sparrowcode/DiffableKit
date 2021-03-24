@@ -22,13 +22,15 @@
 import UIKit
 
 /**
- Diffable table data source.
+ SPDiffable: Diffable table data source.
  
  Using array cell providers for get view for each model.
  Need pass all cell providers which will be using in collection view and data source all by order each and try get view.
  */
 @available(iOS 13.0, *)
 open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+    
+    // MARK: - Properties
     
     /**
      SPDiffable: Mediator call some methods which can not using in data source object.
@@ -40,6 +42,8 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     public weak var mediator: SPDiffableTableMediator?
     
     private weak var tableView: UITableView?
+    
+    // MARK: - Init
     
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
@@ -138,5 +142,8 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
 }
 
+/**
+ SPDiffable: Wrapper of table cell provider.
+ */
 @available(iOS 13.0, *)
 public typealias SPDiffableTableCellProvider = SPDiffableTableDataSource.CellProvider

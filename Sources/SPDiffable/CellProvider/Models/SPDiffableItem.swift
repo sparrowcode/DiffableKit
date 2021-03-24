@@ -22,14 +22,14 @@
 import UIKit
 
 /**
- Basic class for items and sections.
+ SPDiffable: Basic class for items and sections.
  
  All next model's classes shoud be extend from it class.
  */
 open class SPDiffableItem: NSObject, NSCopying {
     
     /**
-     Identifier help for detect uniq cell and doing diffable work and animations.
+     SPDiffable: Identifier help for detect uniq cell and doing diffable work and animations.
      
      Always shoud be uniq. But if it changed, diffable system remove old and insert new (not reload).
      Identifier uses in `Hashable` and `Equatable` protocols.

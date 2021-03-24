@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Header & Footer model class with simple text.
+ SPDiffable: Header & Footer model class with simple text.
  */
 open class SPDiffableTextHeaderFooter: SPDiffableItem {
     

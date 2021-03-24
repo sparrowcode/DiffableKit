@@ -20,6 +20,7 @@
 // SOFTWARE.
 
 import UIKit
+import SPDiffable
 
 @available(iOS 13.0, *)
 class DiffableTableController: SPDiffableTableController, SPDiffableTableMediator {

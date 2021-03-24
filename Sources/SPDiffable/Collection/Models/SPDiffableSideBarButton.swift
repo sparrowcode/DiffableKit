@@ -22,17 +22,17 @@
 import UIKit
 
 /**
- Buton item in side bar.
+ SPDiffable: Buton item in side bar.
  
  Colorful title usually.
  */
 @available(iOS 14, *)
 open class SPDiffableSideBarButton: SPDiffableItem {
     
-    public let title: String
-    public let image: UIImage?
-    public var accessories: [UICellAccessory]
-    public var action: Action
+    open var title: String
+    open var image: UIImage?
+    open var accessories: [UICellAccessory]
+    open var action: Action
     
     public init(identifier: SPDiffableItem.Identifier? = nil, title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
         self.title = title

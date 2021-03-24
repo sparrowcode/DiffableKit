@@ -25,7 +25,7 @@ import UIKit
 public enum SPDiffableTableCellProviders {
     
     /**
-     Return cell providers, which process for project models cells.
+     SPDiffable: Return cell providers, which process for project models cells.
      No need additional configure.
      
      For change style of cells requerid register new cell provider.

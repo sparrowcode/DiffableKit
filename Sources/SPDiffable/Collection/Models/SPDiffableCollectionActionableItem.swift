@@ -22,38 +22,16 @@
 import UIKit
 
 /**
- SPDiffable: List class using for ovveride logic of text color.
- 
- When change state, here using custom processing of title color. It depended of state.
- Also not show background selection, but cell selected. Need deselect it manually.
- Configure it cell need via `updateWithItem` func.
+ SPDiffable: Actionable collection item model.
  */
-@available(iOS 14, *)
-class SPDiffableSideBarButtonCollectionViewListCell: UICollectionViewListCell {
+open class SPDiffableCollectionActionableItem: SPDiffableItem {
     
-    private var item: SPDiffableSideBarButton? = nil
+    open var action: Action?
     
-    open func updateWithItem(_ newItem: SPDiffableSideBarButton) {
-        guard item != newItem else { return }
-        item = newItem
-        setNeedsUpdateConfiguration()
+    public init(identifier: String, action: Action? = nil) {
+        self.action = action
+        super.init(identifier: identifier)
     }
     
-    override func updateConfiguration(using state: UICellConfigurationState) {
-        var content = UIListContentConfiguration.sidebarCell().updated(for: state)
-        content.text = item?.title
-        content.image = item?.image
-        content.textProperties.color = tintColor
-        contentConfiguration = content
-    }
-    
-    /**
-     SPDiffable: Button can't be selected becouse it call once action.
-     Automatically disable selection.
-     */
-    override var isSelected: Bool {
-        didSet { if isSelected { isSelected = false } }
-    }
+    public typealias Action = (_ indexPath: IndexPath) -> Void
 }
-
-

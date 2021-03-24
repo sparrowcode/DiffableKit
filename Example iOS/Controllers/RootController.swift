@@ -20,6 +20,7 @@
 // SOFTWARE.
 
 import UIKit
+import SPDiffable
 
 @available(iOS 13.0, *)
 class RootController: DiffableTableController {
@@ -69,13 +70,15 @@ class RootController: DiffableTableController {
             header: SPDiffableTextHeaderFooter(text: "Presenter"),
             footer: SPDiffableTextHeaderFooter(text: "Push in navigation processing by table controller. Sometimes you need manually deselect cell."),
             items: [
-                SPDiffableTableRow(text: "Basic Deselect", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Deselect", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 }),
-                SPDiffableTableRow(text: "Basic Push", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Push", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
                     guard let self = self else { return }
-                    self.tableView.deselectRow(at: indexPath, animated: true)
+                    let controller = UIViewController()
+                    controller.view.backgroundColor = .secondarySystemGroupedBackground
+                    self.navigationController?.pushViewController(controller, animated: true)
                 })
             ]
         )

@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Basic diffable collection controller.
+ SPDiffable: Basic diffable collection controller.
  
  For common init call `setCellProviders` with default data and providers for it models.
  If need init manually, shoud init `diffableDataSource` first, and next apply content when you need it.
@@ -30,12 +30,16 @@ import UIKit
 @available(iOS 13.0, *)
 open class SPDiffableCollectionController: UICollectionViewController {
     
-    public var diffableDataSource: SPDiffableCollectionDataSource?
+    // MARK: - Properties
+    
+    open var diffableDataSource: SPDiffableCollectionDataSource?
     
     open weak var diffableDelegate: SPDiffableCollectionDelegate?
     
+    // MARK: - Configure
+    
     /**
-     Init `diffableDataSource` and apply content to data source without animation.
+     SPDiffable: Init `diffableDataSource` and apply content to data source without animation.
      
      If need custom logic, you can manually init and apply data when you need.
      
@@ -43,7 +47,7 @@ open class SPDiffableCollectionController: UICollectionViewController {
      - parameter providers: Cell Providers with valid order for processing.
      - parameter sections: Content as array of `SPDiffableSection`.
      */
-    public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
+    open func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
         diffableDataSource = SPDiffableCollectionDataSource(collectionView: collectionView, cellProviders: providers)
         diffableDataSource?.apply(sections, animated: false)
     }
@@ -53,5 +57,11 @@ open class SPDiffableCollectionController: UICollectionViewController {
     open override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = diffableDataSource?.itemIdentifier(for: indexPath) else { return }
         diffableDelegate?.diffableCollectionView?(collectionView, didSelectItem: item)
+        switch item {
+        case let model as SPDiffableCollectionActionableItem:
+            model.action?(indexPath)
+        default:
+            break
+        }
     }
 }

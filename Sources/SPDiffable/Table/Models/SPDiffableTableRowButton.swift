@@ -22,17 +22,17 @@
 import UIKit
 
 /**
- When table cell has style button.
+ SPDiffable: When table cell has style button.
  
  Action pass index path of proccess cell.
  */
 open class SPDiffableTableRowButton: SPDiffableItem {
     
-    public var text: String
-    public var detail: String?
-    public var icon: UIImage?
-    public var accessoryType: UITableViewCell.AccessoryType
-    public var action: Action
+    open var text: String
+    open var detail: String?
+    open var icon: UIImage?
+    open var accessoryType: UITableViewCell.AccessoryType
+    open var action: Action
     
     public init(identifier: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .default, action: @escaping Action) {
         self.text = text

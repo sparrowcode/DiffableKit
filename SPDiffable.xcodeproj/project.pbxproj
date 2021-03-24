@@ -17,6 +17,7 @@
 		F4920A6424F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */; };
 		F4920A6924F447D6007F7EE9 /* SPDiffableTableCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */; };
 		F4920A6C24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */; };
+		F4D77FAC260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D77FAB260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift */; };
 		F4FBB993260912A50036E67D /* SPDiffableCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBB98726090FFE0036E67D /* SPDiffableCollectionDelegate.swift */; };
 		F4FBB995260912A70036E67D /* SPDiffableTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBB98B260910D40036E67D /* SPDiffableTableDelegate.swift */; };
 		F4FBB99C260912E20036E67D /* SPDiffable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SPDiffable::SPDiffable::Product" /* SPDiffable.framework */; platformFilter = ios; };
@@ -86,6 +87,7 @@
 		F4977BC6252E079A00B20771 /* Example iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Example iOS.entitlements"; sourceTree = "<group>"; };
 		F4D6FB12256646FC0046A328 /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
 		F4D6FB16256646FD0046A328 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F4D77FAB260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionActionableItem.swift; sourceTree = "<group>"; };
 		F4FBB98726090FFE0036E67D /* SPDiffableCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDelegate.swift; sourceTree = "<group>"; };
 		F4FBB98B260910D40036E67D /* SPDiffableTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableDelegate.swift; sourceTree = "<group>"; };
 		OBJ_10 /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				OBJ_16 /* SPDiffableSideBarButton.swift */,
 				OBJ_17 /* SPDiffableSideBarHeader.swift */,
 				OBJ_18 /* SPDiffableSideBarItem.swift */,
+				F4D77FAB260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				OBJ_69 /* SPDiffableStepper.swift in Sources */,
 				OBJ_70 /* SPDiffableSubtitleTableViewCell.swift in Sources */,
 				OBJ_71 /* SPDiffableSwitch.swift in Sources */,
+				F4D77FAC260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift in Sources */,
 				F4FBB995260912A70036E67D /* SPDiffableTableDelegate.swift in Sources */,
 				OBJ_72 /* SPDiffableTableViewCell.swift in Sources */,
 				OBJ_73 /* SPDiffableTableController.swift in Sources */,
