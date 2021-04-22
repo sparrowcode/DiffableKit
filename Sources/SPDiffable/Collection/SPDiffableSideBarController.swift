@@ -31,17 +31,28 @@ import UIKit
  Layout detect data source and automatically set header and footer mode.
 */
 @available(iOS 14, *)
-open class SPDiffableSideBarController: UIViewController, UICollectionViewDelegate {
+open class SPDiffableSideBarController: SPDiffableCollectionController {
     
-    // MARK: - Properties
+    // MARK: - Init
     
-    open lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    public init() {
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        commonInit()
+        
+    }
     
-    open var diffableDataSource: SPDiffableCollectionDataSource?
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
     
-    open weak var diffableDelegate: SPDiffableCollectionDelegate?
+    private func commonInit() {
+        collectionView.setCollectionViewLayout(makeLayout(), animated: false)
+    }
     
-    private var layout: UICollectionViewCompositionalLayout {
+    // MARK: - Layout
+    
+    private func makeLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { [weak self] (section, layoutEnvironment) -> NSCollectionLayoutSection? in
             var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
             let header = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].header
@@ -49,52 +60,6 @@ open class SPDiffableSideBarController: UIViewController, UICollectionViewDelega
             let footer = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].footer
             configuration.footerMode = (footer == nil) ? .none : .supplementary
             return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
-        }
-    }
-    
-    // MARK: - Configure
-    
-    /**
-     SPDiffable: Init `diffableDataSource` and apply content to data source without animation.
-     
-     If need custom logic, you can manually init and apply data when you need.
-     
-     - warning: Changes applied not animatable.
-     - parameter providers: Cell Providers with valid order for processing.
-     - parameter sections: Content as array of `SPDiffableSection`.
-     */
-    public func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
-        diffableDataSource = SPDiffableCollectionDataSource(collectionView: collectionView, cellProviders: providers)
-        diffableDataSource?.apply(sections, animated: false)
-    }
-    
-    // MARK: - Lifecycle
-    
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(collectionView)
-        NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
-    
-    // MARK: - UICollectionViewDelegate
-    
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let item = diffableDataSource?.itemIdentifier(for: indexPath) else { return }
-        diffableDelegate?.diffableCollectionView?(collectionView, didSelectItem: item)
-        switch item {
-        case let item as SPDiffableSideBarItem:
-            item.action(indexPath)
-        case let item as SPDiffableSideBarButton:
-            item.action(indexPath)
-        default:
-            break
         }
     }
 }

@@ -22,19 +22,35 @@
 import UIKit
 
 /**
- SPDiffable: Basic diffable collection controller.
+ SPDiffable: Basic diffable collection view.
  
  For common init call `setCellProviders` with default data and providers for it models.
  If need init manually, shoud init `diffableDataSource` first, and next apply content when you need it.
  */
 @available(iOS 13.0, *)
-open class SPDiffableCollectionController: UICollectionViewController {
+open class SPDiffableCollectionView: UICollectionView, UICollectionViewDelegate {
     
     // MARK: - Properties
     
     open var diffableDataSource: SPDiffableCollectionDataSource?
     
     open weak var diffableDelegate: SPDiffableCollectionDelegate?
+    
+    // MARK: - Init
+    
+    public init() {
+        super.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        commonInit()
+    }
+    
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        delegate = self
+    }
     
     // MARK: - Configure
     
@@ -48,13 +64,13 @@ open class SPDiffableCollectionController: UICollectionViewController {
      - parameter sections: Content as array of `SPDiffableSection`.
      */
     open func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
-        diffableDataSource = SPDiffableCollectionDataSource(collectionView: collectionView, cellProviders: providers)
+        diffableDataSource = SPDiffableCollectionDataSource(collectionView: self, cellProviders: providers)
         diffableDataSource?.apply(sections, animated: false)
     }
     
     // MARK: - UICollectionViewDelegate
     
-    open override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = diffableDataSource?.item(for: indexPath) else { return }
         diffableDelegate?.diffableCollectionView?(collectionView, didSelectItem: item)
         switch item {
