@@ -47,7 +47,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
         }
     }
     
-    // MARK: - Apply Wrappers
+    // MARK: - Apply Content
     
     /**
      SPDiffable: Applying sections to current snapshot.

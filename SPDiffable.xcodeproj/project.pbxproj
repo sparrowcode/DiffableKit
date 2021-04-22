@@ -17,6 +17,8 @@
 		F4920A6424F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6324F3BFFA007F7EE9 /* SPDiffableWrapperItem.swift */; };
 		F4920A6924F447D6007F7EE9 /* SPDiffableTableCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */; };
 		F4920A6C24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */; };
+		F4AB9BE326315F4400EC27A5 /* SPDiffableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB9BE226315F4400EC27A5 /* SPDiffableCollectionView.swift */; };
+		F4AB9BE9263161DA00EC27A5 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB9BE8263161DA00EC27A5 /* SPDiffableSideBarController.swift */; };
 		F4D77FAC260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D77FAB260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift */; };
 		F4FBB993260912A50036E67D /* SPDiffableCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBB98726090FFE0036E67D /* SPDiffableCollectionDelegate.swift */; };
 		F4FBB995260912A70036E67D /* SPDiffableTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBB98B260910D40036E67D /* SPDiffableTableDelegate.swift */; };
@@ -25,7 +27,6 @@
 		OBJ_53 /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SPDiffableCollectionController.swift */; };
 		OBJ_54 /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SPDiffableCollectionDataSource.swift */; };
 		OBJ_55 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */; };
-		OBJ_56 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* SPDiffableSideBarController.swift */; };
 		OBJ_57 /* SPDiffableSideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* SPDiffableSideBarButton.swift */; };
 		OBJ_58 /* SPDiffableSideBarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* SPDiffableSideBarHeader.swift */; };
 		OBJ_59 /* SPDiffableSideBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* SPDiffableSideBarItem.swift */; };
@@ -85,6 +86,10 @@
 		F4920A6824F447D6007F7EE9 /* SPDiffableTableCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableTableCellProviders.swift; sourceTree = "<group>"; };
 		F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionCellProviders.swift; sourceTree = "<group>"; };
 		F4977BC6252E079A00B20771 /* Example iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Example iOS.entitlements"; sourceTree = "<group>"; };
+		F4AB9BE226315F4400EC27A5 /* SPDiffableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionView.swift; sourceTree = "<group>"; };
+		F4AB9BE626315FB400EC27A5 /* CODESTYLE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODESTYLE.md; sourceTree = "<group>"; };
+		F4AB9BE8263161DA00EC27A5 /* SPDiffableSideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarController.swift; sourceTree = "<group>"; };
+		F4AB9BED263163B600EC27A5 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		F4D6FB12256646FC0046A328 /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
 		F4D6FB16256646FD0046A328 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F4D77FAB260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionActionableItem.swift; sourceTree = "<group>"; };
@@ -93,7 +98,6 @@
 		OBJ_10 /* SPDiffableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionController.swift; sourceTree = "<group>"; };
 		OBJ_11 /* SPDiffableCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableCollectionDataSource.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButtonCollectionViewListCell.swift; sourceTree = "<group>"; };
-		OBJ_13 /* SPDiffableSideBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarController.swift; sourceTree = "<group>"; };
 		OBJ_16 /* SPDiffableSideBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarButton.swift; sourceTree = "<group>"; };
 		OBJ_17 /* SPDiffableSideBarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarHeader.swift; sourceTree = "<group>"; };
 		OBJ_18 /* SPDiffableSideBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDiffableSideBarItem.swift; sourceTree = "<group>"; };
@@ -288,6 +292,8 @@
 				OBJ_47 /* README.md */,
 				F4D6FB16256646FD0046A328 /* .gitignore */,
 				OBJ_45 /* SPDiffable.podspec */,
+				F4AB9BE626315FB400EC27A5 /* CODESTYLE.md */,
+				F4AB9BED263163B600EC27A5 /* TODO.md */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				F47A41CF24EB222C0054DBB2 /* Example iOS */,
@@ -322,8 +328,9 @@
 			children = (
 				OBJ_15 /* Models */,
 				OBJ_10 /* SPDiffableCollectionController.swift */,
+				F4AB9BE226315F4400EC27A5 /* SPDiffableCollectionView.swift */,
 				OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */,
-				OBJ_13 /* SPDiffableSideBarController.swift */,
+				F4AB9BE8263161DA00EC27A5 /* SPDiffableSideBarController.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -434,8 +441,9 @@
 				OBJ_54 /* SPDiffableCollectionDataSource.swift in Sources */,
 				F4920A6C24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */,
 				OBJ_55 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */,
-				OBJ_56 /* SPDiffableSideBarController.swift in Sources */,
 				OBJ_57 /* SPDiffableSideBarButton.swift in Sources */,
+				F4AB9BE326315F4400EC27A5 /* SPDiffableCollectionView.swift in Sources */,
+				F4AB9BE9263161DA00EC27A5 /* SPDiffableSideBarController.swift in Sources */,
 				F4920A6924F447D6007F7EE9 /* SPDiffableTableCellProviders.swift in Sources */,
 				OBJ_58 /* SPDiffableSideBarHeader.swift in Sources */,
 				OBJ_59 /* SPDiffableSideBarItem.swift in Sources */,
