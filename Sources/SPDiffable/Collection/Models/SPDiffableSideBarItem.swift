@@ -27,19 +27,17 @@ import UIKit
  For header use `SPDiffableSideBarHeader` class.
  */
 @available(iOS 14, *)
-open class SPDiffableSideBarItem: SPDiffableItem {
+open class SPDiffableSideBarItem: SPDiffableCollectionActionableItem {
     
     open var title: String
     open var image: UIImage?
     open var accessories: [UICellAccessory]
-    open var action: Action
     
     public init(identifier: SPDiffableItem.Identifier? = nil, title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
         self.title = title
         self.image = image
         self.accessories = accessories
-        self.action = action
-        super.init(identifier: identifier ?? title)
+        super.init(identifier: identifier ?? title, action: action)
     }
     
     public typealias Action = (_ indexPath: IndexPath) -> Void
