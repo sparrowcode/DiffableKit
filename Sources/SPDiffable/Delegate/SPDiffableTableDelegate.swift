@@ -25,7 +25,7 @@ import UIKit
  SPDiffable: Protocol with table events.
  */
 @available(iOS 13.0, *)
-@objc public protocol SPDiffableTableDelegate: class {
+@objc public protocol SPDiffableTableDelegate: AnyObject {
     
     @objc optional func diffableTableView(_ tableView: UITableView, didSelectItem item: SPDiffableItem)
 }
