@@ -30,8 +30,6 @@ import UIKit
 @available(iOS 13.0, *)
 open class SPDiffableTableController: UITableViewController {
     
-    // MARK: - Properties
-    
     open var diffableDataSource: SPDiffableTableDataSource?
     
     open weak var diffableDelegate: SPDiffableTableDelegate?
@@ -44,7 +42,7 @@ open class SPDiffableTableController: UITableViewController {
         tableView.register(SPDiffableSubtitleTableViewCell.self, forCellReuseIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier)
     }
     
-    // MARK: - Configure
+    // MARK: - Init
     
     /**
      SPDiffable: Init `diffableDataSource` and apply content to data source without animation.

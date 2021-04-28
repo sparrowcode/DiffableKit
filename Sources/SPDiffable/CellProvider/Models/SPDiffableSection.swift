@@ -29,8 +29,6 @@ import UIKit
  */
 open class SPDiffableSection: NSObject, NSCopying {
     
-    // MARK: - Properties
-    
     /**
      SPDiffable: Identifier help for detect uniq section and doing diffable work and animations.
      

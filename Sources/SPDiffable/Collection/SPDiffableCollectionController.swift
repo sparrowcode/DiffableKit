@@ -30,13 +30,9 @@ import UIKit
 @available(iOS 13.0, *)
 open class SPDiffableCollectionController: UICollectionViewController {
     
-    // MARK: - Properties
-    
     open var diffableDataSource: SPDiffableCollectionDataSource?
     
     open weak var diffableDelegate: SPDiffableCollectionDelegate?
-    
-    // MARK: - Configure
     
     /**
      SPDiffable: Init `diffableDataSource` and apply content to data source without animation.

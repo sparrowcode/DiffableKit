@@ -30,8 +30,6 @@ import UIKit
 @available(iOS 13.0, *)
 open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
-    // MARK: - Properties
-    
     private weak var collectionView: UICollectionView?
 
     // MARK: - Init
