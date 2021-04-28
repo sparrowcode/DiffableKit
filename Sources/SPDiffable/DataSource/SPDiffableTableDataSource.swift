@@ -30,8 +30,6 @@ import UIKit
 @available(iOS 13.0, *)
 open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
-    // MARK: - Properties
-    
     /**
      SPDiffable: Mediator call some methods which can not using in data source object.
      

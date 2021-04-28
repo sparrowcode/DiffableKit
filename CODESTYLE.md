@@ -15,11 +15,8 @@ class Example {
 
 Here you find all which using in project.
 
-
 - // MARK: - Init
-- // MARK: - Configure
 - // MARK: - Lifecycle
-- // MARK: - Properties
-
+- // MARK: - Helpers
 
 If you can't find valid, add new to codestyle agreements please. Other can be use wit if class is large and need struct it even without adding to codestyle agreements.
