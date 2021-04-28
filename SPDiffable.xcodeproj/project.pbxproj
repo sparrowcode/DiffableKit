@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,11 +19,11 @@
 		F4920A6C24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4920A6B24F44834007F7EE9 /* SPDiffableCollectionCellProviders.swift */; };
 		F4AB9BE326315F4400EC27A5 /* SPDiffableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB9BE226315F4400EC27A5 /* SPDiffableCollectionView.swift */; };
 		F4AB9BE9263161DA00EC27A5 /* SPDiffableSideBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB9BE8263161DA00EC27A5 /* SPDiffableSideBarController.swift */; };
+		F4CEDF4126393423008BF79D /* SPDiffable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SPDiffable::SPDiffable::Product" /* SPDiffable.framework */; };
+		F4CEDF4226393423008BF79D /* SPDiffable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "SPDiffable::SPDiffable::Product" /* SPDiffable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4D77FAC260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D77FAB260B2FFC004660B8 /* SPDiffableCollectionActionableItem.swift */; };
 		F4FBB993260912A50036E67D /* SPDiffableCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBB98726090FFE0036E67D /* SPDiffableCollectionDelegate.swift */; };
 		F4FBB995260912A70036E67D /* SPDiffableTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBB98B260910D40036E67D /* SPDiffableTableDelegate.swift */; };
-		F4FBB99C260912E20036E67D /* SPDiffable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SPDiffable::SPDiffable::Product" /* SPDiffable.framework */; platformFilter = ios; };
-		F4FBB99D260912E20036E67D /* SPDiffable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "SPDiffable::SPDiffable::Product" /* SPDiffable.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		OBJ_53 /* SPDiffableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SPDiffableCollectionController.swift */; };
 		OBJ_54 /* SPDiffableCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SPDiffableCollectionDataSource.swift */; };
 		OBJ_55 /* SPDiffableSideBarButtonCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* SPDiffableSideBarButtonCollectionViewListCell.swift */; };
@@ -49,7 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F4FBB99E260912E20036E67D /* PBXContainerItemProxy */ = {
+		F4CEDF4326393423008BF79D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -59,13 +59,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F4977A3B252DE21000B20771 /* Embed Frameworks */ = {
+		F4CEDF4526393423008BF79D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F4FBB99D260912E20036E67D /* SPDiffable.framework in Embed Frameworks */,
+				F4CEDF4226393423008BF79D /* SPDiffable.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FBB99C260912E20036E67D /* SPDiffable.framework in Frameworks */,
+				F4CEDF4126393423008BF79D /* SPDiffable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +345,12 @@
 				F47A41CA24EB222C0054DBB2 /* Sources */,
 				F47A41CB24EB222C0054DBB2 /* Frameworks */,
 				F47A41CC24EB222C0054DBB2 /* Resources */,
-				F4977A3B252DE21000B20771 /* Embed Frameworks */,
+				F4CEDF4526393423008BF79D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F4FBB99F260912E20036E67D /* PBXTargetDependency */,
+				F4CEDF4426393423008BF79D /* PBXTargetDependency */,
 			);
 			name = "Example iOS";
 			productName = Example;
@@ -474,11 +474,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F4FBB99F260912E20036E67D /* PBXTargetDependency */ = {
+		F4CEDF4426393423008BF79D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = "SPDiffable::SPDiffable" /* SPDiffable iOS */;
-			targetProxy = F4FBB99E260912E20036E67D /* PBXContainerItemProxy */;
+			targetProxy = F4CEDF4326393423008BF79D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -548,10 +547,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Example iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPDiffable;
@@ -614,10 +610,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Example iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPDiffable;
@@ -729,8 +722,7 @@
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -747,10 +739,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SPDiffable.xcodeproj/SPDiffable_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -782,10 +771,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SPDiffable.xcodeproj/SPDiffable_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";

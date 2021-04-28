@@ -25,7 +25,7 @@ import UIKit
  SPDiffable: Protocol with collection events.
  */
 @available(iOS 13.0, *)
-@objc public protocol SPDiffableCollectionDelegate: class {
+@objc public protocol SPDiffableCollectionDelegate: AnyObject {
     
     @objc optional func diffableCollectionView(_ collectionView: UICollectionView, didSelectItem item: SPDiffableItem)
 }
