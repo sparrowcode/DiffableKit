@@ -69,6 +69,7 @@ public enum SPDiffableTableCellProviders {
             cell.textLabel?.text = item.text
             let control = SPDiffableSwitch(action: item.action)
             control.isOn = item.isOn
+            cell.imageView?.image = item.icon
             cell.accessoryView = control
             cell.selectionStyle = .none
             return cell
@@ -86,6 +87,7 @@ public enum SPDiffableTableCellProviders {
             control.value = item.value
             control.minimumValue = item.minimumValue
             control.maximumValue = item.maximumValue
+            cell.imageView?.image = item.icon
             cell.accessoryView = control
             cell.selectionStyle = .none
             return cell
