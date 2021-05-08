@@ -1,3 +1,3 @@
 # To Do List 
 
-- Update `SPDiffableCollectionDelegate` & `SPDiffableTableDelegate` for process index path.
+- Now no more plans. For add feature please create issue.

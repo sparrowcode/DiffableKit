@@ -27,5 +27,5 @@ import UIKit
 @available(iOS 13.0, *)
 @objc public protocol SPDiffableCollectionDelegate: AnyObject {
     
-    @objc optional func diffableCollectionView(_ collectionView: UICollectionView, didSelectItem item: SPDiffableItem)
+    @objc optional func diffableCollectionView(_ collectionView: UICollectionView, didSelectItem item: SPDiffableItem, indexPath: IndexPath)
 }
