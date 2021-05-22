@@ -1,3 +1,3 @@
-# To Do List 
+# TODO
 
-- Now no more plans. For add feature please create issue.
+Here provided ideas or features which will be implemented soon.
