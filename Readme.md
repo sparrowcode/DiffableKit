@@ -8,7 +8,6 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 ## Navigate
 
-- [Requirements](#requirements)
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
@@ -26,11 +25,11 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
-## Requirements
-
-iOS 13+
-
 ## Installation
+
+Ready for use on iOS 12+. Works with Swift 5+. Required Xcode 12.5 and higher.
+
+<img align="right" src="https://github.com/ivanvorobei/SPDiffable/blob/main/Assets/Readme/spm-install-preview.png" width="520"/>
 
 ### Swift Package Manager
 
@@ -300,7 +299,6 @@ Collection of native Swift extensions to boost your development. Support tvOS an
 ## Russian Community
 
 В телеграм-канале [Код Воробья](https://sparrowcode.by/telegram) пишу о iOS разработке. Помощь можно найти в [нашем чате](https://sparrowcode.by/telegram/chat).
-
 Видео-туториалы выклыдываю на [YouTube](https://sparrowcode.by/youtube):
 
 [![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://sparrowcode.by/youtube)

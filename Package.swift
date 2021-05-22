@@ -13,9 +13,14 @@ let package = Package(
             targets: ["SPDiffable"]
         ),
     ],
+    dependencies: [],
     targets: [
         .target(
             name: "SPDiffable",
-            dependencies: []),
-    ]
+            swiftSettings: [
+                .define("SPDIFFABLE_SPM")
+            ]
+        ),
+    ],
+    swiftLanguageVersions: [.v5]
 )
