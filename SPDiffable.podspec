@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
-  s.name          = 'SPDiffable'
-  s.version       = '1.2.4'
-  s.summary       = 'Extenshion of Diffable API which allow not duplicate code and use less models.'
-  s.homepage      = 'https://github.com/ivanvorobei/SPDiffable'
-  s.source        = { :git => 'https://github.com/ivanvorobei/SPDiffable.git', :tag => s.version }
-  s.license       = { :type => 'MIT', :file => "LICENSE" }
+  s.name = 'SPDiffable'
+  s.version = '1.2.4'
+  s.summary = 'Extenshion of Diffable API which allow not duplicate code and use less models.'
+  s.homepage = 'https://github.com/ivanvorobei/SPDiffable'
+  s.source = { :git => 'https://github.com/ivanvorobei/SPDiffable.git', :tag => s.version }
+  s.license = { :type => 'MIT', :file => "LICENSE" }
   
   s.author = { 'Ivan Vorobei' => 'hello@ivanvorobei.by' }
   s.social_media_url = 'https://ivanvorobei.by'
