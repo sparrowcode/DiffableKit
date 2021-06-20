@@ -59,8 +59,16 @@ open class SPDiffableCollectionView: UICollectionView, UICollectionViewDelegate 
      - parameter providers: Cell Providers with valid order for processing.
      - parameter sections: Content as array of `SPDiffableSection`.
      */
-    open func setCellProviders( _ providers: [SPDiffableCollectionCellProvider], sections: [SPDiffableSection]) {
-        diffableDataSource = SPDiffableCollectionDataSource(collectionView: self, cellProviders: providers)
+    open func setCellProviders(
+        _ cellProviders: [SPDiffableCollectionCellProvider],
+        supplementaryViewProviders: [SPDiffableCollectionSupplementaryViewProvider] = [],
+        sections: [SPDiffableSection])
+    {
+        diffableDataSource = SPDiffableCollectionDataSource(
+            collectionView: self,
+            cellProviders: cellProviders,
+            supplementaryViewProviders: supplementaryViewProviders
+        )
         diffableDataSource?.apply(sections, animated: false)
     }
     
