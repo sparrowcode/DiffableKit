@@ -34,7 +34,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
 
     // MARK: - Init
     
-    public init(collectionView: UICollectionView, cellProviders: [CellProvider], supplementaryViewProviders: [SupplementaryViewProvider]) {
+    public init(collectionView: UICollectionView, cellProviders: [CellProvider], supplementaryViewProviders: [SupplementaryViewProvider] = []) {
         
         super.init(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
             for provider in cellProviders {
