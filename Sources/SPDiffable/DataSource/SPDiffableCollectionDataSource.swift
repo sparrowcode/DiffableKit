@@ -148,10 +148,17 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
     }
     
     /**
+     SPDiffable: Get sections.
+     */
+    public func sections() -> [SPDiffableSection] {
+        return snapshot().sectionIdentifiers
+    }
+    
+    /**
      SPDiffable: Get section by index.
      */
     public func section(for index: Int) -> SPDiffableSection? {
-        let snapshot = self.snapshot()
+        let snapshot = snapshot()
         guard index < snapshot.sectionIdentifiers.count else { return nil }
         return snapshot.sectionIdentifiers[index]
     }
