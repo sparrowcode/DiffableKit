@@ -56,14 +56,17 @@ open class SPDiffableCollectionView: UICollectionView, UICollectionViewDelegate 
      If need custom logic, you can manually init and apply data when you need.
      
      - warning: Changes applied not animatable.
-     - parameter providers: Cell Providers with valid order for processing.
+     - parameter cellProviders: Cell providers with valid order for processing.
+     - parameter supplementaryViewProviders: Supplementary view providers with valid order for processing.
+     - parameter headerAsFirstCell: Flag for use header as cell or supplementary.
      - parameter sections: Content as array of `SPDiffableSection`.
      */
     open func setCellProviders(
         _ cellProviders: [SPDiffableCollectionCellProvider],
         supplementaryViewProviders: [SPDiffableCollectionSupplementaryViewProvider] = [],
-        sections: [SPDiffableSection])
-    {
+        headerAsFirstCell: Bool = true,
+        sections: [SPDiffableSection]
+    ) {
         diffableDataSource = SPDiffableCollectionDataSource(
             collectionView: self,
             cellProviders: cellProviders,
