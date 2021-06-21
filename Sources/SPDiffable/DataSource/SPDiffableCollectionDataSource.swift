@@ -32,6 +32,13 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
     
     private weak var collectionView: UICollectionView?
     
+    /**
+     SPDiffable: Make section and use header model like first cell.
+     
+     If you don't use composition layout, no way say to collection system about header elements. Its using random, sometimes its cell provider call, sometimes it call supplementary. In this case we shoudn't set header to section snapshot. For this case it condition only.
+     */
+    public var headerAsFirstElement: Bool = true
+    
     // MARK: - Init
     
     public init(collectionView: UICollectionView, cellProviders: [CellProvider], supplementaryViewProviders: [SupplementaryViewProvider] = []) {
@@ -86,22 +93,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             }
             
             // Update current sections.
-            
-            // If you don't use composition layout, no way say to collection system
-            // about header elements. Its using random, sometimes its
-            // cell provider call, sometimes it call supplementary.
-            // In this case we shoudn't set header to section snapshot.
-            // For this case it condition only.
-            let headerAsFirstElement: Bool = {
-                if collectionView?.collectionViewLayout is UICollectionViewCompositionalLayout {
-                    return true
-                }
-                if collectionView?.collectionViewLayout is UICollectionViewFlowLayout {
-                    return false
-                }
-                return true
-            }()
-            
+    
             for section in sections {
                 var sectionSnapshot = SPDiffableSectionSnapshot()
                 
