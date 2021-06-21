@@ -44,6 +44,7 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     // MARK: - Init
     
     public init(tableView: UITableView, cellProviders: [CellProvider]) {
+        self.tableView = tableView
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
             for provider in cellProviders {
                 if let cell = provider(tableView, indexPath, item) {
@@ -52,7 +53,6 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
             }
             return nil
         })
-        self.tableView = tableView
     }
     
     // MARK: - Apply Content
