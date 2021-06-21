@@ -93,11 +93,11 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             // In this case we shoudn't set header to section snapshot.
             // For this case it condition only.
             let headerAsFirstElement: Bool = {
-                if collectionView?.collectionViewLayout is UICollectionViewFlowLayout {
-                    return false
-                }
                 if collectionView?.collectionViewLayout is UICollectionViewCompositionalLayout {
                     return true
+                }
+                if collectionView?.collectionViewLayout is UICollectionViewFlowLayout {
+                    return false
                 }
                 return true
             }()
