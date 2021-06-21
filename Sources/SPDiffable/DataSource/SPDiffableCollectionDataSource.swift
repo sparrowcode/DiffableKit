@@ -31,10 +31,12 @@ import UIKit
 open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     private weak var collectionView: UICollectionView?
-
+    
     // MARK: - Init
     
     public init(collectionView: UICollectionView, cellProviders: [CellProvider], supplementaryViewProviders: [SupplementaryViewProvider] = []) {
+        
+        self.collectionView = collectionView
         
         super.init(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
             for provider in cellProviders {
@@ -91,32 +93,25 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             // In this case we shoudn't set header to section snapshot.
             // For this case it condition only.
             let headerAsFirstElement: Bool = {
-                print("collectionView: \(collectionView)")
                 if collectionView?.collectionViewLayout is UICollectionViewFlowLayout {
-                    print("return false")
                     return false
                 }
                 if collectionView?.collectionViewLayout is UICollectionViewCompositionalLayout {
-                    print("return true")
                     return true
                 }
-                print("return true 2")
                 return true
             }()
-            print("headerAsFirstElement \(headerAsFirstElement)")
             
             for section in sections {
                 var sectionSnapshot = SPDiffableSectionSnapshot()
                 
                 if headerAsFirstElement {
-                    print("call as headerAsFirstElement")
                     let header = section.header
                     if let header = header {
                         sectionSnapshot.append([header])
                     }
                     sectionSnapshot.append(section.items, to: header)
                 } else {
-                    print("call as DONT headerAsFirstElement")
                     sectionSnapshot.append(section.items)
                 }
                 
