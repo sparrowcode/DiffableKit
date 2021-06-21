@@ -85,13 +85,34 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             
             // Update current sections.
             
+            // If you don't use composition layout, no way say to collection system
+            // about header elements. Its using random, sometimes its
+            // cell provider call, sometimes it call supplementary.
+            // In this case we shoudn't set header to section snapshot.
+            // For this case it condition only.
+            let headerAsFirstElement: Bool = {
+                if collectionView?.collectionViewLayout is UICollectionViewFlowLayout {
+                    return false
+                }
+                if collectionView?.collectionViewLayout is UICollectionViewCompositionalLayout {
+                    return true
+                }
+                return true
+            }()
+            
             for section in sections {
                 var sectionSnapshot = SPDiffableSectionSnapshot()
-                let header = section.header
-                if let header = header {
-                    sectionSnapshot.append([header])
+                
+                if headerAsFirstElement {
+                    let header = section.header
+                    if let header = header {
+                        sectionSnapshot.append([header])
+                    }
+                    sectionSnapshot.append(section.items, to: header)
+                } else {
+                    sectionSnapshot.append(section.items)
                 }
-                sectionSnapshot.append(section.items, to: header)
+                
                 sectionSnapshot.expand(sectionSnapshot.items)
                 apply(sectionSnapshot, to: section, animatingDifferences: animated)
             }
