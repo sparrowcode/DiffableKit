@@ -54,7 +54,8 @@ open class SPDiffableCollectionController: UICollectionViewController {
         diffableDataSource = SPDiffableCollectionDataSource(
             collectionView: collectionView,
             cellProviders: cellProviders,
-            supplementaryViewProviders: supplementaryViewProviders
+            supplementaryViewProviders: supplementaryViewProviders,
+            headerAsFirstCell: headerAsFirstCell
         )
         diffableDataSource?.apply(sections, animated: false)
     }
