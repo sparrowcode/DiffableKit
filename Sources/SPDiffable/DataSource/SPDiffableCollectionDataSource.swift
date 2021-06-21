@@ -37,12 +37,13 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
      
      If you don't use composition layout, no way say to collection system about header elements. Its using random, sometimes its cell provider call, sometimes it call supplementary. In this case we shoudn't set header to section snapshot. For this case it condition only.
      */
-    public var headerAsFirstElement: Bool = true
+    public let headerAsFirstCell: Bool
     
     // MARK: - Init
     
-    public init(collectionView: UICollectionView, cellProviders: [CellProvider], supplementaryViewProviders: [SupplementaryViewProvider] = []) {
+    public init(collectionView: UICollectionView, cellProviders: [CellProvider], supplementaryViewProviders: [SupplementaryViewProvider] = [], headerAsFirstCell: Bool = true) {
         
+        self.headerAsFirstCell = headerAsFirstCell
         self.collectionView = collectionView
         
         super.init(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
@@ -97,7 +98,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             for section in sections {
                 var sectionSnapshot = SPDiffableSectionSnapshot()
                 
-                if headerAsFirstElement {
+                if headerAsFirstCell {
                     let header = section.header
                     if let header = header {
                         sectionSnapshot.append([header])
