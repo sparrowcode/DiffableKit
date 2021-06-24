@@ -36,4 +36,8 @@ import UIKit
     @objc optional func diffableTableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     
     @objc optional func diffableTableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    
+    @objc optional func diffableTableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool
+    
+    @objc optional func diffableTableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
 }

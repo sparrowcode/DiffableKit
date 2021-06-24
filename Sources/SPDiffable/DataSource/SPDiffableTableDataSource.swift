@@ -138,6 +138,14 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     public override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         mediator?.diffableTableView?(tableView, commit: editingStyle, forRowAt: indexPath)
     }
+    
+    open override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return mediator?.diffableTableView?(tableView, canMoveRowAt: indexPath) ?? false
+    }
+    
+    open override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        mediator?.diffableTableView?(tableView, moveRowAt: sourceIndexPath, to: destinationIndexPath)
+    }
 }
 
 /**
