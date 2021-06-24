@@ -85,6 +85,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             // Remove section if it deleted from content.
             
             var snapshot = self.snapshot()
+            
             let deletedSections = snapshot.sectionIdentifiers.filter({ (checkSection) -> Bool in
                 return !sections.contains(where: { $0.identifier == checkSection.identifier })
             })
@@ -92,6 +93,19 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
                 snapshot.deleteSections(deletedSections)
                 apply(snapshot, animated: true)
             }
+            
+            // Reoder
+
+            for (sectionIndex, section) in sections.enumerated() {
+                let beforeSectionIndex = sectionIndex - 1
+                guard (sections.count > beforeSectionIndex) && (beforeSectionIndex >= 0) else { continue }
+                let afterSection = sections[beforeSectionIndex]
+                snapshot.moveSection(section, afterSection: afterSection)
+            }
+            
+            // Apply Sections Changes
+            
+            apply(snapshot, animated: true)
             
             // Update current sections.
     
