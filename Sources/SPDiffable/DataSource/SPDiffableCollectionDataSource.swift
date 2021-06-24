@@ -100,8 +100,8 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
                 let previousSectionIndex = sectionIndex - 1
                 guard (sections.count > previousSectionIndex) && (previousSectionIndex >= 0) else { continue }
                 let previousSection = sections[previousSectionIndex]
-                guard snapshot.sectionIdentifiers.first(where: { $0.identifier == section.identifier }) else { continue }
-                guard snapshot.sectionIdentifiers.first(where: { $0.identifier == previousSection.identifier }) else { continue }
+                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == section.identifier }) else { continue }
+                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == previousSection.identifier }) else { continue }
                 snapshot.moveSection(section, afterSection: previousSection)
             }
             
