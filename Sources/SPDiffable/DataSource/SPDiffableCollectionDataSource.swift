@@ -97,10 +97,12 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             // Reoder
 
             for (sectionIndex, section) in sections.enumerated() {
-                let beforeSectionIndex = sectionIndex - 1
-                guard (sections.count > beforeSectionIndex) && (beforeSectionIndex >= 0) else { continue }
-                let afterSection = sections[beforeSectionIndex]
-                snapshot.moveSection(section, afterSection: afterSection)
+                let previousSectionIndex = sectionIndex - 1
+                guard (sections.count > previousSectionIndex) && (previousSectionIndex >= 0) else { continue }
+                let previousSection = sections[previousSectionIndex]
+                guard snapshot.sectionIdentifiers.first(where: { $0.identifier == section.identifier }) else { continue }
+                guard snapshot.sectionIdentifiers.first(where: { $0.identifier == previousSection.identifier }) else { continue }
+                snapshot.moveSection(section, afterSection: previousSection)
             }
             
             // Apply Sections Changes
