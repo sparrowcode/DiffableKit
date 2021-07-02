@@ -94,6 +94,17 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
                 apply(snapshot, animated: true)
             }
             
+            // Reoder sections
+
+            for (sectionIndex, section) in sections.enumerated() {
+                let previousSectionIndex = sectionIndex - 1
+                guard (sections.count > previousSectionIndex) && (previousSectionIndex >= 0) else { continue }
+                let previousSection = sections[previousSectionIndex]
+                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == section.identifier }) else { continue }
+                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == previousSection.identifier }) else { continue }
+                snapshot.moveSection(section, afterSection: previousSection)
+            }
+            
             // Add new sections and update current sections
     
             for section in sections {
@@ -111,17 +122,6 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
                 
                 sectionSnapshot.expand(sectionSnapshot.items)
                 apply(sectionSnapshot, to: section, animatingDifferences: animated)
-            }
-            
-            // Reoder sections
-
-            for (sectionIndex, section) in sections.enumerated() {
-                let previousSectionIndex = sectionIndex - 1
-                guard (sections.count > previousSectionIndex) && (previousSectionIndex >= 0) else { continue }
-                let previousSection = sections[previousSectionIndex]
-                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == section.identifier }) else { continue }
-                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == previousSection.identifier }) else { continue }
-                snapshot.moveSection(section, afterSection: previousSection)
             }
             
             // Apply changes
