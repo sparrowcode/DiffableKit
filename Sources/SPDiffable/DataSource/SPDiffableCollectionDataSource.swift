@@ -82,9 +82,9 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
     public func apply(_ sections: [SPDiffableSection], animated: Bool) {
         if #available(iOS 14, *) {
             
-            // Remove section if it deleted from content.
-            
             var snapshot = self.snapshot()
+            
+            // Remove section if it deleted from content
             
             let deletedSections = snapshot.sectionIdentifiers.filter({ (checkSection) -> Bool in
                 return !sections.contains(where: { $0.identifier == checkSection.identifier })
@@ -94,22 +94,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
                 apply(snapshot, animated: true)
             }
             
-            // Reoder
-
-            for (sectionIndex, section) in sections.enumerated() {
-                let previousSectionIndex = sectionIndex - 1
-                guard (sections.count > previousSectionIndex) && (previousSectionIndex >= 0) else { continue }
-                let previousSection = sections[previousSectionIndex]
-                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == section.identifier }) else { continue }
-                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == previousSection.identifier }) else { continue }
-                snapshot.moveSection(section, afterSection: previousSection)
-            }
-            
-            // Apply Sections Changes
-            
-            apply(snapshot, animated: true)
-            
-            // Update current sections.
+            // Add new sections and update current sections
     
             for section in sections {
                 var sectionSnapshot = SPDiffableSectionSnapshot()
@@ -127,6 +112,22 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
                 sectionSnapshot.expand(sectionSnapshot.items)
                 apply(sectionSnapshot, to: section, animatingDifferences: animated)
             }
+            
+            // Reoder sections
+
+            for (sectionIndex, section) in sections.enumerated() {
+                let previousSectionIndex = sectionIndex - 1
+                guard (sections.count > previousSectionIndex) && (previousSectionIndex >= 0) else { continue }
+                let previousSection = sections[previousSectionIndex]
+                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == section.identifier }) else { continue }
+                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == previousSection.identifier }) else { continue }
+                snapshot.moveSection(section, afterSection: previousSection)
+            }
+            
+            // Apply changes
+            
+            apply(snapshot, animated: true)
+            
         } else {
             var snapshot = SPDiffableSnapshot()
             snapshot.appendSections(sections)
