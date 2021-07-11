@@ -94,6 +94,22 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     }
     
     /**
+     SPDiffable: Get sections.
+     */
+    public func sections() -> [SPDiffableSection] {
+        return snapshot().sectionIdentifiers
+    }
+    
+    /**
+     SPDiffable: Get section by index.
+     */
+    public func section(for index: Int) -> SPDiffableSection? {
+        let snapshot = snapshot()
+        guard index < snapshot.sectionIdentifiers.count else { return nil }
+        return snapshot.sectionIdentifiers[index]
+    }
+    
+    /**
      SPDiffable: Get index path for item by identifier.
      */
     public func indexPath(for itemIdentifier: SPDiffableItem.Identifier) -> IndexPath? {
