@@ -115,6 +115,15 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
                 snapshot.moveSection(section, afterSection: previousSection)
             }
             
+            // Set new header and footer
+            
+            for checkSection in snapshot.sectionIdentifiers {
+                if let newSection = sections.first(where: { $0.identifier == checkSection.identifier }) {
+                    checkSection.header = newSection.header
+                    checkSection.footer = newSection.footer
+                }
+            }
+            
             // Apply Changes
             
             apply(snapshot, animated: true)
