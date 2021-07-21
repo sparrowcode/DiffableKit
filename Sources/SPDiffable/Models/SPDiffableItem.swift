@@ -22,45 +22,36 @@
 import UIKit
 
 /**
- SPDiffable: Basic section class. Can set header, footer and items in it section.
+ SPDiffable: Basic class for items and sections.
  
- Using in diffable work. All sections shoud be inhert from it.
- Can init with empty models if need configure later.
+ All next model's classes shoud be extend from it class.
  */
-open class SPDiffableSection: NSObject, NSCopying {
+open class SPDiffableItem: NSObject, NSCopying {
     
     /**
-     SPDiffable: Identifier help for detect uniq section and doing diffable work and animations.
+     SPDiffable: Identifier help for detect uniq cell and doing diffable work and animations.
      
      Always shoud be uniq. But if it changed, diffable system remove old and insert new (not reload).
      Identifier uses in `Hashable` and `Equatable` protocols.
      */
-    public var identifier: SectionIdentifier
-    
-    public var header: SPDiffableItem?
-    public var footer: SPDiffableItem?
-
-    public var items: [SPDiffableItem]
+    open var identifier: Identifier
     
     // MARK: - Init
     
-    public init(identifier: SectionIdentifier, header: SPDiffableItem? = nil, footer: SPDiffableItem? = nil, items: [SPDiffableItem] = []) {
+    public init(identifier: Identifier) {
         self.identifier = identifier
-        self.header = header
-        self.footer = footer
-        self.items = items
     }
     
     // MARK: - Hashable and Equatable
     
-    public override var hash: Int {
+    open override var hash: Int {
         var hasher = Hasher()
         hasher.combine(identifier)
         return hasher.finalize()
     }
     
-    public override func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? SPDiffableSection else { return false }
+    open override func isEqual(_ object: Any?) -> Bool {
+        guard let object = object as? SPDiffableItem else { return false }
         return identifier == object.identifier
     }
     
@@ -68,16 +59,11 @@ open class SPDiffableSection: NSObject, NSCopying {
     
     // Implemented becouse when using with collection,
     // sometimes catch error about unregognized selector.
-    public func copy(with zone: NSZone? = nil) -> Any {
-        return SPDiffableSection(
-            identifier: self.identifier,
-            header: self.header,
-            footer: self.footer,
-            items: self.items
-        )
+    open func copy(with zone: NSZone? = nil) -> Any {
+        return SPDiffableItem(identifier: self.identifier)
     }
     
-    // MARK: - Item Identifier
+    // MARK: - Identifier
     
-    public typealias SectionIdentifier = String
+    public typealias Identifier = String
 }
