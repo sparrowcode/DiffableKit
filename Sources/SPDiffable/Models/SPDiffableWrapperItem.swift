@@ -22,14 +22,23 @@
 import UIKit
 
 /**
- SPDiffable: Header & Footer model class with simple text.
+ SPDiffable: Wrapper class for any model.
+ 
+ Using it class if you no need create custom model to diffable.
+ You can pass any object and unwrap in cell provider.
+ 
+ Also need pass uniq `identifier`.
  */
-open class SPDiffableTextHeaderFooter: SPDiffableItem {
+open class SPDiffableWrapperItem: SPDiffableItem {
     
-    public var text: String
+    /**
+     SPDiffable: You can pass any object as model.
+     Later need uwrap it for get.
+     */
+    open var model: Any
     
-    public init(identifier: String? = nil, text: String) {
-        self.text = text
-        super.init(identifier: identifier ?? text)
+    public init(identifier: String, model: Any) {
+        self.model = model
+        super.init(identifier: identifier)
     }
 }
