@@ -25,11 +25,11 @@ open class SPDiffableSubtitleTableViewCell: UITableViewCell {
     
     public static let reuseIdentifier = "SPDiffableSubtitleTableViewCell"
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
     }
     
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
