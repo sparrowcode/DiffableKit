@@ -82,8 +82,8 @@ open class SPDiffableCollectionView: UICollectionView, UICollectionViewDelegate 
         guard let item = diffableDataSource?.item(for: indexPath) else { return }
         diffableDelegate?.diffableCollectionView?(collectionView, didSelectItem: item, indexPath: indexPath)
         switch item {
-        case let model as SPDiffableCollectionActionableItem:
-            model.action?(indexPath)
+        case let model as SPDiffableActionableItem:
+            model.action?(model, indexPath)
         default:
             break
         }

@@ -27,7 +27,7 @@ import UIKit
  For header use `SPDiffableSideBarHeader` class.
  */
 @available(iOS 14, *)
-open class SPDiffableSideBarItem: SPDiffableCollectionActionableItem {
+open class SPDiffableSideBarItem: SPDiffableActionableItem {
     
     open var title: String
     open var image: UIImage?
@@ -39,6 +39,4 @@ open class SPDiffableSideBarItem: SPDiffableCollectionActionableItem {
         self.accessories = accessories
         super.init(identifier: identifier ?? title, action: action)
     }
-    
-    public typealias Action = (_ indexPath: IndexPath) -> Void
 }

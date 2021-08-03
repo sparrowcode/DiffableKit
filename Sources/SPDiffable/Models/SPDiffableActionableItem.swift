@@ -24,7 +24,7 @@ import UIKit
 /**
  SPDiffable: Actionable collection item model.
  */
-open class SPDiffableCollectionActionableItem: SPDiffableItem {
+open class SPDiffableActionableItem: SPDiffableItem, SPDiffableItemActionable {
     
     open var action: Action?
     
@@ -32,6 +32,4 @@ open class SPDiffableCollectionActionableItem: SPDiffableItem {
         self.action = action
         super.init(identifier: identifier)
     }
-    
-    public typealias Action = (_ indexPath: IndexPath) -> Void
 }
