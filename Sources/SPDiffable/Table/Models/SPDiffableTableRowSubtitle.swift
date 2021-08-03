@@ -28,7 +28,7 @@ import UIKit
  By default if action is nil, selection style set to `.none`.
  If accessory is control, you can find reay-use class for it.
  */
-open class SPDiffableTableRowSubtitle: SPDiffableItem {
+open class SPDiffableTableRowSubtitle: SPDiffableItem, SPDiffableItemActionable {
     
     open var text: String
     open var subtitle: String? = nil
@@ -46,6 +46,4 @@ open class SPDiffableTableRowSubtitle: SPDiffableItem {
         self.action = action
         super.init(identifier: identifier ?? text)
     }
-    
-    public typealias Action = (_ indexPath: IndexPath) -> Void
 }
