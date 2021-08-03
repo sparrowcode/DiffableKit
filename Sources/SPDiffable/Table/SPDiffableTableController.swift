@@ -63,10 +63,13 @@ open class SPDiffableTableController: UITableViewController {
     open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let item = diffableDataSource?.itemIdentifier(for: indexPath) else { return }
         diffableDelegate?.diffableTableView?(tableView, didSelectItem: item, indexPath: indexPath)
+        
         switch item {
         case let model as SPDiffableTableRow:
             model.action?(indexPath)
         case let model as SPDiffableTableRowSubtitle:
+            model.action?(indexPath)
+        case let model as SPDiffableWrapperItem:
             model.action?(indexPath)
         default:
             break

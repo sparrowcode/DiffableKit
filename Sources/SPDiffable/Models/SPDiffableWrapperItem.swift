@@ -36,9 +36,12 @@ open class SPDiffableWrapperItem: SPDiffableItem {
      Later need uwrap it for get.
      */
     open var model: Any
+    open var action: Action?
     
-    public init(identifier: String, model: Any) {
+    public init(identifier: String, model: Any, action: Action? = nil) {
         self.model = model
         super.init(identifier: identifier)
     }
+    
+    public typealias Action = (_ indexPath: IndexPath) -> Void
 }
