@@ -40,6 +40,7 @@ open class SPDiffableWrapperItem: SPDiffableItem, SPDiffableItemActionable {
     
     public init(identifier: String, model: Any, action: Action? = nil) {
         self.model = model
+        self.action = action
         super.init(identifier: identifier)
     }
 }
