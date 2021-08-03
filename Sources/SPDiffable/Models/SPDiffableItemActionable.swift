@@ -22,21 +22,12 @@
 import UIKit
 
 /**
- SPDiffable: Buton item in side bar.
- 
- Colorful title usually.
+ SPDiffable: Protocol for items which shoud have actions.
+ In default controllers will be handled.
  */
-@available(iOS 14, *)
-open class SPDiffableSideBarButton: SPDiffableActionableItem {
+public protocol SPDiffableItemActionable: AnyObject {
     
-    open var title: String
-    open var image: UIImage?
-    open var accessories: [UICellAccessory]
+    var action: Action? { get set }
     
-    public init(identifier: SPDiffableItem.Identifier? = nil, title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
-        self.title = title
-        self.image = image
-        self.accessories = accessories
-        super.init(identifier: identifier ?? title, action: action)
-    }
+    typealias Action = (_ item: SPDiffableItem, _ indexPath: IndexPath) -> Void
 }

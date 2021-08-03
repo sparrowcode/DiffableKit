@@ -43,13 +43,13 @@ class SidebarController: SPDiffableSideBarController {
             SPDiffableSection(
                 identifier: Section.tabs.rawValue,
                 items: [
-                    SPDiffableSideBarItem(title: "Listen Now", image: UIImage(systemName: "play.circle"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Browse", image: UIImage(systemName: "square.grid.2x2"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Radio", image: UIImage(systemName: "dot.radiowaves.left.and.right"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), action: { _ in
+                    SPDiffableSideBarItem(title: "Listen Now", image: UIImage(systemName: "play.circle"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Browse", image: UIImage(systemName: "square.grid.2x2"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Radio", image: UIImage(systemName: "dot.radiowaves.left.and.right"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), action: { _, _ in
                         print("action call 2")
                     }),
-                    SPDiffableSideBarButton(title: "Button", image: UIImage(systemName: "plus.square.fill"), action: { [weak self] _ in
+                    SPDiffableSideBarButton(title: "Button", image: UIImage(systemName: "plus.square.fill"), action: { [weak self] _, _ in
                         print("action call")
                         guard let self = self else { return }
                         let controller = UIViewController()
@@ -63,12 +63,12 @@ class SidebarController: SPDiffableSideBarController {
                 identifier: Section.library.rawValue,
                 header: SPDiffableSideBarHeader(text: "Library", accessories: [.outlineDisclosure()]),
                 items: [
-                    SPDiffableSideBarItem(title: "Recently Added", image: UIImage(systemName: "clock"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Artists", image: UIImage(systemName: "music.mic"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Songs", image: UIImage(systemName: "music.note"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Music Videos", image: UIImage(systemName: "tv.music.note"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "TV & Movies", image: UIImage(systemName: "tv"), action: { _ in })
+                    SPDiffableSideBarItem(title: "Recently Added", image: UIImage(systemName: "clock"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Artists", image: UIImage(systemName: "music.mic"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Songs", image: UIImage(systemName: "music.note"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Music Videos", image: UIImage(systemName: "tv.music.note"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "TV & Movies", image: UIImage(systemName: "tv"), action: { _, _ in })
                 ])
         )
         content.append(
@@ -76,12 +76,12 @@ class SidebarController: SPDiffableSideBarController {
                 identifier: Section.playlists.rawValue,
                 header: SPDiffableSideBarHeader(text: "Playlists", accessories: [.outlineDisclosure()]),
                 items: [
-                    SPDiffableSideBarItem(title: "All Playlists", image: UIImage(systemName: "music.note.list"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Replay 2015", image: UIImage(systemName: "music.note.list"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Replay 2016", image: UIImage(systemName: "music.note.list"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Replay 2017", image: UIImage(systemName: "music.note.list"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Replay 2018", image: UIImage(systemName: "music.note.list"), action: { _ in }),
-                    SPDiffableSideBarItem(title: "Replay 2019", image: UIImage(systemName: "music.note.list"), action: { _ in })
+                    SPDiffableSideBarItem(title: "All Playlists", image: UIImage(systemName: "music.note.list"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Replay 2015", image: UIImage(systemName: "music.note.list"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Replay 2016", image: UIImage(systemName: "music.note.list"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Replay 2017", image: UIImage(systemName: "music.note.list"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Replay 2018", image: UIImage(systemName: "music.note.list"), action: { _, _ in }),
+                    SPDiffableSideBarItem(title: "Replay 2019", image: UIImage(systemName: "music.note.list"), action: { _, _ in })
                 ])
         )
         return content

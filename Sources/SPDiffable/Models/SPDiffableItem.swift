@@ -67,14 +67,3 @@ open class SPDiffableItem: NSObject, NSCopying {
     
     public typealias Identifier = String
 }
-
-/**
- SPDiffable: Protocol for items which shoud have actions.
- In default controllers will be handled.
- */
-public protocol SPDiffableItemActionable: AnyObject {
-    
-    var action: Action? { get set }
-    
-    typealias Action = (_ item: SPDiffableItem, _ indexPath: IndexPath) -> Void
-}

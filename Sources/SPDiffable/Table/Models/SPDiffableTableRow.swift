@@ -28,14 +28,13 @@ import UIKit
  By default if action is nil, selection style set to `.none`.
  If accessory is control, you can find reay-use class for it.
  */
-open class SPDiffableTableRow: SPDiffableItem, SPDiffableItemActionable {
+open class SPDiffableTableRow: SPDiffableActionableItem {
     
     open var text: String
     open var detail: String? = nil
     open var icon: UIImage? = nil
     open var selectionStyle: UITableViewCell.SelectionStyle
     open var accessoryType: UITableViewCell.AccessoryType
-    public var action: Action?
     
     public init(identifier: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .none, action: Action? = nil) {
         self.text = text
@@ -43,7 +42,6 @@ open class SPDiffableTableRow: SPDiffableItem, SPDiffableItemActionable {
         self.icon = icon
         self.accessoryType = accessoryType
         self.selectionStyle = selectionStyle
-        self.action = action
-        super.init(identifier: identifier ?? text)
+        super.init(identifier: identifier ?? text, action: action)
     }
 }
