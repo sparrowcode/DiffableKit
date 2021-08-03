@@ -70,11 +70,11 @@ class RootController: DiffableTableController {
             header: SPDiffableTextHeaderFooter(text: "Presenter"),
             footer: SPDiffableTextHeaderFooter(text: "Push in navigation processing by table controller. Sometimes you need manually deselect cell."),
             items: [
-                SPDiffableTableRow(text: "Deselect", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Deselect", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] model, indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 }),
-                SPDiffableTableRow(text: "Push", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Push", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] model, indexPath in
                     guard let self = self else { return }
                     let controller = UIViewController()
                     controller.view.backgroundColor = .secondarySystemGroupedBackground
@@ -99,7 +99,7 @@ class RootController: DiffableTableController {
                 identifier: Section.sidebar.identifier,
                 footer: SPDiffableTextHeaderFooter(text: "Example of new Side Bar."),
                 items: [
-                    SPDiffableTableRow(text: "Present Side Bar", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
+                    SPDiffableTableRow(text: "Present Side Bar", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] model, indexPath in
                         guard let self = self else { return }
                         self.tableView.deselectRow(at: indexPath, animated: true)
                         let sideBarController = SideBarSplitController()
@@ -115,7 +115,7 @@ class RootController: DiffableTableController {
             identifier: Section.checkmark.identifier,
             footer: SPDiffableTextHeaderFooter(text: "Example how usage search by models and change checkmark without reload table."),
             items: [
-                SPDiffableTableRow(text: "Chekmarks", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Chekmarks", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] model, indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })
@@ -127,7 +127,7 @@ class RootController: DiffableTableController {
             identifier: Section.customCellProvider.identifier,
             footer: SPDiffableTextHeaderFooter(text: "Also you can add more providers for specific controller, and use default and custom specially for some contorllers."),
             items: [
-                SPDiffableTableRow(text: "Custom Cell Provider", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] indexPath in
+                SPDiffableTableRow(text: "Custom Cell Provider", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] model, indexPath in
                     guard let self = self else { return }
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 })

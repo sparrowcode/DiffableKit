@@ -29,7 +29,7 @@ import UIKit
  
  Also need pass uniq `identifier`.
  */
-open class SPDiffableWrapperItem: SPDiffableItem {
+open class SPDiffableWrapperItem: SPDiffableItem, SPDiffableItemActionable {
     
     /**
      SPDiffable: You can pass any object as model.
@@ -42,6 +42,4 @@ open class SPDiffableWrapperItem: SPDiffableItem {
         self.model = model
         super.init(identifier: identifier)
     }
-    
-    public typealias Action = (_ indexPath: IndexPath) -> Void
 }

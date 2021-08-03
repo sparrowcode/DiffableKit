@@ -65,12 +65,8 @@ open class SPDiffableTableController: UITableViewController {
         diffableDelegate?.diffableTableView?(tableView, didSelectItem: item, indexPath: indexPath)
         
         switch item {
-        case let model as SPDiffableTableRow:
-            model.action?(indexPath)
-        case let model as SPDiffableTableRowSubtitle:
-            model.action?(indexPath)
-        case let model as SPDiffableWrapperItem:
-            model.action?(indexPath)
+        case let model as SPDiffableItemActionable:
+            model.action?(item, indexPath)
         default:
             break
         }
