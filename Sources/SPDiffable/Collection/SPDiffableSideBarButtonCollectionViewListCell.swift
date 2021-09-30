@@ -47,6 +47,11 @@ class SPDiffableSideBarButtonCollectionViewListCell: UICollectionViewListCell {
         contentConfiguration = content
     }
     
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
+        setNeedsUpdateConfiguration()
+    }
+    
     /**
      SPDiffable: Button can't be selected becouse it call once action.
      Automatically disable selection.
