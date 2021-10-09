@@ -105,7 +105,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             }
             
             // Reoder
-
+            
             for (sectionIndex, section) in sections.enumerated() {
                 let previousSectionIndex = sectionIndex - 1
                 guard (sections.count > previousSectionIndex) && (previousSectionIndex >= 0) else { continue }
@@ -129,7 +129,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             apply(snapshot, animated: true)
             
             // Update items in Sections
-    
+            
             for section in sections {
                 var sectionSnapshot = SPDiffableSectionSnapshot()
                 
@@ -164,6 +164,39 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
      */
     public func apply(_ snapshot: SPDiffableSnapshot, animated: Bool) {
         apply(snapshot, animatingDifferences: animated, completion: nil)
+    }
+    
+    // MARK: - Reload Content
+    
+    /**
+     SPDiffable: Reload current snapshot with new snapshot.
+     
+     Deep reload like reload data in old way collection view.
+     
+     - parameter sections: Array of `SPDiffableSection`, it content of table.
+     */
+    public func reload(_ sections: [SPDiffableSection]) {
+        var snapshot = SPDiffableSnapshot()
+        snapshot.appendSections(sections)
+        for section in sections {
+            snapshot.appendItems(section.items, toSection: section)
+        }
+        reload(snapshot)
+    }
+    
+    /**
+     SPDiffable: Reload current snapshot with new snapshot.
+     
+     Deep reload like reload data in old way collection view.
+     
+     - parameter snapshot: New snapshot.
+     */
+    public func reload(_ snapshot: SPDiffableSnapshot) {
+        if #available(iOS 15.0, *) {
+            applySnapshotUsingReloadData(snapshot, completion: nil)
+        } else {
+            apply(snapshot, animatingDifferences: false, completion: nil)
+        }
     }
     
     // MARK: - Get Content
