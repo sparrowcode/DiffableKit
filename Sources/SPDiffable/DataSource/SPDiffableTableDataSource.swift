@@ -66,11 +66,7 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
      - parameter animating: Shoud apply changes with animation or not.
      */
     public func apply(_ sections: [SPDiffableSection], animated: Bool) {
-        var snapshot = SPDiffableSnapshot()
-        snapshot.appendSections(sections)
-        for section in sections {
-            snapshot.appendItems(section.items, toSection: section)
-        }
+        let snapshot = convertToSnapshot(sections)
         apply(snapshot, animatingDifferences: animated)
     }
     
@@ -82,6 +78,35 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
      */
     public func apply(_ snapshot: SPDiffableSnapshot, animated: Bool) {
         apply(snapshot, animatingDifferences: animated, completion: nil)
+    }
+    
+    // MARK: - Reload Content
+    
+    /**
+     SPDiffable: Reload current snapshot with new snapshot.
+     
+     Deep reload like reload data in old way table view.
+     
+     - parameter sections: Array of `SPDiffableSection`, it content of table.
+     */
+    public func reload(_ sections: [SPDiffableSection]) {
+        let snapshot = convertToSnapshot(sections)
+        reload(snapshot)
+    }
+    
+    /**
+     SPDiffable: Reload current snapshot with new snapshot.
+     
+     Deep reload like reload data in old way table view.
+     
+     - parameter snapshot: New snapshot.
+     */
+    public func reload(_ snapshot: SPDiffableSnapshot) {
+        if #available(iOS 15.0, *) {
+            applySnapshotUsingReloadData(snapshot, completion: nil)
+        } else {
+            apply(snapshot, animatingDifferences: false, completion: nil)
+        }
     }
     
     // MARK: - Get Content
@@ -123,6 +148,17 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         guard let indexPath = indexPath(for: itemIdentifier) else { return nil }
         guard let cell = self.tableView?.cellForRow(at: indexPath) as? T else { return nil }
         return cell
+    }
+    
+    // MARK: - Helpers
+    
+    public func convertToSnapshot(_ sections: [SPDiffableSection]) -> SPDiffableSnapshot {
+        var snapshot = SPDiffableSnapshot()
+        snapshot.appendSections(sections)
+        for section in sections {
+            snapshot.appendItems(section.items, toSection: section)
+        }
+        return snapshot
     }
     
     // MARK: - Mediator

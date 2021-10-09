@@ -137,11 +137,21 @@ var content: [SPDiffableSection] {
 You can add more items or sections. Last step - apply:
 
 ```swift
-diffableDataSource?.apply(sections: content, animating: true)
+diffableDataSource?.apply(content, animating: true)
 ```
 
 Call this when you need update content. When you call `setCellProviders`, it set content by default without animation.
 That all. You can each time create new order or count cells and it automatically show with diffable animation.
+
+#### Reload Content
+
+If you need something like old function `.reloadData()` in collection and table, look at this method:
+
+```swift
+diffableDataSource?.reload(content)
+```
+
+Changes apply without animation and like deep reload.
 
 ### Mediator
 
