@@ -1,4 +1,4 @@
-<img align="left" src="https://cdn.ivanvorobei.by/github/spdiffable/example-app-preview.png-1" width="200"/>
+<img align="left" src="https://cdn.ivanvorobei.by/github/spdiffable/example-app-preview-1.png" width="200"/>
 
 # SPDiffable
 
