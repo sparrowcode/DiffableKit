@@ -2,12 +2,9 @@
 
 Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and special cell providers for one-usage models.
 
-If you like the project, don't forget to `put star ★` and follow me on GitHub:
+If you like the project, don't forget to `put star ★`<br>Check out my other libraries:
 
 <p float="left">
-    <a href="https://github.com/ivanvorobei">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg">
-    </a>
     <a href="https://opensource.ivanvorobei.by">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
     </a>
@@ -34,23 +31,25 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 ## Installation
 
-Ready for use on iOS 12+. Works with Swift 5+. Required Xcode 12.0 and higher.
+Ready for use on iOS 13+. Works with Swift 5+. Required Xcode 12.0 and higher.
 
-<img align="right" src="https://github.com/ivanvorobei/SPDiffable/blob/main/Assets/Readme/spm-install-preview.png" width="520"/>
+<img align="right" src="https://github.com/ivanvorobei/SPDiffable/blob/main/Assets/Readme/spm-install-preview.png" width="550"/>
 
 ### Swift Package Manager
 
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
-To integrate `SPDiffable` into your Xcode project using Xcode 12, specify it in `File > Swift Packages > Add Package Dependency...`:
+Once you have your Swift package set up, adding as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
 
-```ogdl
-https://github.com/ivanvorobei/SPDiffable
+```swift
+dependencies: [
+    .package(url: "https://github.com/ivanvorobei/SPDiffable.git", .upToNextMajor(from: "1.6.0"))
+]
 ```
 
 ### CocoaPods:
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPDiffable` into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'SPDiffable'
@@ -58,7 +57,7 @@ pod 'SPDiffable'
 
 ### Manually
 
-If you prefer not to use any of dependency managers, you can integrate `SPDiffable` into your project manually. Put `Sources/SPDiffable` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+If you prefer not to use any of dependency managers, you can integrate manually. Put `Sources/SPDiffable` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 ## Usage
 
@@ -213,7 +212,7 @@ In class available ready-use cell providers for menu item and header section. Fo
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-    setCellProviders([SPDiffableCollectionCellProviders.sideBar], sections: content)
+    setCellProviders(SPDiffableCollectionCellProviders.sideBar, sections: content)
 }
 ```
 
@@ -275,16 +274,25 @@ Now in project you can find this ready-use models:
 
 #### For Table:
 
+Here provided models:
+
 - `SPDiffableTableRow` it native item for table cell. Support all basic styles and action for tap event.
 - `SPDiffableTableRowSubtitle` it native item for table cell with subtitle. Support all as before.
+- `SPDiffableTableRowButton` item for table in style as button. Support table styles and action for tap.
 - `SPDiffableTableRowStepper` item for table cell with stepper. Has maximum value and minimum, also incuded action with passed value.
 - `SPDiffableTableRowSwitch` item for table with switch, included default state and action for change event.
-- `SPDiffableTableRowButton` item for table in style as button. Support table styles and action for tap.
+
+Here provided cells:
 
 - `SPDiffableTableViewCell` basic table cell with detail text right side.
 - `SPDiffableSubtitleTableViewCell` basic table cell with two lines of texts.
+- `SPDiffableStepper` cell with stepper control. Using with `SPDiffableTableRowStepper` model.
+- `SPDiffableSwitch` cell with switch. Using with `SPDiffableTableRowSwitch` model.
+- `SPDiffableSlider` cell with slider.
 
 #### For Collection:
+
+Provided only models, becouse for most items using list registration and no need specific cell class.
 
 - `SPDiffableCollectionActionableItem` actionable item for collection view.
 - `SPDiffableSideBarItem` menu item in side bar. Support accessories and actions.
@@ -296,7 +304,7 @@ Now in project you can find this ready-use models:
 In project you can find class `SPDiffableWrapperItem`. Using it, when you don't want create custom item model for you diffable struct. You can pass any your model and uwrap it later in cell provider.
 
 ```swift
-let item = SPDiffableWrapperItem(identifier: "unqi-identifier", model: LocationRowModel(city: "Minsk"))
+let item = SPDiffableWrapperItem(identifier: "uniq-identifier", model: LocationRowModel(city: "Minsk"))
 ```
 
 ## Сontribution
