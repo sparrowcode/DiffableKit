@@ -1,6 +1,8 @@
 # SPDiffable
 
-<img align="left" src="https://cdn.ivanvorobei.by/github/spdiffable/example-app-preview.png" width="450"/>
+<a href="https://opensource.ivanvorobei.by/spdiffable/preview">
+    <img align="left" src="https://cdn.ivanvorobei.by/github/spdiffable/example-app-preview.png" width="450"/>
+</a>
 
 Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and special cell providers for one-usage models.
 
