@@ -1,3 +1,5 @@
+<img align="left" src="https://cdn.ivanvorobei.by/github/spdiffable/example-app-preview.png" width="300"/>
+
 # SPDiffable
 
 Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and special cell providers for one-usage models.
@@ -33,7 +35,7 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
 
 Ready for use on iOS 13+. Works with Swift 5+. Required Xcode 12.0 and higher.
 
-<img align="right" src="https://github.com/ivanvorobei/SPDiffable/blob/main/Assets/Readme/spm-install-preview.png" width="550"/>
+<img align="right" src="https://cdn.ivanvorobei.by/github/spdiffable/spm-install-preview.png" width="550"/>
 
 ### Swift Package Manager
 
