@@ -4,6 +4,12 @@
 
 Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and special cell providers for one-usage models.
 
+I made example app with features and video preview:
+
+[![https://opensource.ivanvorobei.by/spdiffable/preview](https://github.com/ivanvorobei/Readme/blob/main/Buttons/video-preview.svg)](https://opensource.ivanvorobei.by/spdiffable/preview)
+
+You can make sidebar, apply changes and make settings screen without making any cells or models. Check readme docs to learn how it work. 
+
 If you like the project, don't forget to `put star ★`<br>Check out my other libraries:
 
 <p float="left">
