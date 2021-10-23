@@ -79,7 +79,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
      - parameter sections: Array of `SPDiffableSection`, it content of table.
      - parameter animating: Shoud apply changes with animation or not.
      */
-    public func apply(_ sections: [SPDiffableSection], animated: Bool) {
+    public func apply(_ sections: [SPDiffableSection], animated: Bool, completion: (() -> Void)? = nil) {
         if #available(iOS 14, *) {
             
             var snapshot = self.snapshot()
@@ -126,7 +126,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             
             // Apply Changes
             
-            apply(snapshot, animated: true)
+            apply(snapshot, animated: true, completion: completion)
             
             // Update items in Sections
             
@@ -152,7 +152,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             for section in sections {
                 snapshot.appendItems(section.items, toSection: section)
             }
-            apply(snapshot, animatingDifferences: animated)
+            apply(snapshot, animatingDifferences: animated, completion: completion)
         }
     }
     
@@ -162,8 +162,8 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
      - parameter snapshot: New snapshot.
      - parameter animating: Shoud apply changes with animation or not.
      */
-    public func apply(_ snapshot: SPDiffableSnapshot, animated: Bool) {
-        apply(snapshot, animatingDifferences: animated, completion: nil)
+    public func apply(_ snapshot: SPDiffableSnapshot, animated: Bool, completion: (() -> Void)? = nil) {
+        apply(snapshot, animatingDifferences: animated, completion: completion)
     }
     
     // MARK: - Reload Content
