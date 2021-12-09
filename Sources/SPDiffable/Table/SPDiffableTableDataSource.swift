@@ -111,6 +111,30 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         }
     }
     
+    /**
+     SPDiffable: Reload one cell by item.
+     
+     - parameter item: Reloading item.
+     */
+    public func reload(_ item: SPDiffableItem) {
+        reload([item])
+    }
+    
+    /**
+     SPDiffable: Reload cells by items.
+     
+     - parameter items: Reloading items.
+     */
+    public func reload(_ items: [SPDiffableItem]) {
+        var snapshot = self.snapshot()
+        if #available(iOS 15.0, *) {
+            snapshot.reconfigureItems(items)
+            apply(snapshot)
+        } else {
+            snapshot.reloadItems(items)
+        }
+    }
+    
     // MARK: - Get Content
     
     /**
