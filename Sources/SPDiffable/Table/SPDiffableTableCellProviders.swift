@@ -31,24 +31,7 @@ public enum SPDiffableTableCellProviders {
      For change style of cells requerid register new cell provider.
      */
     public static var `default`: [SPDiffableTableCellProvider] {
-        return [rowDetail, rowSubtitle, self.switch, stepper]
-    }
-    
-    public static var customCell: SPDiffableTableCellProvider  {
-        let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
-            guard let item = item as? SPDiffableCustomTableRow else { return nil }
-            let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableCustomTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableCustomTableViewCell
-            cell.textLabel?.text = item.text
-            cell.textLabel?.textColor = item.textColor
-            cell.textLabel?.font = item.textFont
-            cell.detailTextLabel?.text = item.detail
-            cell.imageView?.image = item.icon
-            cell.accessoryType = item.accessoryType
-            cell.selectionStyle = item.selectionStyle
-            cell.higlightStyle = item.higlightStyle
-            return cell
-        }
-        return cellProvider
+        return [rowDetail, rowSubtitle, `switch`, stepper, customisable]
     }
     
     public static var rowDetail: SPDiffableTableCellProvider  {
@@ -107,6 +90,23 @@ public enum SPDiffableTableCellProviders {
             cell.imageView?.image = item.icon
             cell.accessoryView = control
             cell.selectionStyle = .none
+            return cell
+        }
+        return cellProvider
+    }
+    
+    public static var customisable: SPDiffableTableCellProvider  {
+        let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
+            guard let item = item as? SPDiffableCustomTableRow else { return nil }
+            let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableCustomTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableCustomTableViewCell
+            cell.textLabel?.text = item.text
+            cell.textLabel?.textColor = item.textColor
+            cell.textLabel?.font = item.textFont
+            cell.detailTextLabel?.text = item.detail
+            cell.imageView?.image = item.icon
+            cell.accessoryType = item.accessoryType
+            cell.selectionStyle = item.selectionStyle
+            cell.higlightStyle = item.higlightStyle
             return cell
         }
         return cellProvider

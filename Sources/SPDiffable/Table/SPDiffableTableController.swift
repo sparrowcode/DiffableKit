@@ -40,6 +40,7 @@ open class SPDiffableTableController: UITableViewController {
         super.viewDidLoad()
         tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.reuseIdentifier)
         tableView.register(SPDiffableSubtitleTableViewCell.self, forCellReuseIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier)
+        tableView.register(SPDiffableCustomTableViewCell.self, forCellReuseIdentifier: SPDiffableCustomTableViewCell.reuseIdentifier)
     }
     
     // MARK: - Init
