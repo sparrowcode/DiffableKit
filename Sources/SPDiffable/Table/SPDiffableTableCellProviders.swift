@@ -34,6 +34,23 @@ public enum SPDiffableTableCellProviders {
         return [rowDetail, rowSubtitle, self.switch, stepper]
     }
     
+    public static var customCell: SPDiffableTableCellProvider  {
+        let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
+            guard let item = item as? SPDiffableCustomTableRow else { return nil }
+            let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableCustomTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableCustomTableViewCell
+            cell.textLabel?.text = item.text
+            cell.textLabel?.textColor = item.textColor
+            cell.textLabel?.font = item.textFont
+            cell.detailTextLabel?.text = item.detail
+            cell.imageView?.image = item.icon
+            cell.accessoryType = item.accessoryType
+            cell.selectionStyle = item.selectionStyle
+            cell.higlightStyle = item.higlightStyle
+            return cell
+        }
+        return cellProvider
+    }
+    
     public static var rowDetail: SPDiffableTableCellProvider  {
         let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
             guard let item = item as? SPDiffableTableRow else { return nil }
