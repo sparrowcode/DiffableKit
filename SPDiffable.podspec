@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = 'SPDiffable'
-  s.version = '1.6.7'
+  s.version = '1.6.8'
   s.summary = 'Extenshion of Diffable API which allow not duplicate code and use less models.'
   s.homepage = 'https://github.com/ivanvorobei/SPDiffable'
   s.source = { :git => 'https://github.com/ivanvorobei/SPDiffable.git', :tag => s.version }

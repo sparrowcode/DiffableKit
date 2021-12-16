@@ -105,7 +105,6 @@ public enum SPDiffableTableCellProviders {
             cell.detailTextLabel?.text = item.detail
             cell.imageView?.image = item.icon
             cell.accessoryType = item.accessoryType
-            cell.selectionStyle = item.selectionStyle
             cell.higlightStyle = item.higlightStyle
             return cell
         }
