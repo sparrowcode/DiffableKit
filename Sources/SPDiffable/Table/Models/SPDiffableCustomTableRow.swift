@@ -27,18 +27,27 @@ import UIKit
  You can customise color and font of labels.
  Diffrent way to manage `selectionStyle`, here it called `higlightStyle` and have more styles.
  */
-open class SPDiffableCustomTableRow: SPDiffableTableRow {
+open class SPDiffableCustomTableRow: SPDiffableActionableItem {
     
+    open var text: String
     open var textColor: UIColor?
     open var textFont: UIFont?
+    open var detail: String? = nil
+    open var icon: UIImage? = nil
     open var higlightStyle: SPDiffableCustomTableViewCell.HiglightStyle
+    open var accessoryType: UITableViewCell.AccessoryType
     
     public init(identifier: String? = nil, text: String, textColor: UIColor? = nil, textFont: UIFont? = nil, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, higlightStyle: SPDiffableCustomTableViewCell.HiglightStyle = .none, action: Action? = nil) {
         
+        self.text = text
         self.textColor = textColor
         self.textFont = textFont
-        self.higlightStyle = higlightStyle
         
-        super.init(identifier: identifier, text: text, detail: detail, icon: icon, accessoryType: accessoryType, action: action)
+        self.detail = detail
+        self.icon = icon
+        self.higlightStyle = higlightStyle
+        self.accessoryType = accessoryType
+        
+        super.init(identifier: identifier ?? text, action: action)
     }
 }
