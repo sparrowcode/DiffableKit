@@ -162,7 +162,7 @@ func item(for indexPath: IndexPath) -> SPDiffableItem? {}
 func indexPath(for itemID: SPDiffableItem.Identifier) -> IndexPath? {}
 func sections() -> [SPDiffableSection] {}
 func section(for index: Int) -> SPDiffableSection? {}
-cell<T: UITableViewCell>(_ type: T.Type, for itemID: SPDiffableItem.Identifier) -> T? {}
+func cell<T: UITableViewCell>(_ type: T.Type, for itemID: SPDiffableItem.Identifier) -> T? {}
 ```
 
 ### Mediator
