@@ -41,7 +41,7 @@ class SidebarController: SPDiffableSideBarController {
         var content: [SPDiffableSection] = []
         content.append(
             SPDiffableSection(
-                identifier: Section.tabs.rawValue,
+                id: Section.tabs.rawValue,
                 items: [
                     SPDiffableSideBarItem(title: "Listen Now", image: UIImage(systemName: "play.circle"), action: { _, _ in }),
                     SPDiffableSideBarItem(title: "Browse", image: UIImage(systemName: "square.grid.2x2"), action: { _, _ in }),
@@ -60,7 +60,7 @@ class SidebarController: SPDiffableSideBarController {
         )
         content.append(
             SPDiffableSection(
-                identifier: Section.library.rawValue,
+                id: Section.library.rawValue,
                 header: SPDiffableSideBarHeader(text: "Library", accessories: [.outlineDisclosure()]),
                 items: [
                     SPDiffableSideBarItem(title: "Recently Added", image: UIImage(systemName: "clock"), action: { _, _ in }),
@@ -73,7 +73,7 @@ class SidebarController: SPDiffableSideBarController {
         )
         content.append(
             SPDiffableSection(
-                identifier: Section.playlists.rawValue,
+                id: Section.playlists.rawValue,
                 header: SPDiffableSideBarHeader(text: "Playlists", accessories: [.outlineDisclosure()]),
                 items: [
                     SPDiffableSideBarItem(title: "All Playlists", image: UIImage(systemName: "music.note.list"), action: { _, _ in }),

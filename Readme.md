@@ -1,22 +1,7 @@
 # SPDiffable
 
-<a href="https://opensource.ivanvorobei.by/spdiffable/preview">
-    <img align="left" src="https://cdn.ivanvorobei.by/github/spdiffable/example-app-preview-double.png" width="450"/>
-</a>
 
 Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and special cell providers for one-usage models.
-
-[![https://opensource.ivanvorobei.by/spdiffable/preview](https://github.com/ivanvorobei/Readme/blob/main/Buttons/video-preview.svg)](https://opensource.ivanvorobei.by/spdiffable/preview)
-
-You can make sidebar, apply changes and make settings screen without making any cells or models.
-
-If you like the project, don't forget to `put star ★`<br>Check out my other libraries:
-
-<p float="left">
-    <a href="https://opensource.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
-    </a>
-</p>
 
 ## Navigate
 
@@ -33,15 +18,11 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
     - [Example](#ready-use)
     - [List classes](#ready-use-classes)
     - [Wrapper](#wrapper)
-- [Сontribution](#сontribution)
-- [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
 ## Installation
 
-Ready for use on iOS 13+. Works with Swift 5+. Required Xcode 12.0 and higher.
-
-<img align="right" src="https://cdn.ivanvorobei.by/github/spdiffable/spm-install-preview.png" width="550"/>
+Ready for use on iOS 13+.
 
 ### Swift Package Manager
 
@@ -51,13 +32,13 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/SPDiffable.git", .upToNextMajor(from: "1.6.0"))
+    .package(url: "https://github.com/ivanvorobei/SPDiffable.git", .upToNextMajor(from: "2.0.0"))
 ]
 ```
 
 ### CocoaPods:
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'SPDiffable'
@@ -115,7 +96,7 @@ class DiffableTableController: SPDiffableTableController {
 }
 ```
 
-Now ready model and convert it to views. Time to add content. Read next section.
+Now ready model and convert it to views. Time to add content.
 
 #### Apply Content
 
@@ -126,7 +107,7 @@ Create content:
 
 var content: [SPDiffableSection] {
     let section = SPDiffableSection(
-        identifier: "example section",
+        id: "example section",
         header: SPDiffableTextHeaderFooter(text: "Header"),
         footer: SPDiffableTextHeaderFooter(text: "Footer"),
         items: [
@@ -228,7 +209,7 @@ Content it array of `SPDiffableSection`. For menu model need use model `SPDiffab
 
 ```swift
 SPDiffableSection(
-    identifier: Section.library.rawValue,
+    id: Section.library.rawValue,
     header: SPDiffableSideBarHeader(text: "Library", accessories: [.outlineDisclosure()]),
     items: [
         SPDiffableSideBarItem(title: "Recently Added", image: UIImage(systemName: "clock"), action: { _ in }),
@@ -246,7 +227,7 @@ You can save time and count lines of code using ready-use classes. In project av
 
 ```swift
 let section = SPDiffableSection(
-    identifier: "example section",
+    id: "example section",
     header: SPDiffableTextHeaderFooter(text: "Header"),
     footer: SPDiffableTextHeaderFooter(text: "Footer"),
     items: [
@@ -312,41 +293,14 @@ Provided only models, becouse for most items using list registration and no need
 In project you can find class `SPDiffableWrapperItem`. Using it, when you don't want create custom item model for you diffable struct. You can pass any your model and uwrap it later in cell provider.
 
 ```swift
-let item = SPDiffableWrapperItem(identifier: "uniq-identifier", model: LocationRowModel(city: "Minsk"))
+let item = SPDiffableWrapperItem(id: "uniq-identifier", model: LocationRowModel(city: "Minsk"))
 ```
-
-## Сontribution
-
-My English is very bad. You can see this once you read the documentation. I would really like to have clean and nice documentation. If you see gramatical errors and can help fix the Readme, please contact me hello@ivanvorobei.by or make a Pull Request. Thank you in advance!
-
-## Other Projects
-
-I love being helpful. Here I have provided a list of libraries that I keep up to date. For see `video previews` of libraries without install open [opensource.ivanvorobei.by](https://opensource.ivanvorobei.by) website.<br>
-I have libraries with native interface and managing permissions. Also available pack of useful extensions for boost your development process.
-
-<p float="left">
-    <a href="https://opensource.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
-    </a>
-        <a href="https://xcodeshop.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/xcode-shop.svg">
-    </a>
-</p>
 
 ## Russian Community
 
-Подписывайся в телеграмм-канал, если хочешь получать уведомления о новых туториалах.<br>
-Со сложными и непонятными задачами помогут в чате.
+Я веду [телеграм-канал](https://sparrowcode.by/telegram), там публикую новости и туториалы.<br>
+С проблемой помогут [в чате](https://sparrowcode.by/telegram/chat).
 
-<p float="left">
-    <a href="https://tutorials.ivanvorobei.by/telegram/channel">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-channel.svg">
-    </a>
-    <a href="https://tutorials.ivanvorobei.by/telegram/chat">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-chat.svg">
-    </a>
-</p>
+Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
 
-Видео-туториалы выклыдываю на [YouTube](https://tutorials.ivanvorobei.by/youtube):
-
-[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://tutorials.ivanvorobei.by/youtube)
+[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://ivanvorobei.by/youtube)

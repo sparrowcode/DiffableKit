@@ -38,6 +38,9 @@ open class SPDiffableTableController: UITableViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delaysContentTouches = false
+        
         tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.reuseIdentifier)
         tableView.register(SPDiffableSubtitleTableViewCell.self, forCellReuseIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier)
         tableView.register(SPDiffableCustomTableViewCell.self, forCellReuseIdentifier: SPDiffableCustomTableViewCell.reuseIdentifier)

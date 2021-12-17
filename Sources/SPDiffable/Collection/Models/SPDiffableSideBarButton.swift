@@ -33,10 +33,10 @@ open class SPDiffableSideBarButton: SPDiffableActionableItem {
     open var image: UIImage?
     open var accessories: [UICellAccessory]
     
-    public init(identifier: SPDiffableItem.Identifier? = nil, title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
+    public init(id: SPDiffableItem.Identifier? = nil, title: String, image: UIImage?, accessories: [UICellAccessory] = [], action: @escaping Action) {
         self.title = title
         self.image = image
         self.accessories = accessories
-        super.init(identifier: identifier ?? title, action: action)
+        super.init(id: id ?? title, action: action)
     }
 }

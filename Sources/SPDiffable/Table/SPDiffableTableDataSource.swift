@@ -135,6 +135,17 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         }
     }
     
+    /**
+     SPDiffable: Update layout.
+
+     - parameter animating: Shoud update layout with animation or not.
+     - parameter completion: A closure to execute when the updating complete.
+     */
+    public func updateLayout(animated: Bool, completion: (() -> Void)? = nil) {
+        let snapshot = self.snapshot()
+        apply(snapshot, animated: animated, completion: completion)
+    }
+    
     // MARK: - Get Content
     
     /**
@@ -163,15 +174,15 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     /**
      SPDiffable: Get index path for item by identifier.
      */
-    public func indexPath(for itemIdentifier: SPDiffableItem.Identifier) -> IndexPath? {
-        return indexPath(for: SPDiffableItem(identifier: itemIdentifier))
+    public func indexPath(for itemID: SPDiffableItem.Identifier) -> IndexPath? {
+        return indexPath(for: SPDiffableItem(id: itemID))
     }
     
     /**
      SPDiffable: Get cell specific type `T` by indetifier.
      */
-    public func cell<T: UITableViewCell>(_ type: T.Type, for itemIdentifier: SPDiffableItem.Identifier) -> T? {
-        guard let indexPath = indexPath(for: itemIdentifier) else { return nil }
+    public func cell<T: UITableViewCell>(_ type: T.Type, for itemID: SPDiffableItem.Identifier) -> T? {
+        guard let indexPath = indexPath(for: itemID) else { return nil }
         guard let cell = self.tableView?.cellForRow(at: indexPath) as? T else { return nil }
         return cell
     }

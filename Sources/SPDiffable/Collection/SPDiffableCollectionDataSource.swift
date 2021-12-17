@@ -87,7 +87,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             // Delete
             
             let deletedSections = snapshot.sectionIdentifiers.filter({ (checkSection) -> Bool in
-                return !sections.contains(where: { $0.identifier == checkSection.identifier })
+                return !sections.contains(where: { $0.id == checkSection.id })
             })
             if !deletedSections.isEmpty {
                 snapshot.deleteSections(deletedSections)
@@ -97,7 +97,7 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             
             let addedSections = sections.filter { checkSection in
                 return !snapshot.sectionIdentifiers.contains(where: {
-                    $0.identifier == checkSection.identifier
+                    $0.id == checkSection.id
                 })
             }
             if !addedSections.isEmpty {
@@ -110,15 +110,15 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
                 let previousSectionIndex = sectionIndex - 1
                 guard (sections.count > previousSectionIndex) && (previousSectionIndex >= 0) else { continue }
                 let previousSection = sections[previousSectionIndex]
-                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == section.identifier }) else { continue }
-                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.identifier == previousSection.identifier }) else { continue }
+                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.id == section.id }) else { continue }
+                guard let _ = snapshot.sectionIdentifiers.first(where: { $0.id == previousSection.id }) else { continue }
                 snapshot.moveSection(section, afterSection: previousSection)
             }
             
             // Set new header and footer
             
             for checkSection in snapshot.sectionIdentifiers {
-                if let newSection = sections.first(where: { $0.identifier == checkSection.identifier }) {
+                if let newSection = sections.first(where: { $0.id == checkSection.id }) {
                     checkSection.header = newSection.header
                     checkSection.footer = newSection.footer
                 }
@@ -199,6 +199,17 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
         }
     }
     
+    /**
+     SPDiffable: Update layout.
+
+     - parameter animating: Shoud update layout with animation or not.
+     - parameter completion: A closure to execute when the updating complete.
+     */
+    public func updateLayout(animated: Bool, completion: (() -> Void)? = nil) {
+        let snapshot = self.snapshot()
+        apply(snapshot, animated: animated, completion: completion)
+    }
+    
     // MARK: - Get Content
     
     /**
@@ -227,15 +238,15 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
     /**
      SPDiffable: Get index path for item by identifier.
      */
-    public func indexPath(for itemIdentifier: SPDiffableItem.Identifier) -> IndexPath? {
-        return indexPath(for: SPDiffableItem(identifier: itemIdentifier))
+    public func indexPath(for itemID: SPDiffableItem.Identifier) -> IndexPath? {
+        return indexPath(for: SPDiffableItem(id: itemID))
     }
     
     /**
      SPDiffable: Get cell specific type `T` by indetifier.
      */
-    public func cell<T: UICollectionViewCell>(_ type: T.Type, for itemIdentifier: SPDiffableItem.Identifier) -> T? {
-        guard let indexPath = indexPath(for: itemIdentifier) else { return nil }
+    public func cell<T: UICollectionViewCell>(_ type: T.Type, for itemID: SPDiffableItem.Identifier) -> T? {
+        guard let indexPath = indexPath(for: itemID) else { return nil }
         guard let cell = self.collectionView?.cellForItem(at: indexPath) as? T else { return nil }
         return cell
     }
