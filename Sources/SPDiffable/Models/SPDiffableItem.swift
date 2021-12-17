@@ -34,25 +34,25 @@ open class SPDiffableItem: NSObject, NSCopying {
      Always shoud be uniq. But if it changed, diffable system remove old and insert new (not reload).
      Identifier uses in `Hashable` and `Equatable` protocols.
      */
-    open var identifier: Identifier
+    open var id: Identifier
     
     // MARK: - Init
     
-    public init(identifier: Identifier) {
-        self.identifier = identifier
+    public init(id: Identifier) {
+        self.id = id
     }
     
     // MARK: - Hashable and Equatable
     
     open override var hash: Int {
         var hasher = Hasher()
-        hasher.combine(identifier)
+        hasher.combine(id)
         return hasher.finalize()
     }
     
     open override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? SPDiffableItem else { return false }
-        return identifier == object.identifier
+        return id == object.id
     }
     
     // MARK: - NSCopying
@@ -60,7 +60,7 @@ open class SPDiffableItem: NSObject, NSCopying {
     // Implemented becouse when using with collection,
     // sometimes catch error about unregognized selector.
     open func copy(with zone: NSZone? = nil) -> Any {
-        return SPDiffableItem(identifier: self.identifier)
+        return SPDiffableItem(id: self.id)
     }
     
     // MARK: - Identifier

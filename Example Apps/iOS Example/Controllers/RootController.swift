@@ -38,7 +38,7 @@ class RootController: DiffableTableController {
         case checkmark = "checkmark"
         case customCellProvider = "customCellProvider"
         
-        var identifier: String {
+        var id: String {
             return rawValue
         }
     }
@@ -48,7 +48,7 @@ class RootController: DiffableTableController {
         var content: [SPDiffableSection] = []
         
         let accessorySection = SPDiffableSection(
-            identifier: Section.accessory.identifier,
+            id: Section.accessory.id,
             header: SPDiffableTextHeaderFooter(text: "Accessory"),
             footer: SPDiffableTextHeaderFooter(text: "Getting default value before show. After changes in elements you can check prints in console."),
             items: [
@@ -66,7 +66,7 @@ class RootController: DiffableTableController {
         content.append(accessorySection)
         
         let basicSection = SPDiffableSection(
-            identifier: Section.basic.identifier,
+            id: Section.basic.id,
             header: SPDiffableTextHeaderFooter(text: "Presenter"),
             footer: SPDiffableTextHeaderFooter(text: "Push in navigation processing by table controller. Sometimes you need manually deselect cell."),
             items: [
@@ -90,13 +90,13 @@ class RootController: DiffableTableController {
         
         if stepperValue != 0 {
             accessorySection.items.append(
-                SPDiffableTableRow(identifier: stepperValueIdentifier, text: "Stepper Value", detail: "\(Int(stepperValue))")
+                SPDiffableTableRow(id: stepperValueIdentifier, text: "Stepper Value", detail: "\(Int(stepperValue))")
             )
         }
         
         if #available(iOS 14, *) {
             let sideBarSections = SPDiffableSection(
-                identifier: Section.sidebar.identifier,
+                id: Section.sidebar.id,
                 footer: SPDiffableTextHeaderFooter(text: "Example of new Side Bar."),
                 items: [
                     SPDiffableTableRow(text: "Present Side Bar", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] model, indexPath in
@@ -112,7 +112,7 @@ class RootController: DiffableTableController {
         }
         
         let checkmarkSections = SPDiffableSection(
-            identifier: Section.checkmark.identifier,
+            id: Section.checkmark.id,
             footer: SPDiffableTextHeaderFooter(text: "Example how usage search by models and change checkmark without reload table."),
             items: [
                 SPDiffableTableRow(text: "Chekmarks", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] model, indexPath in
@@ -124,7 +124,7 @@ class RootController: DiffableTableController {
         content.append(checkmarkSections)
         
         let cellProviderSection = SPDiffableSection(
-            identifier: Section.customCellProvider.identifier,
+            id: Section.customCellProvider.id,
             footer: SPDiffableTextHeaderFooter(text: "Also you can add more providers for specific controller, and use default and custom specially for some contorllers."),
             items: [
                 SPDiffableTableRow(text: "Custom Cell Provider", accessoryType: .disclosureIndicator, selectionStyle: .default, action: { [weak self] model, indexPath in

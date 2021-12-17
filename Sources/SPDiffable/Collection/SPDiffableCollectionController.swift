@@ -34,6 +34,15 @@ open class SPDiffableCollectionController: UICollectionViewController {
     
     open weak var diffableDelegate: SPDiffableCollectionDelegate?
     
+    // MARK: - Lifecycle
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.delaysContentTouches = false
+    }
+    
+    // MARK: - Init
+    
     /**
      SPDiffable: Init `diffableDataSource` and apply content to data source without animation.
      

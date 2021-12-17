@@ -38,9 +38,9 @@ open class SPDiffableWrapperItem: SPDiffableItem, SPDiffableItemActionable {
     open var model: Any
     open var action: Action?
     
-    public init(identifier: String, model: Any, action: Action? = nil) {
+    public init(id: String, model: Any, action: Action? = nil) {
         self.model = model
         self.action = action
-        super.init(identifier: identifier)
+        super.init(id: id)
     }
 }

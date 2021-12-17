@@ -28,8 +28,8 @@ open class SPDiffableActionableItem: SPDiffableItem, SPDiffableItemActionable {
     
     open var action: Action?
     
-    public init(identifier: String, action: Action? = nil) {
+    public init(id: String, action: Action? = nil) {
         self.action = action
-        super.init(identifier: identifier)
+        super.init(id: id)
     }
 }

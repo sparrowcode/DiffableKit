@@ -36,7 +36,7 @@ open class SPDiffableTableRowStepper: SPDiffableItem {
     open var icon: UIImage? = nil
     open var action: Action
     
-    public init(identifier: String? = nil, text: String, icon: UIImage? = nil, stepValue: Double, value: Double, minimumValue: Double, maximumValue: Double, action: @escaping Action) {
+    public init(id: String? = nil, text: String, icon: UIImage? = nil, stepValue: Double, value: Double, minimumValue: Double, maximumValue: Double, action: @escaping Action) {
         self.text = text
         self.icon = icon
         self.stepValue = stepValue
@@ -44,7 +44,7 @@ open class SPDiffableTableRowStepper: SPDiffableItem {
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
         self.action = action
-        super.init(identifier: identifier ?? text)
+        super.init(id: id ?? text)
     }
     
     public typealias Action = (_ value: Double) -> Void
