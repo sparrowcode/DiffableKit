@@ -11,6 +11,8 @@ Apple's diffable API requerid models for each object type. If you want use it in
     - [Manually](#manually)
 - [Usage](#usage)
     - [How it work](#usage)
+    - [Set Content](#set-content)
+    - [Get Content](#get-content)
     - [Mediator](#mediator)
     - [Diffable Delegate](#diffable-delegate)
     - [Sidebar](#sidebar)
@@ -32,7 +34,7 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/SPDiffable.git", .upToNextMajor(from: "2.0.0"))
+    .package(url: "https://github.com/ivanvorobei/SPDiffable", .upToNextMajor(from: "2.0.0"))
 ]
 ```
 
@@ -98,7 +100,7 @@ class DiffableTableController: SPDiffableTableController {
 
 Now ready model and convert it to views. Time to add content.
 
-#### Apply Content
+### Set Content
 
 Now table support models and custom cell provider. You can apply diffable content with animation (or not).
 Create content:
@@ -136,10 +138,27 @@ That all. You can each time create new order or count cells and it automatically
 If you need something like old function `.reloadData()` in collection and table, look at this method:
 
 ```swift
-diffableDataSource?.reload(content)
+// Reload fully content
+diffableDataSource.reload(content)
+
+// Reload only specific items
+diffableDataSource.reload(items) // or for 1 item `reload(item)`
+
 ```
 
 Changes apply without animation and like deep reload.
+
+### Get Content
+
+You can get index path by item, item by id and many other funcs:
+
+```swift
+func item(for indexPath: IndexPath) -> SPDiffableItem? {}
+func indexPath(for itemID: SPDiffableItem.Identifier) -> IndexPath? {}
+func sections() -> [SPDiffableSection] {}
+func section(for index: Int) -> SPDiffableSection? {}
+cell<T: UITableViewCell>(_ type: T.Type, for itemID: SPDiffableItem.Identifier) -> T? {}
+```
 
 ### Mediator
 
@@ -283,7 +302,6 @@ Here provided cells:
 
 Provided only models, becouse for most items using list registration and no need specific cell class.
 
-- `SPDiffableCollectionActionableItem` actionable item for collection view.
 - `SPDiffableSideBarItem` menu item in side bar. Support accessories and actions.
 - `SPDiffableSideBarButton` button item in side bar. Color of title similar to tint.
 - `SPDiffableSideBarHeader` header model for side bar item.
