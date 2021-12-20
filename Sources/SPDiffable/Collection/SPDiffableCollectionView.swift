@@ -84,6 +84,8 @@ open class SPDiffableCollectionView: UICollectionView, UICollectionViewDelegate 
         switch item {
         case let model as SPDiffableActionableItem:
             model.action?(model, indexPath)
+        case let model as SPDiffableWrapperItem:
+            model.action?(model, indexPath)
         default:
             break
         }
