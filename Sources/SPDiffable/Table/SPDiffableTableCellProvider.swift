@@ -21,21 +21,34 @@
 
 import UIKit
 
+/**
+ SPDiffable: Wrapper of table cell provider.
+ */
 @available(iOS 13.0, *)
-public enum SPDiffableTableCellProviders {
+open class SPDiffableTableCellProvider {
     
-    /**
-     SPDiffable: Return cell providers, which process for project models cells.
-     No need additional configure.
-     
-     For change style of cells requerid register new cell provider.
-     */
-    public static var `default`: [SPDiffableTableCellProvider] {
-        return [rowDetail, rowSubtitle, `switch`, stepper, customisable]
+    open var clouser: SPDiffableTableDataSource.CellProvider
+    
+    public init(clouser: @escaping SPDiffableTableDataSource.CellProvider) {
+        self.clouser = clouser
+    }
+    
+    // MARK: - Ready Use
+    
+    public static var `default`: SPDiffableTableCellProvider  {
+        return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
+            let providers = [rowDetail, rowSubtitle, `switch`, stepper, customisable]
+            for provider in providers {
+                if let cell = provider.clouser(tableView, indexPath, item) {
+                    return cell
+                }
+            }
+            return nil
+        }
     }
     
     public static var rowDetail: SPDiffableTableCellProvider  {
-        let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
+        return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
             guard let item = item as? SPDiffableTableRow else { return nil }
             let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTableViewCell
             cell.textLabel?.text = item.text
@@ -45,11 +58,10 @@ public enum SPDiffableTableCellProviders {
             cell.selectionStyle = item.selectionStyle
             return cell
         }
-        return cellProvider
     }
     
     public static var rowSubtitle: SPDiffableTableCellProvider  {
-        let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
+        return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
             guard let item = item as? SPDiffableTableRowSubtitle else { return nil }
             let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableSubtitleTableViewCell
             cell.textLabel?.text = item.text
@@ -59,11 +71,10 @@ public enum SPDiffableTableCellProviders {
             cell.selectionStyle = item.selectionStyle
             return cell
         }
-        return cellProvider
     }
     
     public static var `switch`: SPDiffableTableCellProvider  {
-        let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
+        return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
             guard let item = item as? SPDiffableTableRowSwitch else { return nil }
             let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTableViewCell
             cell.textLabel?.text = item.text
@@ -74,11 +85,10 @@ public enum SPDiffableTableCellProviders {
             cell.selectionStyle = .none
             return cell
         }
-        return cellProvider
     }
     
     public static var stepper: SPDiffableTableCellProvider  {
-        let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
+        return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
             guard let item = item as? SPDiffableTableRowStepper else { return nil }
             let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTableViewCell
             cell.textLabel?.text = item.text
@@ -92,11 +102,10 @@ public enum SPDiffableTableCellProviders {
             cell.selectionStyle = .none
             return cell
         }
-        return cellProvider
     }
     
     public static var customisable: SPDiffableTableCellProvider  {
-        let cellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, item) -> UITableViewCell? in
+        return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
             guard let item = item as? SPDiffableCustomTableRow else { return nil }
             let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableCustomTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableCustomTableViewCell
             cell.textLabel?.text = item.text
@@ -108,6 +117,5 @@ public enum SPDiffableTableCellProviders {
             cell.higlightStyle = item.higlightStyle
             return cell
         }
-        return cellProvider
     }
 }

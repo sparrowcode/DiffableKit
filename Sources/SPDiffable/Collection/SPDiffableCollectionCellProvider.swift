@@ -21,15 +21,37 @@
 
 import UIKit
 
-public enum SPDiffableCollectionCellProviders {
+import UIKit
+
+/**
+ SPDiffable: Wrapper of collection cell provider.
+ */
+@available(iOS 13.0, *)
+open class SPDiffableCollectionCellProvider {
+    
+    open var clouser: SPDiffableCollectionDataSource.CellProvider
+    
+    public init(clouser: @escaping SPDiffableCollectionDataSource.CellProvider) {
+        self.clouser = clouser
+    }
+    
+    // MARK: - Ready Use
     
     /**
      SPDiffable: Defaults cell provider, which can help you doing side bar faster.
      You can do your providers and ise its with more flexible.
      */
     @available(iOS 14, *)
-    public static var sideBar: [SPDiffableCollectionCellProvider] {
-        return [sideBarItem, sideBarButton, sideBarHeader]
+    public static var sideBar: SPDiffableCollectionCellProvider  {
+        return SPDiffableCollectionCellProvider() { (collectionView, indexPath, item) -> UICollectionViewCell? in
+            let providers = [sideBarItem, sideBarButton, sideBarHeader]
+            for provider in providers {
+                if let cell = provider.clouser(collectionView, indexPath, item) {
+                    return cell
+                }
+            }
+            return nil
+        }
     }
     
     @available(iOS 14, *)
@@ -41,11 +63,10 @@ public enum SPDiffableCollectionCellProviders {
             cell.contentConfiguration = content
             cell.accessories = item.accessories
         }
-        let cellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
+        return SPDiffableCollectionCellProvider() { (collectionView, indexPath, item) -> UICollectionViewCell? in
             guard let item = item as? SPDiffableSideBarItem else { return nil }
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         }
-        return cellProvider
     }
     
     @available(iOS 14, *)
@@ -54,11 +75,10 @@ public enum SPDiffableCollectionCellProviders {
             cell.updateWithItem(item)
             cell.accessories = item.accessories
         }
-        let cellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
+        return SPDiffableCollectionCellProvider() { (collectionView, indexPath, item) -> UICollectionViewCell? in
             guard let item = item as? SPDiffableSideBarButton else { return nil }
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         }
-        return cellProvider
     }
     
     @available(iOS 14, *)
@@ -70,10 +90,9 @@ public enum SPDiffableCollectionCellProviders {
             cell.contentConfiguration = content
             cell.accessories = item.accessories
         }
-        let cellProvider: SPDiffableCollectionCellProvider = { (collectionView, indexPath, item) -> UICollectionViewCell? in
+        return SPDiffableCollectionCellProvider() { (collectionView, indexPath, item) -> UICollectionViewCell? in
             guard let item = item as? SPDiffableSideBarHeader else { return nil }
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         }
-        return cellProvider
     }
 }
