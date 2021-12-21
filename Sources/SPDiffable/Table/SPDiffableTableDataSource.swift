@@ -43,17 +43,18 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     
     // MARK: - Init
     
-    public init(tableView: UITableView, cellProviders: [CellProvider]) {
+    public init(tableView: UITableView, cellProviders: [SPDiffableTableCellProvider]) {
         self.tableView = tableView
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
             for provider in cellProviders {
-                if let cell = provider(tableView, indexPath, item) {
+                if let cell = provider.clouser(tableView, indexPath, item) {
                     return cell
                 }
             }
             return nil
         })
     }
+    
     
     // MARK: - Apply Content
     
@@ -236,9 +237,3 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
         mediator?.diffableTableView?(tableView, moveRowAt: sourceIndexPath, to: destinationIndexPath)
     }
 }
-
-/**
- SPDiffable: Wrapper of table cell provider.
- */
-@available(iOS 13.0, *)
-public typealias SPDiffableTableCellProvider = SPDiffableTableDataSource.CellProvider

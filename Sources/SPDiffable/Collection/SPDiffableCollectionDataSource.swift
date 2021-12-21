@@ -41,14 +41,14 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
     
     // MARK: - Init
     
-    public init(collectionView: UICollectionView, cellProviders: [CellProvider], supplementaryViewProviders: [SupplementaryViewProvider] = [], headerAsFirstCell: Bool = true) {
+    public init(collectionView: UICollectionView, cellProviders: [SPDiffableCollectionCellProvider], supplementaryViewProviders: [SupplementaryViewProvider] = [], headerAsFirstCell: Bool = true) {
         
         self.headerAsFirstCell = headerAsFirstCell
         self.collectionView = collectionView
         
         super.init(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
             for provider in cellProviders {
-                if let cell = provider(collectionView, indexPath, item) {
+                if let cell = provider.clouser(collectionView, indexPath, item) {
                     return cell
                 }
             }
@@ -251,12 +251,6 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
         return cell
     }
 }
-
-/**
- SPDiffable: Wrapper of collection cell provider.
- */
-@available(iOS 13.0, *)
-public typealias SPDiffableCollectionCellProvider = SPDiffableCollectionDataSource.CellProvider
 
 /**
  SPDiffable: Wrapper of collection supplementary view provider.

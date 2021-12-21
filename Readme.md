@@ -84,7 +84,7 @@ class DiffableTableController: SPDiffableTableController {
         tableView.register(LocationTableCell.self, forCellReuseIdentifier: "LocationTableCell")
         
         // Cell provider for `LocationRowModel`
-        let locationCellProvider: SPDiffableTableCellProvider = { (tableView, indexPath, model) -> UITableViewCell? in
+        let locationCellProvider = SPDiffableTableCellProvider() { (tableView, indexPath, model) -> UITableViewCell? in
             switch model {
             case let model as TableRowModel:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTableCell", for: indexPath) as! LocationTableCell
@@ -270,7 +270,7 @@ let section = SPDiffableSection(
 You init cell model and pass action, choose selection style and other. As you see, model describe native table cell. Next, you need set cell provider, but it also already available, for get it call `SPDiffableTableController.defaultCellProvider`.
 
 ```swift
-setCellProviders(SPDiffableTableCellProviders.default, sections: [section])
+setCellProviders([.default], sections: [section])
 ```
 
 Now project's models automatically converting to cell. No need any additional work. That all code. 
