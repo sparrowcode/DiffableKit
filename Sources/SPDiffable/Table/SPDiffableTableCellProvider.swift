@@ -37,7 +37,7 @@ open class SPDiffableTableCellProvider {
     
     public static var `default`: SPDiffableTableCellProvider  {
         return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
-            let providers = [rowDetail, rowSubtitle, `switch`, stepper, customisable]
+            let providers = [rowDetail, rowSubtitle, `switch`, stepper]
             for provider in providers {
                 if let cell = provider.clouser(tableView, indexPath, item) {
                     return cell
@@ -100,21 +100,6 @@ open class SPDiffableTableCellProvider {
             cell.imageView?.image = item.icon
             cell.accessoryView = control
             cell.selectionStyle = .none
-            return cell
-        }
-    }
-    
-    public static var customisable: SPDiffableTableCellProvider  {
-        return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
-            guard let item = item as? SPDiffableCustomTableRow else { return nil }
-            let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableCustomTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableCustomTableViewCell
-            cell.textLabel?.text = item.text
-            cell.textLabel?.textColor = item.textColor
-            cell.textLabel?.font = item.textFont
-            cell.detailTextLabel?.text = item.detail
-            cell.imageView?.image = item.icon
-            cell.accessoryType = item.accessoryType
-            cell.higlightStyle = item.higlightStyle
             return cell
         }
     }
