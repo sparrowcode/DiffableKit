@@ -35,16 +35,8 @@ open class SPDiffableTableCellProvider {
     
     // MARK: - Ready Use
     
-    public static var `default`: SPDiffableTableCellProvider  {
-        return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
-            let providers = [rowDetail, rowSubtitle, `switch`, stepper]
-            for provider in providers {
-                if let cell = provider.clouser(tableView, indexPath, item) {
-                    return cell
-                }
-            }
-            return nil
-        }
+    public static var `default`: [SPDiffableTableCellProvider]  {
+        [rowDetail, rowSubtitle, `switch`, stepper]
     }
     
     public static var rowDetail: SPDiffableTableCellProvider  {

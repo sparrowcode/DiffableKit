@@ -40,18 +40,13 @@ open class SPDiffableCollectionCellProvider {
     /**
      SPDiffable: Defaults cell provider, which can help you doing side bar faster.
      You can do your providers and ise its with more flexible.
+     
+     - warning:
+     Don't make shared clouser becouse cell registrantion handle inside with error.
      */
     @available(iOS 14, *)
-    public static var sideBar: SPDiffableCollectionCellProvider  {
-        return SPDiffableCollectionCellProvider() { (collectionView, indexPath, item) -> UICollectionViewCell? in
-            let providers = [sideBarItem, sideBarButton, sideBarHeader]
-            for provider in providers {
-                if let cell = provider.clouser(collectionView, indexPath, item) {
-                    return cell
-                }
-            }
-            return nil
-        }
+    public static var sideBar: [SPDiffableCollectionCellProvider]  {
+        [sideBarItem, sideBarButton, sideBarHeader]
     }
     
     @available(iOS 14, *)
