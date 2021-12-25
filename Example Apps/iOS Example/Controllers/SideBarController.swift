@@ -27,7 +27,7 @@ class SidebarController: SPDiffableSideBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCellProviders([.sideBar], sections: content)
+        setCellProviders(SPDiffableCollectionCellProvider.sideBar, sections: content)
     }
     
     enum Section: String {
