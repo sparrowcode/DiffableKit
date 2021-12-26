@@ -21,51 +21,8 @@
 
 import UIKit
 
-/**
- SPDiffable: Diffable collecton data source.
- 
- Using array cell providers for get view for each model.
- Need pass all cell providers which will be using in collection view and data source all by order each and try get view.
- */
 @available(iOS 13.0, *)
-open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
-    
-    private weak var collectionView: UICollectionView?
-    
-    /**
-     SPDiffable: Make section and use header model like first cell.
-     
-     If you don't use composition layout, no way say to collection system about header elements. Its using random, sometimes its cell provider call, sometimes it call supplementary. In this case we shoudn't set header to section snapshot. For this case it condition only.
-     */
-    public let headerAsFirstCell: Bool
-    
-    // MARK: - Init
-    
-    public init(collectionView: UICollectionView, cellProviders: [SPDiffableCollectionCellProvider], supplementaryViewProviders: [SupplementaryViewProvider] = [], headerAsFirstCell: Bool = true) {
-        
-        self.headerAsFirstCell = headerAsFirstCell
-        self.collectionView = collectionView
-        
-        super.init(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
-            for provider in cellProviders {
-                if let cell = provider.clouser(collectionView, indexPath, item) {
-                    return cell
-                }
-            }
-            return nil
-        }
-        
-        if !supplementaryViewProviders.isEmpty {
-            supplementaryViewProvider = { (collectionView, kind, indexPath) -> UICollectionReusableView? in
-                for provider in supplementaryViewProviders {
-                    if let view = provider(collectionView, kind, indexPath) {
-                        return view
-                    }
-                }
-                return nil
-            }
-        }
-    }
+extension SPDiffableCollectionDataSource {
     
     // MARK: - Apply Content
     
@@ -209,51 +166,4 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
         let snapshot = self.snapshot()
         apply(snapshot, animated: animated, completion: completion)
     }
-    
-    // MARK: - Get Content
-    
-    /**
-     SPDiffable: Get item by index path.
-     */
-    public func item(for indexPath: IndexPath) -> SPDiffableItem? {
-        return itemIdentifier(for: indexPath)
-    }
-    
-    /**
-     SPDiffable: Get sections.
-     */
-    public func sections() -> [SPDiffableSection] {
-        return snapshot().sectionIdentifiers
-    }
-    
-    /**
-     SPDiffable: Get section by index.
-     */
-    public func section(for index: Int) -> SPDiffableSection? {
-        let snapshot = snapshot()
-        guard index < snapshot.sectionIdentifiers.count else { return nil }
-        return snapshot.sectionIdentifiers[index]
-    }
-    
-    /**
-     SPDiffable: Get index path for item by identifier.
-     */
-    public func indexPath(for itemID: SPDiffableItem.Identifier) -> IndexPath? {
-        return indexPath(for: SPDiffableItem(id: itemID))
-    }
-    
-    /**
-     SPDiffable: Get cell specific type `T` by indetifier.
-     */
-    public func cell<T: UICollectionViewCell>(_ type: T.Type, for itemID: SPDiffableItem.Identifier) -> T? {
-        guard let indexPath = indexPath(for: itemID) else { return nil }
-        guard let cell = self.collectionView?.cellForItem(at: indexPath) as? T else { return nil }
-        return cell
-    }
 }
-
-/**
- SPDiffable: Wrapper of collection supplementary view provider.
- */
-@available(iOS 13.0, *)
-public typealias SPDiffableCollectionSupplementaryViewProvider = SPDiffableCollectionDataSource.SupplementaryViewProvider
