@@ -64,7 +64,7 @@ open class SPDiffableTableController: UITableViewController {
     // MARK: - UITableViewDelegate
     
     open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = diffableDataSource?.itemIdentifier(for: indexPath) else { return }
+        guard let item = diffableDataSource?.item(for: indexPath) else { return }
         diffableDelegate?.diffableTableView?(tableView, didSelectItem: item, indexPath: indexPath)
         
         switch item {
