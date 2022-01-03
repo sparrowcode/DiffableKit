@@ -21,11 +21,12 @@
 
 import UIKit
 
-/**
- SPDiffable: Protocol for mirrir `UICollectionViewDelegate`.
- */
 @available(iOS 13.0, *)
-@objc public protocol SPDiffableCollectionDelegate: AnyObject {
+open class SPDiffableTableHeaderFooterProvider {
     
-    @objc optional func diffableCollectionView(_ collectionView: UICollectionView, didSelectItem item: SPDiffableItem, indexPath: IndexPath)
+    open var clouser: SPDiffableTableDataSource.HeaderFooterProvider
+    
+    public init(clouser: @escaping SPDiffableTableDataSource.HeaderFooterProvider) {
+        self.clouser = clouser
+    }
 }

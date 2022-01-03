@@ -32,8 +32,6 @@ open class SPDiffableCollectionController: UICollectionViewController {
     
     open var diffableDataSource: SPDiffableCollectionDataSource?
     
-    open weak var diffableDelegate: SPDiffableCollectionDelegate?
-    
     // MARK: - Lifecycle
     
     open override func viewDidLoad() {
@@ -50,35 +48,22 @@ open class SPDiffableCollectionController: UICollectionViewController {
      
      - warning: Changes applied not animatable.
      - parameter cellProviders: Cell providers with valid order for processing.
-     - parameter supplementaryViewProviders: Supplementary view providers with valid order for processing.
+     - parameter headerFooterProviders: Header and Footer providers with valid order for processing.
      - parameter headerAsFirstCell: Flag for use header as cell or supplementary.
      - parameter sections: Content as array of `SPDiffableSection`.
      */
     open func setCellProviders(
         _ cellProviders: [SPDiffableCollectionCellProvider],
-        supplementaryViewProviders: [SPDiffableCollectionSupplementaryViewProvider] = [],
+        headerFooterProviders: [SPDiffableCollectionHeaderFooterProvider] = [],
         headerAsFirstCell: Bool = true,
         sections: [SPDiffableSection]
     ) {
         diffableDataSource = SPDiffableCollectionDataSource(
             collectionView: collectionView,
             cellProviders: cellProviders,
-            supplementaryViewProviders: supplementaryViewProviders,
+            headerFooterProviders: headerFooterProviders,
             headerAsFirstCell: headerAsFirstCell
         )
         diffableDataSource?.apply(sections, animated: false)
-    }
-    
-    // MARK: - UICollectionViewDelegate
-    
-    open override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let item = diffableDataSource?.item(for: indexPath) else { return }
-        diffableDelegate?.diffableCollectionView?(collectionView, didSelectItem: item, indexPath: indexPath)
-        switch item {
-        case let model as SPDiffableItemActionable:
-            model.action?(item, indexPath)
-        default:
-            break
-        }
     }
 }

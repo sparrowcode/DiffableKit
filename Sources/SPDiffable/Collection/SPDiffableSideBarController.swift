@@ -38,7 +38,6 @@ open class SPDiffableSideBarController: SPDiffableCollectionController {
     public init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
         commonInit()
-        
     }
     
     public required init?(coder: NSCoder) {

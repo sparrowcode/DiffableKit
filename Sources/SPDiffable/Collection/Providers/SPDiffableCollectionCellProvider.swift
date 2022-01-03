@@ -21,10 +21,8 @@
 
 import UIKit
 
-import UIKit
-
 /**
- SPDiffable: Wrapper of collection cell provider.
+ SPDiffable: Cell Provider.
  */
 @available(iOS 13.0, *)
 open class SPDiffableCollectionCellProvider {

@@ -37,15 +37,28 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
      It allow manage for example header titles not ovveride data source class.
      Now data source doing only cell provider logic.
      */
-    public weak var mediator: SPDiffableTableMediator?
+    open weak var mediator: SPDiffableTableMediator?
+    
+    /**
+     SPDiffable: Mirror of `UITableViewDelegate`.
+     */
+    open weak var diffableDelegate: SPDiffableTableDelegate?
     
     // Using for get cells or update its.
     internal weak var tableView: UITableView?
     
+    // Similar to collection native header and footer provider.
+    internal var headerFooterProviders: [SPDiffableTableHeaderFooterProvider]
+    
     // MARK: - Init
     
-    public init(tableView: UITableView, cellProviders: [SPDiffableTableCellProvider]) {
+    public init(
+        tableView: UITableView,
+        cellProviders: [SPDiffableTableCellProvider],
+        headerFooterProviders: [SPDiffableTableHeaderFooterProvider] = []
+    ) {
         self.tableView = tableView
+        self.headerFooterProviders = headerFooterProviders
         super.init(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
             for provider in cellProviders {
                 if let cell = provider.clouser(tableView, indexPath, item) {
@@ -54,6 +67,7 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
             }
             return nil
         })
+        self.tableView?.delegate = self
     }
     
     // MARK: - Mediator
@@ -93,4 +107,8 @@ open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSe
     open override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         mediator?.diffableTableView?(tableView, moveRowAt: sourceIndexPath, to: destinationIndexPath)
     }
+    
+    // MARK: - Supplementary
+    
+    public typealias HeaderFooterProvider = (_ tableView: UITableView, _ section: Int, _ item: SPDiffableItem) -> UIView?
 }

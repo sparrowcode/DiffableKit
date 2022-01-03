@@ -22,10 +22,16 @@
 import UIKit
 
 /**
- SPDiffable: Protocol for mirrir `UICollectionViewDelegate`.
+ SPDiffable: Header and Footer provider.
+ 
+ In native diffable called `SupplementaryViewProvider`.
  */
 @available(iOS 13.0, *)
-@objc public protocol SPDiffableCollectionDelegate: AnyObject {
+open class SPDiffableCollectionHeaderFooterProvider {
     
-    @objc optional func diffableCollectionView(_ collectionView: UICollectionView, didSelectItem item: SPDiffableItem, indexPath: IndexPath)
+    open var clouser: SPDiffableCollectionDataSource.SupplementaryViewProvider
+    
+    public init(clouser: @escaping SPDiffableCollectionDataSource.SupplementaryViewProvider) {
+        self.clouser = clouser
+    }
 }

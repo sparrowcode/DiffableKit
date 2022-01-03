@@ -32,15 +32,11 @@ open class SPDiffableTableController: UITableViewController {
     
     open var diffableDataSource: SPDiffableTableDataSource?
     
-    open weak var diffableDelegate: SPDiffableTableDelegate?
-    
     // MARK: - Lifecycle
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delaysContentTouches = false
-        
         tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.reuseIdentifier)
         tableView.register(SPDiffableSubtitleTableViewCell.self, forCellReuseIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier)
     }
@@ -53,25 +49,20 @@ open class SPDiffableTableController: UITableViewController {
      If need custom logic, you can manually init and apply data when you need.
      
      - warning: Changes applied not animatable.
-     - parameter providers: Cell Providers with valid order for processing.
+     - parameter cellProviders: Cell Providers with valid order for processing.
+     - parameter headerFooterProviders: Header and Footer providers with valid order for processing.
      - parameter sections: Content as array of `SPDiffableSection`.
      */
-    open func setCellProviders( _ providers: [SPDiffableTableCellProvider], sections: [SPDiffableSection]) {
-        diffableDataSource = SPDiffableTableDataSource(tableView: tableView, cellProviders: providers)
+    open func setCellProviders(
+        _ cellProviders: [SPDiffableTableCellProvider],
+        headerFooterProviders: [SPDiffableTableHeaderFooterProvider] = [],
+        sections: [SPDiffableSection]
+    ) {
+        diffableDataSource = SPDiffableTableDataSource(
+            tableView: tableView,
+            cellProviders: cellProviders,
+            headerFooterProviders: headerFooterProviders
+        )
         diffableDataSource?.apply(sections, animated: false)
-    }
-    
-    // MARK: - UITableViewDelegate
-    
-    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = diffableDataSource?.item(for: indexPath) else { return }
-        diffableDelegate?.diffableTableView?(tableView, didSelectItem: item, indexPath: indexPath)
-        
-        switch item {
-        case let model as SPDiffableItemActionable:
-            model.action?(item, indexPath)
-        default:
-            break
-        }
     }
 }
