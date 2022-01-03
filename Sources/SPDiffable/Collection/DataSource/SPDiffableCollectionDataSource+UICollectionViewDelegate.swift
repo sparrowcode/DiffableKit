@@ -21,11 +21,18 @@
 
 import UIKit
 
-/**
- SPDiffable: Protocol for mirrir `UICollectionViewDelegate`.
- */
 @available(iOS 13.0, *)
-@objc public protocol SPDiffableCollectionDelegate: AnyObject {
+extension SPDiffableCollectionDataSource: UICollectionViewDelegate {
     
-    @objc optional func diffableCollectionView(_ collectionView: UICollectionView, didSelectItem item: SPDiffableItem, indexPath: IndexPath)
+    // Process actions after tap.
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = item(for: indexPath) else { return }
+        diffableDelegate?.diffableCollectionView?(collectionView, didSelectItem: item, indexPath: indexPath)
+        switch item {
+        case let model as SPDiffableActionableItem:
+            model.action?(model, indexPath)
+        default:
+            break
+        }
+    }
 }

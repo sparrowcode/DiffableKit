@@ -37,13 +37,22 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
      */
     public let headerAsFirstCell: Bool
     
+    /**
+     SPDiffable: Mirror of `UICollectionViewDelegate`.
+     */
+    open weak var diffableDelegate: SPDiffableCollectionDelegate?
+    
     // Using for get cells or update its.
     internal weak var collectionView: UICollectionView?
     
     // MARK: - Init
     
-    public init(collectionView: UICollectionView, cellProviders: [SPDiffableCollectionCellProvider], supplementaryViewProviders: [SupplementaryViewProvider] = [], headerAsFirstCell: Bool = true) {
-        
+    public init(
+        collectionView: UICollectionView,
+        cellProviders: [SPDiffableCollectionCellProvider],
+        headerFooterProviders: [SPDiffableCollectionHeaderFooterProvider] = [],
+        headerAsFirstCell: Bool = true
+    ) {
         self.headerAsFirstCell = headerAsFirstCell
         self.collectionView = collectionView
         
@@ -55,22 +64,18 @@ open class SPDiffableCollectionDataSource: UICollectionViewDiffableDataSource<SP
             }
             return nil
         }
-        
-        if !supplementaryViewProviders.isEmpty {
+
+        if !headerFooterProviders.isEmpty {
             supplementaryViewProvider = { (collectionView, kind, indexPath) -> UICollectionReusableView? in
-                for provider in supplementaryViewProviders {
-                    if let view = provider(collectionView, kind, indexPath) {
+                for provider in headerFooterProviders {
+                    if let view = provider.clouser(collectionView, kind, indexPath) {
                         return view
                     }
                 }
                 return nil
             }
         }
+        
+        collectionView.delegate = self
     }
 }
-
-/**
- SPDiffable: Wrapper of collection supplementary view provider.
- */
-@available(iOS 13.0, *)
-public typealias SPDiffableCollectionSupplementaryViewProvider = SPDiffableCollectionDataSource.SupplementaryViewProvider

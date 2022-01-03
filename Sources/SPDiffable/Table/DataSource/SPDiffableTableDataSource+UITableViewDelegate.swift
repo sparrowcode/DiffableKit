@@ -21,11 +21,28 @@
 
 import UIKit
 
-/**
- SPDiffable: Protocol for mirrir `UICollectionViewDelegate`.
- */
 @available(iOS 13.0, *)
-@objc public protocol SPDiffableCollectionDelegate: AnyObject {
+extension SPDiffableTableDataSource: UITableViewDelegate {
     
-    @objc optional func diffableCollectionView(_ collectionView: UICollectionView, didSelectItem item: SPDiffableItem, indexPath: IndexPath)
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = item(for: indexPath) else { return }
+        diffableDelegate?.diffableTableView?(tableView, didSelectItem: item, indexPath: indexPath)
+        
+        switch item {
+        case let model as SPDiffableItemActionable:
+            model.action?(item, indexPath)
+        default:
+            break
+        }
+    }
+    
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerItem = self.section(for: section)?.header else { return nil }
+        for provider in headerFooterProviders {
+            if let view = provider.clouser(tableView, section, headerItem) {
+                return view
+            }
+        }
+        return nil
+    }
 }

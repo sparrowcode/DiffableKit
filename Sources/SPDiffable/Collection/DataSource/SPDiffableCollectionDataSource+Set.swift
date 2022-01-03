@@ -158,7 +158,7 @@ extension SPDiffableCollectionDataSource {
     
     /**
      SPDiffable: Update layout.
-
+     
      - parameter animating: Shoud update layout with animation or not.
      - parameter completion: A closure to execute when the updating complete.
      */
