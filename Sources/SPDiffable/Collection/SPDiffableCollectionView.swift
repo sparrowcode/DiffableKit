@@ -45,6 +45,7 @@ open class SPDiffableCollectionView: UICollectionView, UICollectionViewDelegate 
     }
     
     private func commonInit() {
+        backgroundColor = .clear
         delaysContentTouches = false
     }
     
