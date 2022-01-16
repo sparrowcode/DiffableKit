@@ -36,7 +36,7 @@ open class SPDiffableTableCellProvider {
     // MARK: - Ready Use
     
     public static var `default`: [SPDiffableTableCellProvider]  {
-        [rowDetail, rowSubtitle, `switch`, stepper]
+        [rowDetail, rowSubtitle, `switch`, stepper, textField]
     }
     
     public static var rowDetail: SPDiffableTableCellProvider  {
@@ -91,6 +91,23 @@ open class SPDiffableTableCellProvider {
             control.maximumValue = item.maximumValue
             cell.imageView?.image = item.icon
             cell.accessoryView = control
+            cell.selectionStyle = .none
+            return cell
+        }
+    }
+
+    public static var textField: SPDiffableTableCellProvider  {
+        return SPDiffableTableCellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
+            guard let item = item as? SPDiffableTableRowTextField else { return nil }
+            let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTextFieldTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTextFieldTableViewCell
+            print("reloaded item \(item.id)")
+            cell.textField.text = item.text
+            cell.textField.placeholder = item.placeholder
+            cell.textField.autocorrectionType = item.autocorrectionType
+            cell.textField.keyboardType = item.keyboardType
+            cell.textField.autocapitalizationType = item.autocapitalizationType
+            cell.textField.delegate = item.delegate
+            cell.accessoryView = .none
             cell.selectionStyle = .none
             return cell
         }

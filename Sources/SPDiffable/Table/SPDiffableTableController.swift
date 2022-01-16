@@ -39,6 +39,7 @@ open class SPDiffableTableController: UITableViewController {
         tableView.delaysContentTouches = false
         tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.reuseIdentifier)
         tableView.register(SPDiffableSubtitleTableViewCell.self, forCellReuseIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier)
+        tableView.register(SPDiffableTextFieldTableViewCell.self, forCellReuseIdentifier: SPDiffableTextFieldTableViewCell.reuseIdentifier)
     }
     
     // MARK: - Init
