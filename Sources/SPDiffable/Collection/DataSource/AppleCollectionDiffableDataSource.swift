@@ -22,11 +22,11 @@
 import UIKit
 
 @available(iOS 13.0, *)
-open class AppleCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+class AppleCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     // MARK: - Init
     
-    public init(
+    init(
         collectionView: UICollectionView,
         cellProvider: @escaping CellProvider,
         headerFooterProvider: SupplementaryViewProvider?
