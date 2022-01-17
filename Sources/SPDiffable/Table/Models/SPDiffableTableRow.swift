@@ -21,13 +21,6 @@
 
 import UIKit
 
-/**
- SPDiffable: Basic table item model with titles and accessories.
- 
- You can set icon and selection style.
- By default if action is nil, selection style set to `.none`.
- If accessory is control, you can find reay-use class for it.
- */
 open class SPDiffableTableRow: SPDiffableActionableItem {
     
     open var text: String
@@ -36,7 +29,15 @@ open class SPDiffableTableRow: SPDiffableActionableItem {
     open var selectionStyle: UITableViewCell.SelectionStyle
     open var accessoryType: UITableViewCell.AccessoryType
     
-    public init(id: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .none, action: Action? = nil) {
+    public init(
+        id: String? = nil,
+        text: String,
+        detail: String? = nil,
+        icon: UIImage? = nil,
+        accessoryType: UITableViewCell.AccessoryType = .none,
+        selectionStyle: UITableViewCell.SelectionStyle = .none,
+        action: Action? = nil
+    ) {
         self.text = text
         self.detail = detail
         self.icon = icon

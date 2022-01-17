@@ -27,7 +27,7 @@ class SidebarController: SPDiffableSideBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCellProviders(SPDiffableCollectionCellProvider.sideBar, sections: content)
+        configureDiffable(sections: content, cellProviders: SPDiffableCollectionDataSource.CellProvider.sideBar)
     }
     
     enum Section: String {
@@ -47,10 +47,9 @@ class SidebarController: SPDiffableSideBarController {
                     SPDiffableSideBarItem(title: "Browse", image: UIImage(systemName: "square.grid.2x2"), action: { _, _ in }),
                     SPDiffableSideBarItem(title: "Radio", image: UIImage(systemName: "dot.radiowaves.left.and.right"), action: { _, _ in }),
                     SPDiffableSideBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), action: { _, _ in
-                        print("action call 2")
+                        
                     }),
                     SPDiffableSideBarButton(title: "Button", image: UIImage(systemName: "plus.square.fill"), action: { [weak self] _, _ in
-                        print("action call")
                         guard let self = self else { return }
                         let controller = UIViewController()
                         controller.view.backgroundColor = .systemBackground

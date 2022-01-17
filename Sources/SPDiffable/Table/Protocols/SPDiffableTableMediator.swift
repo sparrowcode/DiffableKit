@@ -21,17 +21,8 @@
 
 import UIKit
 
-/**
- SPDiffable: Protocol for some data source methods.
- 
- This methods not always implemented in data source and split to other protocol.
- */
 @available(iOS 13.0, *)
 @objc public protocol SPDiffableTableMediator: AnyObject {
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-    
-    @objc optional func diffableTableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
     
     @objc optional func diffableTableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     

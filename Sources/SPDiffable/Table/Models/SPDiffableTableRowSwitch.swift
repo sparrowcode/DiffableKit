@@ -21,11 +21,6 @@
 
 import UIKit
 
-/**
- SPDiffable: Table model with switch.
- 
- Switch's action pass new state.
- */
 open class SPDiffableTableRowSwitch: SPDiffableItem {
     
     open var text: String
@@ -33,7 +28,13 @@ open class SPDiffableTableRowSwitch: SPDiffableItem {
     open var isOn: Bool
     open var action: Action
     
-    public init(id: String? = nil, text: String, icon: UIImage? = nil, isOn: Bool, action: @escaping Action) {
+    public init(
+        id: String? = nil,
+        text: String,
+        icon: UIImage? = nil,
+        isOn: Bool,
+        action: @escaping Action
+    ) {
         self.text = text
         self.icon = icon
         self.isOn = isOn

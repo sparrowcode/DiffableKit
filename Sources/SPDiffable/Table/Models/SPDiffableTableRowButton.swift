@@ -21,11 +21,6 @@
 
 import UIKit
 
-/**
- SPDiffable: When table cell has style button.
- 
- Action pass index path of proccess cell.
- */
 open class SPDiffableTableRowButton: SPDiffableItem {
     
     open var text: String
@@ -34,7 +29,15 @@ open class SPDiffableTableRowButton: SPDiffableItem {
     open var accessoryType: UITableViewCell.AccessoryType
     open var action: Action
     
-    public init(id: String? = nil, text: String, detail: String? = nil, icon: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, selectionStyle: UITableViewCell.SelectionStyle = .default, action: @escaping Action) {
+    public init(
+        id: String? = nil,
+        text: String,
+        detail: String? = nil,
+        icon: UIImage? = nil,
+        accessoryType: UITableViewCell.AccessoryType = .none,
+        selectionStyle: UITableViewCell.SelectionStyle = .default,
+        action: @escaping Action
+    ) {
         self.text = text
         self.detail = detail
         self.icon = icon

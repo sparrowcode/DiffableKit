@@ -21,9 +21,6 @@
 
 import UIKit
 
-/**
- SPDiffable: Table item with text field.
- */
 open class SPDiffableTableRowTextField: SPDiffableItem {
     
     open var text: String?

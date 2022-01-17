@@ -21,15 +21,6 @@
 
 import UIKit
 
-/**
- SPDiffable: Basic side bar controller.
-
- For common init call `setCellProviders` with default data and providers for it models.
- If need init manually, shoud init `diffableDataSource` fist, and next apply content when you need it.
-
- Collection configuration setted to `.sidebar`.
- Layout detect data source and automatically set header and footer mode.
-*/
 @available(iOS 14, *)
 open class SPDiffableSideBarController: SPDiffableCollectionController {
     
@@ -54,9 +45,9 @@ open class SPDiffableSideBarController: SPDiffableCollectionController {
     private func makeLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { [weak self] (section, layoutEnvironment) -> NSCollectionLayoutSection? in
             var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
-            let header = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].header
+            let header = self?.diffableDataSource?.getSection(index: section)?.header
             configuration.headerMode = (header == nil) ? .none : .firstItemInSection
-            let footer = self?.diffableDataSource?.snapshot().sectionIdentifiers[section].footer
+            let footer = self?.diffableDataSource?.getSection(index: section)?.footer
             configuration.footerMode = (footer == nil) ? .none : .supplementary
             return NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
         }
