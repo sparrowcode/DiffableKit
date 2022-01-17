@@ -25,7 +25,7 @@ import UIKit
 extension SPDiffableTableDataSource: UITableViewDelegate {
     
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = item(for: indexPath) else { return }
+        guard let item = getItem(indexPath: indexPath) else { return }
         diffableDelegate?.diffableTableView?(tableView, didSelectItem: item, indexPath: indexPath)
         
         switch item {
@@ -37,9 +37,19 @@ extension SPDiffableTableDataSource: UITableViewDelegate {
     }
     
     open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerItem = self.section(for: section)?.header else { return nil }
+        guard let item = self.getSection(index: section)?.header else { return nil }
         for provider in headerFooterProviders {
-            if let view = provider.clouser(tableView, section, headerItem) {
+            if let view = provider.clouser(tableView, section, item) {
+                return view
+            }
+        }
+        return nil
+    }
+    
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard let item = self.getSection(index: section)?.footer else { return nil }
+        for provider in headerFooterProviders {
+            if let view = provider.clouser(tableView, section, item) {
                 return view
             }
         }

@@ -22,11 +22,19 @@
 import UIKit
 
 @available(iOS 13.0, *)
-open class SPDiffableTableHeaderFooterProvider {
+public protocol SPDiffableDataSourceInterface: AnyObject {
     
-    open var clouser: SPDiffableTableDataSource.HeaderFooterProvider
+    // MARK: - Set
     
-    public init(clouser: @escaping SPDiffableTableDataSource.HeaderFooterProvider) {
-        self.clouser = clouser
-    }
+    func set(_ sections: [SPDiffableSection], animated: Bool, completion: (() -> Void)?)
+    func set(_ items: [SPDiffableItem], animated: Bool, completion: (() -> Void)?)
+    func reconfigure(_ items: [SPDiffableItem])
+    func updateLayout(animated: Bool, completion: (() -> Void)?)
+    
+    // MARK: - Get
+    
+    func getItem(id: String) -> SPDiffableItem?
+    func getItem(indexPath: IndexPath) -> SPDiffableItem?
+    func getSection(id: String) -> SPDiffableSection?
+    func getSection(index: Int) -> SPDiffableSection?
 }

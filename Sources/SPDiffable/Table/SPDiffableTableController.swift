@@ -21,12 +21,6 @@
 
 import UIKit
 
-/**
- SPDiffable: Basic diffable table controller.
- 
- For common init call `setCellProviders` with default data and providers for it models.
- If need init manually, shoud init `diffableDataSource` first, and next apply content when you need it.
- */
 @available(iOS 13.0, *)
 open class SPDiffableTableController: UITableViewController {
     
@@ -42,28 +36,18 @@ open class SPDiffableTableController: UITableViewController {
         tableView.register(SPDiffableTextFieldTableViewCell.self, forCellReuseIdentifier: SPDiffableTextFieldTableViewCell.reuseIdentifier)
     }
     
-    // MARK: - Init
+    // MARK: - Configure
     
-    /**
-     SPDiffable: Init `diffableDataSource` and apply content to data source without animation.
-     
-     If need custom logic, you can manually init and apply data when you need.
-     
-     - warning: Changes applied not animatable.
-     - parameter cellProviders: Cell Providers with valid order for processing.
-     - parameter headerFooterProviders: Header and Footer providers with valid order for processing.
-     - parameter sections: Content as array of `SPDiffableSection`.
-     */
-    open func setCellProviders(
-        _ cellProviders: [SPDiffableTableCellProvider],
-        headerFooterProviders: [SPDiffableTableHeaderFooterProvider] = [],
-        sections: [SPDiffableSection]
+    open func configureDiffable(
+        sections: [SPDiffableSection],
+        cellProviders: [SPDiffableTableDataSource.CellProvider],
+        headerFooterProviders: [SPDiffableTableDataSource.HeaderFooterProvider] = []
     ) {
         diffableDataSource = SPDiffableTableDataSource(
             tableView: tableView,
             cellProviders: cellProviders,
             headerFooterProviders: headerFooterProviders
         )
-        diffableDataSource?.apply(sections, animated: false)
+        diffableDataSource?.set(sections, animated: false)
     }
 }

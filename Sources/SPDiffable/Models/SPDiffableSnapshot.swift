@@ -20,7 +20,7 @@
 // SOFTWARE.
 
 import UIKit
-
+/*
 /**
  SPDiffable: Wrapper of `NSDiffableDataSourceSnapshot` with basic `SPDiffableSection` & `SPDiffableItem`.
  */
@@ -32,3 +32,4 @@ public typealias SPDiffableSnapshot = NSDiffableDataSourceSnapshot<SPDiffableSec
  */
 @available(iOS 14, *)
 public typealias SPDiffableSectionSnapshot = NSDiffableDataSourceSectionSnapshot<SPDiffableItem>
+*/

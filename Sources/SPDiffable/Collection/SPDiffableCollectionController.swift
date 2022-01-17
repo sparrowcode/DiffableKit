@@ -21,12 +21,6 @@
 
 import UIKit
 
-/**
- SPDiffable: Basic diffable collection controller.
- 
- For common init call `setCellProviders` with default data and providers for it models.
- If need init manually, shoud init `diffableDataSource` first, and next apply content when you need it.
- */
 @available(iOS 13.0, *)
 open class SPDiffableCollectionController: UICollectionViewController {
     
@@ -39,31 +33,18 @@ open class SPDiffableCollectionController: UICollectionViewController {
         collectionView.delaysContentTouches = false
     }
     
-    // MARK: - Init
+    // MARK: - Configure
     
-    /**
-     SPDiffable: Init `diffableDataSource` and apply content to data source without animation.
-     
-     If need custom logic, you can manually init and apply data when you need.
-     
-     - warning: Changes applied not animatable.
-     - parameter cellProviders: Cell providers with valid order for processing.
-     - parameter headerFooterProviders: Header and Footer providers with valid order for processing.
-     - parameter headerAsFirstCell: Flag for use header as cell or supplementary.
-     - parameter sections: Content as array of `SPDiffableSection`.
-     */
-    open func setCellProviders(
-        _ cellProviders: [SPDiffableCollectionCellProvider],
-        headerFooterProviders: [SPDiffableCollectionHeaderFooterProvider] = [],
-        headerAsFirstCell: Bool = true,
-        sections: [SPDiffableSection]
+    open func configureDiffable(
+        sections: [SPDiffableSection],
+        cellProviders: [SPDiffableCollectionDataSource.CellProvider],
+        headerFooterProviders: [SPDiffableCollectionDataSource.HeaderFooterProvider] = []
     ) {
         diffableDataSource = SPDiffableCollectionDataSource(
             collectionView: collectionView,
             cellProviders: cellProviders,
-            headerFooterProviders: headerFooterProviders,
-            headerAsFirstCell: headerAsFirstCell
+            headerFooterProviders: headerFooterProviders
         )
-        diffableDataSource?.apply(sections, animated: false)
+        diffableDataSource?.set(sections, animated: false)
     }
 }

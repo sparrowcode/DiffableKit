@@ -36,7 +36,7 @@ class DiffableTableController: SPDiffableTableController, SPDiffableTableMediato
     override func viewDidLoad() {
         super.viewDidLoad()
         diffableDataSource?.mediator = self
-        setCellProviders(SPDiffableTableCellProvider.default, sections: content)
+        configureDiffable(sections: content, cellProviders: SPDiffableTableDataSource.CellProvider.default)
     }
     
     var content: [SPDiffableSection] {
@@ -44,6 +44,6 @@ class DiffableTableController: SPDiffableTableController, SPDiffableTableMediato
     }
     
     internal func updateContent(animated: Bool) {
-        diffableDataSource?.apply(content, animated: animated)
+        diffableDataSource?.set(content, animated: animated)
     }
 }

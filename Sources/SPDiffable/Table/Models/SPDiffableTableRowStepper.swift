@@ -21,11 +21,6 @@
 
 import UIKit
 
-/**
- SPDiffable: Model table cell with stepper and action for it.
- 
- Steper action pass value in handler.
- */
 open class SPDiffableTableRowStepper: SPDiffableItem {
     
     open var stepValue: Double
@@ -36,7 +31,16 @@ open class SPDiffableTableRowStepper: SPDiffableItem {
     open var icon: UIImage? = nil
     open var action: Action
     
-    public init(id: String? = nil, text: String, icon: UIImage? = nil, stepValue: Double, value: Double, minimumValue: Double, maximumValue: Double, action: @escaping Action) {
+    public init(
+        id: String? = nil,
+        text: String,
+        icon: UIImage? = nil,
+        stepValue: Double,
+        value: Double,
+        minimumValue: Double,
+        maximumValue: Double,
+        action: @escaping Action
+    ) {
         self.text = text
         self.icon = icon
         self.stepValue = stepValue
