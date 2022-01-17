@@ -21,17 +21,17 @@
 
 import UIKit
 
-/**
- SPDiffable: Header and Footer provider.
- 
- In native diffable called `SupplementaryViewProvider`.
- */
 @available(iOS 13.0, *)
-open class SPDiffableCollectionHeaderFooterProvider {
+extension SPDiffableTableDataSource {
     
-    open var clouser: SPDiffableCollectionDataSource.SupplementaryViewProvider
-    
-    public init(clouser: @escaping SPDiffableCollectionDataSource.SupplementaryViewProvider) {
-        self.clouser = clouser
+    open class HeaderFooterProvider {
+        
+        open var clouser: Clouser
+        
+        public init(clouser: @escaping Clouser) {
+            self.clouser = clouser
+        }
+        
+        public typealias Clouser = (_ tableView: UITableView, _ section: Int, _ item: SPDiffableItem) -> UIView?
     }
 }

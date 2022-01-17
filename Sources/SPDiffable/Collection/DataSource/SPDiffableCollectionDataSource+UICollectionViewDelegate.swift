@@ -24,9 +24,8 @@ import UIKit
 @available(iOS 13.0, *)
 extension SPDiffableCollectionDataSource: UICollectionViewDelegate {
     
-    // Process actions after tap.
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let item = item(for: indexPath) else { return }
+        guard let item = getItem(indexPath: indexPath) else { return }
         diffableDelegate?.diffableCollectionView?(collectionView, didSelectItem: item, indexPath: indexPath)
         switch item {
         case let model as SPDiffableActionableItem:

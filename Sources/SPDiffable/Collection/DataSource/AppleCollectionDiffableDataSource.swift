@@ -21,40 +21,24 @@
 
 import UIKit
 
-open class SPDiffableTextFieldTableViewCell: UITableViewCell {
+@available(iOS 13.0, *)
+open class AppleCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
-    public static var reuseIdentifier: String { "SPDiffableTextFieldTableViewCell" }
+    // MARK: - Init
     
-    public let textField = UITextField()
-    
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .value1, reuseIdentifier: reuseIdentifier)
-        commonInit()
+    public init(
+        collectionView: UICollectionView,
+        cellProvider: @escaping CellProvider,
+        headerFooterProvider: SupplementaryViewProvider?
+    ) {
+        super.init(collectionView: collectionView, cellProvider: cellProvider)
+        self.supplementaryViewProvider = supplementaryViewProvider
     }
     
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
-    }
+    // MARK: - Wrappers
     
-    private func commonInit() {
-        textField.backgroundColor = .clear
-        contentView.addSubview(textField)
-    }
+    typealias Snapshot = NSDiffableDataSourceSnapshot<SPDiffableSection, SPDiffableItem>
     
-    open override func prepareForReuse() {
-        super.prepareForReuse()
-        accessoryView = nil
-        detailTextLabel?.text = nil
-    }
-    
-    open override func layoutSubviews() {
-        super.layoutSubviews()
-        textField.frame = .init(
-            x: contentView.layoutMargins.left,
-            y: .zero,
-            width: contentView.frame.width - contentView.layoutMargins.left - contentView.layoutMargins.right,
-            height: contentView.frame.height
-        )
-    }
+    @available(iOS 14.0, *)
+    typealias SectionSnapshot = NSDiffableDataSourceSectionSnapshot<SPDiffableItem>
 }

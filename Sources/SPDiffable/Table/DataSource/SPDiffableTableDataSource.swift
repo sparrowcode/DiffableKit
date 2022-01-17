@@ -21,94 +21,153 @@
 
 import UIKit
 
-/**
- SPDiffable: Diffable table data source.
- 
- Using array cell providers for get view for each model.
- Need pass all cell providers which will be using in collection view and data source all by order each and try get view.
- */
 @available(iOS 13.0, *)
-open class SPDiffableTableDataSource: UITableViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
+open class SPDiffableTableDataSource: NSObject, SPDiffableDataSourceInterface {
     
-    /**
-     SPDiffable: Mediator call some methods which can not using in data source object.
-     
-     Need set mediator for data source and implement methods which need.
-     It allow manage for example header titles not ovveride data source class.
-     Now data source doing only cell provider logic.
-     */
-    open weak var mediator: SPDiffableTableMediator?
+    open weak var mediator: SPDiffableTableMediator? {
+        get { appleDiffableDataSource?.mediator }
+        set { appleDiffableDataSource?.mediator = newValue }
+    }
     
-    /**
-     SPDiffable: Mirror of `UITableViewDelegate`.
-     */
     open weak var diffableDelegate: SPDiffableTableDelegate?
     
-    // Using for get cells or update its.
     internal weak var tableView: UITableView?
+    internal var sections: [SPDiffableSection]
+    internal var headerFooterProviders: [HeaderFooterProvider]
     
-    // Similar to collection native header and footer provider.
-    internal var headerFooterProviders: [SPDiffableTableHeaderFooterProvider]
+    private var appleDiffableDataSource: AppleTableDiffableDataSource?
     
     // MARK: - Init
     
-    public init(
+    init(
         tableView: UITableView,
-        cellProviders: [SPDiffableTableCellProvider],
-        headerFooterProviders: [SPDiffableTableHeaderFooterProvider] = []
+        cellProviders: [CellProvider],
+        headerFooterProviders: [HeaderFooterProvider]
     ) {
+        
         self.tableView = tableView
+        self.sections = []
         self.headerFooterProviders = headerFooterProviders
-        super.init(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
-            for provider in cellProviders {
-                if let cell = provider.clouser(tableView, indexPath, item) {
-                    return cell
+        
+        super.init()
+        
+        self.appleDiffableDataSource = .init(
+            tableView: tableView,
+            cellProvider: { tableView, indexPath, itemIdentifier in
+                for provider in cellProviders {
+                    let itemID = itemIdentifier.id
+                    guard let item = self.getItem(id: itemID) else { continue }
+                    if let cell = provider.clouser(tableView, indexPath, item) {
+                        return cell
+                    }
                 }
+                return nil
             }
-            return nil
-        })
+        )
+        
         self.tableView?.delegate = self
     }
     
-    // MARK: - Mediator
+    // MARK: - Set
     
-    public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let title = mediator?.diffableTableView?(tableView, titleForHeaderInSection: section) {
-            return title
+    public func set(_ sections: [SPDiffableSection], animated: Bool, completion: (() -> Void)? = nil) {
+        
+        // Update content
+        
+        self.sections = sections
+        
+        // Add, remove or reoder
+        
+        let snapshot = convertToSnapshot(self.sections)
+        appleDiffableDataSource?.apply(snapshot, animatingDifferences: animated, completion: completion)
+        
+        // Update visible cells
+        
+        var items: [SPDiffableItem] = []
+        let visibleIndexPaths = self.tableView?.indexPathsForVisibleRows ?? []
+        for indexPath in visibleIndexPaths {
+            if let item = getItem(indexPath: indexPath) {
+                items.append(item)
+            }
         }
-        if let header = snapshot().sectionIdentifiers[section].header as? SPDiffableTextHeaderFooter {
-            return header.text
+        
+        if !items.isEmpty {
+            reconfigure(items)
+        }
+    }
+    
+    public func set(_ items: [SPDiffableItem], animated: Bool, completion: (() -> Void)? = nil) {
+        
+        // Update content
+        
+        for newItem in items {
+            for (sectionIndex, section) in sections.enumerated() {
+                if let itemIndex = section.items.firstIndex(where: { $0.id == newItem.id }) {
+                    sections[sectionIndex].items[itemIndex] = newItem
+                }
+            }
+        }
+        
+        // Update snapshot
+        
+        var snapshot = convertToSnapshot(sections)
+        if #available(iOS 15.0, *) {
+            snapshot.reconfigureItems(items)
+        } else {
+            snapshot.reloadItems(items)
+        }
+        appleDiffableDataSource?.apply(snapshot, animatingDifferences: false)
+    }
+    
+    public func reconfigure(_ items: [SPDiffableItem]) {
+        guard var snapshot = appleDiffableDataSource?.snapshot() else { return }
+        if #available(iOS 15.0, *) {
+            snapshot.reconfigureItems(items)
+        } else {
+            snapshot.reloadItems(items)
+        }
+        appleDiffableDataSource?.apply(snapshot, animatingDifferences: false)
+    }
+    
+    public func updateLayout(animated: Bool, completion: (() -> Void)? = nil) {
+        guard let snapshot = appleDiffableDataSource?.snapshot() else { return }
+        appleDiffableDataSource?.apply(snapshot, animatingDifferences: animated, completion: completion)
+    }
+    
+    // MARK: - Get
+    
+    public func getItem(id: String) -> SPDiffableItem? {
+        for section in sections {
+            if let item = section.items.first(where: { $0.id == id }) {
+                return item
+            }
         }
         return nil
     }
     
-    public override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if let title = mediator?.diffableTableView?(tableView, titleForFooterInSection: section) {
-            return title
+    public func getItem(indexPath: IndexPath) -> SPDiffableItem? {
+        guard let itemID = appleDiffableDataSource?.itemIdentifier(for: indexPath)?.id else { return nil }
+        return getItem(id: itemID)
+    }
+    
+    public func getSection(id: String) -> SPDiffableSection? {
+        return sections.first(where: { $0.id == id })
+    }
+    
+    public func getSection(index: Int) -> SPDiffableSection? {
+        guard let snapshot = appleDiffableDataSource?.snapshot() else { return nil }
+        guard index < snapshot.sectionIdentifiers.count else { return nil }
+        return snapshot.sectionIdentifiers[index]
+    }
+    
+    // MARK: - Private
+    
+    private func convertToSnapshot(_ sections: [SPDiffableSection]) -> AppleTableDiffableDataSource.Snapshot {
+        var snapshot = AppleTableDiffableDataSource.Snapshot()
+        snapshot.appendSections(sections)
+        for section in sections {
+            snapshot.appendItems(section.items, toSection: section)
         }
-        if let footer = snapshot().sectionIdentifiers[section].footer as? SPDiffableTextHeaderFooter {
-            return footer.text
-        }
-        return nil
+        return snapshot
     }
-    
-    public override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return mediator?.diffableTableView?(tableView, canEditRowAt: indexPath) ?? false
-    }
-    
-    public override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        mediator?.diffableTableView?(tableView, commit: editingStyle, forRowAt: indexPath)
-    }
-    
-    open override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return mediator?.diffableTableView?(tableView, canMoveRowAt: indexPath) ?? false
-    }
-    
-    open override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        mediator?.diffableTableView?(tableView, moveRowAt: sourceIndexPath, to: destinationIndexPath)
-    }
-    
-    // MARK: - Supplementary
-    
-    public typealias HeaderFooterProvider = (_ tableView: UITableView, _ section: Int, _ item: SPDiffableItem) -> UIView?
 }
