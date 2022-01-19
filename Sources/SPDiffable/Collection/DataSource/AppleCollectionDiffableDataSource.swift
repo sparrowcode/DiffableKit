@@ -32,7 +32,7 @@ class AppleCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDi
         headerFooterProvider: SupplementaryViewProvider?
     ) {
         super.init(collectionView: collectionView, cellProvider: cellProvider)
-        self.supplementaryViewProvider = supplementaryViewProvider
+        self.supplementaryViewProvider = headerFooterProvider
     }
     
     // MARK: - Wrappers

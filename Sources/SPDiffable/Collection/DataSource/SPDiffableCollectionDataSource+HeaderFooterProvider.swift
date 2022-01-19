@@ -32,7 +32,7 @@ extension SPDiffableCollectionDataSource {
             self.clouser = clouser
         }
         
-        public typealias Clouser = (_ collectionView: UICollectionView, _ section: Int, _ item: SPDiffableItem) -> UICollectionReusableView?
+        public typealias Clouser = (_ collectionView: UICollectionView, _ kind: String, _ indexPath: IndexPath, _ item: SPDiffableItem) -> UICollectionReusableView?
     }
 }
 

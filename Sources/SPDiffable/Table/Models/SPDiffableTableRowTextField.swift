@@ -28,6 +28,7 @@ open class SPDiffableTableRowTextField: SPDiffableItem {
     open var autocorrectionType: UITextAutocorrectionType
     open var keyboardType: UIKeyboardType
     open var autocapitalizationType: UITextAutocapitalizationType
+    open var clearButtonMode: UITextField.ViewMode
     open weak var delegate: UITextFieldDelegate?
     
     public init(
@@ -37,6 +38,7 @@ open class SPDiffableTableRowTextField: SPDiffableItem {
         autocorrectionType: UITextAutocorrectionType,
         keyboardType: UIKeyboardType,
         autocapitalizationType: UITextAutocapitalizationType,
+        clearButtonMode: UITextField.ViewMode,
         delegate: UITextFieldDelegate?
     ) {
         self.text = text
@@ -45,6 +47,7 @@ open class SPDiffableTableRowTextField: SPDiffableItem {
         self.autocorrectionType = autocorrectionType
         self.keyboardType = keyboardType
         self.autocapitalizationType = autocapitalizationType
+        self.clearButtonMode = clearButtonMode
         super.init(id: id)
     }
 }

@@ -36,7 +36,7 @@ open class SPDiffableCollectionDataSource: NSObject, SPDiffableDataSourceInterfa
         collectionView: UICollectionView,
         cellProviders: [CellProvider],
         headerFooterProviders: [HeaderFooterProvider],
-        headerAsFirstCell: Bool = true
+        headerAsFirstCell: Bool
     ) {
         self.headerAsFirstCell = headerAsFirstCell
         self.collectionView = collectionView
@@ -71,12 +71,12 @@ open class SPDiffableCollectionDataSource: NSObject, SPDiffableDataSourceInterfa
                     switch elementKind {
                     case UICollectionView.elementKindSectionHeader:
                         guard let headerItem = section.header else { continue }
-                        if let view = provider.clouser(collectionView, sectionIndex, headerItem) {
+                        if let view = provider.clouser(collectionView, elementKind, indexPath, headerItem) {
                             return view
                         }
                     case UICollectionView.elementKindSectionFooter:
                         guard let footerItem = section.footer else { continue }
-                        if let view = provider.clouser(collectionView, sectionIndex, footerItem) {
+                        if let view = provider.clouser(collectionView, elementKind, indexPath, footerItem) {
                             return view
                         }
                     default:

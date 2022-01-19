@@ -124,6 +124,7 @@ extension SPDiffableTableDataSource {
                 cell.textField.keyboardType = item.keyboardType
                 cell.textField.autocapitalizationType = item.autocapitalizationType
                 cell.textField.delegate = item.delegate
+                cell.textField.clearButtonMode = item.clearButtonMode
                 cell.accessoryView = .none
                 cell.selectionStyle = .none
                 return cell

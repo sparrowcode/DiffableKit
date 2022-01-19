@@ -38,12 +38,14 @@ open class SPDiffableCollectionController: UICollectionViewController {
     open func configureDiffable(
         sections: [SPDiffableSection],
         cellProviders: [SPDiffableCollectionDataSource.CellProvider],
-        headerFooterProviders: [SPDiffableCollectionDataSource.HeaderFooterProvider] = []
+        headerFooterProviders: [SPDiffableCollectionDataSource.HeaderFooterProvider] = [],
+        headerAsFirstCell: Bool
     ) {
         diffableDataSource = SPDiffableCollectionDataSource(
             collectionView: collectionView,
             cellProviders: cellProviders,
-            headerFooterProviders: headerFooterProviders
+            headerFooterProviders: headerFooterProviders,
+            headerAsFirstCell: headerAsFirstCell
         )
         diffableDataSource?.set(sections, animated: false)
     }
