@@ -38,11 +38,14 @@ open class SPDiffableCollectionDataSource: NSObject, SPDiffableDataSourceInterfa
         headerFooterProviders: [HeaderFooterProvider],
         headerAsFirstCell: Bool
     ) {
+        
         self.headerAsFirstCell = headerAsFirstCell
         self.collectionView = collectionView
         self.sections = []
         
         super.init()
+        
+        self.collectionView?.delegate = self
         
         self.appleDiffableDataSource = .init(
             collectionView: collectionView,
@@ -86,8 +89,6 @@ open class SPDiffableCollectionDataSource: NSObject, SPDiffableDataSourceInterfa
                 return nil
             }
         )
-        
-        self.collectionView?.delegate = self
     }
     
     // MARK: - Configure

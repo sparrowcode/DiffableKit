@@ -57,4 +57,9 @@ open class SPDiffableTextFieldTableViewCell: UITableViewCell {
             height: contentView.frame.height
         )
     }
+    
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let superSize = super.sizeThatFits(size)
+        return .init(width: superSize.width, height: superSize.height + 4)
+    }
 }

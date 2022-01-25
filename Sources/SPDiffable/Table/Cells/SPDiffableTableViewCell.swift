@@ -38,4 +38,9 @@ open class SPDiffableTableViewCell: UITableViewCell {
         accessoryView = nil
         detailTextLabel?.text = nil
     }
+    
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let superSize = super.sizeThatFits(size)
+        return .init(width: superSize.width, height: superSize.height + 4)
+    }
 }
