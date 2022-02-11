@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		F47A41FC24EB22A70054DBB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47A41EC24EB22A70054DBB2 /* Assets.xcassets */; };
 		F47A41FD24EB22A70054DBB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47A41ED24EB22A70054DBB2 /* LaunchScreen.storyboard */; };
 		F47A41FF24EB22A70054DBB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47A41EF24EB22A70054DBB2 /* AppDelegate.swift */; };
+		F4DE1B2C27B681AA00A608F1 /* SPDiffable in Frameworks */ = {isa = PBXBuildFile; productRef = F4DE1B2B27B681AA00A608F1 /* SPDiffable */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4DE1B2C27B681AA00A608F1 /* SPDiffable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +128,7 @@
 			);
 			name = "Example iOS";
 			packageProductDependencies = (
+				F4DE1B2B27B681AA00A608F1 /* SPDiffable */,
 			);
 			productName = Example;
 			productReference = F47A41CE24EB222C0054DBB2 /* Example iOS.app */;
@@ -258,7 +261,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.spdiffable;
@@ -321,7 +327,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.spdiffable;
@@ -433,7 +442,8 @@
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -460,6 +470,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4DE1B2B27B681AA00A608F1 /* SPDiffable */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SPDiffable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = OBJ_1 /* Project object */;
 }
