@@ -26,7 +26,7 @@ import UIKit
  
  Colorful title usually.
  */
-@available(iOS 14, *)
+@available(iOS 14, tvOS 14, *)
 open class SPDiffableSideBarButton: SPDiffableActionableItem {
     
     open var title: String

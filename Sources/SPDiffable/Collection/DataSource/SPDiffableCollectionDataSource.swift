@@ -21,7 +21,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 13, *)
 open class SPDiffableCollectionDataSource: NSObject, SPDiffableDataSourceInterface {
     
     open weak var diffableDelegate: SPDiffableCollectionDelegate?
@@ -106,7 +106,7 @@ open class SPDiffableCollectionDataSource: NSObject, SPDiffableDataSourceInterfa
         
         // Update items in Sections
         
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, tvOS 14, *) {
             for section in sections {
                 var sectionSnapshot = AppleCollectionDiffableDataSource.SectionSnapshot()
                 
@@ -155,7 +155,7 @@ open class SPDiffableCollectionDataSource: NSObject, SPDiffableDataSourceInterfa
         // Update snapshot
         
         var snapshot = convertToSnapshot(sections)
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, tvOS 15, *) {
             snapshot.reconfigureItems(items)
         } else {
             snapshot.reloadItems(items)
@@ -165,7 +165,7 @@ open class SPDiffableCollectionDataSource: NSObject, SPDiffableDataSourceInterfa
     
     public func reconfigure(_ items: [SPDiffableItem]) {
         guard var snapshot = appleDiffableDataSource?.snapshot() else { return }
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, tvOS 15, *) {
             snapshot.reconfigureItems(items)
         } else {
             snapshot.reloadItems(items)

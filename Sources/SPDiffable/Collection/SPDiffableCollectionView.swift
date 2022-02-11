@@ -21,7 +21,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 13, *)
 open class SPDiffableCollectionView: UICollectionView, UICollectionViewDelegate {
     
     open var diffableDataSource: SPDiffableCollectionDataSource?

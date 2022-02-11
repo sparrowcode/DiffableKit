@@ -26,7 +26,7 @@ import UIKit
  
  For header use `SPDiffableSideBarHeader` class.
  */
-@available(iOS 14, *)
+@available(iOS 14, tvOS 14, *)
 open class SPDiffableSideBarItem: SPDiffableActionableItem {
     
     open var title: String

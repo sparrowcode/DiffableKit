@@ -24,7 +24,7 @@ import UIKit
 /**
  SPDiffable: Header model for side bar item.
  */
-@available(iOS 14, *)
+@available(iOS 14, tvOS 14, *)
 open class SPDiffableSideBarHeader: SPDiffableItem {
     
     open var text: String

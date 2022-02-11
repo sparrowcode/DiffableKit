@@ -41,6 +41,6 @@ open class SPDiffableTableViewCell: UITableViewCell {
     
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
         let superSize = super.sizeThatFits(size)
-        return .init(width: superSize.width, height: superSize.height + 4)
+        return .init(width: superSize.width, height: superSize.height)
     }
 }

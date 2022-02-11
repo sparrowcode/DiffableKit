@@ -21,7 +21,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 13, *)
 class AppleCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDiffableSection, SPDiffableItem> {
     
     // MARK: - Init
@@ -37,8 +37,9 @@ class AppleCollectionDiffableDataSource: UICollectionViewDiffableDataSource<SPDi
     
     // MARK: - Wrappers
     
+    @available(tvOS 13.0, *)
     typealias Snapshot = NSDiffableDataSourceSnapshot<SPDiffableSection, SPDiffableItem>
     
-    @available(iOS 14.0, *)
+    @available(iOS 14.0, tvOS 14, *)
     typealias SectionSnapshot = NSDiffableDataSourceSectionSnapshot<SPDiffableItem>
 }

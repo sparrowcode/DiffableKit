@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "SPDiffable",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v12), .tvOS(.v12)
     ],
     products: [
         .library(

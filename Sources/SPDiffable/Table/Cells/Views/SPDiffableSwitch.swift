@@ -19,6 +19,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if canImport(UIKit) && os(iOS)
 import UIKit
 
 open class SPDiffableSwitch: UISwitch {
@@ -39,3 +40,4 @@ open class SPDiffableSwitch: UISwitch {
         action(isOn)
     }
 }
+#endif

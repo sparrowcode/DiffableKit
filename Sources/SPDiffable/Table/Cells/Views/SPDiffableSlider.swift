@@ -19,6 +19,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if canImport(UIKit) && os(iOS)
 import UIKit
 
 open class SPDiffableSlider: UISlider {
@@ -40,3 +41,5 @@ open class SPDiffableSlider: UISlider {
         action(Double(value))
     }
 }
+#endif
+

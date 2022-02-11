@@ -21,7 +21,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 14, *)
 open class SPDiffableTableController: UITableViewController {
     
     open var diffableDataSource: SPDiffableTableDataSource?

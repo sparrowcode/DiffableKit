@@ -21,7 +21,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 13, *)
 extension SPDiffableCollectionDataSource {
     
     open class CellProvider {
@@ -36,6 +36,7 @@ extension SPDiffableCollectionDataSource {
         
         // MARK: - Ready Use
         
+        #if os(iOS)
         @available(iOS 14, *)
         public static var sideBar: [SPDiffableCollectionDataSource.CellProvider]  {
             [sideBarItem, sideBarButton, sideBarHeader]
@@ -82,5 +83,6 @@ extension SPDiffableCollectionDataSource {
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
             }
         }
+        #endif
     }
 }

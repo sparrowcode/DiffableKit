@@ -21,7 +21,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 13, *)
 open class SPDiffableTableDataSource: NSObject, SPDiffableDataSourceInterface {
     
     open weak var mediator: SPDiffableTableMediator? {
@@ -111,7 +111,7 @@ open class SPDiffableTableDataSource: NSObject, SPDiffableDataSourceInterface {
         // Update snapshot
         
         var snapshot = convertToSnapshot(sections)
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, tvOS 15, *) {
             snapshot.reconfigureItems(items)
         } else {
             snapshot.reloadItems(items)
@@ -121,7 +121,7 @@ open class SPDiffableTableDataSource: NSObject, SPDiffableDataSourceInterface {
     
     public func reconfigure(_ items: [SPDiffableItem]) {
         guard var snapshot = appleDiffableDataSource?.snapshot() else { return }
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, tvOS 15, *) {
             snapshot.reconfigureItems(items)
         } else {
             snapshot.reloadItems(items)

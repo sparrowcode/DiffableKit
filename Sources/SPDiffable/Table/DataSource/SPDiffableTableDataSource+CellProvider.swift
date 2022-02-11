@@ -21,7 +21,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 13, *)
 extension SPDiffableTableDataSource {
     
     open class CellProvider {
@@ -36,8 +36,13 @@ extension SPDiffableTableDataSource {
         
         // MARK: - Ready Use
         
+       
         public static var `default`: [CellProvider]  {
-            [rowDetail, rowSubtitle, `switch`, stepper, textField]
+            #if os(iOS)
+            return [rowDetail, rowSubtitle, `switch`, stepper, textField]
+            #else
+            return [rowDetail, rowSubtitle, textField]
+            #endif
         }
         
         public static var rowDetail: CellProvider  {
@@ -66,6 +71,7 @@ extension SPDiffableTableDataSource {
             }
         }
         
+        #if os(iOS)
         public static var `switch`: CellProvider  {
             return CellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
                 guard let item = item as? SPDiffableTableRowSwitch else { return nil }
@@ -86,7 +92,9 @@ extension SPDiffableTableDataSource {
                 return cell
             }
         }
+        #endif
         
+        #if os(iOS)
         public static var stepper: CellProvider  {
             return CellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
                 guard let item = item as? SPDiffableTableRowStepper else { return nil }
@@ -113,6 +121,7 @@ extension SPDiffableTableDataSource {
                 return cell
             }
         }
+        #endif
         
         public static var textField: CellProvider  {
             return CellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
