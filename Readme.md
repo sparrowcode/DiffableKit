@@ -18,7 +18,7 @@ Apple's diffable API requerid models for each object type. If you want use it in
 
 ## Installation
 
-Ready for use on iOS 13+.
+Ready for use on iOS and tvOS 13+.
 
 ### Swift Package Manager
 
