@@ -239,6 +239,12 @@ open class SPDiffableCollectionDataSource: NSObject, SPDiffableDataSourceInterfa
                 let previousSection = sections[previousSectionIndex]
                 guard let _ = snapshot.sectionIdentifiers.first(where: { $0.id == section.id }) else { continue }
                 guard let _ = snapshot.sectionIdentifiers.first(where: { $0.id == previousSection.id }) else { continue }
+                
+                // If try move section to same index as original.
+                // This line allow skip it action.
+                // Can happen crash for collection if doing it.
+                if (previousSectionIndex + 1) == sectionIndex { continue }
+                
                 snapshot.moveSection(section, afterSection: previousSection)
             }
             
