@@ -21,20 +21,14 @@
 
 import UIKit
 
-open class SPDiffableTableRowTextField: SPDiffableItem {
+open class SPDiffableTableRowTextFieldTitle: SPDiffableTableRowTextField {
     
-    open var icon: UIImage?
-    open var text: String?
-    open var placeholder: String
-    open var autocorrectionType: UITextAutocorrectionType
-    open var keyboardType: UIKeyboardType
-    open var autocapitalizationType: UITextAutocapitalizationType
-    open var clearButtonMode: UITextField.ViewMode
-    open weak var delegate: UITextFieldDelegate?
+    open var title: String
     
     public init(
         id: String,
         icon: UIImage? = nil,
+        title: String,
         text: String?,
         placeholder: String,
         autocorrectionType: UITextAutocorrectionType,
@@ -43,14 +37,7 @@ open class SPDiffableTableRowTextField: SPDiffableItem {
         clearButtonMode: UITextField.ViewMode,
         delegate: UITextFieldDelegate?
     ) {
-        self.icon = icon
-        self.text = text
-        self.placeholder = placeholder
-        self.delegate = delegate
-        self.autocorrectionType = autocorrectionType
-        self.keyboardType = keyboardType
-        self.autocapitalizationType = autocapitalizationType
-        self.clearButtonMode = clearButtonMode
-        super.init(id: id)
+        self.title = title
+        super.init(id: id, icon: icon, text: text, placeholder: placeholder, autocorrectionType: autocorrectionType, keyboardType: keyboardType, autocapitalizationType: autocapitalizationType, clearButtonMode: clearButtonMode, delegate: delegate)
     }
 }

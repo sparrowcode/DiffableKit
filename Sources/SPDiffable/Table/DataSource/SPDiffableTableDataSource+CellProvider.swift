@@ -36,13 +36,13 @@ extension SPDiffableTableDataSource {
         
         // MARK: - Ready Use
         
-       
+        
         public static var `default`: [CellProvider]  {
-            #if os(iOS)
+#if os(iOS)
             return [rowDetail, rowSubtitle, `switch`, stepper, textField]
-            #else
+#else
             return [rowDetail, rowSubtitle, textField]
-            #endif
+#endif
         }
         
         public static var rowDetail: CellProvider  {
@@ -93,7 +93,7 @@ extension SPDiffableTableDataSource {
             }
         }
         #endif
-        
+                
         #if os(iOS)
         public static var stepper: CellProvider  {
             return CellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
@@ -125,18 +125,18 @@ extension SPDiffableTableDataSource {
         
         public static var textField: CellProvider  {
             return CellProvider() { (tableView, indexPath, item) -> UITableViewCell? in
-                guard let item = item as? SPDiffableTableRowTextField else { return nil }
-                let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTextFieldTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTextFieldTableViewCell
-                cell.textField.text = item.text
-                cell.textField.placeholder = item.placeholder
-                cell.textField.autocorrectionType = item.autocorrectionType
-                cell.textField.keyboardType = item.keyboardType
-                cell.textField.autocapitalizationType = item.autocapitalizationType
-                cell.textField.delegate = item.delegate
-                cell.textField.clearButtonMode = item.clearButtonMode
-                cell.accessoryView = .none
-                cell.selectionStyle = .none
-                return cell
+                switch item {
+                case let item as SPDiffableTableRowTextFieldTitle:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTextFieldTitleTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTextFieldTitleTableViewCell
+                    cell.configure(with: item)
+                    return cell
+                case let item as SPDiffableTableRowTextField :
+                    let cell = tableView.dequeueReusableCell(withIdentifier: SPDiffableTextFieldTableViewCell.reuseIdentifier, for: indexPath) as! SPDiffableTextFieldTableViewCell
+                    cell.configure(with: item)
+                    return cell
+                default:
+                    return nil
+                }
             }
         }
     }

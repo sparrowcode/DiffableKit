@@ -21,11 +21,11 @@
 
 import UIKit
 
-open class SPDiffableTextFieldTableViewCell: UITableViewCell {
+open class SPDiffableTextFieldTitleTableViewCell: UITableViewCell {
     
     // MARK: - Data
     
-    public static var reuseIdentifier: String { "SPDiffableTextFieldTableViewCell" }
+    public static var reuseIdentifier: String { "SPDiffableTextFieldTitleTableViewCell" }
     
     // MARK: - Views
     
@@ -54,8 +54,9 @@ open class SPDiffableTextFieldTableViewCell: UITableViewCell {
         detailTextLabel?.text = nil
     }
     
-    open func configure(with item: SPDiffableTableRowTextField) {
+    open func configure(with item: SPDiffableTableRowTextFieldTitle) {
         imageView?.image = item.icon
+        textLabel?.text = item.title
         textField.text = item.text
         textField.placeholder = item.placeholder
         textField.autocorrectionType = item.autocorrectionType
@@ -63,6 +64,7 @@ open class SPDiffableTextFieldTableViewCell: UITableViewCell {
         textField.autocapitalizationType = item.autocapitalizationType
         textField.delegate = item.delegate
         textField.clearButtonMode = item.clearButtonMode
+        textField.textAlignment = .right
         accessoryView = .none
         selectionStyle = .none
     }
@@ -71,12 +73,16 @@ open class SPDiffableTextFieldTableViewCell: UITableViewCell {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        textField.frame = .init(
-            x: contentView.layoutMargins.left,
-            y: .zero,
-            width: contentView.frame.width - contentView.layoutMargins.left - contentView.layoutMargins.right,
-            height: contentView.frame.height
-        )
+        if let textLabel = self.textLabel {
+            let textFieldX = textLabel.frame.origin.x + textLabel.frame.width
+            textField.frame = .init(
+                x: textFieldX,
+                y: .zero,
+                width: contentView.frame.width - textFieldX - contentView.layoutMargins.right,
+                height: contentView.frame.height
+            )
+        }
+        
     }
     
     open override func sizeThatFits(_ size: CGSize) -> CGSize {

@@ -34,6 +34,7 @@ open class SPDiffableTableController: UITableViewController {
         tableView.register(SPDiffableTableViewCell.self, forCellReuseIdentifier: SPDiffableTableViewCell.reuseIdentifier)
         tableView.register(SPDiffableSubtitleTableViewCell.self, forCellReuseIdentifier: SPDiffableSubtitleTableViewCell.reuseIdentifier)
         tableView.register(SPDiffableTextFieldTableViewCell.self, forCellReuseIdentifier: SPDiffableTextFieldTableViewCell.reuseIdentifier)
+        tableView.register(SPDiffableTextFieldTitleTableViewCell.self, forCellReuseIdentifier: SPDiffableTextFieldTitleTableViewCell.reuseIdentifier)
     }
     
     // MARK: - Configure
