@@ -1,9 +1,9 @@
 # SPDiffable
 
 <p aligment="left">
-    <img src="https://cdn.ivanvorobei.by/github/spdiffable/v2.0/ready-use-cells.png?version=1" height="250"/>
-    <img src="https://cdn.ivanvorobei.by/github/spdiffable/v2.0/sidebar.png?version=1" height="250"/>
-    <img src="https://cdn.ivanvorobei.by/github/spdiffable/v2.0/info.png?version=1" height="250"/>
+    <img src="https://cdn.ivanvorobei.io/github/spdiffable/v2.0/ready-use-cells.png?version=1" height="250"/>
+    <img src="https://cdn.ivanvorobei.io/github/spdiffable/v2.0/sidebar.png?version=1" height="250"/>
+    <img src="https://cdn.ivanvorobei.io/github/spdiffable/v2.0/info.png?version=1" height="250"/>
 </p>
 
 Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and special cell providers for one-usage models.
@@ -49,6 +49,6 @@ If you prefer not to use any of dependency managers, you can integrate manually.
 Я веду [телеграм-канал](https://sparrowcode.io/telegram), там публикую новости и туториалы.<br>
 С проблемой помогут [в чате](https://sparrowcode.io/telegram/chat).
 
-Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
+Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.io/youtube):
 
-[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://ivanvorobei.by/youtube)
+[![Tutorials on YouTube](https://cdn.ivanvorobei.io/github/readme/youtube-preview.jpg)](https://ivanvorobei.io/youtube)
