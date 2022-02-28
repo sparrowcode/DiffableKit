@@ -31,6 +31,7 @@ open class SPDiffableTableRowTextField: SPDiffableItem {
     open var autocapitalizationType: UITextAutocapitalizationType
     open var clearButtonMode: UITextField.ViewMode
     open weak var delegate: UITextFieldDelegate?
+    open var editable: Bool
     
     public init(
         id: String,
@@ -41,7 +42,8 @@ open class SPDiffableTableRowTextField: SPDiffableItem {
         keyboardType: UIKeyboardType,
         autocapitalizationType: UITextAutocapitalizationType,
         clearButtonMode: UITextField.ViewMode,
-        delegate: UITextFieldDelegate?
+        delegate: UITextFieldDelegate?,
+        editable: Bool = true
     ) {
         self.icon = icon
         self.text = text
@@ -51,6 +53,7 @@ open class SPDiffableTableRowTextField: SPDiffableItem {
         self.keyboardType = keyboardType
         self.autocapitalizationType = autocapitalizationType
         self.clearButtonMode = clearButtonMode
+        self.editable = editable
         super.init(id: id)
     }
 }

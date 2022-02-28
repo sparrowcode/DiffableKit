@@ -35,9 +35,10 @@ open class SPDiffableTableRowTextFieldTitle: SPDiffableTableRowTextField {
         keyboardType: UIKeyboardType,
         autocapitalizationType: UITextAutocapitalizationType,
         clearButtonMode: UITextField.ViewMode,
-        delegate: UITextFieldDelegate?
+        delegate: UITextFieldDelegate?,
+        editable: Bool = true
     ) {
         self.title = title
-        super.init(id: id, icon: icon, text: text, placeholder: placeholder, autocorrectionType: autocorrectionType, keyboardType: keyboardType, autocapitalizationType: autocapitalizationType, clearButtonMode: clearButtonMode, delegate: delegate)
+        super.init(id: id, icon: icon, text: text, placeholder: placeholder, autocorrectionType: autocorrectionType, keyboardType: keyboardType, autocapitalizationType: autocapitalizationType, clearButtonMode: clearButtonMode, delegate: delegate, editable: editable)
     }
 }

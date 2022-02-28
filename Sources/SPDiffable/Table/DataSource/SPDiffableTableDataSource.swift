@@ -160,6 +160,17 @@ open class SPDiffableTableDataSource: NSObject, SPDiffableDataSourceInterface {
         return snapshot.sectionIdentifiers[index]
     }
     
+    public func getIndexPath(id: String) -> IndexPath? {
+        guard let item = getItem(id: id) else { return nil }
+        guard let indexPath = appleDiffableDataSource?.indexPath(for: item) else { return nil }
+        return indexPath
+    }
+    
+    public func getIndexPath(item: SPDiffableItem) -> IndexPath? {
+        guard let indexPath = appleDiffableDataSource?.indexPath(for: item) else { return nil }
+        return indexPath
+    }
+    
     // MARK: - Private
     
     private func convertToSnapshot(_ sections: [SPDiffableSection]) -> AppleTableDiffableDataSource.Snapshot {

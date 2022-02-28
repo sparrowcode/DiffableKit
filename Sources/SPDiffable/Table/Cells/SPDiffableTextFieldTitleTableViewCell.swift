@@ -44,6 +44,9 @@ open class SPDiffableTextFieldTitleTableViewCell: UITableViewCell {
     }
     
     private func commonInit() {
+        if #available(iOS 13.0, *) {
+            textLabel?.textColor = .secondaryLabel
+        }
         textField.backgroundColor = .clear
         contentView.addSubview(textField)
     }
@@ -65,6 +68,7 @@ open class SPDiffableTextFieldTitleTableViewCell: UITableViewCell {
         textField.delegate = item.delegate
         textField.clearButtonMode = item.clearButtonMode
         textField.textAlignment = .right
+        textField.isEnabled = item.editable
         accessoryView = .none
         selectionStyle = .none
     }
