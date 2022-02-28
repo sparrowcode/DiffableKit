@@ -44,7 +44,7 @@ open class SPDiffableTextFieldTitleTableViewCell: UITableViewCell {
     }
     
     private func commonInit() {
-        if #available(iOS 13.0, *) {
+        if #available(iOS 13.0, tvOS 13.0, *) {
             textLabel?.textColor = .secondaryLabel
         }
         textField.backgroundColor = .clear
