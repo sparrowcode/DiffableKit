@@ -36,6 +36,16 @@ extension SPDiffableTableDataSource: UITableViewDelegate {
         }
     }
     
+    public func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let item = getItem(indexPath: indexPath) else { return nil }
+        return diffableDelegate?.diffableTableView?(tableView, leadingSwipeActionsConfigurationForItem: item, at: indexPath)
+    }
+    
+    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let item = getItem(indexPath: indexPath) else { return nil }
+        return diffableDelegate?.diffableTableView?(tableView, trailingSwipeActionsConfigurationForItem: item, at: indexPath)
+    }
+    
     open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let item = self.getSection(index: section)?.header else { return nil }
         for provider in headerFooterProviders {

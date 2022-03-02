@@ -25,4 +25,8 @@ import UIKit
 @objc public protocol SPDiffableTableDelegate: AnyObject {
     
     @objc optional func diffableTableView(_ tableView: UITableView, didSelectItem item: SPDiffableItem, indexPath: IndexPath)
+    
+    @objc optional func diffableTableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForItem item: SPDiffableItem, at indexPath: IndexPath) -> UISwipeActionsConfiguration?
+
+    @objc optional func diffableTableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForItem item: SPDiffableItem, at indexPath: IndexPath) -> UISwipeActionsConfiguration?
 }
