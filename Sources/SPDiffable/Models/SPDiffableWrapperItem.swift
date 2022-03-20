@@ -29,18 +29,16 @@ import UIKit
  
  Also need pass uniq `identifier`.
  */
-open class SPDiffableWrapperItem: SPDiffableItem, SPDiffableItemActionable {
+open class SPDiffableWrapperItem: SPDiffableActionableItem {
     
     /**
      SPDiffable: You can pass any object as model.
      Later need uwrap it for get.
      */
     open var model: Any
-    open var action: Action?
     
     public init(id: String, model: Any, action: Action? = nil) {
         self.model = model
-        self.action = action
-        super.init(id: id)
+        super.init(id: id, action: action)
     }
 }

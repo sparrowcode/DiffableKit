@@ -50,6 +50,7 @@ open class SPDiffableTextFieldTableViewCell: UITableViewCell {
     
     open override func prepareForReuse() {
         super.prepareForReuse()
+        textField.text = nil
         accessoryView = nil
         detailTextLabel?.text = nil
     }
