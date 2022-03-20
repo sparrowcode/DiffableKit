@@ -26,7 +26,9 @@ import UIKit
     
     @objc optional func diffableTableView(_ tableView: UITableView, didSelectItem item: SPDiffableItem, indexPath: IndexPath)
     
+    #if canImport(UIKit) && (os(iOS))
     @objc optional func diffableTableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForItem item: SPDiffableItem, at indexPath: IndexPath) -> UISwipeActionsConfiguration?
 
     @objc optional func diffableTableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForItem item: SPDiffableItem, at indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    #endif
 }
