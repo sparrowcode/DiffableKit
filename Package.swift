@@ -3,24 +3,24 @@
 import PackageDescription
 
 let package = Package(
-    name: "SPDiffable",
+    name: "DiffableKit",
     platforms: [
-        .iOS(.v12), .tvOS(.v12)
+        .iOS(.v13)
     ],
     products: [
         .library(
-            name: "SPDiffable",
-            targets: ["SPDiffable"]
-        ),
+            name: "DiffableKit",
+            targets: ["DiffableKit"]
+        )
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "SPDiffable",
+            name: "DiffableKit",
             swiftSettings: [
-                .define("SPDIFFABLE_SPM")
+                .define("DIFFABLEKIT_SPM")
             ]
-        ),
+        )
     ],
     swiftLanguageVersions: [.v5]
 )
