@@ -3,9 +3,6 @@
 ### Community
 
 <p float="left">
-    <a href="https://discord.gg/WGgkhtzfhT">
-        <img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=2" height="52">
-    </a>
     <a href="#apps-using">
         <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=2" height="52">
     </a>
