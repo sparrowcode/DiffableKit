@@ -21,4 +21,17 @@ open class DiffableSection: NSObject {
         self.footer = footer
         self.items = items
     }
+    
+    // MARK: - Hashable and Equatable
+    
+    open override var hash: Int {
+        var hasher = Hasher()
+        hasher.combine(id)
+        return hasher.finalize()
+    }
+    
+    open override func isEqual(_ object: Any?) -> Bool {
+        guard let object = object as? DiffableSection else { return false }
+        return id == object.id
+    }
 }

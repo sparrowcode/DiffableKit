@@ -5,6 +5,7 @@ open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
     open weak var diffableDelegate: DiffableTableDelegate?
     internal var headerFooterProviders: [HeaderFooterProvider]
     private var appleDiffableDataSource: AppleTableDiffableDataSource?
+    private weak var tableView: UITableView?
     
     // MARK: - Init
     
@@ -33,7 +34,8 @@ open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
             }
         )
         
-        tableView.delegate = self
+        self.tableView = tableView
+        self.tableView?.delegate = self
     }
     
     // MARK: - DiffableDataSourceInterface
@@ -51,13 +53,33 @@ open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
             return snapshot
         }
         
-        // Add, remove or reoder
+        // 1. Add, remove or reoder
         
-        let snapshot = convertToSnapshot(sections)
-        appleDiffableDataSource?.apply(snapshot, animatingDifferences: animated, completion: completion)
+        let newSnaphsot = convertToSnapshot(sections)
+        appleDiffableDataSource?.apply(newSnaphsot, animatingDifferences: animated, completion: completion)
         
-        // Update visible cells
-        // Droped logic for now.
+        // 2. Update visible cells
+        
+        var items: [DiffableItem] = []
+        for indexPath in self.tableView?.indexPathsForVisibleRows ?? [] {
+            if let item = getItem(indexPath: indexPath) {
+                items.append(item)
+            }
+        }
+        
+        if !items.isEmpty {
+            reconfigure(items)
+        }
+    }
+    
+    public func reconfigure(_ items: [DiffableItem]) {
+        guard var snapshot = appleDiffableDataSource?.snapshot() else { return }
+        if #available(iOS 15.0, tvOS 15, *) {
+            snapshot.reconfigureItems(items)
+        } else {
+            snapshot.reloadItems(items)
+        }
+        appleDiffableDataSource?.apply(snapshot, animatingDifferences: true)
     }
     
     // MARK: Get
