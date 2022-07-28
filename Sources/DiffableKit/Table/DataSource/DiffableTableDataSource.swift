@@ -1,5 +1,6 @@
 import UIKit
 
+@available(iOS 13.0, tvOS 13, *)
 open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
     
     open weak var diffableDelegate: DiffableTableDelegate?
