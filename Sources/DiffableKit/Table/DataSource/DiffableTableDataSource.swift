@@ -41,6 +41,11 @@ open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
     
     // MARK: - DiffableDataSourceInterface
     
+    public func updateLayout(animated: Bool, completion: (() -> Void)? = nil) {
+        guard let snapshot = appleDiffableDataSource?.snapshot() else { return }
+        appleDiffableDataSource?.apply(snapshot, animatingDifferences: animated, completion: completion)
+    }
+    
     // MARK: Set
     
     public func set(_ sections: [DiffableSection], animated: Bool, completion: (() -> Void)? = nil) {
