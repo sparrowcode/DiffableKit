@@ -9,6 +9,8 @@ open class DiffableTableController: UITableViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delaysContentTouches = false
+        tableView.layoutMargins = .zero
+        tableView.register(DiffableTableViewCell.self, forCellReuseIdentifier: DiffableTableViewCell.reuseIdentifier)
     }
     
     // MARK: - Configure

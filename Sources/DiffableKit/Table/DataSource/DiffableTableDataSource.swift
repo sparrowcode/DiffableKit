@@ -4,29 +4,28 @@ import UIKit
 open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
     
     open weak var diffableDelegate: DiffableTableDelegate?
+    
     internal var headerFooterProviders: [HeaderFooterProvider]
     private var appleDiffableDataSource: AppleTableDiffableDataSource?
     private weak var tableView: UITableView?
     
     // MARK: - Init
     
-    init(
+    public init(
         tableView: UITableView,
         cellProviders: [CellProvider],
         headerFooterProviders: [HeaderFooterProvider]
     ) {
         
-        // Table doesn't have `supplementaryViewProvider`.
-        // Did it manually.
+        // Table doesn't have `supplementaryViewProvider`. Did it manually.
         self.headerFooterProviders = headerFooterProviders
         
         super.init()
         
         self.appleDiffableDataSource = .init(
             tableView: tableView,
-            cellProvider: { tableView, indexPath, itemIdentifier in
+            cellProvider: { tableView, indexPath, item in
                 for provider in cellProviders {
-                    guard let item = self.getItem(id: itemIdentifier.id) else { continue }
                     if let cell = provider.clouser(tableView, indexPath, item) {
                         return cell
                     }
@@ -59,7 +58,7 @@ open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
             return snapshot
         }
         
-        // 1. Add, remove or reoder
+        // 1. Add, remove & reoder
         
         let newSnaphsot = convertToSnapshot(sections)
         appleDiffableDataSource?.apply(newSnaphsot, animatingDifferences: animated, completion: completion)
