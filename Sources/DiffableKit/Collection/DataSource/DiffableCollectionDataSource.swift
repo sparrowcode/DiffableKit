@@ -109,6 +109,17 @@ open class DiffableCollectionDataSource: NSObject, DiffableDataSourceInterface {
             reconfigure(items)
         }
         
+        /*var sections: [DiffableSection] = []
+        for indexPath in self.collectionView?.indexPathsForVisibleSupplementaryElements(ofKind: UICollectionView.elementKindSectionHeader) ?? [] {
+            print("got \(indexPath)")
+            if let section = getSection(index: indexPath.section) {
+                sections.append(section)
+            }
+        }
+        if !sections.isEmpty {
+            reconfigure(sections)
+        }*/
+        
         #warning("maybe it may crash side bar. for now collection work well without it.")
         #warning("complex logic was dropped")
         #warning("decide to later")

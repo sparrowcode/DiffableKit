@@ -12,7 +12,6 @@ open class DiffableTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
     
-
     open override func prepareForReuse() {
         super.prepareForReuse()
         accessoryView = nil
