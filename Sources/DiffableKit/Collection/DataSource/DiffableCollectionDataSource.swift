@@ -25,6 +25,8 @@ open class DiffableCollectionDataSource: NSObject, DiffableDataSourceInterface {
         }
     }
     
+    open weak var diffableLayoutDelegate: DiffableCollectionViewDelegateFlowLayout?
+    
     private var appleDiffableDataSource: AppleCollectionDiffableDataSource?
     private weak var collectionView: UICollectionView?
     

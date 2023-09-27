@@ -1,6 +1,6 @@
 import UIKit
 
-extension DiffableCollectionDataSource: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension DiffableCollectionDataSource: UICollectionViewDelegate {
     
     #if os(iOS)
     public func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
