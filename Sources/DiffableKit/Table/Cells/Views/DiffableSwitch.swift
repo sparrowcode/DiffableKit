@@ -3,7 +3,7 @@ import UIKit
 
 open class DiffableSwitch: UISwitch {
     
-    var action: (_ state: Bool) -> Void = { _ in }
+    public var action: (_ state: Bool) -> Void = { _ in }
     
     public init() {
         super.init(frame: .zero)
