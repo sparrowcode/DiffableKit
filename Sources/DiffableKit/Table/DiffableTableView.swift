@@ -18,4 +18,23 @@ open class DiffableTableView: UITableView {
         )
         diffableDataSource?.set(sections, animated: false)
     }
+    
+    public init() {
+        super.init(frame: .zero, style: .insetGrouped)
+        commonInit()
+    }
+    
+    public init(style: UITableView.Style) {
+        super.init(frame: .zero, style: style)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        delaysContentTouches = false
+        cellLayoutMarginsFollowReadableWidth = true
+    }
+    
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

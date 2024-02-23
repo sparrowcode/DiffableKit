@@ -9,6 +9,7 @@ open class DiffableTableController: UITableViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delaysContentTouches = false
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.layoutMargins = .zero
         tableView.register(DiffableTableViewCell.self, forCellReuseIdentifier: DiffableTableViewCell.reuseIdentifier)
     }

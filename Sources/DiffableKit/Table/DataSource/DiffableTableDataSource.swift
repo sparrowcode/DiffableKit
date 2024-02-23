@@ -77,6 +77,17 @@ open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
         }
     }
     
+    public func reconfigureVisibleItems() {
+        let visibleIndexPaths = tableView?.indexPathsForVisibleRows ?? []
+        var visibleItems: [DiffableItem] = []
+        for indexPath in visibleIndexPaths {
+            if let item = getItem(indexPath: indexPath) {
+                visibleItems.append(item)
+            }
+        }
+        reconfigure(visibleItems)
+    }
+    
     public func reconfigure(_ items: [DiffableItem]) {
         guard var snapshot = appleDiffableDataSource?.snapshot() else { return }
         if #available(iOS 15.0, tvOS 15, *) {

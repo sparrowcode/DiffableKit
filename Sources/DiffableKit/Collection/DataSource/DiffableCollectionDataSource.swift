@@ -111,46 +111,30 @@ open class DiffableCollectionDataSource: NSObject, DiffableDataSourceInterface {
             reconfigure(items)
         }
         
-        /*var sections: [DiffableSection] = []
-        for indexPath in self.collectionView?.indexPathsForVisibleSupplementaryElements(ofKind: UICollectionView.elementKindSectionHeader) ?? [] {
-            print("got \(indexPath)")
-            if let section = getSection(index: indexPath.section) {
-                sections.append(section)
-            }
-        }
-        if !sections.isEmpty {
-            reconfigure(sections)
-        }*/
-        
-        #warning("maybe it may crash side bar. for now collection work well without it.")
-        #warning("complex logic was dropped")
-        #warning("decide to later")
-        if #available(iOS 14.0, tvOS 14, *) {
-            for section in sections {
-                var sectionSnapshot = AppleCollectionDiffableDataSource.SectionSnapshot()
-                if let collectionSection = section as? DiffableCollectionSection, collectionSection.headerProcess == .headerIsFirstCell {
-                    if let header = section.header {
-                        sectionSnapshot.append([header])
-                        sectionSnapshot.append(section.items, to: header)
-                    } else {
-                        sectionSnapshot.append(section.items, to: nil)
-                    }
+        for section in sections {
+            var sectionSnapshot = AppleCollectionDiffableDataSource.SectionSnapshot()
+            if let collectionSection = section as? DiffableCollectionSection, collectionSection.headerProcess == .headerIsFirstCell {
+                if let header = section.header {
+                    sectionSnapshot.append([header])
+                    sectionSnapshot.append(section.items, to: header)
                 } else {
-                    sectionSnapshot.append(section.items)
+                    sectionSnapshot.append(section.items, to: nil)
                 }
-                
-                if let section = section as? DiffableCollectionSection {
-                    if section.expanded {
-                        sectionSnapshot.expand(sectionSnapshot.items)
-                    } else {
-                        sectionSnapshot.collapse(sectionSnapshot.items)
-                    }
-                } else {
+            } else {
+                sectionSnapshot.append(section.items)
+            }
+            
+            if let section = section as? DiffableCollectionSection {
+                if section.expanded {
                     sectionSnapshot.expand(sectionSnapshot.items)
+                } else {
+                    sectionSnapshot.collapse(sectionSnapshot.items)
                 }
-                
-                appleDiffableDataSource?.apply(sectionSnapshot, to: section, animatingDifferences: animated)
+            } else {
+                sectionSnapshot.expand(sectionSnapshot.items)
             }
+            
+            appleDiffableDataSource?.apply(sectionSnapshot, to: section, animatingDifferences: animated)
         }
     }
     
