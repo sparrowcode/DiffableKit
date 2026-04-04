@@ -1,13 +1,14 @@
 import UIKit
 
-open class DiffableButtonTableViewCell: UITableViewCell {
+open class DiffableButtonTableViewCell: DiffableTableViewCell {
 
-    public static var reuseIdentifier: String { "DiffableButtonTableViewCell" }
+    open override class var reuseIdentifier: String { "DiffableButtonTableViewCell" }
 
-    private var originalImage: UIImage?
+    private static let highlightAlpha: CGFloat = 0.6
+    private static let highlightAnimationDuration: TimeInterval = 0.15
 
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(cellStyle: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
     }
 
@@ -15,52 +16,26 @@ open class DiffableButtonTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
 
-    open override func prepareForReuse() {
-        super.prepareForReuse()
-        originalImage = nil
-        contentConfiguration = nil
-        accessoryView = nil
-    }
-
-    open override func tintColorDidChange() {
-        super.tintColorDidChange()
-        updateDimming()
-    }
-
-    func updateDimming() {
+    override func updateImageDimming() {
         guard var content = contentConfiguration as? UIListContentConfiguration else { return }
         let dimmed = tintAdjustmentMode == .dimmed
-
         let color: UIColor = dimmed ? .secondaryLabel : tintColor
         if content.textProperties.color != color {
             content.textProperties.color = color
+            contentConfiguration = content
         }
-
-        if let image = content.image {
-            if dimmed {
-                if image !== originalImage { originalImage = image }
-                if let desaturated = originalImage?.desaturated() {
-                    content.image = desaturated
-                }
-            } else if let original = originalImage {
-                content.image = original
-                originalImage = nil
-            }
-        }
-
-        contentConfiguration = content
+        super.updateImageDimming()
     }
 
     open override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        let alpha: CGFloat = highlighted ? 0.6 : 1
+        let alpha: CGFloat = highlighted ? Self.highlightAlpha : 1
         if animated {
-            UIView.animate(withDuration: 0.15) {
+            UIView.animate(withDuration: Self.highlightAnimationDuration) {
                 self.contentView.subviews.forEach { $0.alpha = alpha }
             }
         } else {
             contentView.subviews.forEach { $0.alpha = alpha }
         }
     }
-
 }

@@ -87,7 +87,7 @@ extension DiffableTableDataSource {
                 let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
                 content.textProperties.font = UIFont.systemFont(ofSize: descriptor.pointSize, weight: .medium)
                 cell.contentConfiguration = content
-                cell.updateDimming()
+                cell.updateImageDimming()
                 cell.accessoryType = item.accessoryType
                 return cell
             }

@@ -2,12 +2,16 @@ import UIKit
 
 open class DiffableTableViewCell: UITableViewCell {
 
-    public static var reuseIdentifier: String { "DiffableTableViewCell" }
+    open class var reuseIdentifier: String { "DiffableTableViewCell" }
 
     private var originalImage: UIImage?
 
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
+    }
+
+    internal init(cellStyle: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: cellStyle, reuseIdentifier: reuseIdentifier)
     }
 
     public required init?(coder: NSCoder) {
