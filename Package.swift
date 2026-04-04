@@ -1,26 +1,19 @@
-// swift-tools-version:5.3
+// swift-tools-version: 5.9
 
 import PackageDescription
 
 let package = Package(
-    name: "SPDiffable",
+    name: "DiffableKit",
     platforms: [
-        .iOS(.v12), .tvOS(.v12)
+        .iOS(.v15)
     ],
     products: [
         .library(
-            name: "SPDiffable",
-            targets: ["SPDiffable"]
-        ),
+            name: "DiffableKit",
+            targets: ["DiffableKit"]
+        )
     ],
-    dependencies: [],
     targets: [
-        .target(
-            name: "SPDiffable",
-            swiftSettings: [
-                .define("SPDIFFABLE_SPM")
-            ]
-        ),
-    ],
-    swiftLanguageVersions: [.v5]
+        .target(name: "DiffableKit")
+    ]
 )

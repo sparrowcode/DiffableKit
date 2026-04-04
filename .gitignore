@@ -4,6 +4,4 @@
 
 # Swift Package Manager
 .swiftpm
-
-# User Interface
-*UserInterfaceState.xcuserstate
+.build
