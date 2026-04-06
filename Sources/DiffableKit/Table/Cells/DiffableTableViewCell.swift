@@ -30,18 +30,16 @@ open class DiffableTableViewCell: UITableViewCell {
         updateImageDimming()
     }
 
-    func updateImageDimming() {
+    func updateImageDimming(saveOriginal: Bool = false) {
         guard var content = contentConfiguration as? UIListContentConfiguration else { return }
+        if saveOriginal { originalImage = content.image }
         let dimmed = tintAdjustmentMode == .dimmed
         if dimmed {
-            let currentImage = content.image
-            if currentImage !== originalImage { originalImage = currentImage }
             guard let desaturated = originalImage?.desaturated() else { return }
             content.image = desaturated
         } else {
             guard let original = originalImage else { return }
             content.image = original
-            originalImage = nil
         }
         contentConfiguration = content
     }
