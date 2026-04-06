@@ -51,7 +51,7 @@ extension DiffableTableDataSource {
                 content.image = item.icon
                 applyImageLayout(&content)
                 cell.contentConfiguration = content
-                cell.updateImageDimming(saveOriginal: true)
+                cell.updateImageDimming()
                 cell.accessoryType = item.accessoryType
                 cell.selectionStyle = item.selectionStyle
                 return cell
@@ -68,7 +68,7 @@ extension DiffableTableDataSource {
                 content.image = item.icon
                 applyImageLayout(&content)
                 cell.contentConfiguration = content
-                cell.updateImageDimming(saveOriginal: true)
+                cell.updateImageDimming()
                 cell.accessoryType = item.accessoryType
                 cell.selectionStyle = item.selectionStyle
                 return cell
@@ -87,7 +87,7 @@ extension DiffableTableDataSource {
                 let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
                 content.textProperties.font = UIFont.systemFont(ofSize: descriptor.pointSize, weight: .medium)
                 cell.contentConfiguration = content
-                cell.updateImageDimming(saveOriginal: true)
+                cell.updateImageDimming()
                 cell.accessoryType = item.accessoryType
                 return cell
             }
@@ -102,7 +102,7 @@ extension DiffableTableDataSource {
                 content.image = item.icon
                 applyImageLayout(&content)
                 cell.contentConfiguration = content
-                cell.updateImageDimming(saveOriginal: true)
+                cell.updateImageDimming()
 
                 if let control = cell.accessoryView as? DiffableSwitch {
                     control.action = item.action
@@ -127,7 +127,7 @@ extension DiffableTableDataSource {
                 content.image = item.icon
                 applyImageLayout(&content)
                 cell.contentConfiguration = content
-                cell.updateImageDimming(saveOriginal: true)
+                cell.updateImageDimming()
 
                 if let control = cell.accessoryView as? DiffableStepper {
                     control.action = item.action

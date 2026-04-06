@@ -16,7 +16,7 @@ open class DiffableButtonTableViewCell: DiffableTableViewCell {
         super.init(coder: coder)
     }
 
-    override func updateImageDimming(saveOriginal: Bool = false) {
+    override func updateImageDimming() {
         guard var content = contentConfiguration as? UIListContentConfiguration else { return }
         let dimmed = tintAdjustmentMode == .dimmed
         let color: UIColor = dimmed ? .secondaryLabel : tintColor
@@ -24,7 +24,7 @@ open class DiffableButtonTableViewCell: DiffableTableViewCell {
             content.textProperties.color = color
             contentConfiguration = content
         }
-        super.updateImageDimming(saveOriginal: saveOriginal)
+        super.updateImageDimming()
     }
 
     open override func setHighlighted(_ highlighted: Bool, animated: Bool) {
