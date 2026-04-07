@@ -16,15 +16,11 @@ open class DiffableButtonTableViewCell: DiffableTableViewCell {
         super.init(coder: coder)
     }
 
-    override func updateImageDimming() {
+    open override func tintColorDidChange() {
+        super.tintColorDidChange()
         guard var content = contentConfiguration as? UIListContentConfiguration else { return }
-        let dimmed = tintAdjustmentMode == .dimmed
-        let color: UIColor = dimmed ? .secondaryLabel : tintColor
-        if content.textProperties.color != color {
-            content.textProperties.color = color
-            contentConfiguration = content
-        }
-        super.updateImageDimming()
+        content.textProperties.color = tintAdjustmentMode == .dimmed ? .secondaryLabel : tintColor
+        contentConfiguration = content
     }
 
     open override func setHighlighted(_ highlighted: Bool, animated: Bool) {

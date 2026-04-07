@@ -27,21 +27,13 @@ open class DiffableTableViewCell: UITableViewCell {
 
     open override func tintColorDidChange() {
         super.tintColorDidChange()
-        updateImageDimming()
-    }
-
-    func updateImageDimming() {
         guard var content = contentConfiguration as? UIListContentConfiguration else { return }
-        if content.image !== originalImage {
+        if tintAdjustmentMode == .dimmed {
             originalImage = content.image
-        }
-        let dimmed = tintAdjustmentMode == .dimmed
-        if dimmed {
-            guard let desaturated = originalImage?.desaturated() else { return }
-            content.image = desaturated
-        } else {
-            guard let original = originalImage else { return }
+            content.image = originalImage?.desaturated()
+        } else if let original = originalImage {
             content.image = original
+            originalImage = nil
         }
         contentConfiguration = content
     }
