@@ -84,6 +84,7 @@ extension DiffableTableDataSource {
                 applyImageLayout(&content)
                 let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
                 content.textProperties.font = UIFont.systemFont(ofSize: descriptor.pointSize, weight: .medium)
+                content.textProperties.color = cell.tintColor
                 cell.contentConfiguration = content
                 cell.accessoryType = item.accessoryType
                 return cell
