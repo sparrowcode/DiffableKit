@@ -29,7 +29,7 @@ open class DiffableTableViewCell: UITableViewCell {
         super.tintColorDidChange()
         guard var content = contentConfiguration as? UIListContentConfiguration else { return }
         if tintAdjustmentMode == .dimmed {
-            originalImage = content.image
+            if originalImage == nil { originalImage = content.image }
             content.image = originalImage?.desaturated()
         } else if let original = originalImage {
             content.image = original
