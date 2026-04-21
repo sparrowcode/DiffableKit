@@ -10,6 +10,6 @@ extension DiffableTableDataSource {
             self.closure = closure
         }
 
-        public typealias Closure = (_ tableView: UITableView, _ section: Int, _ item: DiffableItem) -> UIView?
+        public typealias Closure = @MainActor (_ tableView: UITableView, _ section: Int, _ item: DiffableItem) -> UIView?
     }
 }

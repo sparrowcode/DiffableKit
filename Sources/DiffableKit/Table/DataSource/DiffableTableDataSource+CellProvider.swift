@@ -10,7 +10,7 @@ extension DiffableTableDataSource {
             self.closure = closure
         }
 
-        public typealias Closure = (_ tableView: UITableView, _ indexPath: IndexPath, _ item: DiffableItem) -> UITableViewCell?
+        public typealias Closure = @MainActor (_ tableView: UITableView, _ indexPath: IndexPath, _ item: DiffableItem) -> UITableViewCell?
 
         // MARK: - Ready Use
 

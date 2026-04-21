@@ -10,6 +10,6 @@ extension DiffableCollectionDataSource {
             self.closure = closure
         }
 
-        public typealias Closure = (_ collectionView: UICollectionView, _ indexPath: IndexPath, _ item: DiffableItem) -> UICollectionViewCell?
+        public typealias Closure = @MainActor (_ collectionView: UICollectionView, _ indexPath: IndexPath, _ item: DiffableItem) -> UICollectionViewCell?
     }
 }

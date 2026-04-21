@@ -1,5 +1,6 @@
 import UIKit
 
+@MainActor
 open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
 
     open weak var diffableDelegate: DiffableTableDelegate? {

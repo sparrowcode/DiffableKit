@@ -1,5 +1,6 @@
 import UIKit
 
+@MainActor
 public protocol DiffableDataSourceInterface: AnyObject {
 
     // MARK: - Set

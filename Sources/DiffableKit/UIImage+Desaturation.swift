@@ -1,6 +1,7 @@
 import UIKit
 import CoreImage.CIFilterBuiltins
 
+@MainActor
 extension UIImage {
 
     private static let desaturationContext = CIContext()
