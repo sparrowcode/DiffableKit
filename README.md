@@ -1,8 +1,16 @@
 # DiffableKit
 
-Wrapper around `UITableViewDiffableDataSource` and `UICollectionViewDiffableDataSource`. Just call `set()` with your content whenever something changes — diffing, animations, and cell updates are handled automatically under the hood.
+Declarative wrapper around `UITableViewDiffableDataSource` and `UICollectionViewDiffableDataSource`. Describe sections and items, call `set()` — diffing, animations, and cell updates are handled automatically.
 
-Built-in row types for settings screens. Cell provider, header/footer provider, delegate with actions — all wired up declaratively.
+## Installation
+
+In Xcode: File → Add Package Dependencies → paste URL:
+
+```
+https://github.com/sparrowcode/DiffableKit
+```
+
+## Usage
 
 ```swift
 class SettingsController: DiffableTableController {
