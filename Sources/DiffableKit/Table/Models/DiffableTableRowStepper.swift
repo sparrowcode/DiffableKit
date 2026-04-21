@@ -30,5 +30,5 @@ open class DiffableTableRowStepper: DiffableItem {
         super.init(id: id ?? text)
     }
 
-    public typealias Action = (_ value: Double) -> Void
+    public typealias Action = @MainActor (_ value: Double) -> Void
 }

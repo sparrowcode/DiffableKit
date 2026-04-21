@@ -24,5 +24,5 @@ open class DiffableTableRowButton: DiffableItem {
         super.init(id: id ?? text)
     }
 
-    public typealias Action = (_ indexPath: IndexPath) -> Void
+    public typealias Action = @MainActor (_ indexPath: IndexPath) -> Void
 }

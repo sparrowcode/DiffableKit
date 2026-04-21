@@ -9,5 +9,5 @@ open class DiffableActionableItem: DiffableItem {
         super.init(id: id)
     }
 
-    public typealias Action = (_ item: DiffableItem, _ indexPath: IndexPath) -> Void
+    public typealias Action = @MainActor (_ item: DiffableItem, _ indexPath: IndexPath) -> Void
 }

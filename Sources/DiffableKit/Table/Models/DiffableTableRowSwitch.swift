@@ -21,5 +21,5 @@ open class DiffableTableRowSwitch: DiffableItem {
         super.init(id: id ?? text)
     }
 
-    public typealias Action = (_ state: Bool) -> Void
+    public typealias Action = @MainActor (_ state: Bool) -> Void
 }
