@@ -71,9 +71,14 @@ open class DiffableCollectionDataSource: NSObject, DiffableDataSourceInterface {
      между текущим и новым снапшотом и анимирует структурные изменения (вставки, удаления, перемещения).
      Снапшот использует String ID как идентификаторы (value type), а объекты хранятся в itemStore/sectionStore.
      Surviving items автоматически reconfigure — cellProvider вызывается заново с обновлёнными данными из store.
+
+     Жизненный цикл хранилища: пока идёт apply-анимация, UICollectionView легитимно дёргает cellProvider
+     для self-sizing и предварительных измерений по обоим наборам id (старым и новым). Чтобы cellProvider
+     всегда находил DiffableItem, накатываем новые items оверлеем поверх старых перед apply, а удаляем
+     лишние только в completion — после того как Apple завершил применение и анимации.
      https://developer.apple.com/documentation/uikit/uicollectionviewdiffabledatasource/apply(_:animatingdifferences:completion:) */
     public func set(_ sections: [DiffableSection], animated: Bool, completion: (() -> Void)? = nil) {
-        rebuildStores(from: sections)
+        mergeStores(from: sections)
         var snapshot = convertToSnapshot(sections)
         if let currentIDs = appleDiffableDataSource?.snapshot().itemIdentifiers {
             let currentSet = Set(currentIDs)
@@ -82,7 +87,10 @@ open class DiffableCollectionDataSource: NSObject, DiffableDataSourceInterface {
                 snapshot.reconfigureItems(toReconfigure)
             }
         }
-        appleDiffableDataSource?.apply(snapshot, animatingDifferences: animated, completion: completion)
+        appleDiffableDataSource?.apply(snapshot, animatingDifferences: animated) { [weak self] in
+            self?.cleanupStoresAfterApply()
+            completion?()
+        }
 
         for section in sections {
             guard let collectionSection = section as? DiffableCollectionSection else { continue }
@@ -158,21 +166,36 @@ open class DiffableCollectionDataSource: NSObject, DiffableDataSourceInterface {
 
     // MARK: - Private
 
-    private func rebuildStores(from sections: [DiffableSection]) {
-        var newItemStore: [String: DiffableItem] = [:]
-        var newSectionStore: [String: DiffableSection] = [:]
+    /* Накатывает новые items/sections поверх существующего хранилища без удаления.
+     Старые id остаются, пока активная apply-анимация может их запросить через cellProvider. */
+    private func mergeStores(from sections: [DiffableSection]) {
         for section in sections {
-            newSectionStore[section.id] = section
+            sectionStore[section.id] = section
             if let collectionSection = section as? DiffableCollectionSection,
                collectionSection.headerAsFirstCell, let header = section.header {
-                newItemStore[header.id] = header
+                itemStore[header.id] = header
             }
             for item in section.items {
-                newItemStore[item.id] = item
+                itemStore[item.id] = item
             }
         }
-        itemStore = newItemStore
-        sectionStore = newSectionStore
+    }
+
+    /* Вызывается из completion apply: к этому моменту UICollectionView завершил применение нового
+     снапшота и больше не запросит cellProvider по старым id. Удаляем из хранилища всё, чего нет
+     в актуальных снапшотах Apple data source — учитываем и основной снапшот, и section snapshots
+     (DiffableCollectionSection хранит свои items в section snapshot, а не в основном). */
+    private func cleanupStoresAfterApply() {
+        guard let mainSnapshot = appleDiffableDataSource?.snapshot() else { return }
+        var validItems = Set(mainSnapshot.itemIdentifiers)
+        let validSections = Set(mainSnapshot.sectionIdentifiers)
+        for sectionID in validSections {
+            if let sectionSnapshot = appleDiffableDataSource?.snapshot(for: sectionID) {
+                validItems.formUnion(sectionSnapshot.items)
+            }
+        }
+        itemStore = itemStore.filter { validItems.contains($0.key) }
+        sectionStore = sectionStore.filter { validSections.contains($0.key) }
     }
 
     private func convertToSnapshot(_ sections: [DiffableSection]) -> AppleCollectionDiffableDataSource.Snapshot {
