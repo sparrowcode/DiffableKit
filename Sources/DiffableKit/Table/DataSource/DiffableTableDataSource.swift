@@ -10,6 +10,14 @@ open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
     internal weak var tableView: UITableView?
     internal var headerFooterProviders: [HeaderFooterProvider]
 
+    /* Анимация для вставок/удалений при `set(_:animated: true)`.
+     Прокси к `UITableViewDiffableDataSource.defaultRowAnimation`.
+     https://developer.apple.com/documentation/uikit/uitableviewdiffabledatasource/defaultrowanimation */
+    public var defaultRowAnimation: UITableView.RowAnimation {
+        get { appleDiffableDataSource?.defaultRowAnimation ?? .automatic }
+        set { appleDiffableDataSource?.defaultRowAnimation = newValue }
+    }
+
     private var appleDiffableDataSource: AppleTableDiffableDataSource?
     private var itemStore: [String: DiffableItem] = [:]
     private var sectionStore: [String: DiffableSection] = [:]
