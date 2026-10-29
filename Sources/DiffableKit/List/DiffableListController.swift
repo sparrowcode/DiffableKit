@@ -32,6 +32,12 @@ open class DiffableListController: UICollectionViewController {
         super.viewDidLoad()
         clearsSelectionOnViewWillAppear = false
         collectionView.delaysContentTouches = false
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillChangeFrame(_:)),
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil
+        )
     }
 
     open override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +58,21 @@ open class DiffableListController: UICollectionViewController {
             headerFooterProviders: headerFooterProviders
         )
         diffableDataSource?.set(sections, animated: false)
+    }
+
+    // MARK: - Keyboard
+
+    /* `UITableViewController` сам поднимает содержимое над клавиатурой, а `UICollectionViewController` —
+     нет. Нижний отступ списка растёт на ту часть клавиатуры, что закрывает список, и строки
+     под клавиатурой можно докрутить. */
+    @objc private func keyboardWillChangeFrame(_ notification: Notification) {
+        guard let window = view.window,
+              let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        let keyboardFrameInView = view.convert(keyboardFrame, from: window.screen.coordinateSpace)
+        let overlap = max(0, view.bounds.maxY - keyboardFrameInView.minY - view.safeAreaInsets.bottom)
+        guard collectionView.contentInset.bottom != overlap else { return }
+        collectionView.contentInset.bottom = overlap
+        collectionView.verticalScrollIndicatorInsets.bottom = overlap
     }
 
     // MARK: - Selection
