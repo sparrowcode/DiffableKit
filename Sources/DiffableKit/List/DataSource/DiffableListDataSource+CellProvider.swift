@@ -67,8 +67,7 @@ extension DiffableListDataSource {
                 content.secondaryText = item.detail
                 content.image = item.icon
                 content.applyDiffableImageLayout()
-                let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
-                content.textProperties.font = UIFont.systemFont(ofSize: descriptor.pointSize, weight: .medium)
+                content.textProperties.font = .diffableRowButton
                 content.textProperties.color = .tintColor
                 cell.contentConfiguration = content
                 cell.accessories = item.accessoryType.listAccessories
