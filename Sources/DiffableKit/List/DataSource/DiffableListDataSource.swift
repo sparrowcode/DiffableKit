@@ -180,11 +180,35 @@ open class DiffableListDataSource: NSObject, DiffableDataSourceInterface {
 
     private func configureTextHeaderFooter(_ view: UICollectionViewListCell, kind: String, section index: Int) {
         guard let section = getSection(index: index) else { return }
-        let item = kind == UICollectionView.elementKindSectionHeader ? section.header : section.footer
-        var content = view.defaultContentConfiguration()
+        let isHeader = kind == UICollectionView.elementKindSectionHeader
+        let item = isHeader ? section.header : section.footer
+        let layout = collectionView?.collectionViewLayout as? DiffableListLayout
+        let isCustomSection = layout?.context.customSectionIDs.contains(section.id) == true
+        /* В секции со своей раскладкой ячейка не знает, что она заголовок списка: `defaultContentConfiguration()`
+         дал бы обычный стиль ячейки (на iOS 18 не капсом и крупнее), а поля — обычной вьюхи (8 pt).
+         Берём стиль заголовка и футера списка того же вида и поля, которые список даёт им сам. */
+        var content = isCustomSection
+            ? Self.systemHeaderFooterConfiguration(isHeader: isHeader, appearance: layout?.appearance ?? .insetGrouped)
+            : view.defaultContentConfiguration()
         content.text = (item as? DiffableTextHeaderFooter)?.text
         view.contentConfiguration = content
+        if isCustomSection {
+            view.directionalLayoutMargins = Self.systemHeaderFooterMargins
+        }
     }
+
+    private static func systemHeaderFooterConfiguration(isHeader: Bool, appearance: UICollectionLayoutListConfiguration.Appearance) -> UIListContentConfiguration {
+        switch appearance {
+        case .plain:
+            return isHeader ? .plainHeader() : .plainFooter()
+        default:
+            return isHeader ? .groupedHeader() : .groupedFooter()
+        }
+    }
+
+    /* Поля системного заголовка и футера, как их даёт секция-список insetGrouped (замер на iOS 27.2).
+     Задача — совпадать с системой: если в новой iOS поля разойдутся, подгоняем это число. */
+    private static let systemHeaderFooterMargins = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
 
     private func updateVisibleTextHeaderFooters() {
         guard let collectionView else { return }

@@ -24,6 +24,16 @@ open class DiffableListLayout: UICollectionViewCompositionalLayout {
     /* Отступы краёв секций от краёв списка из последнего расчёта лейаута. */
     public var sectionHorizontalInsets: NSDirectionalEdgeInsets { context.sectionHorizontalInsets }
 
+    /* Своя раскладка для секции вместо списка, например сетка плиток. Получает секцию данных,
+     уже собранную секцию-список, ширину содержимого между её краями и окружение лейаута
+     (трейты, например размер текста для точной высоты элементов). У секции-списка своя
+     секция берёт отступы (`contentInsets`, `contentInsetsReference`) и заголовок с футером,
+     тогда она стоит вровень с остальными, в том числе на широком экране с readable width.
+     `nil` — секция остаётся списком. */
+    public var sectionLayoutProvider: ((_ section: DiffableSection, _ listSection: NSCollectionLayoutSection, _ contentWidth: CGFloat, _ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection?)? {
+        didSet { invalidateLayout() }
+    }
+
     internal let context: DiffableListLayoutContext
 
     // MARK: - Init
@@ -81,6 +91,9 @@ internal final class DiffableListLayoutContext {
     weak var layout: DiffableListLayout?
     weak var dataSource: DiffableListDataSource?
     private(set) var sectionHorizontalInsets: NSDirectionalEdgeInsets = .zero
+    /* Секции со своей раскладкой из `sectionLayoutProvider`: их текстовым заголовку и футеру
+       нужен системный стиль явно, вне секции-списка ячейка его не получает. */
+    private(set) var customSectionIDs: Set<String> = []
 
     init(appearance: UICollectionLayoutListConfiguration.Appearance) {
         self.appearance = appearance
@@ -98,15 +111,25 @@ internal final class DiffableListLayoutContext {
             dataSource?.trailingSwipeActionsConfiguration(at: indexPath)
         }
 
-        let layoutSection = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: environment)
+        let listSection = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: environment)
         sectionHorizontalInsets = NSDirectionalEdgeInsets(
             top: 0,
-            leading: layoutSection.contentInsets.leading,
+            leading: listSection.contentInsets.leading,
             bottom: 0,
-            trailing: layoutSection.contentInsets.trailing
+            trailing: listSection.contentInsets.trailing
         )
-        applyReadableWidth(to: layoutSection)
-        return layoutSection
+        applyReadableWidth(to: listSection)
+        if let section, let provider = layout?.sectionLayoutProvider {
+            let contentWidth = environment.container.effectiveContentSize.width - sectionHorizontalInsets.leading - sectionHorizontalInsets.trailing
+            if let customSection = provider(section, listSection, contentWidth, environment) {
+                customSectionIDs.insert(section.id)
+                return customSection
+            }
+        }
+        if let section {
+            customSectionIDs.remove(section.id)
+        }
+        return listSection
     }
 
     /* На широком экране (iPad, Mac) секции сужаются до readable width, как ячейки таблицы
