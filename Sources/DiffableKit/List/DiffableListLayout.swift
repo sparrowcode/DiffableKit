@@ -25,12 +25,13 @@ open class DiffableListLayout: UICollectionViewCompositionalLayout {
     public var sectionHorizontalInsets: NSDirectionalEdgeInsets { context.sectionHorizontalInsets }
 
     /* Своя раскладка для секции вместо списка, например сетка плиток. Получает секцию данных,
-     уже собранную секцию-список, ширину содержимого между её краями и окружение лейаута
-     (трейты, например размер текста для точной высоты элементов). У секции-списка своя
-     секция берёт отступы (`contentInsets`, `contentInsetsReference`) и заголовок с футером,
-     тогда она стоит вровень с остальными, в том числе на широком экране с readable width.
+     уже собранную секцию-список и окружение лейаута (трейты, например размер текста для точной
+     высоты элементов). У секции-списка своя секция берёт отступы (`contentInsets`,
+     `contentInsetsReference`) и заголовок с футером, тогда она стоит вровень с остальными,
+     в том числе на широком экране с readable width. Ширины элементов — долями (`fractionalWidth`)
+     и отступами групп: ширину между краями секции считает сам лейаут, с учётом safe area.
      `nil` — секция остаётся списком. */
-    public var sectionLayoutProvider: ((_ section: DiffableSection, _ listSection: NSCollectionLayoutSection, _ contentWidth: CGFloat, _ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection?)? {
+    public var sectionLayoutProvider: ((_ section: DiffableSection, _ listSection: NSCollectionLayoutSection, _ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection?)? {
         didSet { invalidateLayout() }
     }
 
@@ -120,8 +121,7 @@ internal final class DiffableListLayoutContext {
         )
         applyReadableWidth(to: listSection)
         if let section, let provider = layout?.sectionLayoutProvider {
-            let contentWidth = environment.container.effectiveContentSize.width - sectionHorizontalInsets.leading - sectionHorizontalInsets.trailing
-            if let customSection = provider(section, listSection, contentWidth, environment) {
+            if let customSection = provider(section, listSection, environment) {
                 customSectionIDs.insert(section.id)
                 return customSection
             }
