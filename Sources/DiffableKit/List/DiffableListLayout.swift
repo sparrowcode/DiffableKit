@@ -21,6 +21,18 @@ open class DiffableListLayout: UICollectionViewCompositionalLayout {
         }
     }
 
+    /* Фон секций-списков, `backgroundColor` конфигурации списка. `nil` — системный цвет для `appearance`.
+     `.clear`, когда фон задан у самого списка, например рядом есть секции со своей раскладкой,
+     под которыми системного фона нет. Системный фон секции в анимации вставки может пройти
+     поверх ячеек соседней секции.
+     https://developer.apple.com/documentation/uikit/uicollectionlayoutlistconfiguration/backgroundcolor */
+    open var listBackgroundColor: UIColor? {
+        didSet {
+            guard listBackgroundColor != oldValue else { return }
+            invalidateLayout()
+        }
+    }
+
     /* Отступы краёв секций от краёв списка из последнего расчёта лейаута. */
     public var sectionHorizontalInsets: NSDirectionalEdgeInsets { context.sectionHorizontalInsets }
 
@@ -102,6 +114,7 @@ internal final class DiffableListLayoutContext {
 
     func makeSection(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         var configuration = UICollectionLayoutListConfiguration(appearance: appearance)
+        configuration.backgroundColor = layout?.listBackgroundColor
         let section = dataSource?.getSection(index: index)
         configuration.headerMode = section?.header == nil ? .none : .supplementary
         configuration.footerMode = section?.footer == nil ? .none : .supplementary
