@@ -47,6 +47,10 @@ open class DiffableListLayout: UICollectionViewCompositionalLayout {
         didSet { invalidateLayout() }
     }
 
+    /* Data source списка: подклассу лейаута, чтобы найти секцию и элемент по `IndexPath`,
+     например когда он дополняет атрибуты своими полями. */
+    public var dataSource: DiffableListDataSource? { context.dataSource }
+
     internal let context: DiffableListLayoutContext
 
     // MARK: - Init
