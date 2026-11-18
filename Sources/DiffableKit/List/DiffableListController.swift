@@ -22,6 +22,12 @@ open class DiffableListController: UICollectionViewController {
         super.init(collectionViewLayout: DiffableListLayout(appearance: appearance))
     }
 
+    /* Список со своим лейаутом — подклассом `DiffableListLayout`, например со своими атрибутами
+     (`layoutAttributesClass`), которые лейаут передаёт ячейкам. */
+    public init(layout: DiffableListLayout) {
+        super.init(collectionViewLayout: layout)
+    }
+
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

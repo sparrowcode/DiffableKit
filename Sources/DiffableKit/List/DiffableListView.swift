@@ -22,6 +22,13 @@ open class DiffableListView: UICollectionView {
         delaysContentTouches = false
     }
 
+    /* Список со своим лейаутом — подклассом `DiffableListLayout`, например со своими атрибутами
+     (`layoutAttributesClass`), которые лейаут передаёт ячейкам. */
+    public init(layout: DiffableListLayout) {
+        super.init(frame: .zero, collectionViewLayout: layout)
+        delaysContentTouches = false
+    }
+
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
