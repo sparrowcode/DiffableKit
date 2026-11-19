@@ -33,6 +33,16 @@ open class DiffableListLayout: UICollectionViewCompositionalLayout {
         }
     }
 
+    /* Секции сужаются до readable width на широком экране, как ячейки таблицы
+     с `cellLayoutMarginsFollowReadableWidth`. `false` — секции по полям списка во всю ширину,
+     например в колонке сплита, ширину которой уже ограничивает сам сплит. */
+    open var followsReadableWidth = true {
+        didSet {
+            guard followsReadableWidth != oldValue else { return }
+            invalidateLayout()
+        }
+    }
+
     /* Отступы краёв секций от краёв списка из последнего расчёта лейаута. */
     public var sectionHorizontalInsets: NSDirectionalEdgeInsets { context.sectionHorizontalInsets }
 
@@ -154,7 +164,7 @@ internal final class DiffableListLayoutContext {
      списка, и `.readableContent` не включаем: иначе на iPhone с полями 20 pt секции встали бы
      на 20 pt вместо системных отступов списка. */
     private func applyReadableWidth(to section: NSCollectionLayoutSection) {
-        guard let collectionView = layout?.collectionView else { return }
+        guard let layout, layout.followsReadableWidth, let collectionView = layout.collectionView else { return }
         let readableFrame = collectionView.readableContentGuide.layoutFrame
         let marginsFrame = collectionView.layoutMarginsGuide.layoutFrame
         guard readableFrame.width < marginsFrame.width else { return }
