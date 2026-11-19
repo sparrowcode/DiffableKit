@@ -27,12 +27,18 @@ open class DiffableTableViewCell: UITableViewCell {
 
     open override func tintColorDidChange() {
         super.tintColorDidChange()
-        guard var content = contentConfiguration as? UIListContentConfiguration else { return }
+        /* Символ, как и текст, окрашен тинтом, и под модалкой его приглушает сам UIKit. Растровую
+         картинку со своими цветами UIKit не трогает, её обесцвечивает ячейка. Растровая копия
+         символа вышла бы чёрной и без его метрики. */
+        guard var content = contentConfiguration as? UIListContentConfiguration,
+              let image = originalImage ?? content.image,
+              !image.isSymbolImage
+        else { return }
         if tintAdjustmentMode == .dimmed {
-            if originalImage == nil { originalImage = content.image }
-            content.image = originalImage?.desaturated()
-        } else if let original = originalImage {
-            content.image = original
+            originalImage = image
+            content.image = image.desaturated()
+        } else {
+            content.image = image
             originalImage = nil
         }
         contentConfiguration = content
