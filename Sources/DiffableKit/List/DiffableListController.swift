@@ -38,12 +38,6 @@ open class DiffableListController: UICollectionViewController {
         super.viewDidLoad()
         clearsSelectionOnViewWillAppear = false
         collectionView.delaysContentTouches = false
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillChangeFrame(_:)),
-            name: UIResponder.keyboardWillChangeFrameNotification,
-            object: nil
-        )
     }
 
     open override func viewWillAppear(_ animated: Bool) {
@@ -70,12 +64,12 @@ open class DiffableListController: UICollectionViewController {
 
     /* `UITableViewController` сам поднимает содержимое над клавиатурой, а `UICollectionViewController` —
      нет. Нижний отступ списка растёт на ту часть клавиатуры, что закрывает список, и строки
-     под клавиатурой можно докрутить. */
-    @objc private func keyboardWillChangeFrame(_ notification: Notification) {
-        guard let window = view.window,
-              let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
-        let keyboardFrameInView = view.convert(keyboardFrame, from: window.screen.coordinateSpace)
-        let overlap = max(0, view.bounds.maxY - keyboardFrameInView.minY - view.safeAreaInsets.bottom)
+     под клавиатурой можно докрутить. Где клавиатура, знает системный `keyboardLayoutGuide`: он
+     меняется вместе с ней и раскладывает экран заново, а раскладка идёт и тогда, когда поповер
+     или окно сами уходят от клавиатуры и меняют размер. */
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let overlap = max(0, view.bounds.maxY - view.keyboardLayoutGuide.layoutFrame.minY - view.safeAreaInsets.bottom)
         guard collectionView.contentInset.bottom != overlap else { return }
         collectionView.contentInset.bottom = overlap
         collectionView.verticalScrollIndicatorInsets.bottom = overlap
