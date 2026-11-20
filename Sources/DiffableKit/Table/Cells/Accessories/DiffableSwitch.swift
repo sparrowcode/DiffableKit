@@ -18,6 +18,13 @@ open class DiffableSwitch: UISwitch {
         fatalError("init(coder:) has not been implemented")
     }
 
+    /* Value from the row. A switch already on screen moves with the system animation, as when the
+       app changes it in response to another control; a new or reused one jumps into place. */
+    func update(isOn: Bool) {
+        guard isOn != self.isOn else { return }
+        setOn(isOn, animated: window != nil)
+    }
+
     @objc private func valueChanged() {
         #if os(iOS) && !targetEnvironment(macCatalyst)
         selectionGenerator.selectionChanged()

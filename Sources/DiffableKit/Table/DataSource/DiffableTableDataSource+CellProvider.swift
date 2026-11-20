@@ -101,7 +101,7 @@ extension DiffableTableDataSource {
                 cell.contentConfiguration = content
                 if let control = cell.accessoryView as? DiffableSwitch {
                     control.action = item.action
-                    control.isOn = item.isOn
+                    control.update(isOn: item.isOn)
                 } else {
                     let control = DiffableSwitch(action: item.action)
                     control.isOn = item.isOn

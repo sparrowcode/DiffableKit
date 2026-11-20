@@ -90,7 +90,7 @@ extension DiffableListDataSource {
                 let control = cell.control { DiffableSwitch(action: item.action) }
                 cell.highlightsBackground = false
                 control.action = item.action
-                control.isOn = item.isOn
+                control.update(isOn: item.isOn)
             }
             return CellProvider { collectionView, indexPath, item in
                 guard let item = item as? DiffableTableRowSwitch else { return nil }
