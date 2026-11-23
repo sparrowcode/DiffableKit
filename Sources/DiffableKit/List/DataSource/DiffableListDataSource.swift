@@ -183,8 +183,8 @@ open class DiffableListDataSource: NSObject, DiffableDataSourceInterface {
     /* Текстовые заголовок и футер — системная `UICollectionViewListCell`: её
      `defaultContentConfiguration()` в заголовке и футере секции списка даёт их системный стиль
      на любой версии iOS (готовые `.header()` и `.footer()` есть только с iOS 18). */
-    private func makeTextHeaderFooterRegistration(elementKind: String) -> UICollectionView.SupplementaryRegistration<UICollectionViewListCell> {
-        UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(elementKind: elementKind) { [weak self] view, kind, indexPath in
+    private func makeTextHeaderFooterRegistration(elementKind: String) -> UICollectionView.SupplementaryRegistration<TextHeaderFooterView> {
+        UICollectionView.SupplementaryRegistration<TextHeaderFooterView>(elementKind: elementKind) { [weak self] view, kind, indexPath in
             self?.configureTextHeaderFooter(view, kind: kind, section: indexPath.section)
         }
     }
@@ -225,7 +225,9 @@ open class DiffableListDataSource: NSObject, DiffableDataSourceInterface {
         guard let collectionView else { return }
         for kind in [UICollectionView.elementKindSectionHeader, UICollectionView.elementKindSectionFooter] {
             for indexPath in collectionView.indexPathsForVisibleSupplementaryElements(ofKind: kind) {
-                guard let view = collectionView.supplementaryView(forElementKind: kind, at: indexPath) as? UICollectionViewListCell else { continue }
+                /* Только свои текстовые вьюхи: заголовок или футер из `HeaderFooterProvider` тоже бывает
+                 `UICollectionViewListCell`, и новая конфигурация заменила бы его содержимое. */
+                guard let view = collectionView.supplementaryView(forElementKind: kind, at: indexPath) as? TextHeaderFooterView else { continue }
                 configureTextHeaderFooter(view, kind: kind, section: indexPath.section)
             }
         }
@@ -262,6 +264,11 @@ open class DiffableListDataSource: NSObject, DiffableDataSourceInterface {
         return snapshot
     }
 }
+
+// MARK: - Text Header & Footer View
+
+/* Своя вьюха текстовых заголовка и футера: по классу data source отличает их от вьюх `HeaderFooterProvider`. */
+private final class TextHeaderFooterView: UICollectionViewListCell {}
 
 // MARK: - Layout
 
