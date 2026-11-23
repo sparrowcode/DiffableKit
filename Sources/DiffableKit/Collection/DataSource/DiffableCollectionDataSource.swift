@@ -78,6 +78,14 @@ open class DiffableCollectionDataSource: NSObject, DiffableDataSourceInterface {
      лишние только в completion — после того как Apple завершил применение и анимации.
      https://developer.apple.com/documentation/uikit/uicollectionviewdiffabledatasource/apply(_:animatingdifferences:completion:) */
     public func set(_ sections: [DiffableSection], animated: Bool, completion: (() -> Void)? = nil) {
+        #if DEBUG
+        assertItemTypesUnchanged(
+            sections.flatMap(storedItems(of:)),
+            appliedIDs: Set(appleDiffableDataSource?.snapshot().itemIdentifiers ?? []),
+            store: itemStore,
+            dataSource: self
+        )
+        #endif
         mergeStores(from: sections)
         var snapshot = convertToSnapshot(sections)
         if let currentIDs = appleDiffableDataSource?.snapshot().itemIdentifiers {
@@ -122,6 +130,9 @@ open class DiffableCollectionDataSource: NSObject, DiffableDataSourceInterface {
         let existingIDs = Set(snapshot.itemIdentifiers)
         let validItems = items.filter { existingIDs.contains($0.id) }
         guard !validItems.isEmpty else { return }
+        #if DEBUG
+        assertItemTypesUnchanged(validItems, appliedIDs: existingIDs, store: itemStore, dataSource: self)
+        #endif
         for item in validItems {
             itemStore[item.id] = item
         }
@@ -171,14 +182,19 @@ open class DiffableCollectionDataSource: NSObject, DiffableDataSourceInterface {
     private func mergeStores(from sections: [DiffableSection]) {
         for section in sections {
             sectionStore[section.id] = section
-            if let collectionSection = section as? DiffableCollectionSection,
-               collectionSection.headerAsFirstCell, let header = section.header {
-                itemStore[header.id] = header
-            }
-            for item in section.items {
+            for item in storedItems(of: section) {
                 itemStore[item.id] = item
             }
         }
+    }
+
+    /* Элементы секции, которые живут в itemStore: у `headerAsFirstCell` заголовок тоже ячейка. */
+    private func storedItems(of section: DiffableSection) -> [DiffableItem] {
+        if let collectionSection = section as? DiffableCollectionSection,
+           collectionSection.headerAsFirstCell, let header = section.header {
+            return [header] + section.items
+        }
+        return section.items
     }
 
     /* Вызывается из completion apply: к этому моменту UICollectionView завершил применение нового

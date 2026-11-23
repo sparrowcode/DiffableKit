@@ -72,6 +72,14 @@ open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
      лишние только в completion — после того как Apple завершил применение и анимации.
      https://developer.apple.com/documentation/uikit/uitableviewdiffabledatasource/apply(_:animatingdifferences:completion:) */
     public func set(_ sections: [DiffableSection], animated: Bool, completion: (() -> Void)? = nil) {
+        #if DEBUG
+        assertItemTypesUnchanged(
+            sections.flatMap { $0.items },
+            appliedIDs: Set(appleDiffableDataSource?.snapshot().itemIdentifiers ?? []),
+            store: itemStore,
+            dataSource: self
+        )
+        #endif
         mergeStores(from: sections)
         var snapshot = convertToSnapshot(sections)
         if let currentIDs = appleDiffableDataSource?.snapshot().itemIdentifiers {
@@ -95,6 +103,9 @@ open class DiffableTableDataSource: NSObject, DiffableDataSourceInterface {
         let existingIDs = Set(snapshot.itemIdentifiers)
         let validItems = items.filter { existingIDs.contains($0.id) }
         guard !validItems.isEmpty else { return }
+        #if DEBUG
+        assertItemTypesUnchanged(validItems, appliedIDs: existingIDs, store: itemStore, dataSource: self)
+        #endif
         for item in validItems {
             itemStore[item.id] = item
         }

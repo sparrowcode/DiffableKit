@@ -89,6 +89,14 @@ open class DiffableListDataSource: NSObject, DiffableDataSourceInterface {
      Заголовки и футеры `reconfigureItems` не трогает, поэтому видимые тексты обновляются отдельно.
      https://developer.apple.com/documentation/uikit/uicollectionviewdiffabledatasource/apply(_:animatingdifferences:completion:) */
     public func set(_ sections: [DiffableSection], animated: Bool, completion: (() -> Void)? = nil) {
+        #if DEBUG
+        assertItemTypesUnchanged(
+            sections.flatMap { $0.items },
+            appliedIDs: Set(appleDiffableDataSource?.snapshot().itemIdentifiers ?? []),
+            store: itemStore,
+            dataSource: self
+        )
+        #endif
         mergeStores(from: sections)
         var snapshot = convertToSnapshot(sections)
         if let currentIDs = appleDiffableDataSource?.snapshot().itemIdentifiers {
@@ -113,6 +121,9 @@ open class DiffableListDataSource: NSObject, DiffableDataSourceInterface {
         let existingIDs = Set(snapshot.itemIdentifiers)
         let validItems = items.filter { existingIDs.contains($0.id) }
         guard !validItems.isEmpty else { return }
+        #if DEBUG
+        assertItemTypesUnchanged(validItems, appliedIDs: existingIDs, store: itemStore, dataSource: self)
+        #endif
         for item in validItems {
             itemStore[item.id] = item
         }
